@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.ImGuiTools;
+using System;
 using WEngine.Scripts.Scenes;
 
 namespace WEngine.Scripts.Main
@@ -45,6 +46,15 @@ namespace WEngine.Scripts.Main
             base.Draw(gameTime);
 
             // TODO: Add your drawing code here
+        }
+
+
+        // This replaces Program.cs
+        [STAThread]
+        public static void Main()
+        {
+            using (var game = new Game1())
+                game.Run();
         }
     }
 }
