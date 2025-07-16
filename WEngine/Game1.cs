@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez;
+using Nez.ImGuiTools;
 
 namespace WEngine
 {
@@ -17,6 +18,17 @@ namespace WEngine
             base.Initialize();
 
             // TODO: Add your initialization logic here
+
+            //debug
+            Core.DebugRenderEnabled = true;
+            //System.Reflection.Assembly.Load("Nez.ImGui");
+            var imGuiManager = new ImGuiManager();
+            Core.RegisterGlobalManager(imGuiManager);
+
+            // toggle ImGui rendering on/off. It starts out enabled.
+            imGuiManager.SetEnabled(true);
+
+
         }
 
         protected override void Update(GameTime gameTime)

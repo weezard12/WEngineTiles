@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEngine", "WEngine\WEngine.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.MG38", "Nez\Nez.Portable\Nez.MG38.csproj", "{3DD51565-774A-3EDD-E2B6-9BE0C812310A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.MG38.ImGui", "Nez\Nez.ImGui\Nez.MG38.ImGui.csproj", "{CCC9ADED-C098-EDDF-B6C2-EBDD3408C0D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.MG38.Persistence", "Nez\Nez.Persistence\Nez.MG38.Persistence.csproj", "{08900AA0-099E-393C-9137-0FCEEFD585DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{3DD51565-774A-3EDD-E2B6-9BE0C812310A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DD51565-774A-3EDD-E2B6-9BE0C812310A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DD51565-774A-3EDD-E2B6-9BE0C812310A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC9ADED-C098-EDDF-B6C2-EBDD3408C0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC9ADED-C098-EDDF-B6C2-EBDD3408C0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC9ADED-C098-EDDF-B6C2-EBDD3408C0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC9ADED-C098-EDDF-B6C2-EBDD3408C0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08900AA0-099E-393C-9137-0FCEEFD585DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08900AA0-099E-393C-9137-0FCEEFD585DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08900AA0-099E-393C-9137-0FCEEFD585DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08900AA0-099E-393C-9137-0FCEEFD585DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
