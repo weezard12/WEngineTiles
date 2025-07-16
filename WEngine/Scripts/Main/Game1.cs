@@ -3,8 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.ImGuiTools;
+using WEngine.Scripts.Scenes;
 
-namespace WEngine
+namespace WEngine.Scripts.Main
 {
     public class Game1 : Core
     {
@@ -20,14 +21,15 @@ namespace WEngine
             // TODO: Add your initialization logic here
 
             //debug
-            Core.DebugRenderEnabled = true;
+            DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             var imGuiManager = new ImGuiManager();
-            Core.RegisterGlobalManager(imGuiManager);
+            RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
             imGuiManager.SetEnabled(true);
 
+            Scene = new TestScene();
 
         }
 
