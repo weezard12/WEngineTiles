@@ -5,6 +5,7 @@
 	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
+	<LangVersion>12.0</LangVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>Nez</AssemblyName>
     <RootNamespace>Nez</RootNamespace>
