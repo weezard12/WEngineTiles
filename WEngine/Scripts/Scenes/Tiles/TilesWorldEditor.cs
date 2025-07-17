@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Xna.Framework;
 using Nez;
 using Nez.UI;
 using System;
@@ -19,11 +20,11 @@ namespace WEngine.Scripts.Scenes.Tiles
             base.OnStart();
 
             // Enable UI Canvas
-            //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
-            //canvas.IsFullScreen = true;
+            var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
+            canvas.IsFullScreen = true;
 
-            ///SetupTileSelectionUI(canvas.Stage);
-           AddEntity(new TilesSelector());
+            SetupTileSelectionUI(canvas.Stage);
+           //AddEntity(new TilesSelector());
         }
         public override void Update()
         {
@@ -33,32 +34,30 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         private void SetupTileSelectionUI(Stage stage)
         {
+
+
             var rootTable = new Table();
-            rootTable.SetFillParent(true);
-
-            // Right-align the panel
-            rootTable.Top().Right();
-
-            var tilePanel = new Table();
-            tilePanel.Defaults().Pad(4).Size(64); // padding and button size
-
-            // Example: adding 4 tile buttons
-            for (int i = 0; i < 4; i++)
-            {
-                var tileButton = new TextButton($"Tile {i}", Skin.CreateDefaultSkin());
-
-                int tileIndex = i; // capture index for closure
-                tileButton.OnClicked += button =>
-                {
-                    // Replace this with your tile selection logic
-                    Debug.Log($"Selected tile {tileIndex}");
-                };
-
-                tilePanel.Add(tileButton);
-            }
-
-            rootTable.Add(tilePanel);
             stage.AddElement(rootTable);
+            rootTable.SetFillParent(true);
+            rootTable.Top().Right().Pad(10);
+
+            var container = new Container();
+            container.SetBackground(new PrimitiveDrawable(Color.DarkSlateGray, 4)); // Optional background
+
+
+            var innerTable = new Table();
+
+            // Add your UI elements to the inner table
+            innerTable.Add(new Label("Tile Selector")).Pad(10);
+            innerTable.Row(); // Move to the next row
+            innerTable.Add(new TextButton("Tile 1", new TextButtonStyle())).Pad(10);
+            innerTable.Row(); // Move to the next row
+            innerTable.Add(new TextButton("Tile 2", new TextButtonStyle())).Pad(10);
+
+            // Add the table into the container
+            container.SetElement(innerTable);  // Not AddElement — this sets the wrapped widget
+
+            rootTable.Add(container).Top().Right().Pad(10);
         }
     }
 }

@@ -15,10 +15,13 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Base
         public string ViewName { get; set; }
 
         public UICanvas Canvas { get; private set; }
+        protected Container RootContainer { get; private set; }
 
         public EditorViewBase(string viewName)
         {
             ViewName = viewName;
+
+            Name = viewName;
         }
 
         public override void OnAddedToScene()
@@ -28,15 +31,18 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Base
             // Create a full-screen UI canvas for this view
             Canvas = AddComponent<UICanvas>();
             Canvas.IsFullScreen = true;
+            
+            RootContainer = new Container();
+            var skin = Skin.CreateDefaultSkin();
+            RootContainer.SetBackground(new PrimitiveDrawable(Color.Black * 0.5f, 2f)); // Semi-transparent with 2px borde
 
             // Initialize the UI for this view
-            InitializeUI(Canvas.Stage, new Container());
+            InitializeUI(Canvas.Stage, RootContainer);
         }
 
         protected virtual void InitializeUI(Stage stage, Container rootContainer)
         {
             stage.AddElement(rootContainer);
-            rootContainer.SetBackground(new PrimitiveDrawable(Color.Black)); // Semi-transparent background
         }
     }
 }
