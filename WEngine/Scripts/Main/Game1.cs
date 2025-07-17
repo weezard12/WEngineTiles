@@ -5,6 +5,7 @@ using Nez;
 using Nez.ImGuiTools;
 using System;
 using WEngine.Scripts.Scenes;
+using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.Main
 {
@@ -13,6 +14,7 @@ namespace WEngine.Scripts.Main
         public Game1()
         {
             IsMouseVisible = true;
+            Window.AllowUserResizing = true;
         }
 
         protected override void Initialize()
@@ -24,13 +26,13 @@ namespace WEngine.Scripts.Main
             //debug
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
-            var imGuiManager = new ImGuiManager();
-            RegisterGlobalManager(imGuiManager);
+            //var imGuiManager = new ImGuiManager();
+            //RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
-            imGuiManager.SetEnabled(true);
+            //imGuiManager.SetEnabled(true);
 
-            Scene = new TestScene();
+            Scene = new TilesWorldEditor();
 
         }
 
