@@ -15,15 +15,21 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         {
         }
 
-        protected override void InitializeUI(Stage stage, Container rootContainer)
+        protected override void InitializeUI(Stage stage, Window window)
         {
-            base.InitializeUI(stage, rootContainer);
+            base.InitializeUI(stage, window);
+
+            window.SetPosition(Screen.Center.X, Screen.Center.Y); // Set position of the window
+
 
             var rootTable = new Table();
             rootTable.SetFillParent(true);
+            rootTable.Top().Right();
+
+            ScrollPane scrollPane = new ScrollPane(rootTable, Skin.CreateDefaultSkin());
 
             // Right-align the panel
-            rootTable.Top().Right();
+            
 
             var tilePanel = new Table();
             tilePanel.Defaults().Pad(4).Size(64); // padding and button size
@@ -41,10 +47,11 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
                 };
 
                 tilePanel.Add(tileButton);
+                tilePanel.Row(); // Move to the next row after each button
             }
 
             rootTable.Add(tilePanel);
-            rootContainer.AddElement(rootTable);
+            window.Add(rootTable);
         }
     }
 

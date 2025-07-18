@@ -20,11 +20,15 @@ namespace WEngine.Scripts.Scenes.Tiles
             base.OnStart();
 
             // Enable UI Canvas
-            var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
-            canvas.IsFullScreen = true;
+            //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
+            //canvas.IsFullScreen = true;
 
-            SetupTileSelectionUI(canvas.Stage);
-           //AddEntity(new TilesSelector());
+            //SetupTileSelectionUI(canvas.Stage);
+
+            TilesSelector tilesSelector = new TilesSelector();
+            
+            AddEntity(tilesSelector);
+            tilesSelector.SetPosition(Screen.Center);
         }
         public override void Update()
         {
@@ -34,7 +38,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         private void SetupTileSelectionUI(Stage stage)
         {
-
+            
 
             var rootTable = new Table();
             stage.AddElement(rootTable);
