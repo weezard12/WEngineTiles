@@ -1,7 +1,12 @@
-﻿using ImGuiNET;
+﻿using Gum.Converters;
+using Gum.DataTypes;
+using Gum.Wireframe;
+using ImGuiNET;
 using Microsoft.Xna.Framework;
+using MonoGameGum;
+using MonoGameGum.Forms;
+using MonoGameGum.Forms.Controls;
 using Nez;
-using Nez.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +14,8 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.TilesEditor;
+using Button = MonoGameGum.Forms.Controls.Button;
+using Label = MonoGameGum.Forms.Controls.Label;
 
 namespace WEngine.Scripts.Scenes.Tiles
 {
@@ -25,43 +32,42 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             //SetupTileSelectionUI(canvas.Stage);
 
-            TilesSelector tilesSelector = new TilesSelector();
-            
-            AddEntity(tilesSelector);
-            tilesSelector.SetPosition(Screen.Center);
+            //TilesSelector tilesSelector = new TilesSelector();
+
+            //AddEntity(tilesSelector);
+            //tilesSelector.SetPosition(Screen.Center);
+
+
+            // Ensure UI renders in screen space
+            //AddRenderer(new ScreenSpaceRenderer(1, null));
+
+            // Create a panel to hold UI controls
+            // Root UI panel
+            var window = new Window();
+            window.Anchor(Gum.Wireframe.Anchor.Center);
+            window.Width = 300;
+            window.Height = 200;
+            window.AddToRoot();
+
+            var textInstance = new Label();
+            textInstance.Dock(Gum.Wireframe.Dock.Top);
+            textInstance.Y = 24;
+            textInstance.Text = "Hello I am a message box";
+            window.AddChild(textInstance);
+
+            var button = new Button();
+            button.Anchor(Gum.Wireframe.Anchor.Bottom);
+            button.Y = -10;
+            button.Text = "Close";
+            window.AddChild(button.Visual);
+            button.Click += (_, _) =>
+            {
+                window.RemoveFromRoot();
+            };
         }
         public override void Update()
         {
             base.Update();
-        }
-
-
-        private void SetupTileSelectionUI(Stage stage)
-        {
-            
-
-            var rootTable = new Table();
-            stage.AddElement(rootTable);
-            rootTable.SetFillParent(true);
-            rootTable.Top().Right().Pad(10);
-
-            var container = new Container();
-            container.SetBackground(new PrimitiveDrawable(Color.DarkSlateGray, 4)); // Optional background
-
-
-            var innerTable = new Table();
-
-            // Add your UI elements to the inner table
-            innerTable.Add(new Label("Tile Selector")).Pad(10);
-            innerTable.Row(); // Move to the next row
-            innerTable.Add(new TextButton("Tile 1", new TextButtonStyle())).Pad(10);
-            innerTable.Row(); // Move to the next row
-            innerTable.Add(new TextButton("Tile 2", new TextButtonStyle())).Pad(10);
-
-            // Add the table into the container
-            container.SetElement(innerTable);  // Not AddElement — this sets the wrapped widget
-
-            rootTable.Add(container).Top().Right().Pad(10);
         }
     }
 }

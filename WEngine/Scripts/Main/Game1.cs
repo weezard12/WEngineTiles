@@ -1,9 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.ImGuiTools;
+using RenderingLibrary;
 using System;
+using System.Reflection.PortableExecutable;
 using WEngine.Scripts.Scenes;
 using WEngine.Scripts.Scenes.Tiles;
 
@@ -22,6 +25,8 @@ namespace WEngine.Scripts.Main
             base.Initialize();
 
             // TODO: Add your initialization logic here
+            MonoGameGum.GumService.Default.Initialize(this);
+
 
             //debug
             DebugRenderEnabled = true;
@@ -38,9 +43,10 @@ namespace WEngine.Scripts.Main
 
         protected override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
+            SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
+            MonoGameGum.GumService.Default.Update(gameTime);
 
-            // TODO: Add your update logic here
+            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -48,6 +54,8 @@ namespace WEngine.Scripts.Main
             base.Draw(gameTime);
 
             // TODO: Add your drawing code here
+
+            MonoGameGum.GumService.Default.Draw();
         }
 
 
