@@ -21,7 +21,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
 
             window.SetPosition(Screen.Center.X, Screen.Center.Y); // Set position of the window
 
-
+            return;
             var rootTable = new Table();
             rootTable.SetFillParent(true);
             rootTable.Top().Right();
