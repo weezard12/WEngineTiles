@@ -1,0 +1,97 @@
+{
+  "UserEvents": {
+    "27a534a25cf745b6c985eb782079a6fe8641b00003dada14f392a2d01b9c790a": [
+      {
+        "NewName": "TestScreen",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-18T14:22:06.9828921Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:22:18.1618217Z"
+      },
+      {
+        "NewName": "TestScreen.WindowStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:33:07.2628346Z"
+      },
+      {
+        "NewName": "TestScreen.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:38:55.3078079Z"
+      },
+      {
+        "NewName": "TestScreen.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:40:07.040255Z"
+      },
+      {
+        "NewName": "TestScreen.ContainerInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:42:05.670017Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-18T14:42:29.4125275Z"
+      },
+      {
+        "NewName": "TestScreen.EditorWindow",
+        "OldName": "TestScreen.WindowStandardInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-18T14:43:36.6425787Z"
+      },
+      {
+        "NewName": "TestScreen.TitleBar",
+        "OldName": "TestScreen.ContainerInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-18T14:43:44.7298414Z"
+      },
+      {
+        "NewName": "TestScreen.Content",
+        "OldName": "TestScreen.ContainerInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-18T14:44:00.6943425Z"
+      },
+      {
+        "NewName": "TestScreen",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-19T11:34:58.1579111Z"
+      },
+      {
+        "NewName": "TestScreen.WindowStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-19T11:35:14.3706954Z"
+      },
+      {
+        "NewName": "TestScreen.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-19T11:35:36.5870183Z"
+      }
+    ]
+  }
+}

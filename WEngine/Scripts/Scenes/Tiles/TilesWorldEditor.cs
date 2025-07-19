@@ -13,6 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Gum;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using Button = MonoGameGum.Forms.Controls.Button;
 using Label = MonoGameGum.Forms.Controls.Label;
@@ -28,6 +29,10 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Enable UI Canvas
             //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
+
+            var gumCanvas = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
+            var gumCanvas2 = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
+
             //canvas.IsFullScreen = true;
 
             //SetupTileSelectionUI(canvas.Stage);
@@ -43,6 +48,11 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Create a panel to hold UI controls
             // Root UI panel
+
+
+            
+
+            return;
             var window = new Window();
             window.Anchor(Gum.Wireframe.Anchor.Center);
             window.Width = 300;
