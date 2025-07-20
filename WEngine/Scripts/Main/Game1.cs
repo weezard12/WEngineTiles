@@ -64,8 +64,6 @@ namespace WEngine.Scripts.Main
         {
             base.Draw(gameTime);
 
-            // TODO: Add your drawing code here
-
             MonoGameGum.GumService.Default.Draw();
         }
 

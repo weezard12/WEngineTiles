@@ -1,36 +1,57 @@
 ﻿using Gum.Wireframe;
 using MonoGameGum;
 using Nez;
+using RenderingLibrary;
+using RenderingLibrary.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static WEngine.Scripts.Main.Game1;
+using Camera = Nez.Camera;
+using Renderer = RenderingLibrary.Graphics.Renderer;
 
 namespace WEngine.Scripts.GameLogic.Gum
 {
     internal class GumCanvas : RenderableComponent, IUpdatable
     {
-        public GraphicalUiElement Screen { get; private set; }
+        public GraphicalUiElement GumElement { get; private set; }
+
+        Renderer renderer;
 
         public override float Width => Screen.Width;
         public override float Height => Screen.Height;
 
         public GumCanvas(string screenName)
         {
-            GraphicalUiElement screenRuntime = LoadedGumProject.Screens.Find(s => s.Name == screenName).ToGraphicalUiElement();
-            Screen = screenRuntime;
+            renderer = GumService.Default.SystemManagers.Renderer;
+            Debug.Log(LoadedGumProject.Components.Count);
+            foreach (var component in LoadedGumProject.Components)
+            {
+                Debug.Log($"Component: {component.Name} - {component.GetType()}");
+            }
+            GraphicalUiElement screenRuntime = LoadedGumProject.GetComponentSave(screenName).ToGraphicalUiElement();
+            GumElement = screenRuntime;
+            GumElement.AddToRoot();
+            //renderer = GumService.Default.SystemManagers.Renderer;
+            
         }
 
         public override void Render(Batcher batcher, Camera camera)
         {
-            
+            //GumService.Default.Draw();
+           
+
         }
 
         public void Update()
         {
-            
+/*            Debug.Log(renderer.Layers.Count);
+            GumBatch batch = new GumBatch();
+            batch.Begin();
+            batch.Draw(GumElement);
+            batch.End();*/
         }
 
         public void LoadUI(string fileName)
@@ -43,33 +64,30 @@ namespace WEngine.Scripts.GameLogic.Gum
         {
             base.OnRemovedFromEntity();
 
-            Screen?.RemoveFromRoot();
+            
 
-            Debug.Log("GumCanvas removed from entity: " + Entity.Name + ", Screen: " + Screen?.Name);
+            Debug.Log("GumCanvas removed from entity: " + Entity.Name);
         }
 
         public override void OnAddedToEntity()
         {
             base.OnAddedToEntity();
-            Screen?.AddToRoot();
 
-            Debug.Log("GumCanvas added to entity: " + Entity.Name + ", Screen: " + Screen?.Name);
+            Debug.Log("GumCanvas added to entity: " + Entity.Name);
         }
 
         public override void OnEnabled()
         {
             base.OnEnabled();
-            Screen?.AddToRoot();
 
-            Debug.Log("GumCanvas enabled for entity: " + Entity.Name + ", Screen: " + Screen?.Name);
+            Debug.Log("GumCanvas enabled for entity: " + Entity.Name);
         }
 
         public override void OnDisabled()
         {
             base.OnDisabled();
-            Screen?.RemoveFromRoot();
 
-            Debug.Log("GumCanvas disabled for entity: " + Entity.Name + ", Screen: " + Screen?.Name);
+            Debug.Log("GumCanvas disabled for entity: " + Entity.Name);
         }
 
     }

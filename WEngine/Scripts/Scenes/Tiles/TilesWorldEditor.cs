@@ -30,8 +30,9 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Enable UI Canvas
             //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
 
-            var gumCanvas = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
-            var gumCanvas2 = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
+            var gumCanvas = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("MyComponents/EditorWindow") );
+
+            //var gumCanvas2 = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
 
             //canvas.IsFullScreen = true;
 
