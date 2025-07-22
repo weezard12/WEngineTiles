@@ -25,7 +25,6 @@ namespace WEngine.Scripts.GameLogic.Gum
 
         public GumCanvas(string screenName)
         {
-            renderer = GumService.Default.SystemManagers.Renderer;
             Debug.Log(LoadedGumProject.Components.Count);
             foreach (var component in LoadedGumProject.Components)
             {

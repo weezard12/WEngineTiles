@@ -33,6 +33,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Gum\GumProject\" />
+    <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\" />
+    <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\Components\MyComponents\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Content\Gum\GumProject\**\*.*">

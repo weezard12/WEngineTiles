@@ -140,6 +140,132 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-07-20T17:15:28.8275474Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/WindowStandard WindowStandardInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-21T20:47:34.2145068Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/ButtonStandard ButtonStandardInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-21T20:47:45.5650636Z"
+      },
+      {
+        "NewName": "TestScreen.EditorWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-21T20:48:16.0069595Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorWindow (Container).Controls/WindowStandard WindowStandardInstance in MyComponents/EditorWindow (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-22T11:07:58.6700769Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorWindow (Container).Controls/ButtonStandard ButtonStandardInstance in MyComponents/EditorWindow (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-22T11:08:03.132039Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-22T11:09:35.021723Z"
+      },
+      {
+        "NewName": "TestScreen.EditorWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-22T11:09:37.997653Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-22T11:12:29.8721883Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorWindow",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2025-07-22T11:12:45.0091303Z"
+      },
+      {
+        "NewName": "MyComponents/TestWindow",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-22T11:14:06.4392804Z"
+      },
+      {
+        "NewName": "TestScreen.TestWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-22T11:14:41.8364Z"
+      },
+      {
+        "NewName": "TestScreen.PanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-22T11:16:01.8515907Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-22T11:16:16.6234097Z"
+      },
+      {
+        "NewName": "MyComponents/Test2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-22T11:18:56.8547756Z"
+      },
+      {
+        "NewName": "MyComponents/Test2 (Container).InnerPanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-22T11:19:03.5991386Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Test2",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2025-07-22T11:19:38.004711Z"
+      },
+      {
+        "NewName": "TestScreen.InnerPanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-22T11:19:46.0487137Z"
+      },
+      {
+        "NewName": "MyComponents/WindowActionsBar",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-22T11:28:43.5874342Z"
       }
     ]
   }

@@ -5,19 +5,19 @@
     <Name>Default</Name>
     <Variable>
       <Type>string</Type>
-      <Name>ButtonStandardInstance.Parent</Name>
-      <Value xsi:type="xsd:string">WindowStandardInstance</Value>
+      <Name>InnerPanelInstance.Parent</Name>
+      <Value xsi:type="xsd:string">TestWindowInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
   <Instance>
-    <Name>WindowStandardInstance</Name>
-    <BaseType>Controls/WindowStandard</BaseType>
+    <Name>TestWindowInstance</Name>
+    <BaseType>MyComponents/TestWindow</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ButtonStandardInstance</Name>
-    <BaseType>Controls/ButtonStandard</BaseType>
+    <Name>InnerPanelInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
