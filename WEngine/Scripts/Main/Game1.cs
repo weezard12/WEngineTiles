@@ -1,4 +1,5 @@
 ﻿
+using Eto.Forms;
 using Gum.DataTypes;
 using Gum.Wireframe;
 using Microsoft.Xna.Framework;
@@ -23,9 +24,6 @@ namespace WEngine.Scripts.Main
         public static GumProjectSave LoadedGumProject { get; private set; }
         public static GraphicalUiElement CurrentGumScreen;
 
-        RenderingLibrary.Graphics.BitmapFont font;
-        GumBatch gumBatch;
-        GraphicalUiElement screenRuntime;
         public Game1()
         {
             IsMouseVisible = true;
@@ -36,6 +34,13 @@ namespace WEngine.Scripts.Main
         protected override void Initialize()
         {
             base.Initialize();
+
+
+            new Application(Eto.Platforms.WinForms);
+
+            var dialog = new OpenFileDialog();
+            dialog.Filters.Add(new FileFilter("Images", ".jpg", ".png"));
+            var result = dialog.ShowDialog(null);
 
             // Gum Logic Initialization
             //MonoGameGum.GumService.Default.Initialize(this);

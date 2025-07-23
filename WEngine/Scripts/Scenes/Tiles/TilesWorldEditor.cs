@@ -32,7 +32,6 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Getting the Gum UI Elements.
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
 
-
             // Enable UI Canvas
             //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
 
