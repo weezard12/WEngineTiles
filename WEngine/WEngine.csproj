@@ -35,6 +35,7 @@
     <Folder Include="Content\Gum\GumProject\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\Components\MyComponents\" />
+    <Folder Include="Scripts\GameLogic\TilesEditor\MyFilesSystem\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Content\Gum\GumProject\**\*.*">

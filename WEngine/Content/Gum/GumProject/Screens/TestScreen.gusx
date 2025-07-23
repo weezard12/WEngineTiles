@@ -5,6 +5,18 @@
     <Name>Default</Name>
     <Variable>
       <Type>float</Type>
+      <Name>TestWindowInstance.Height</Name>
+      <Value xsi:type="xsd:float">398</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TestWindowInstance.Width</Name>
+      <Value xsi:type="xsd:float">368</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>TilesSelectionWindowInstance.X</Name>
       <Value xsi:type="xsd:float">647</Value>
       <SetsValue>true</SetsValue>

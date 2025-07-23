@@ -259,6 +259,16 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>MyComponents/SearchableContent</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/SelectFileWindow</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>MyComponents/TilesSelectionWindow</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

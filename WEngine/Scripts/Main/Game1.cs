@@ -1,6 +1,4 @@
-﻿
-using Eto.Forms;
-using Gum.DataTypes;
+﻿using Gum.DataTypes;
 using Gum.Wireframe;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -35,13 +33,6 @@ namespace WEngine.Scripts.Main
         {
             base.Initialize();
 
-
-            new Application(Eto.Platforms.WinForms);
-
-            var dialog = new OpenFileDialog();
-            dialog.Filters.Add(new FileFilter("Images", ".jpg", ".png"));
-            var result = dialog.ShowDialog(null);
-
             // Gum Logic Initialization
             //MonoGameGum.GumService.Default.Initialize(this);
 
@@ -50,7 +41,6 @@ namespace WEngine.Scripts.Main
             LoadGumScreen("EditorScreen");
 
             // Load and configure the component
-
 
             // This assumes that your project has at least 1 screen
             //var screenRuntime = LoadedGumProject.Screens.First().ToGraphicalUiElement();

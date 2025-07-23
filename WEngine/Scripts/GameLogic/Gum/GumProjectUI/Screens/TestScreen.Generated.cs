@@ -64,6 +64,8 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     }
     private void ApplyDefaultVariables()
     {
+        this.TestWindowInstance.Visual.Height = 398f;
+        this.TestWindowInstance.Visual.Width = 368f;
 
         this.TilesSelectionWindowInstance.Visual.X = 647f;
         this.TilesSelectionWindowInstance.Visual.Y = 4f;

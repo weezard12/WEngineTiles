@@ -60,10 +60,10 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
     }
     private void ApplyDefaultVariables()
     {
-        this.TilesSelectionWindowInstance.Visual.Y = 0f;
         this.TilesSelectionWindowInstance.Visual.X = 0f;
         this.TilesSelectionWindowInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
         this.TilesSelectionWindowInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
+        this.TilesSelectionWindowInstance.Visual.Y = 0f;
         this.TilesSelectionWindowInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
         this.TilesSelectionWindowInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
 

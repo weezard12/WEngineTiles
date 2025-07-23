@@ -87,6 +87,10 @@ partial class EditorWindow : WindowStandard
     private void ApplyDefaultVariables()
     {
 
+        this.InnerPanelInstance.Visual.Height = 0f;
+        this.InnerPanelInstance.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
+        this.InnerPanelInstance.Visual.Width = 0f;
+        this.InnerPanelInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
 
 
 
