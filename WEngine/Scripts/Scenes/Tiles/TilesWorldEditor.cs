@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Gum;
 using WEngine.Scripts.GameLogic.TilesEditor;
+using WEngine.Scripts.Main;
 using Button = MonoGameGum.Forms.Controls.Button;
 using Label = MonoGameGum.Forms.Controls.Label;
 
@@ -22,10 +23,15 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorldEditor : TilesWorld
     {
+        private TilesSelectionWindow tilesSelectionWindow;
 
         public override void OnStart()
         {
             base.OnStart();
+
+            // Getting the Gum UI Elements.
+            tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+
 
             // Enable UI Canvas
             //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
@@ -51,30 +57,6 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Root UI panel
 
 
-            
-
-            return;
-            var window = new Window();
-            window.Anchor(Gum.Wireframe.Anchor.Center);
-            window.Width = 300;
-            window.Height = 200;
-            window.AddToRoot();
-
-            var textInstance = new Label();
-            textInstance.Dock(Gum.Wireframe.Dock.Top);
-            textInstance.Y = 24;
-            textInstance.Text = "Hello I am a message box";
-            window.AddChild(textInstance);
-
-            var button = new Button();
-            button.Anchor(Gum.Wireframe.Anchor.Bottom);
-            button.Y = -10;
-            button.Text = "Close";
-            window.AddChild(button.Visual);
-            button.Click += (_, _) =>
-            {
-                window.RemoveFromRoot();
-            };
         }
         public override void Update()
         {

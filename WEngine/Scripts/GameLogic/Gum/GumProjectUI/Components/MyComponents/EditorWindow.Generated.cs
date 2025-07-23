@@ -35,7 +35,6 @@ partial class EditorWindow : WindowStandard
     public TextRuntime TitleText { get; protected set; }
     public ButtonClose CloseButton { get; protected set; }
     public ButtonIcon MinimizeButton { get; protected set; }
-    public ColoredRectangleRuntime ColoredRectangleInstance1 { get; protected set; }
 
     public EditorWindow(InteractiveGue visual) : base(visual) { }
     public EditorWindow() : base(new ContainerRuntime())
@@ -65,11 +64,6 @@ partial class EditorWindow : WindowStandard
         CloseButton.Name = "CloseButton";
         MinimizeButton = new ButtonIcon();
         MinimizeButton.Name = "MinimizeButton";
-        ColoredRectangleInstance1 = new ColoredRectangleRuntime();
-        ColoredRectangleInstance1.ElementSave = ObjectFinder.Self.GetStandardElement("ColoredRectangle");
-        if (ColoredRectangleInstance1.ElementSave != null) ColoredRectangleInstance1.AddStatesAndCategoriesRecursivelyToGue(ColoredRectangleInstance1.ElementSave);
-        if (ColoredRectangleInstance1.ElementSave != null) ColoredRectangleInstance1.SetInitialState();
-        ColoredRectangleInstance1.Name = "ColoredRectangleInstance1";
     }
     protected override void AssignParents()
     {
@@ -89,7 +83,6 @@ partial class EditorWindow : WindowStandard
         TitleBarInstance.AddChild(TitleText);
         TitleBarInstance.AddChild(CloseButton);
         TitleBarInstance.AddChild(MinimizeButton);
-        InnerPanelInstance.AddChild(ColoredRectangleInstance1);
     }
     private void ApplyDefaultVariables()
     {
@@ -139,17 +132,6 @@ partial class EditorWindow : WindowStandard
         this.MinimizeButton.Visual.Y = 2f;
         this.MinimizeButton.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
         this.MinimizeButton.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.ColoredRectangleInstance1.Height = -5f;
-        this.ColoredRectangleInstance1.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ColoredRectangleInstance1.Width = -5f;
-        this.ColoredRectangleInstance1.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ColoredRectangleInstance1.X = 0f;
-        this.ColoredRectangleInstance1.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.ColoredRectangleInstance1.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.ColoredRectangleInstance1.Y = 0f;
-        this.ColoredRectangleInstance1.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.ColoredRectangleInstance1.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
 
     }
     partial void CustomInitialize();

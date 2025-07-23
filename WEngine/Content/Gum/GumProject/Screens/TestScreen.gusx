@@ -3,10 +3,27 @@
   <Name>TestScreen</Name>
   <State>
     <Name>Default</Name>
+    <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.X</Name>
+      <Value xsi:type="xsd:float">647</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.Y</Name>
+      <Value xsi:type="xsd:float">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Instance>
     <Name>TestWindowInstance</Name>
     <BaseType>MyComponents/EditorWindow</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TilesSelectionWindowInstance</Name>
+    <BaseType>MyComponents/TilesSelectionWindow</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

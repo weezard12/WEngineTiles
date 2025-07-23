@@ -37,7 +37,9 @@ partial class EditorWindowContent : MonoGameGum.Forms.Controls.FrameworkElement
     public EditorWindowContent() : base(new ContainerRuntime())
     {
 
+        this.Visual.Height = 0f;
         this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
+        this.Visual.Width = 0f;
         this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
 
         InitializeInstances();

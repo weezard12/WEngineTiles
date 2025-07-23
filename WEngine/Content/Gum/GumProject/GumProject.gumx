@@ -259,6 +259,11 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>MyComponents/TilesSelectionWindow</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>MyComponents/WindowActionsBar</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

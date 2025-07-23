@@ -1,4 +1,4 @@
-//Code for TestScreen
+//Code for EditorScreen
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
+partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -19,27 +19,26 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("TestScreen");
+            var element = ObjectFinder.Self.GetElementSave("EditorScreen");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new TestScreen(visual);
+            if(createForms) visual.FormsControlAsObject = new EditorScreen(visual);
             visual.Width = 0;
             visual.WidthUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
             visual.Height = 0;
             visual.HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TestScreen)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("TestScreen", () => 
+        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(EditorScreen)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("EditorScreen", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
         });
     }
-    public EditorWindow TestWindowInstance { get; protected set; }
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
 
-    public TestScreen(InteractiveGue visual) : base(visual) { }
-    public TestScreen() : base(new ContainerRuntime())
+    public EditorScreen(InteractiveGue visual) : base(visual) { }
+    public EditorScreen() : base(new ContainerRuntime())
     {
 
 
@@ -52,21 +51,21 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     protected virtual void InitializeInstances()
     {
         base.ReactToVisualChanged();
-        TestWindowInstance = new EditorWindow();
-        TestWindowInstance.Name = "TestWindowInstance";
         TilesSelectionWindowInstance = new TilesSelectionWindow();
         TilesSelectionWindowInstance.Name = "TilesSelectionWindowInstance";
     }
     protected virtual void AssignParents()
     {
-        this.AddChild(TestWindowInstance);
         this.AddChild(TilesSelectionWindowInstance);
     }
     private void ApplyDefaultVariables()
     {
-
-        this.TilesSelectionWindowInstance.Visual.X = 647f;
-        this.TilesSelectionWindowInstance.Visual.Y = 4f;
+        this.TilesSelectionWindowInstance.Visual.Y = 0f;
+        this.TilesSelectionWindowInstance.Visual.X = 0f;
+        this.TilesSelectionWindowInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
+        this.TilesSelectionWindowInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
+        this.TilesSelectionWindowInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
+        this.TilesSelectionWindowInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
 
     }
     partial void CustomInitialize();

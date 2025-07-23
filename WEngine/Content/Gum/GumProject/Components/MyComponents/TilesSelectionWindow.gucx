@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>MyComponents/TilesSelectionWindow</Name>
+  <BaseType>MyComponents/EditorWindow</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>float</Type>
+      <Name>EditorWindowContentInstance.Height</Name>
+      <Value xsi:type="xsd:float">-46</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>EditorWindowContentInstance.Parent</Name>
+      <Value xsi:type="xsd:string">InnerPanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>EditorWindowContentInstance.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>EditorWindowContentInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>EditorWindowContentInstance.XOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>EditorWindowContentInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>EditorWindowContentInstance.YOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ImportTilesetButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Import Tileset</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ImportTilesetButton.Height</Name>
+      <Value xsi:type="xsd:float">19</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ImportTilesetButton.IgnoredByParentSize</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ImportTilesetButton.Parent</Name>
+      <Value xsi:type="xsd:string">InnerPanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ImportTilesetButton.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ImportTilesetButton.WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ImportTilesetButton.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ImportTilesetButton.Y</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>InnerPanelInstance.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TitleText.Text</Name>
+      <Value xsi:type="xsd:string">Tiles Selection</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>Background</Name>
+    <BaseType>NineSlice</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>InnerPanelInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TitleBarInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderTopLeftInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderTopRightInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderBottomLeftInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderBottomRightInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderTopInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderBottomInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderLeftInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>BorderRightInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ColoredRectangleInstance</Name>
+    <BaseType>ColoredRectangle</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TitleText</Name>
+    <BaseType>Text</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>CloseButton</Name>
+    <BaseType>Controls/ButtonClose</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>MinimizeButton</Name>
+    <BaseType>Controls/ButtonIcon</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ImportTilesetButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>EditorWindowContentInstance</Name>
+    <BaseType>MyComponents/EditorWindowContent</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

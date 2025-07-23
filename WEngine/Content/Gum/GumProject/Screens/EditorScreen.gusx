@@ -3,6 +3,52 @@
   <Name>EditorScreen</Name>
   <State>
     <Name>Default</Name>
+    <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.X</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TilesSelectionWindowInstance.Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>TilesSelectionWindowInstance.XOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TilesSelectionWindowInstance.XUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TilesSelectionWindowInstance.YOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TilesSelectionWindowInstance.YUnits</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
+  <Instance>
+    <Name>TilesSelectionWindowInstance</Name>
+    <BaseType>MyComponents/TilesSelectionWindow</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
   <Behaviors />
 </ScreenSave>

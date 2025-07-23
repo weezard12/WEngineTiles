@@ -735,69 +735,6 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-07-23T09:36:47.9627831Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).ButtonIconInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:36:58.1440709Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).TitleText",
-        "OldName": "MyComponents/TestWindow (Controls/WindowStandard).TextInstance",
-        "ElementType": "Components",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-23T09:38:16.3254643Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).CloseWindowButton",
-        "OldName": "MyComponents/TestWindow (Controls/WindowStandard).ButtonCloseInstance",
-        "ElementType": "Components",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-23T09:38:27.8223498Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).MinimizeButton",
-        "OldName": "MyComponents/TestWindow (Controls/WindowStandard).ButtonIconInstance",
-        "ElementType": "Components",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-23T09:38:48.1316597Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).CloseButton",
-        "OldName": "MyComponents/TestWindow (Controls/WindowStandard).CloseWindowButton",
-        "ElementType": "Components",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-23T09:38:53.0915018Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-23T09:40:54.9693455Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow",
-        "ElementType": "Components",
-        "EventType": 1,
-        "TimestampUtc": "2025-07-23T09:41:03.1456071Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow",
-        "OldName": "MyComponents/TestWindow",
-        "ElementType": "Components",
-        "EventType": 2,
-        "TimestampUtc": "2025-07-23T09:41:21.7273587Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Controls/WindowStandard).ColoredRectangleInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:41:51.1661392Z"
       }
     ]
   }
