@@ -33,25 +33,17 @@ partial class Panel : MonoGameGum.Forms.Controls.Panel
     }
 
     public Panel(InteractiveGue visual) : base(visual) { }
-    public Panel() : base(new ContainerRuntime())
+    public Panel()
     {
 
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-    }
-    private void ApplyDefaultVariables()
-    {
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

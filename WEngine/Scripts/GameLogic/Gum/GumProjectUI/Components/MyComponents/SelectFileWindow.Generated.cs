@@ -34,64 +34,18 @@ partial class SelectFileWindow : EditorWindow
     public SearchableContent SearchableContentInstance { get; protected set; }
 
     public SelectFileWindow(InteractiveGue visual) : base(visual) { }
-    public SelectFileWindow() : base(new ContainerRuntime())
+    public SelectFileWindow()
     {
 
-        this.Visual.Height = 268f;
-        this.Visual.Width = 290f;
 
 
-        ApplyDefaultVariables();
-        CustomInitialize();
     }
-    protected override void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        base.InitializeInstances();
-        SearchableContentInstance = new SearchableContent();
-        SearchableContentInstance.Name = "SearchableContentInstance";
+        SearchableContentInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SearchableContent>(this.Visual,"SearchableContentInstance");
+        CustomInitialize();
     }
-    protected override void AssignParents()
-    {
-        // Intentionally do not call base.AssignParents so that this class can determine the addition of order
-        this.AddChild(Background);
-        this.AddChild(InnerPanelInstance);
-        this.AddChild(TitleBarInstance);
-        this.AddChild(BorderTopLeftInstance);
-        this.AddChild(BorderTopRightInstance);
-        this.AddChild(BorderBottomLeftInstance);
-        this.AddChild(BorderBottomRightInstance);
-        this.AddChild(BorderTopInstance);
-        this.AddChild(BorderBottomInstance);
-        this.AddChild(BorderLeftInstance);
-        this.AddChild(BorderRightInstance);
-        TitleBarInstance.AddChild(ColoredRectangleInstance);
-        TitleBarInstance.AddChild(TitleText);
-        TitleBarInstance.AddChild(CloseButton);
-        TitleBarInstance.AddChild(MinimizeButton);
-        InnerPanelInstance.AddChild(SearchableContentInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        this.SearchableContentInstance.Visual.Height = -24f;
-        this.SearchableContentInstance.Visual.X = 0f;
-        this.SearchableContentInstance.Visual.Y = 24f;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

@@ -45,157 +45,28 @@ partial class WindowStandard : MonoGameGum.Forms.Window
     public Panel BorderRightInstance { get; protected set; }
 
     public WindowStandard(InteractiveGue visual) : base(visual) { }
-    public WindowStandard() : base(new ContainerRuntime())
+    public WindowStandard()
     {
 
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        Background = new NineSliceRuntime();
-        Background.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (Background.ElementSave != null) Background.AddStatesAndCategoriesRecursivelyToGue(Background.ElementSave);
-        if (Background.ElementSave != null) Background.SetInitialState();
-        Background.Name = "Background";
-        InnerPanelInstance = new Panel();
-        InnerPanelInstance.Name = "InnerPanelInstance";
-        TitleBarInstance = new Panel();
-        TitleBarInstance.Name = "TitleBarInstance";
-        BorderTopLeftInstance = new Panel();
-        BorderTopLeftInstance.Name = "BorderTopLeftInstance";
-        BorderTopRightInstance = new Panel();
-        BorderTopRightInstance.Name = "BorderTopRightInstance";
-        BorderBottomLeftInstance = new Panel();
-        BorderBottomLeftInstance.Name = "BorderBottomLeftInstance";
-        BorderBottomRightInstance = new Panel();
-        BorderBottomRightInstance.Name = "BorderBottomRightInstance";
-        BorderTopInstance = new Panel();
-        BorderTopInstance.Name = "BorderTopInstance";
-        BorderBottomInstance = new Panel();
-        BorderBottomInstance.Name = "BorderBottomInstance";
-        BorderLeftInstance = new Panel();
-        BorderLeftInstance.Name = "BorderLeftInstance";
-        BorderRightInstance = new Panel();
-        BorderRightInstance.Name = "BorderRightInstance";
+        Background = this.Visual?.GetGraphicalUiElementByName("Background") as NineSliceRuntime;
+        InnerPanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"InnerPanelInstance");
+        TitleBarInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"TitleBarInstance");
+        BorderTopLeftInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderTopLeftInstance");
+        BorderTopRightInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderTopRightInstance");
+        BorderBottomLeftInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderBottomLeftInstance");
+        BorderBottomRightInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderBottomRightInstance");
+        BorderTopInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderTopInstance");
+        BorderBottomInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderBottomInstance");
+        BorderLeftInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderLeftInstance");
+        BorderRightInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"BorderRightInstance");
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(Background);
-        this.AddChild(InnerPanelInstance);
-        this.AddChild(TitleBarInstance);
-        this.AddChild(BorderTopLeftInstance);
-        this.AddChild(BorderTopRightInstance);
-        this.AddChild(BorderBottomLeftInstance);
-        this.AddChild(BorderBottomRightInstance);
-        this.AddChild(BorderTopInstance);
-        this.AddChild(BorderBottomInstance);
-        this.AddChild(BorderLeftInstance);
-        this.AddChild(BorderRightInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-this.Background.SetProperty("ColorCategoryState", "Primary");
-this.Background.SetProperty("StyleCategoryState", "Panel");
-
-
-        this.TitleBarInstance.Visual.Height = 24f;
-        this.TitleBarInstance.Visual.Width = 0f;
-        this.TitleBarInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.TitleBarInstance.Visual.X = 0f;
-        this.TitleBarInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.TitleBarInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.TitleBarInstance.Visual.Y = 0f;
-        this.TitleBarInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.TitleBarInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.BorderTopLeftInstance.Visual.Height = 10f;
-        this.BorderTopLeftInstance.Visual.Width = 10f;
-        this.BorderTopLeftInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderTopLeftInstance.Visual.X = 0f;
-        this.BorderTopLeftInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.BorderTopLeftInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-        this.BorderTopLeftInstance.Visual.Y = 0f;
-        this.BorderTopLeftInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.BorderTopLeftInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.BorderTopRightInstance.Visual.Height = 10f;
-        this.BorderTopRightInstance.Visual.Width = 10f;
-        this.BorderTopRightInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderTopRightInstance.Visual.X = 0f;
-        this.BorderTopRightInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.BorderTopRightInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.BorderTopRightInstance.Visual.Y = 0f;
-        this.BorderTopRightInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.BorderTopRightInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.BorderBottomLeftInstance.Visual.Height = 10f;
-        this.BorderBottomLeftInstance.Visual.Width = 10f;
-        this.BorderBottomLeftInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderBottomLeftInstance.Visual.X = 0f;
-        this.BorderBottomLeftInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.BorderBottomLeftInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-        this.BorderBottomLeftInstance.Visual.Y = 0f;
-        this.BorderBottomLeftInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Bottom;
-        this.BorderBottomLeftInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-
-        this.BorderBottomRightInstance.Visual.Height = 10f;
-        this.BorderBottomRightInstance.Visual.Width = 10f;
-        this.BorderBottomRightInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderBottomRightInstance.Visual.X = 0f;
-        this.BorderBottomRightInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.BorderBottomRightInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.BorderBottomRightInstance.Visual.Y = 0f;
-        this.BorderBottomRightInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Bottom;
-        this.BorderBottomRightInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-
-        this.BorderTopInstance.Visual.Height = 10f;
-        this.BorderTopInstance.Visual.Width = -20f;
-        this.BorderTopInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.BorderTopInstance.Visual.X = 0f;
-        this.BorderTopInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.BorderTopInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.BorderTopInstance.Visual.Y = 0f;
-        this.BorderTopInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.BorderTopInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.BorderBottomInstance.Visual.Height = 10f;
-        this.BorderBottomInstance.Visual.Width = -20f;
-        this.BorderBottomInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.BorderBottomInstance.Visual.X = 0f;
-        this.BorderBottomInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.BorderBottomInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.BorderBottomInstance.Visual.Y = 0f;
-        this.BorderBottomInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Bottom;
-        this.BorderBottomInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-
-        this.BorderLeftInstance.Visual.Height = -20f;
-        this.BorderLeftInstance.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.BorderLeftInstance.Visual.Width = 10f;
-        this.BorderLeftInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderLeftInstance.Visual.X = 0f;
-        this.BorderLeftInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.BorderLeftInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-        this.BorderLeftInstance.Visual.Y = 0f;
-        this.BorderLeftInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.BorderLeftInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.BorderRightInstance.Visual.Height = -20f;
-        this.BorderRightInstance.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.BorderRightInstance.Visual.Width = 10f;
-        this.BorderRightInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.BorderRightInstance.Visual.X = 0f;
-        this.BorderRightInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.BorderRightInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.BorderRightInstance.Visual.Y = 0f;
-        this.BorderRightInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.BorderRightInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

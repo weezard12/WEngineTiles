@@ -40,30 +40,26 @@ partial class MenuItem : MonoGameGum.Forms.Controls.MenuItem
         Focused,
     }
 
-    MenuItemCategory? mMenuItemCategoryState;
+    MenuItemCategory? _menuItemCategoryState;
     public MenuItemCategory? MenuItemCategoryState
     {
-        get => mMenuItemCategoryState;
+        get => _menuItemCategoryState;
         set
         {
-            mMenuItemCategoryState = value;
-            var appliedDynamically = false;
-            if(!appliedDynamically)
+            _menuItemCategoryState = value;
+            if(value != null)
             {
-                switch (value)
+                if(Visual.Categories.ContainsKey("MenuItemCategory"))
                 {
-                    case MenuItemCategory.Enabled:
-                        this.Background.SetProperty("ColorCategoryState", "DarkGray");
-                        break;
-                    case MenuItemCategory.Highlighted:
-                        this.Background.SetProperty("ColorCategoryState", "LightGray");
-                        break;
-                    case MenuItemCategory.Selected:
-                        this.Background.SetProperty("ColorCategoryState", "Primary");
-                        break;
-                    case MenuItemCategory.Focused:
-                        this.Background.SetProperty("ColorCategoryState", "DarkGray");
-                        break;
+                    var category = Visual.Categories["MenuItemCategory"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "MenuItemCategory");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
                 }
             }
         }
@@ -72,75 +68,19 @@ partial class MenuItem : MonoGameGum.Forms.Controls.MenuItem
     public TextRuntime TextInstance { get; protected set; }
 
     public MenuItem(InteractiveGue visual) : base(visual) { }
-    public MenuItem() : base(new ContainerRuntime())
+    public MenuItem()
     {
 
-        this.Visual.Height = 0f;
-        this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
-         
-        this.Visual.Width = 0f;
-        this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
-        this.Visual.X = 0f;
-        this.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-        this.Visual.Y = 0f;
-        this.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        Background = new NineSliceRuntime();
-        Background.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (Background.ElementSave != null) Background.AddStatesAndCategoriesRecursivelyToGue(Background.ElementSave);
-        if (Background.ElementSave != null) Background.SetInitialState();
-        Background.Name = "Background";
-        TextInstance = new TextRuntime();
-        TextInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Text");
-        if (TextInstance.ElementSave != null) TextInstance.AddStatesAndCategoriesRecursivelyToGue(TextInstance.ElementSave);
-        if (TextInstance.ElementSave != null) TextInstance.SetInitialState();
-        TextInstance.Name = "TextInstance";
+        Background = this.Visual?.GetGraphicalUiElementByName("Background") as NineSliceRuntime;
+        TextInstance = this.Visual?.GetGraphicalUiElementByName("TextInstance") as TextRuntime;
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(Background);
-        this.AddChild(TextInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-this.Background.SetProperty("ColorCategoryState", "DarkGray");
-        this.Background.Height = 0f;
-        this.Background.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.Width = 0f;
-        this.Background.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.X = 0f;
-        this.Background.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Background.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Background.Y = 0f;
-        this.Background.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.Background.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-this.TextInstance.SetProperty("ColorCategoryState", "White");
-this.TextInstance.SetProperty("StyleCategoryState", "Normal");
-        this.TextInstance.Height = 0f;
-        this.TextInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
-        this.TextInstance.HorizontalAlignment = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.TextInstance.Text = @"Menu Item";
-        this.TextInstance.VerticalAlignment = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.TextInstance.Width = 2f;
-        this.TextInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
-        this.TextInstance.X = 2f;
-        this.TextInstance.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.TextInstance.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.TextInstance.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.TextInstance.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

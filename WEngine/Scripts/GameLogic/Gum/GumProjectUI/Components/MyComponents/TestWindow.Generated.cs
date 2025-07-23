@@ -46,44 +46,8 @@ partial class TestWindow : WindowStandard
         ApplyDefaultVariables();
         CustomInitialize();
     }
-    protected override void InitializeInstances()
-    {
-        base.ReactToVisualChanged();
-        base.InitializeInstances();
-        ColoredRectangleInstance = new ColoredRectangleRuntime();
-        ColoredRectangleInstance.ElementSave = ObjectFinder.Self.GetStandardElement("ColoredRectangle");
-        if (ColoredRectangleInstance.ElementSave != null) ColoredRectangleInstance.AddStatesAndCategoriesRecursivelyToGue(ColoredRectangleInstance.ElementSave);
-        if (ColoredRectangleInstance.ElementSave != null) ColoredRectangleInstance.SetInitialState();
-        ColoredRectangleInstance.Name = "ColoredRectangleInstance";
-        TitleText = new TextRuntime();
-        TitleText.ElementSave = ObjectFinder.Self.GetStandardElement("Text");
-        if (TitleText.ElementSave != null) TitleText.AddStatesAndCategoriesRecursivelyToGue(TitleText.ElementSave);
-        if (TitleText.ElementSave != null) TitleText.SetInitialState();
-        TitleText.Name = "TitleText";
-        CloseButton = new ButtonClose();
-        CloseButton.Name = "CloseButton";
-        MinimizeButton = new ButtonIcon();
-        MinimizeButton.Name = "MinimizeButton";
-    }
-    protected override void AssignParents()
-    {
-        // Intentionally do not call base.AssignParents so that this class can determine the addition of order
-        this.AddChild(Background);
-        this.AddChild(InnerPanelInstance);
-        this.AddChild(TitleBarInstance);
-        this.AddChild(BorderTopLeftInstance);
-        this.AddChild(BorderTopRightInstance);
-        this.AddChild(BorderBottomLeftInstance);
-        this.AddChild(BorderBottomRightInstance);
-        this.AddChild(BorderTopInstance);
-        this.AddChild(BorderBottomInstance);
-        this.AddChild(BorderLeftInstance);
-        this.AddChild(BorderRightInstance);
-        TitleBarInstance.AddChild(ColoredRectangleInstance);
-        TitleBarInstance.AddChild(TitleText);
-        TitleBarInstance.AddChild(CloseButton);
-        TitleBarInstance.AddChild(MinimizeButton);
-    }
+
+
     private void ApplyDefaultVariables()
     {
 

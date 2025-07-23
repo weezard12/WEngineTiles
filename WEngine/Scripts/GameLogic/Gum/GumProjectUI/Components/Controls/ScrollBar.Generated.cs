@@ -36,18 +36,26 @@ partial class ScrollBar : MonoGameGum.Forms.Controls.ScrollBar
     {
     }
 
-    ScrollBarCategory? mScrollBarCategoryState;
+    ScrollBarCategory? _scrollBarCategoryState;
     public ScrollBarCategory? ScrollBarCategoryState
     {
-        get => mScrollBarCategoryState;
+        get => _scrollBarCategoryState;
         set
         {
-            mScrollBarCategoryState = value;
-            var appliedDynamically = false;
-            if(!appliedDynamically)
+            _scrollBarCategoryState = value;
+            if(value != null)
             {
-                switch (value)
+                if(Visual.Categories.ContainsKey("ScrollBarCategory"))
                 {
+                    var category = Visual.Categories["ScrollBarCategory"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "ScrollBarCategory");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
                 }
             }
         }
@@ -59,95 +67,22 @@ partial class ScrollBar : MonoGameGum.Forms.Controls.ScrollBar
     public ButtonStandard ThumbInstance { get; protected set; }
 
     public ScrollBar(InteractiveGue visual) : base(visual) { }
-    public ScrollBar() : base(new ContainerRuntime())
+    public ScrollBar()
     {
 
-        this.Visual.Height = 0f;
-        this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-         
-        this.Visual.Width = 24f;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        UpButtonInstance = new ButtonIcon();
-        UpButtonInstance.Name = "UpButtonInstance";
-        DownButtonInstance = new ButtonIcon();
-        DownButtonInstance.Name = "DownButtonInstance";
-        TrackInstance = new ContainerRuntime();
-        TrackInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Container");
-        if (TrackInstance.ElementSave != null) TrackInstance.AddStatesAndCategoriesRecursivelyToGue(TrackInstance.ElementSave);
-        if (TrackInstance.ElementSave != null) TrackInstance.SetInitialState();
-        TrackInstance.Name = "TrackInstance";
-        TrackBackground = new NineSliceRuntime();
-        TrackBackground.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (TrackBackground.ElementSave != null) TrackBackground.AddStatesAndCategoriesRecursivelyToGue(TrackBackground.ElementSave);
-        if (TrackBackground.ElementSave != null) TrackBackground.SetInitialState();
-        TrackBackground.Name = "TrackBackground";
-        ThumbInstance = new ButtonStandard();
-        ThumbInstance.Name = "ThumbInstance";
+        UpButtonInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonIcon>(this.Visual,"UpButtonInstance");
+        DownButtonInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonIcon>(this.Visual,"DownButtonInstance");
+        TrackInstance = this.Visual?.GetGraphicalUiElementByName("TrackInstance") as ContainerRuntime;
+        TrackBackground = this.Visual?.GetGraphicalUiElementByName("TrackBackground") as NineSliceRuntime;
+        ThumbInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"ThumbInstance");
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(UpButtonInstance);
-        this.AddChild(DownButtonInstance);
-        this.AddChild(TrackInstance);
-        TrackInstance.AddChild(TrackBackground);
-        TrackInstance.AddChild(ThumbInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-UpButtonInstance.IconCategory = Icon.IconCategory.Arrow1;
-        this.UpButtonInstance.Visual.Height = 24f;
-        this.UpButtonInstance.Visual.Rotation = 90f;
-        this.UpButtonInstance.Visual.Width = 24f;
-        this.UpButtonInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.UpButtonInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-
-DownButtonInstance.IconCategory = Icon.IconCategory.Arrow1;
-        this.DownButtonInstance.Visual.Height = 24f;
-        this.DownButtonInstance.Visual.Rotation = -90f;
-        this.DownButtonInstance.Visual.Width = 24f;
-        this.DownButtonInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.DownButtonInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Bottom;
-        this.DownButtonInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-
-        this.TrackInstance.Height = -48f;
-        this.TrackInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.TrackInstance.Width = 0f;
-        this.TrackInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.TrackInstance.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.TrackInstance.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.TrackInstance.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.TrackInstance.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-this.TrackBackground.SetProperty("ColorCategoryState", "Gray");
-this.TrackBackground.SetProperty("StyleCategoryState", "Solid");
-        this.TrackBackground.Height = 0f;
-        this.TrackBackground.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.TrackBackground.Width = 0f;
-        this.TrackBackground.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.TrackBackground.X = 0f;
-        this.TrackBackground.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.TrackBackground.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.TrackBackground.Y = 0f;
-        this.TrackBackground.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.TrackBackground.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        ThumbInstance.ButtonDisplayText = @"";
-        this.ThumbInstance.Visual.Width = 0f;
-        this.ThumbInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ThumbInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.ThumbInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.ThumbInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.ThumbInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

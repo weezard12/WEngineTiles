@@ -42,53 +42,26 @@ partial class ButtonIcon : MonoGameGum.Forms.Controls.Button
         DisabledFocused,
     }
 
-    ButtonCategory? mButtonCategoryState;
+    ButtonCategory? _buttonCategoryState;
     public ButtonCategory? ButtonCategoryState
     {
-        get => mButtonCategoryState;
+        get => _buttonCategoryState;
         set
         {
-            mButtonCategoryState = value;
-            var appliedDynamically = false;
-            if(!appliedDynamically)
+            _buttonCategoryState = value;
+            if(value != null)
             {
-                switch (value)
+                if(Visual.Categories.ContainsKey("ButtonCategory"))
                 {
-                    case ButtonCategory.Enabled:
-                        this.Background.SetProperty("ColorCategoryState", "Primary");
-                        this.FocusedIndicator.Visible = false;
-                        this.Icon.Visual.SetProperty("IconColor", "White");
-                        break;
-                    case ButtonCategory.Disabled:
-                        this.Background.SetProperty("ColorCategoryState", "DarkGray");
-                        this.FocusedIndicator.Visible = false;
-                        this.Icon.Visual.SetProperty("IconColor", "Gray");
-                        break;
-                    case ButtonCategory.Highlighted:
-                        this.Background.SetProperty("ColorCategoryState", "PrimaryLight");
-                        this.FocusedIndicator.Visible = false;
-                        this.Icon.Visual.SetProperty("IconColor", "White");
-                        break;
-                    case ButtonCategory.Pushed:
-                        this.Background.SetProperty("ColorCategoryState", "PrimaryDark");
-                        this.FocusedIndicator.Visible = false;
-                        this.Icon.Visual.SetProperty("IconColor", "White");
-                        break;
-                    case ButtonCategory.HighlightedFocused:
-                        this.Background.SetProperty("ColorCategoryState", "PrimaryLight");
-                        this.FocusedIndicator.Visible = true;
-                        this.Icon.Visual.SetProperty("IconColor", "White");
-                        break;
-                    case ButtonCategory.Focused:
-                        this.Background.SetProperty("ColorCategoryState", "Primary");
-                        this.FocusedIndicator.Visible = true;
-                        this.Icon.Visual.SetProperty("IconColor", "White");
-                        break;
-                    case ButtonCategory.DisabledFocused:
-                        this.Background.SetProperty("ColorCategoryState", "DarkGray");
-                        this.FocusedIndicator.Visible = true;
-                        this.Icon.Visual.SetProperty("IconColor", "Gray");
-                        break;
+                    var category = Visual.Categories["ButtonCategory"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "ButtonCategory");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
                 }
             }
         }
@@ -104,77 +77,20 @@ partial class ButtonIcon : MonoGameGum.Forms.Controls.Button
     }
 
     public ButtonIcon(InteractiveGue visual) : base(visual) { }
-    public ButtonIcon() : base(new ContainerRuntime())
+    public ButtonIcon()
     {
 
-         
-        this.Visual.Height = 32f;
-        this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-         
-        this.Visual.Width = 32f;
-        this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        Background = new NineSliceRuntime();
-        Background.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (Background.ElementSave != null) Background.AddStatesAndCategoriesRecursivelyToGue(Background.ElementSave);
-        if (Background.ElementSave != null) Background.SetInitialState();
-        Background.Name = "Background";
-        Icon = new Icon();
-        Icon.Name = "Icon";
-        FocusedIndicator = new NineSliceRuntime();
-        FocusedIndicator.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (FocusedIndicator.ElementSave != null) FocusedIndicator.AddStatesAndCategoriesRecursivelyToGue(FocusedIndicator.ElementSave);
-        if (FocusedIndicator.ElementSave != null) FocusedIndicator.SetInitialState();
-        FocusedIndicator.Name = "FocusedIndicator";
+        Background = this.Visual?.GetGraphicalUiElementByName("Background") as NineSliceRuntime;
+        Icon = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Icon>(this.Visual,"Icon");
+        FocusedIndicator = this.Visual?.GetGraphicalUiElementByName("FocusedIndicator") as NineSliceRuntime;
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(Background);
-        this.AddChild(Icon);
-        this.AddChild(FocusedIndicator);
-    }
-    private void ApplyDefaultVariables()
-    {
-this.Background.SetProperty("ColorCategoryState", "Primary");
-this.Background.SetProperty("StyleCategoryState", "Bordered");
-        this.Background.Height = 0f;
-        this.Background.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.Width = 0f;
-        this.Background.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.X = 0f;
-        this.Background.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Background.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Background.Y = 0f;
-        this.Background.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.Background.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.Icon.Visual.Height = 0f;
-        this.Icon.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Icon.Visual.Width = 0f;
-        this.Icon.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Icon.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Icon.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Icon.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.Icon.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-this.FocusedIndicator.SetProperty("ColorCategoryState", "Warning");
-this.FocusedIndicator.SetProperty("StyleCategoryState", "Solid");
-        this.FocusedIndicator.Height = 2f;
-        this.FocusedIndicator.HeightUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.FocusedIndicator.Visible = false;
-        this.FocusedIndicator.Y = 2f;
-        this.FocusedIndicator.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.FocusedIndicator.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

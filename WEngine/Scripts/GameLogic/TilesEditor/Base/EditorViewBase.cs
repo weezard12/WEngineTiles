@@ -81,9 +81,9 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Base
             windowTable.SetFillParent(true);
             window.Add(windowTable);
 
-            windowTable.Bottom().Left();
+/*            windowTable.Bottom().Left();
             windowTable.Add(new Label("Test")).Bottom().Left();
-
+*/
             return;
             Table titleTable = new Table();
             // Custom Title Bar Logic

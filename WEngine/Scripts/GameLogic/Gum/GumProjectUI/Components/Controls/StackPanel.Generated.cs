@@ -33,26 +33,17 @@ partial class StackPanel : MonoGameGum.Forms.Controls.StackPanel
     }
 
     public StackPanel(InteractiveGue visual) : base(visual) { }
-    public StackPanel() : base(new ContainerRuntime())
+    public StackPanel()
     {
 
-        this.Visual.ChildrenLayout = global::Gum.Managers.ChildrenLayout.TopToBottomStack;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-    }
-    private void ApplyDefaultVariables()
-    {
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

@@ -36,68 +36,20 @@ partial class WindowActionsBar : MonoGameGum.Forms.Controls.FrameworkElement
     public TextRuntime TextInstance { get; protected set; }
 
     public WindowActionsBar(InteractiveGue visual) : base(visual) { }
-    public WindowActionsBar() : base(new ContainerRuntime())
+    public WindowActionsBar()
     {
 
-        this.Visual.ChildrenLayout = global::Gum.Managers.ChildrenLayout.Regular;
-        this.Visual.Height = 30f;
-        this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-        this.Visual.Width = 0f;
-        this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Visual.X = 0f;
-        this.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Visual.Y = 0f;
-        this.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        ButtonCloseInstance = new ButtonClose();
-        ButtonCloseInstance.Name = "ButtonCloseInstance";
-        ButtonCloseInstance1 = new ButtonClose();
-        ButtonCloseInstance1.Name = "ButtonCloseInstance1";
-        TextInstance = new TextRuntime();
-        TextInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Text");
-        if (TextInstance.ElementSave != null) TextInstance.AddStatesAndCategoriesRecursivelyToGue(TextInstance.ElementSave);
-        if (TextInstance.ElementSave != null) TextInstance.SetInitialState();
-        TextInstance.Name = "TextInstance";
+        ButtonCloseInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonClose>(this.Visual,"ButtonCloseInstance");
+        ButtonCloseInstance1 = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonClose>(this.Visual,"ButtonCloseInstance1");
+        TextInstance = this.Visual?.GetGraphicalUiElementByName("TextInstance") as TextRuntime;
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(ButtonCloseInstance);
-        this.AddChild(ButtonCloseInstance1);
-        this.AddChild(TextInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-        this.ButtonCloseInstance.Visual.Height = 30f;
-        this.ButtonCloseInstance.Visual.Width = 30f;
-        this.ButtonCloseInstance.Visual.X = 0f;
-        this.ButtonCloseInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.ButtonCloseInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.ButtonCloseInstance.Visual.Y = 0f;
-        this.ButtonCloseInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.ButtonCloseInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.ButtonCloseInstance1.Visual.Height = 30f;
-        this.ButtonCloseInstance1.Visual.Width = 30f;
-        this.ButtonCloseInstance1.Visual.X = -37f;
-        this.ButtonCloseInstance1.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.ButtonCloseInstance1.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.ButtonCloseInstance1.Visual.Y = 0f;
-        this.ButtonCloseInstance1.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.ButtonCloseInstance1.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.TextInstance.Text = @"Title";
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

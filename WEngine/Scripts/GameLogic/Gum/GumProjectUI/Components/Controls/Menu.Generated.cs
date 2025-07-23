@@ -36,72 +36,19 @@ partial class Menu : MonoGameGum.Forms.Controls.Menu
     public ContainerRuntime InnerPanelInstance { get; protected set; }
 
     public Menu(InteractiveGue visual) : base(visual) { }
-    public Menu() : base(new ContainerRuntime())
+    public Menu()
     {
 
-        this.Visual.Height = 24f;
-         
-        this.Visual.Width = 0f;
-        this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Visual.X = 0f;
-        this.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Visual.Y = 0f;
-        this.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        Background = new NineSliceRuntime();
-        Background.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (Background.ElementSave != null) Background.AddStatesAndCategoriesRecursivelyToGue(Background.ElementSave);
-        if (Background.ElementSave != null) Background.SetInitialState();
-        Background.Name = "Background";
-        InnerPanelInstance = new ContainerRuntime();
-        InnerPanelInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Container");
-        if (InnerPanelInstance.ElementSave != null) InnerPanelInstance.AddStatesAndCategoriesRecursivelyToGue(InnerPanelInstance.ElementSave);
-        if (InnerPanelInstance.ElementSave != null) InnerPanelInstance.SetInitialState();
-        InnerPanelInstance.Name = "InnerPanelInstance";
+        Background = this.Visual?.GetGraphicalUiElementByName("Background") as NineSliceRuntime;
+        InnerPanelInstance = this.Visual?.GetGraphicalUiElementByName("InnerPanelInstance") as ContainerRuntime;
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(Background);
-        this.AddChild(InnerPanelInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-this.Background.SetProperty("ColorCategoryState", "DarkGray");
-        this.Background.Height = 0f;
-        this.Background.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.Width = 0f;
-        this.Background.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.X = 0f;
-        this.Background.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Background.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Background.Y = 0f;
-        this.Background.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.Background.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.InnerPanelInstance.ChildrenLayout = global::Gum.Managers.ChildrenLayout.LeftToRightStack;
-        this.InnerPanelInstance.Height = -8f;
-        this.InnerPanelInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.InnerPanelInstance.StackSpacing = 2f;
-        this.InnerPanelInstance.Width = 0f;
-        this.InnerPanelInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.InnerPanelInstance.X = 0f;
-        this.InnerPanelInstance.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.InnerPanelInstance.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.InnerPanelInstance.Y = 0f;
-        this.InnerPanelInstance.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.InnerPanelInstance.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

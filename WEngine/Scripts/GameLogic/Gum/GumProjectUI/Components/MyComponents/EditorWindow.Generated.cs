@@ -37,106 +37,21 @@ partial class EditorWindow : WindowStandard
     public ButtonIcon MinimizeButton { get; protected set; }
 
     public EditorWindow(InteractiveGue visual) : base(visual) { }
-    public EditorWindow() : base(new ContainerRuntime())
+    public EditorWindow()
     {
 
-        this.Visual.Y = 0f;
 
 
-        ApplyDefaultVariables();
-        CustomInitialize();
     }
-    protected override void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        base.InitializeInstances();
-        ColoredRectangleInstance = new ColoredRectangleRuntime();
-        ColoredRectangleInstance.ElementSave = ObjectFinder.Self.GetStandardElement("ColoredRectangle");
-        if (ColoredRectangleInstance.ElementSave != null) ColoredRectangleInstance.AddStatesAndCategoriesRecursivelyToGue(ColoredRectangleInstance.ElementSave);
-        if (ColoredRectangleInstance.ElementSave != null) ColoredRectangleInstance.SetInitialState();
-        ColoredRectangleInstance.Name = "ColoredRectangleInstance";
-        TitleText = new TextRuntime();
-        TitleText.ElementSave = ObjectFinder.Self.GetStandardElement("Text");
-        if (TitleText.ElementSave != null) TitleText.AddStatesAndCategoriesRecursivelyToGue(TitleText.ElementSave);
-        if (TitleText.ElementSave != null) TitleText.SetInitialState();
-        TitleText.Name = "TitleText";
-        CloseButton = new ButtonClose();
-        CloseButton.Name = "CloseButton";
-        MinimizeButton = new ButtonIcon();
-        MinimizeButton.Name = "MinimizeButton";
+        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
+        TitleText = this.Visual?.GetGraphicalUiElementByName("TitleText") as TextRuntime;
+        CloseButton = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonClose>(this.Visual,"CloseButton");
+        MinimizeButton = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonIcon>(this.Visual,"MinimizeButton");
+        CustomInitialize();
     }
-    protected override void AssignParents()
-    {
-        // Intentionally do not call base.AssignParents so that this class can determine the addition of order
-        this.AddChild(Background);
-        this.AddChild(InnerPanelInstance);
-        this.AddChild(TitleBarInstance);
-        this.AddChild(BorderTopLeftInstance);
-        this.AddChild(BorderTopRightInstance);
-        this.AddChild(BorderBottomLeftInstance);
-        this.AddChild(BorderBottomRightInstance);
-        this.AddChild(BorderTopInstance);
-        this.AddChild(BorderBottomInstance);
-        this.AddChild(BorderLeftInstance);
-        this.AddChild(BorderRightInstance);
-        TitleBarInstance.AddChild(ColoredRectangleInstance);
-        TitleBarInstance.AddChild(TitleText);
-        TitleBarInstance.AddChild(CloseButton);
-        TitleBarInstance.AddChild(MinimizeButton);
-    }
-    private void ApplyDefaultVariables()
-    {
-
-        this.InnerPanelInstance.Visual.Height = 0f;
-        this.InnerPanelInstance.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.InnerPanelInstance.Visual.Width = 0f;
-        this.InnerPanelInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-
-
-
-
-
-
-
-
-
-
-        this.ColoredRectangleInstance.Alpha = 255;
-        this.ColoredRectangleInstance.Green = 121;
-        this.ColoredRectangleInstance.Height = 0f;
-        this.ColoredRectangleInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ColoredRectangleInstance.Red = 108;
-        this.ColoredRectangleInstance.Width = 0f;
-        this.ColoredRectangleInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ColoredRectangleInstance.X = 0f;
-        this.ColoredRectangleInstance.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.ColoredRectangleInstance.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.ColoredRectangleInstance.Y = 0f;
-        this.ColoredRectangleInstance.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.ColoredRectangleInstance.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.TitleText.Text = @"Window title";
-        this.TitleText.X = 5f;
-        this.TitleText.Y = 5f;
-
-        this.CloseButton.Visual.Height = 20f;
-        this.CloseButton.Visual.Width = 20f;
-        this.CloseButton.Visual.X = 0f;
-        this.CloseButton.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.CloseButton.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.CloseButton.Visual.Y = 2f;
-        this.CloseButton.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.CloseButton.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.MinimizeButton.Visual.Height = 20f;
-        this.MinimizeButton.Visual.Width = 20f;
-        this.MinimizeButton.Visual.X = -20f;
-        this.MinimizeButton.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.MinimizeButton.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.MinimizeButton.Visual.Y = 2f;
-        this.MinimizeButton.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.MinimizeButton.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

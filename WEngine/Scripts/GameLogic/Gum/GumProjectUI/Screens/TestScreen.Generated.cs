@@ -39,37 +39,19 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
 
     public TestScreen(InteractiveGue visual) : base(visual) { }
-    public TestScreen() : base(new ContainerRuntime())
+    public TestScreen()
     {
 
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        TestWindowInstance = new EditorWindow();
-        TestWindowInstance.Name = "TestWindowInstance";
-        TilesSelectionWindowInstance = new TilesSelectionWindow();
-        TilesSelectionWindowInstance.Name = "TilesSelectionWindowInstance";
+        TestWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorWindow>(this.Visual,"TestWindowInstance");
+        TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(TestWindowInstance);
-        this.AddChild(TilesSelectionWindowInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-        this.TestWindowInstance.Visual.Height = 398f;
-        this.TestWindowInstance.Visual.Width = 368f;
-
-        this.TilesSelectionWindowInstance.Visual.X = 647f;
-        this.TilesSelectionWindowInstance.Visual.Y = 4f;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

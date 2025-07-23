@@ -34,43 +34,18 @@ partial class SearchableContent : EditorWindowContent
     public TextBox Search { get; protected set; }
 
     public SearchableContent(InteractiveGue visual) : base(visual) { }
-    public SearchableContent() : base(new ContainerRuntime())
+    public SearchableContent()
     {
 
-        this.Visual.ChildrenLayout = global::Gum.Managers.ChildrenLayout.Regular;
 
 
-        ApplyDefaultVariables();
-        CustomInitialize();
     }
-    protected override void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        base.InitializeInstances();
-        Search = new TextBox();
-        Search.Name = "Search";
+        Search = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TextBox>(this.Visual,"Search");
+        CustomInitialize();
     }
-    protected override void AssignParents()
-    {
-        // Intentionally do not call base.AssignParents so that this class can determine the addition of order
-        this.AddChild(ScrollViewerInstance);
-        this.AddChild(Search);
-    }
-    private void ApplyDefaultVariables()
-    {
-        this.ScrollViewerInstance.Visual.FlipHorizontal = false;
-        this.ScrollViewerInstance.Visual.Height = -25f;
-        this.ScrollViewerInstance.Visual.X = 0f;
-        this.ScrollViewerInstance.Visual.Y = 13f;
-
-        Search.PlaceholderText = @"Search for file / folder";
-        this.Search.Visual.X = 0f;
-        this.Search.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Left;
-        this.Search.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-        this.Search.Visual.Y = 0f;
-        this.Search.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.Search.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

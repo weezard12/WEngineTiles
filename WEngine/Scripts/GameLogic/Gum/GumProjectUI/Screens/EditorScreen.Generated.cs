@@ -38,35 +38,18 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
 
     public EditorScreen(InteractiveGue visual) : base(visual) { }
-    public EditorScreen() : base(new ContainerRuntime())
+    public EditorScreen()
     {
 
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        TilesSelectionWindowInstance = new TilesSelectionWindow();
-        TilesSelectionWindowInstance.Name = "TilesSelectionWindowInstance";
+        TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(TilesSelectionWindowInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-        this.TilesSelectionWindowInstance.Visual.X = 0f;
-        this.TilesSelectionWindowInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.TilesSelectionWindowInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.TilesSelectionWindowInstance.Visual.Y = 0f;
-        this.TilesSelectionWindowInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.TilesSelectionWindowInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

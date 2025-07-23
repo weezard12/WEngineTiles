@@ -38,24 +38,26 @@ partial class ScrollViewer : MonoGameGum.Forms.Controls.ScrollViewer
         VerticalScrollVisible,
     }
 
-    ScrollBarVisibility? mScrollBarVisibilityState;
+    ScrollBarVisibility? _scrollBarVisibilityState;
     public ScrollBarVisibility? ScrollBarVisibilityState
     {
-        get => mScrollBarVisibilityState;
+        get => _scrollBarVisibilityState;
         set
         {
-            mScrollBarVisibilityState = value;
-            var appliedDynamically = false;
-            if(!appliedDynamically)
+            _scrollBarVisibilityState = value;
+            if(value != null)
             {
-                switch (value)
+                if(Visual.Categories.ContainsKey("ScrollBarVisibility"))
                 {
-                    case ScrollBarVisibility.NoScrollBar:
-                        this.VerticalScrollBarInstance.Visual.Visible = false;
-                        break;
-                    case ScrollBarVisibility.VerticalScrollVisible:
-                        this.VerticalScrollBarInstance.Visual.Visible = true;
-                        break;
+                    var category = Visual.Categories["ScrollBarVisibility"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "ScrollBarVisibility");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
                 }
             }
         }
@@ -66,81 +68,21 @@ partial class ScrollViewer : MonoGameGum.Forms.Controls.ScrollViewer
     public ContainerRuntime InnerPanelInstance { get; protected set; }
 
     public ScrollViewer(InteractiveGue visual) : base(visual) { }
-    public ScrollViewer() : base(new ContainerRuntime())
+    public ScrollViewer()
     {
 
-         
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        Background = new NineSliceRuntime();
-        Background.ElementSave = ObjectFinder.Self.GetStandardElement("NineSlice");
-        if (Background.ElementSave != null) Background.AddStatesAndCategoriesRecursivelyToGue(Background.ElementSave);
-        if (Background.ElementSave != null) Background.SetInitialState();
-        Background.Name = "Background";
-        VerticalScrollBarInstance = new ScrollBar();
-        VerticalScrollBarInstance.Name = "VerticalScrollBarInstance";
-        ClipContainerInstance = new ContainerRuntime();
-        ClipContainerInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Container");
-        if (ClipContainerInstance.ElementSave != null) ClipContainerInstance.AddStatesAndCategoriesRecursivelyToGue(ClipContainerInstance.ElementSave);
-        if (ClipContainerInstance.ElementSave != null) ClipContainerInstance.SetInitialState();
-        ClipContainerInstance.Name = "ClipContainerInstance";
-        InnerPanelInstance = new ContainerRuntime();
-        InnerPanelInstance.ElementSave = ObjectFinder.Self.GetStandardElement("Container");
-        if (InnerPanelInstance.ElementSave != null) InnerPanelInstance.AddStatesAndCategoriesRecursivelyToGue(InnerPanelInstance.ElementSave);
-        if (InnerPanelInstance.ElementSave != null) InnerPanelInstance.SetInitialState();
-        InnerPanelInstance.Name = "InnerPanelInstance";
+        Background = this.Visual?.GetGraphicalUiElementByName("Background") as NineSliceRuntime;
+        VerticalScrollBarInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollBar>(this.Visual,"VerticalScrollBarInstance");
+        ClipContainerInstance = this.Visual?.GetGraphicalUiElementByName("ClipContainerInstance") as ContainerRuntime;
+        InnerPanelInstance = this.Visual?.GetGraphicalUiElementByName("InnerPanelInstance") as ContainerRuntime;
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(Background);
-        this.AddChild(VerticalScrollBarInstance);
-        this.AddChild(ClipContainerInstance);
-        ClipContainerInstance.AddChild(InnerPanelInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-this.Background.SetProperty("ColorCategoryState", "DarkGray");
-this.Background.SetProperty("StyleCategoryState", "Bordered");
-        this.Background.Height = 0f;
-        this.Background.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.Width = 0f;
-        this.Background.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Background.X = 0f;
-        this.Background.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.Background.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.Background.Y = 0f;
-        this.Background.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.Background.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.VerticalScrollBarInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Right;
-        this.VerticalScrollBarInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromLarge;
-        this.VerticalScrollBarInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.VerticalScrollBarInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-        this.ClipContainerInstance.ClipsChildren = true;
-        this.ClipContainerInstance.Height = -4f;
-        this.ClipContainerInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ClipContainerInstance.Width = -27f;
-        this.ClipContainerInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ClipContainerInstance.X = 2f;
-        this.ClipContainerInstance.Y = 2f;
-        this.ClipContainerInstance.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-        this.ClipContainerInstance.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromSmall;
-
-        this.InnerPanelInstance.ChildrenLayout = global::Gum.Managers.ChildrenLayout.TopToBottomStack;
-        this.InnerPanelInstance.Height = 0f;
-        this.InnerPanelInstance.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
-        this.InnerPanelInstance.Width = 0f;
-        this.InnerPanelInstance.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }

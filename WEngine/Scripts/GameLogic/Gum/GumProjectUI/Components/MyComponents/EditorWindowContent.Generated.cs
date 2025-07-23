@@ -34,43 +34,18 @@ partial class EditorWindowContent : MonoGameGum.Forms.Controls.FrameworkElement
     public ScrollViewer ScrollViewerInstance { get; protected set; }
 
     public EditorWindowContent(InteractiveGue visual) : base(visual) { }
-    public EditorWindowContent() : base(new ContainerRuntime())
+    public EditorWindowContent()
     {
 
-        this.Visual.Height = 0f;
-        this.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.Visual.Width = 0f;
-        this.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
 
-        InitializeInstances();
 
-        ApplyDefaultVariables();
-        AssignParents();
-        CustomInitialize();
     }
-    protected virtual void InitializeInstances()
+    protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        ScrollViewerInstance = new ScrollViewer();
-        ScrollViewerInstance.Name = "ScrollViewerInstance";
+        ScrollViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollViewer>(this.Visual,"ScrollViewerInstance");
+        CustomInitialize();
     }
-    protected virtual void AssignParents()
-    {
-        this.AddChild(ScrollViewerInstance);
-    }
-    private void ApplyDefaultVariables()
-    {
-        this.ScrollViewerInstance.Visual.Height = 0f;
-        this.ScrollViewerInstance.Visual.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ScrollViewerInstance.Visual.Width = 0f;
-        this.ScrollViewerInstance.Visual.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToParent;
-        this.ScrollViewerInstance.Visual.X = 0f;
-        this.ScrollViewerInstance.Visual.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-        this.ScrollViewerInstance.Visual.XUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-        this.ScrollViewerInstance.Visual.Y = 0f;
-        this.ScrollViewerInstance.Visual.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-        this.ScrollViewerInstance.Visual.YUnits = global::Gum.Converters.GeneralUnitType.PixelsFromMiddle;
-
-    }
+    //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
     partial void CustomInitialize();
 }
