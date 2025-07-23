@@ -3,21 +3,10 @@
   <Name>TestScreen</Name>
   <State>
     <Name>Default</Name>
-    <Variable>
-      <Type>string</Type>
-      <Name>InnerPanelInstance.Parent</Name>
-      <Value xsi:type="xsd:string">TestWindowInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
   </State>
   <Instance>
     <Name>TestWindowInstance</Name>
-    <BaseType>MyComponents/TestWindow</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>InnerPanelInstance</Name>
-    <BaseType>Controls/Panel</BaseType>
+    <BaseType>MyComponents/EditorWindow</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

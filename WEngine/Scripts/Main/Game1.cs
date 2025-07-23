@@ -51,7 +51,7 @@ namespace WEngine.Scripts.Main
             //var screenRuntime = LoadedGumProject.Screens.First().ToGraphicalUiElement();
             //screenRuntime.AddToRoot();
 
-            //debug
+            // Debug
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             //var imGuiManager = new ImGuiManager();
@@ -126,6 +126,26 @@ namespace WEngine.Scripts.Main
                 Debug.Log($"List of all existing components:");
                 foreach (var existingComponent in LoadedGumProject.Components)
                     Debug.Log(existingComponent.Name);
+
+            return null;
+        }
+
+        protected GraphicalUiElement CreateEditorWindow(string title, GraphicalUiElement content)
+        {
+            // Load the Gum component by name
+            var gumComponent = LoadedGumProject.Components.FirstOrDefault(c => c.Name == "Controls/WindowStandard");
+            if (gumComponent != null)
+            {
+                // Convert to GraphicalUiElement and add to root
+                var graphicalUiElement = gumComponent.ToGraphicalUiElement();
+                CurrentGumScreen.AddChild(graphicalUiElement);
+                return graphicalUiElement;
+            }
+
+
+            Debug.Log($"List of all existing components:");
+            foreach (var existingComponent in LoadedGumProject.Components)
+                Debug.Log(existingComponent.Name);
 
             return null;
         }

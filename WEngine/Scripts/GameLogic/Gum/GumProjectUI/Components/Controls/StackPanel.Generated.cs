@@ -1,4 +1,4 @@
-//Code for TestScreen
+//Code for Controls/StackPanel (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
+partial class StackPanel : MonoGameGum.Forms.Controls.StackPanel
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -19,28 +19,24 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("TestScreen");
+            var element = ObjectFinder.Self.GetElementSave("Controls/StackPanel");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new TestScreen(visual);
-            visual.Width = 0;
-            visual.WidthUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
-            visual.Height = 0;
-            visual.HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
+            if(createForms) visual.FormsControlAsObject = new StackPanel(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TestScreen)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("TestScreen", () => 
+        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(StackPanel)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("Controls/StackPanel", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
         });
     }
-    public EditorWindow TestWindowInstance { get; protected set; }
 
-    public TestScreen(InteractiveGue visual) : base(visual) { }
-    public TestScreen() : base(new ContainerRuntime())
+    public StackPanel(InteractiveGue visual) : base(visual) { }
+    public StackPanel() : base(new ContainerRuntime())
     {
 
+        this.Visual.ChildrenLayout = global::Gum.Managers.ChildrenLayout.TopToBottomStack;
 
         InitializeInstances();
 
@@ -51,16 +47,12 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     protected virtual void InitializeInstances()
     {
         base.ReactToVisualChanged();
-        TestWindowInstance = new EditorWindow();
-        TestWindowInstance.Name = "TestWindowInstance";
     }
     protected virtual void AssignParents()
     {
-        this.AddChild(TestWindowInstance);
     }
     private void ApplyDefaultVariables()
     {
-
     }
     partial void CustomInitialize();
 }
