@@ -7,10 +7,10 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class SelectFileWindow
+partial class ButtonImage
 {
     partial void CustomInitialize()
     {
-        
+    
     }
 }

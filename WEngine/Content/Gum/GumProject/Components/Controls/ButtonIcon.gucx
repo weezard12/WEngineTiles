@@ -176,6 +176,12 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>ColorCategory</Type>
+      <Name>Icon.IconColor</Name>
+      <Value xsi:type="xsd:string">White</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Icon.Width</Name>
       <Value xsi:type="xsd:float">0</Value>

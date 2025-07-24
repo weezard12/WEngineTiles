@@ -25,6 +25,18 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Editor/Icons/closeIcon.png;Assets/Editor/Icons/closeIcon
 
+#begin Assets/Editor/Icons/FileTypes/pngIcon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Editor/Icons/FileTypes/pngIcon.png;Assets/Editor/Icons/FileTypes/pngIcon
+
 #begin Assets/Editor/Icons/minimizeIcon.png
 /importer:TextureImporter
 /processor:TextureProcessor

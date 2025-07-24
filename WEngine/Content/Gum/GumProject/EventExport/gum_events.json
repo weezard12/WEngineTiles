@@ -735,6 +735,174 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-07-23T09:36:47.9627831Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-24T09:48:39.1493148Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).ScrollViewerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:48:59.631025Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:49:35.8970985Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).TextBoxInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:50:27.814751Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).ButtonIconInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:51:40.1220012Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).ButtonDenyInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:51:44.2815071Z"
+      },
+      {
+        "NewName": "MyComponents/File",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-24T09:53:49.7143081Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:53:59.3099146Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ButtonIconInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:54:42.3451745Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T09:59:31.4157863Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).FilesPanel",
+        "OldName": "MyComponents/FilesViewer (Container).PanelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-24T09:59:37.9131059Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileNameLabel",
+        "OldName": "MyComponents/File (Container).LabelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-24T10:04:01.2181977Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).MyComponents/SearchableContent SearchableContentInstance in MyComponents/SelectFileWindow (MyComponents/EditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-24T10:05:06.9489187Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).FilesViewerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T10:05:27.4095723Z"
+      },
+      {
+        "NewName": "EditorScreen.SelectFileWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T10:05:56.163229Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/FilesViewer (Container).Controls/Panel FilesPanel in MyComponents/FilesViewer (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-24T10:14:55.5689935Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileIcon",
+        "OldName": "MyComponents/File (Container).ButtonIconInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-24T10:40:17.4366974Z"
+      },
+      {
+        "NewName": "MyComponents/ButtonImage",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-24T11:09:27.8008435Z"
+      },
+      {
+        "NewName": "MyComponents/ButtonImage (Container).Background",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T11:10:00.3175952Z"
+      },
+      {
+        "NewName": "MyComponents/ButtonImage (Container).FocusedIndicator",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T11:10:00.4206342Z"
+      },
+      {
+        "NewName": "MyComponents/ButtonImage (Container).SpriteInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T11:10:09.2763211Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ButtonImageInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-24T11:12:57.8831105Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/File (Container).Controls/ButtonIcon FileIcon in MyComponents/File (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-24T11:13:17.2299186Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileIcon",
+        "OldName": "MyComponents/File (Container).ButtonImageInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-24T11:13:24.4985377Z"
       }
     ]
   }

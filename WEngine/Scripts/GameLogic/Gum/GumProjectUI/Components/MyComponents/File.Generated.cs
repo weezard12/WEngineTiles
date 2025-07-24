@@ -1,4 +1,4 @@
-//Code for MyComponents/SelectFileWindow (MyComponents/EditorWindow)
+//Code for MyComponents/File (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class SelectFileWindow : EditorWindow
+partial class File : MonoGameGum.Forms.Controls.FrameworkElement
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -19,22 +19,23 @@ partial class SelectFileWindow : EditorWindow
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("MyComponents/SelectFileWindow");
+            var element = ObjectFinder.Self.GetElementSave("MyComponents/File");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new SelectFileWindow(visual);
+            if(createForms) visual.FormsControlAsObject = new File(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(SelectFileWindow)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/SelectFileWindow", () => 
+        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(File)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/File", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
         });
     }
-    public FilesViewer FilesViewerInstance { get; protected set; }
+    public ButtonImage FileIcon { get; protected set; }
+    public Label FileNameLabel { get; protected set; }
 
-    public SelectFileWindow(InteractiveGue visual) : base(visual) { }
-    public SelectFileWindow()
+    public File(InteractiveGue visual) : base(visual) { }
+    public File()
     {
 
 
@@ -43,7 +44,8 @@ partial class SelectFileWindow : EditorWindow
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        FilesViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<FilesViewer>(this.Visual,"FilesViewerInstance");
+        FileIcon = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonImage>(this.Visual,"FileIcon");
+        FileNameLabel = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"FileNameLabel");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

@@ -6,32 +6,38 @@
     <Name>Default</Name>
     <Variable>
       <Type>float</Type>
-      <Name>Height</Name>
-      <Value xsi:type="xsd:float">268</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SearchableContentInstance.Height</Name>
-      <Value xsi:type="xsd:float">-24</Value>
+      <Name>FilesViewerInstance.Height</Name>
+      <Value xsi:type="xsd:float">-30</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>SearchableContentInstance.Parent</Name>
+      <Name>FilesViewerInstance.Parent</Name>
       <Value xsi:type="xsd:string">InnerPanelInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SearchableContentInstance.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Name>FilesViewerInstance.Width</Name>
+      <Value xsi:type="xsd:float">-7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SearchableContentInstance.Y</Name>
-      <Value xsi:type="xsd:float">24</Value>
+      <Name>FilesViewerInstance.X</Name>
+      <Value xsi:type="xsd:float">-1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FilesViewerInstance.Y</Name>
+      <Value xsi:type="xsd:float">11</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">575</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -42,9 +48,15 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TitleText.Text</Name>
+      <Value xsi:type="xsd:string">Select File</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">290</Value>
+      <Value xsi:type="xsd:float">776</Value>
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
@@ -124,8 +136,8 @@
     <DefinedByBase>true</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>SearchableContentInstance</Name>
-    <BaseType>MyComponents/SearchableContent</BaseType>
+    <Name>FilesViewerInstance</Name>
+    <BaseType>MyComponents/FilesViewer</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

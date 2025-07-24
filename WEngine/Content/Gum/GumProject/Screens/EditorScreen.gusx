@@ -50,5 +50,10 @@
     <BaseType>MyComponents/TilesSelectionWindow</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
+  <Instance>
+    <Name>SelectFileWindowInstance</Name>
+    <BaseType>MyComponents/SelectFileWindow</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
   <Behaviors />
 </ScreenSave>
