@@ -903,6 +903,76 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-07-24T11:13:24.4985377Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ButtonImageInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T08:51:48.7291511Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/File (Container).MyComponents/ButtonImage ButtonImageInstance in MyComponents/File (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-25T08:52:44.6807987Z"
+      },
+      {
+        "NewName": "MyComponents/Folder",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-25T08:53:04.1329658Z"
+      },
+      {
+        "NewName": "MyComponents/Folder (MyComponents/File).ButtonImageInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T08:53:25.0016328Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T08:54:23.1417171Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T08:54:52.3803314Z"
+      },
+      {
+        "NewName": "FileComponent",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-25T08:58:03.0740357Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/File (Container).Controls/ButtonStandard ButtonStandardInstance in MyComponents/File (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-25T08:58:57.3355345Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T09:05:22.6867498Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/File (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/File (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-25T09:05:59.3343521Z"
       }
     ]
   }

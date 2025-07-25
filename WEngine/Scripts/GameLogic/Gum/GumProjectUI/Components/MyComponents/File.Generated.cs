@@ -31,8 +31,10 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
             return gue;
         });
     }
+    public ContainerRuntime ContainerInstance { get; protected set; }
     public ButtonImage FileIcon { get; protected set; }
     public Label FileNameLabel { get; protected set; }
+    public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
 
     public File(InteractiveGue visual) : base(visual) { }
     public File()
@@ -44,8 +46,10 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
+        ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as ContainerRuntime;
         FileIcon = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonImage>(this.Visual,"FileIcon");
         FileNameLabel = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"FileNameLabel");
+        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

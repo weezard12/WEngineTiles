@@ -25,7 +25,7 @@ partial class FilesViewer
         }
         foreach (var file in Directory.GetDirectories(path))
         {
-            ScrollViewerInstance.AddChild(new File(file));
+            ScrollViewerInstance.AddChild(new File(file,true));
         }
 
     }
