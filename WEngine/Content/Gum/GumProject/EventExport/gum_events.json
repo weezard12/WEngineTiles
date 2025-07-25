@@ -1043,6 +1043,13 @@
         "ElementType": "Components",
         "EventType": 1,
         "TimestampUtc": "2025-07-25T10:38:20.3516494Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T10:45:18.9879244Z"
       }
     ]
   }
