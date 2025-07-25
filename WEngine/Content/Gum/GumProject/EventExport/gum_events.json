@@ -1022,6 +1022,20 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-07-25T09:40:00.8773729Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).PathTextBox",
+        "OldName": "MyComponents/FilesViewer (Container).TextBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-25T10:19:13.5017093Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).SearchTextBox",
+        "OldName": "MyComponents/FilesViewer (Container).TextBoxInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-25T10:19:22.0808457Z"
       }
     ]
   }

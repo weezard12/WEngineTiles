@@ -17,6 +17,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>PathTextBox.PlaceholderText</Name>
+      <Value xsi:type="xsd:string">Path</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>ScrollViewerInstance.Height</Name>
       <Value xsi:type="xsd:float">-24</Value>
@@ -85,49 +91,43 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextBoxInstance.PlaceholderText</Name>
-      <Value xsi:type="xsd:string">Path</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TextBoxInstance1.PlaceholderText</Name>
+      <Name>SearchTextBox.PlaceholderText</Name>
       <Value xsi:type="xsd:string">Search</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextBoxInstance1.X</Name>
+      <Name>SearchTextBox.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>TextBoxInstance1.XOrigin</Name>
+      <Name>SearchTextBox.XOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextBoxInstance1.XUnits</Name>
+      <Name>SearchTextBox.XUnits</Name>
       <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextBoxInstance1.Y</Name>
+      <Name>SearchTextBox.Y</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>TextBoxInstance1.YOrigin</Name>
+      <Name>SearchTextBox.YOrigin</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextBoxInstance1.YUnits</Name>
+      <Name>SearchTextBox.YUnits</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -186,12 +186,12 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>TextBoxInstance</Name>
+    <Name>PathTextBox</Name>
     <BaseType>Controls/TextBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>TextBoxInstance1</Name>
+    <Name>SearchTextBox</Name>
     <BaseType>Controls/TextBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
