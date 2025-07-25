@@ -45,7 +45,7 @@ partial class FilesViewer
     public void SetAbsolutePath(string path)
     {
 
-        if(path.EndsWith("\\"))
+        if(path.EndsWith('\\'))
             path = path.Substring(0, path.Length - 1); // Remove trailing backslash if present
 
         AbsolutePath = path;
