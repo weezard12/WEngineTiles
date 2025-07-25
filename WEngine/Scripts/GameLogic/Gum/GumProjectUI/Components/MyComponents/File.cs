@@ -12,44 +12,56 @@ partial class File
 {
     private static readonly Dictionary<string, string> FileIcons = new()
     {
-        { "png", "pngIcon.png" },
+        { ".png", "pngIcon.png" },
         { "", "" },
-
     };
 
     public string FileName { get; set; }
-    public string FileExtension { get; set; }
+    public string FileExtension => Path.GetExtension(FileName);
     public string FilePath { get; set; }
     public string ContainingDirectoryPath { get; set; }
 
     public bool IsFolder { get; private set; }
 
-    public File(string fullPath, bool isFolder = false)
+    private readonly FilesViewer FilesViewer;
+
+    public File(FilesViewer filesViewer, string fullPath, bool isFolder = false)
     {
         this.IsFolder = isFolder;
         this.FileName = Path.GetFileName(fullPath);
+        this.FilesViewer = filesViewer;
+
+        this.FilePath = fullPath;
 
         FileNameLabel.Text = Path.GetFileName(fullPath);
 
         if (isFolder)
         {
-            FileIcon.SpriteInstance.SourceFileName = "folderIcon.png";
+            FileIcon.SourceFileName = "folderIcon.png";
             return;
         }
-        string spriteName = "fileDefaultIcon.png";
-        if (FileIcons.TryGetValue(fullPath, out spriteName))
-        {
-            
-        }
-        FileIcon.SpriteInstance.SourceFileName = "fileDefaultIcon.png";
+
+        if(FileIcons.TryGetValue(FileExtension, out string specialTexture))
+            FileIcon.SourceFileName = specialTexture;
+        else
+            FileIcon.SourceFileName = "fileDefaultIcon.png";
     }
     partial void CustomInitialize()
     {
-        ContainerInstance.Click += (sender, e) =>
+        FileClickBounds.Click += (sender, e) =>
         {
-            Debug.Log($"Clicked on file: {FileName}");
+            Debug.Log($"Clicked1 on file: {FileName}");
+            if (IsFolder)
+            {
+                FilesViewer.ToggleFolder(FilePath);
+                FilesViewer.RefreshView();
+            }
         };
-        
+
+        FileClickBounds.HoverOver += (sender, e) =>
+        {
+
+        };
     }
     
 }

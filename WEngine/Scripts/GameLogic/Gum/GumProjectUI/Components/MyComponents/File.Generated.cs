@@ -32,8 +32,9 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
         });
     }
     public ContainerRuntime ContainerInstance { get; protected set; }
-    public ButtonImage FileIcon { get; protected set; }
+    public SpriteRuntime FileIcon { get; protected set; }
     public Label FileNameLabel { get; protected set; }
+    public ContainerRuntime FileClickBounds { get; protected set; }
     public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
 
     public File(InteractiveGue visual) : base(visual) { }
@@ -47,8 +48,9 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
     {
         base.ReactToVisualChanged();
         ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as ContainerRuntime;
-        FileIcon = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonImage>(this.Visual,"FileIcon");
+        FileIcon = this.Visual?.GetGraphicalUiElementByName("FileIcon") as SpriteRuntime;
         FileNameLabel = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"FileNameLabel");
+        FileClickBounds = this.Visual?.GetGraphicalUiElementByName("FileClickBounds") as ContainerRuntime;
         ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
         CustomInitialize();
     }

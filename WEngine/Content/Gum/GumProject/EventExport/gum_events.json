@@ -973,6 +973,55 @@
         "ElementType": "Components",
         "EventType": 6,
         "TimestampUtc": "2025-07-25T09:05:59.3343521Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ContainerInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T09:06:24.9840418Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileClickBounds",
+        "OldName": "MyComponents/File (Container).ContainerInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-25T09:08:10.4384481Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T09:08:14.3289415Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Folder (MyComponents/File).MyComponents/ButtonImage ButtonImageInstance in MyComponents/Folder (MyComponents/File)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-25T09:16:44.1582613Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).SpriteInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-25T09:39:44.1608618Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/File (Container).MyComponents/ButtonImage FileIcon in MyComponents/File (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-25T09:39:48.5729394Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileIcon",
+        "OldName": "MyComponents/File (Container).SpriteInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-25T09:40:00.8773729Z"
       }
     ]
   }

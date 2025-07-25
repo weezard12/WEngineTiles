@@ -31,7 +31,6 @@ partial class Folder : File
             return gue;
         });
     }
-    public ButtonImage ButtonImageInstance { get; protected set; }
 
     public Folder(InteractiveGue visual) : base(visual) { }
     public Folder()
@@ -43,7 +42,6 @@ partial class Folder : File
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        ButtonImageInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonImage>(this.Visual,"ButtonImageInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

@@ -5,15 +5,9 @@
   <State>
     <Name>Default</Name>
     <Variable>
-      <Type>float</Type>
-      <Name>ButtonImageInstance.Height</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ButtonImageInstance.Width</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Type>ChildrenLayout</Type>
+      <Name>ContainerInstance.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -30,18 +24,23 @@
     <DefinedByBase>true</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ButtonImageInstance</Name>
-    <BaseType>MyComponents/ButtonImage</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>FileIcon</Name>
-    <BaseType>MyComponents/ButtonImage</BaseType>
+    <BaseType>Sprite</BaseType>
     <DefinedByBase>true</DefinedByBase>
   </Instance>
   <Instance>
     <Name>FileNameLabel</Name>
     <BaseType>Controls/Label</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FileClickBounds</Name>
+    <BaseType>Container</BaseType>
+    <DefinedByBase>true</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ColoredRectangleInstance</Name>
+    <BaseType>ColoredRectangle</BaseType>
     <DefinedByBase>true</DefinedByBase>
   </Instance>
   <Behaviors />
