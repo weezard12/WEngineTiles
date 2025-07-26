@@ -31,10 +31,40 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
             return gue;
         });
     }
+    public enum QuikcStyles
+    {
+        Hovered,
+        Selected,
+    }
+
+    QuikcStyles? _quikcStylesState;
+    public QuikcStyles? QuikcStylesState
+    {
+        get => _quikcStylesState;
+        set
+        {
+            _quikcStylesState = value;
+            if(value != null)
+            {
+                if(Visual.Categories.ContainsKey("QuikcStyles"))
+                {
+                    var category = Visual.Categories["QuikcStyles"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "QuikcStyles");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+            }
+        }
+    }
+    public ContainerRuntime FileClickBounds { get; protected set; }
     public ContainerRuntime ContainerInstance { get; protected set; }
     public SpriteRuntime FileIcon { get; protected set; }
     public Label FileNameLabel { get; protected set; }
-    public ContainerRuntime FileClickBounds { get; protected set; }
     public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
 
     public File(InteractiveGue visual) : base(visual) { }
@@ -47,10 +77,10 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
+        FileClickBounds = this.Visual?.GetGraphicalUiElementByName("FileClickBounds") as ContainerRuntime;
         ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as ContainerRuntime;
         FileIcon = this.Visual?.GetGraphicalUiElementByName("FileIcon") as SpriteRuntime;
         FileNameLabel = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"FileNameLabel");
-        FileClickBounds = this.Visual?.GetGraphicalUiElementByName("FileClickBounds") as ContainerRuntime;
         ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
         CustomInitialize();
     }

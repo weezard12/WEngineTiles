@@ -56,12 +56,24 @@ partial class File
                 FilesViewer.ToggleFolder(FilePath);
                 FilesViewer.RefreshView();
             }
+            else
+            {
+                QuikcStylesState = QuikcStyles.Selected;
+            }
         };
-
-        FileClickBounds.HoverOver += (sender, e) =>
+        
+        FileClickBounds.RollOn += (sender, e) =>
         {
-
+            Debug.Log($"Hovered on file: {FileName}");
+            QuikcStylesState = QuikcStyles.Hovered;
         };
+
+        FileClickBounds.RollOff += (sender, e) =>
+        {
+            Debug.Log($"Unhovered on file: {FileName}");
+            QuikcStylesState = QuikcStyles.Selected;
+        };
+        
     }
     
 }

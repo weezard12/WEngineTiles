@@ -13,7 +13,7 @@
     <Variable>
       <Type>int</Type>
       <Name>ColoredRectangleInstance.Alpha</Name>
-      <Value xsi:type="xsd:int">82</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -223,7 +223,7 @@
     <Variable>
       <Type>string</Type>
       <Name>FileNameLabel.LabelText</Name>
-      <Value xsi:type="xsd:string">File name .type</Value>
+      <Value xsi:type="xsd:string">File name.type</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -263,6 +263,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>QuikcStyles</Type>
+      <Name>QuikcStylesState</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <Value xsi:type="xsd:string">Default</Value>
@@ -288,6 +293,69 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>QuikcStyles</Name>
+    <State>
+      <Name>Hovered</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Alpha</Name>
+        <Value xsi:type="xsd:int">71</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Red</Name>
+        <Value xsi:type="xsd:int">159</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">171</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Selected</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Alpha</Name>
+        <Value xsi:type="xsd:int">196</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Red</Name>
+        <Value xsi:type="xsd:int">67</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">87</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Blue</Name>
+        <Value xsi:type="xsd:int">228</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Instance>
+    <Name>FileClickBounds</Name>
+    <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
   <Instance>
     <Name>ContainerInstance</Name>
     <BaseType>Container</BaseType>
@@ -301,11 +369,6 @@
   <Instance>
     <Name>FileNameLabel</Name>
     <BaseType>Controls/Label</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>FileClickBounds</Name>
-    <BaseType>Container</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
