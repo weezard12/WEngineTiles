@@ -7,7 +7,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FilesViewerInstance.Height</Name>
-      <Value xsi:type="xsd:float">-30</Value>
+      <Value xsi:type="xsd:float">-63</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -31,13 +31,127 @@
     <Variable>
       <Type>float</Type>
       <Name>FilesViewerInstance.Y</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">-6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
       <Value xsi:type="xsd:float">575</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>InnerPanelInstance.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>PanelInstance.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PanelInstance.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>PanelInstance.HeightUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>PanelInstance.Parent</Name>
+      <Value xsi:type="xsd:string">InnerPanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PanelInstance.Width</Name>
+      <Value xsi:type="xsd:float">-20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>PanelInstance.WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PanelInstance.X</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Select</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectButton.Parent</Name>
+      <Value xsi:type="xsd:string">PanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SelectPathTextBox.Height</Name>
+      <Value xsi:type="xsd:float">31</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectPathTextBox.Parent</Name>
+      <Value xsi:type="xsd:string">PanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectPathTextBox.PlaceholderText</Name>
+      <Value xsi:type="xsd:string">Selected path</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SelectPathTextBox.Text</Name>
+      <Value xsi:type="xsd:string"></Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SelectPathTextBox.Width</Name>
+      <Value xsi:type="xsd:float">-130</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>SelectPathTextBox.WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SelectPathTextBox.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SelectPathTextBox.Y</Name>
+      <Value xsi:type="xsd:float">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>SelectPathTextBox.YOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -138,6 +252,21 @@
   <Instance>
     <Name>FilesViewerInstance</Name>
     <BaseType>MyComponents/FilesViewer</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>PanelInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SelectPathTextBox</Name>
+    <BaseType>Controls/TextBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SelectButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

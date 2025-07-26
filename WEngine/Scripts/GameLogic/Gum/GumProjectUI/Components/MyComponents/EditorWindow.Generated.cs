@@ -31,6 +31,36 @@ partial class EditorWindow : WindowStandard
             return gue;
         });
     }
+    public enum SizeStyles
+    {
+        Windowed,
+        Minimized,
+    }
+
+    SizeStyles? _sizeStylesState;
+    public SizeStyles? SizeStylesState
+    {
+        get => _sizeStylesState;
+        set
+        {
+            _sizeStylesState = value;
+            if(value != null)
+            {
+                if(Visual.Categories.ContainsKey("SizeStyles"))
+                {
+                    var category = Visual.Categories["SizeStyles"];
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+                else
+                {
+                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "SizeStyles");
+                    var state = category.States.Find(item => item.Name == value.ToString());
+                    this.Visual.ApplyState(state);
+                }
+            }
+        }
+    }
     public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
     public TextRuntime TitleText { get; protected set; }
     public ButtonClose CloseButton { get; protected set; }

@@ -173,6 +173,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>IconCategory</Type>
+      <Name>MinimizeButton.IconCategory</Name>
+      <Value xsi:type="xsd:string">Minimize</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>MinimizeButton.Parent</Name>
       <Value xsi:type="xsd:string">TitleBarInstance</Value>
@@ -221,6 +227,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>SizeStyles</Type>
+      <Name>SizeStylesState</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <Value xsi:type="xsd:string">Default</Value>
@@ -258,6 +269,67 @@
       <SetsValue>true</SetsValue>
     </Variable>
   </State>
+  <Category>
+    <Name>SizeStyles</Name>
+    <State>
+      <Name>Windowed</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>InnerPanelInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <Category>States and Visibility</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TitleBarInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <Category>States and Visibility</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Height</Name>
+        <Value xsi:type="xsd:float">150</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Width</Name>
+        <Value xsi:type="xsd:float">150</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Minimized</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Height</Name>
+        <Value xsi:type="xsd:float">26</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>InnerPanelInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TitleBarInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Width</Name>
+        <Value xsi:type="xsd:float">150</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>Background</Name>
     <BaseType>NineSlice</BaseType>

@@ -32,6 +32,9 @@ partial class SelectFileWindow : EditorWindow
         });
     }
     public FilesViewer FilesViewerInstance { get; protected set; }
+    public Panel PanelInstance { get; protected set; }
+    public TextBox SelectPathTextBox { get; protected set; }
+    public ButtonStandard SelectButton { get; protected set; }
 
     public SelectFileWindow(InteractiveGue visual) : base(visual) { }
     public SelectFileWindow()
@@ -44,6 +47,9 @@ partial class SelectFileWindow : EditorWindow
     {
         base.ReactToVisualChanged();
         FilesViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<FilesViewer>(this.Visual,"FilesViewerInstance");
+        PanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");
+        SelectPathTextBox = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TextBox>(this.Visual,"SelectPathTextBox");
+        SelectButton = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"SelectButton");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

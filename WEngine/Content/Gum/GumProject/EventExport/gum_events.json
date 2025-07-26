@@ -1071,6 +1071,83 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-07-26T20:58:12.5759093Z"
+      },
+      {
+        "NewName": "PathStyles",
+        "OldName": "Styles",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2025-07-26T21:17:25.2542477Z"
+      },
+      {
+        "NewName": "MyComponents/FilesViewer (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-26T21:22:32.0674694Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-26T21:26:03.3218319Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-26T21:26:09.2634586Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-07-26T21:26:31.2147028Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).SelectButton",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).TextBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:29:37.738013Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).FileConfirmTextBox",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).ButtonStandardInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:29:58.3937951Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).Select",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).FileConfirmTextBox",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:31:57.0790629Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).FileConfirmButton",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).SelectButton",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:32:08.0019189Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).SelectPathTextBox",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).FileConfirmButton",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:32:37.0707107Z"
+      },
+      {
+        "NewName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).SelectButton",
+        "OldName": "MyComponents/SelectFileWindow (MyComponents/EditorWindow).Select",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T21:32:43.3030421Z"
       }
     ]
   }
