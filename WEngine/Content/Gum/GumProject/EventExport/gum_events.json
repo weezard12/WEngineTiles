@@ -1050,6 +1050,27 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-07-25T10:45:18.9879244Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileHighlight",
+        "OldName": "MyComponents/File (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T20:58:12.5657788Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileHighlight",
+        "OldName": "MyComponents/File (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T20:58:12.5672807Z"
+      },
+      {
+        "NewName": "MyComponents/File (Container).FileHighlight",
+        "OldName": "MyComponents/File (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-07-26T20:58:12.5759093Z"
       }
     ]
   }

@@ -15,6 +15,8 @@ partial class FilesViewer
 
     private readonly HashSet<string> OpenedFolders = new HashSet<string>();
 
+    private readonly HashSet<string> SelectedFiles = new HashSet<string>();
+
     partial void CustomInitialize()
     {
         SetAbsolutePath("C:\\Users\\User1\\Downloads\\test");
@@ -79,7 +81,22 @@ partial class FilesViewer
     {
         if (!OpenedFolders.Remove(path))
             OpenedFolders.Add(path);
+    }
 
-
+    public void SelectFile(string filePath)
+    {
+        SelectedFiles.Add(filePath);
+    }
+    public void SelectFile(File file)
+    {
+        SelectedFiles.Add(file.FilePath);
+    }
+    public void UnselectFile(string filePath)
+    {
+        SelectedFiles.Remove(filePath);
+    }
+    public void UnselectFile(File file)
+    {
+        SelectedFiles.Remove(file.FilePath);
     }
 }

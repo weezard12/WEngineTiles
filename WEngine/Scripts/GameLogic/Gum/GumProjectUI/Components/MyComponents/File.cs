@@ -58,20 +58,34 @@ partial class File
             }
             else
             {
-                QuikcStylesState = QuikcStyles.Selected;
+                if(QuikcStylesState == QuikcStyles.Selected)
+                {
+                    QuikcStylesState = QuikcStyles.Hovered;
+                    FilesViewer.UnselectFile(this);
+                }
+                    
+                else
+                {
+                    QuikcStylesState = QuikcStyles.Selected;
+                    FilesViewer.SelectFile(this);
+                }
+                    
             }
         };
         
         FileClickBounds.RollOn += (sender, e) =>
         {
             Debug.Log($"Hovered on file: {FileName}");
-            QuikcStylesState = QuikcStyles.Hovered;
+            if (QuikcStylesState != QuikcStyles.Selected)
+                QuikcStylesState = QuikcStyles.Hovered;
         };
 
         FileClickBounds.RollOff += (sender, e) =>
         {
             Debug.Log($"Unhovered on file: {FileName}");
-            QuikcStylesState = QuikcStyles.Selected;
+            if (QuikcStylesState != QuikcStyles.Selected)
+                QuikcStylesState = QuikcStyles.Clear;
+
         };
         
     }

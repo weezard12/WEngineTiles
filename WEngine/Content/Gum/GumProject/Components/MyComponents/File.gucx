@@ -12,85 +12,84 @@
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>ColoredRectangleInstance.Alpha</Name>
+      <Name>FileHighlight.Alpha</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>ColoredRectangleInstance.Green</Name>
+      <Name>FileHighlight.Green</Name>
       <Value xsi:type="xsd:int">171</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredRectangleInstance.Height</Name>
+      <Name>FileHighlight.Height</Name>
       <Value xsi:type="xsd:float">-0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>ColoredRectangleInstance.HeightUnits</Name>
+      <Name>FileHighlight.HeightUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>ColoredRectangleInstance.Parent</Name>
-      <Value xsi:type="xsd:string">FileClickBounds</Value>
+      <Name>FileHighlight.Parent</Name>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>ColoredRectangleInstance.Red</Name>
+      <Name>FileHighlight.Red</Name>
       <Value xsi:type="xsd:int">159</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredRectangleInstance.Width</Name>
+      <Name>FileHighlight.Width</Name>
       <Value xsi:type="xsd:float">-0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>ColoredRectangleInstance.WidthUnits</Name>
+      <Name>FileHighlight.WidthUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredRectangleInstance.X</Name>
+      <Name>FileHighlight.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>ColoredRectangleInstance.XOrigin</Name>
+      <Name>FileHighlight.XOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>ColoredRectangleInstance.XUnits</Name>
+      <Name>FileHighlight.XUnits</Name>
       <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ColoredRectangleInstance.Y</Name>
+      <Name>FileHighlight.Y</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>ColoredRectangleInstance.YOrigin</Name>
+      <Name>FileHighlight.YOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>ColoredRectangleInstance.YUnits</Name>
+      <Name>FileHighlight.YUnits</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -299,27 +298,27 @@
       <Name>Hovered</Name>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Alpha</Name>
+        <Name>FileHighlight.Alpha</Name>
         <Value xsi:type="xsd:int">71</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Red</Name>
-        <Value xsi:type="xsd:int">159</Value>
+        <Name>FileHighlight.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Green</Name>
+        <Name>FileHighlight.Green</Name>
         <Value xsi:type="xsd:int">171</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <Category>Rendering</Category>
+        <Name>FileHighlight.Red</Name>
+        <Value xsi:type="xsd:int">159</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -327,37 +326,70 @@
       <Name>Selected</Name>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Alpha</Name>
+        <Name>FileHighlight.Alpha</Name>
         <Value xsi:type="xsd:int">196</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Red</Name>
-        <Value xsi:type="xsd:int">67</Value>
+        <Name>FileHighlight.Blue</Name>
+        <Value xsi:type="xsd:int">228</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Green</Name>
+        <Name>FileHighlight.Green</Name>
         <Value xsi:type="xsd:int">87</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ColoredRectangleInstance.Blue</Name>
-        <Value xsi:type="xsd:int">228</Value>
+        <Name>FileHighlight.Red</Name>
+        <Value xsi:type="xsd:int">67</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Clear</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FileHighlight.Alpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FileHighlight.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <Category>Rendering</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FileHighlight.Green</Name>
+        <Value xsi:type="xsd:int">171</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FileHighlight.Red</Name>
+        <Value xsi:type="xsd:int">159</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
   </Category>
   <Instance>
-    <Name>FileClickBounds</Name>
-    <BaseType>Container</BaseType>
+    <Name>FileHighlight</Name>
+    <BaseType>ColoredRectangle</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
     <Name>ContainerInstance</Name>
+    <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FileClickBounds</Name>
     <BaseType>Container</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
@@ -369,11 +401,6 @@
   <Instance>
     <Name>FileNameLabel</Name>
     <BaseType>Controls/Label</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>ColoredRectangleInstance</Name>
-    <BaseType>ColoredRectangle</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
