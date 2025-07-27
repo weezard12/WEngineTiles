@@ -1,4 +1,4 @@
-//Code for MyComponents/SelectFileWindow (MyComponents/EditorWindow)
+//Code for MyComponents/SelectFileWindow (MyComponents/DialogEditorWindow)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class SelectFileWindow : EditorWindow
+partial class SelectFileWindow : DialogEditorWindow
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()

@@ -11,6 +11,14 @@ partial class SelectFileWindow
 {
     partial void CustomInitialize()
     {
-        
+        SelectButton.Click += (_, _) =>
+        {
+            RaiseDialogComplete(SelectPathTextBox.Text);
+            RemoveFromRoot();
+        };
+        FilesViewerInstance.OnFileSelected += (filePath) =>
+        {
+            SelectPathTextBox.Text = filePath;
+        };
     }
 }

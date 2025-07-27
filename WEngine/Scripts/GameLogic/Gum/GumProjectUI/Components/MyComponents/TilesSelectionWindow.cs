@@ -3,6 +3,7 @@ using Gum.Converters;
 using Gum.DataTypes;
 using Gum.Managers;
 using Gum.Wireframe;
+using MonoGameGum;
 using Nez;
 using RenderingLibrary.Graphics;
 using System;
@@ -16,7 +17,8 @@ partial class TilesSelectionWindow
         Debug.Log("Custom Initialize");
         ImportTilesetButton.Click += (_, _) =>
         {
-            CurrentGumScreen.AddChild(new SelectFileWindow().Visual);
+            SelectFileWindow selectFileWindow = new SelectFileWindow();
+            CurrentGumScreen.AddChild(selectFileWindow);
         };
     }
 

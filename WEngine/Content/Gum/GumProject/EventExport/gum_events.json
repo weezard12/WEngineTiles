@@ -1155,6 +1155,13 @@
         "ElementType": "Screens",
         "EventType": 6,
         "TimestampUtc": "2025-07-27T17:56:45.1599231Z"
+      },
+      {
+        "NewName": "MyComponents/DialogEditorWindow",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-07-27T18:20:30.4629556Z"
       }
     ]
   }

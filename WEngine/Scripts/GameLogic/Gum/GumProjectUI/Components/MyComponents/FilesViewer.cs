@@ -4,6 +4,7 @@ using Gum.Managers;
 using Gum.Wireframe;
 
 using RenderingLibrary.Graphics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,10 @@ partial class FilesViewer
 
     private readonly HashSet<string> SelectedFiles = new HashSet<string>();
 
-    public int SelectFilesAmount { get; set; } = -1;
+    public int SelectFilesAmount { get; set; } = 1;
+
+    public event Action<string> OnFileSelected;
+    public event Action<string> OnFileUnselected;
 
     partial void CustomInitialize()
     {
@@ -91,12 +95,14 @@ partial class FilesViewer
         if (SelectFilesAmount < 0)
         {
             SelectedFiles.Add(filePath);
+            OnFileSelected?.Invoke(filePath);
             return true;
         }
 
         if (SelectedFiles.Count < SelectFilesAmount)
         {
             SelectedFiles.Add(filePath);
+            OnFileSelected?.Invoke(filePath);
             return true;
         }
 
@@ -110,6 +116,7 @@ partial class FilesViewer
     public void UnselectFile(string filePath)
     {
         SelectedFiles.Remove(filePath);
+        OnFileUnselected?.Invoke(filePath);
     }
     public void UnselectFile(File file)
     {

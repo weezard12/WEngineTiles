@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>MyComponents/SelectFileWindow</Name>
-  <BaseType>MyComponents/EditorWindow</BaseType>
+  <BaseType>MyComponents/DialogEditorWindow</BaseType>
   <State>
     <Name>Default</Name>
     <Variable>
@@ -175,6 +175,26 @@
     </Variable>
   </State>
   <Instance>
+    <Name>FilesViewerInstance</Name>
+    <BaseType>MyComponents/FilesViewer</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>PanelInstance</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SelectPathTextBox</Name>
+    <BaseType>Controls/TextBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>SelectButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
     <Name>Background</Name>
     <BaseType>NineSlice</BaseType>
     <DefinedByBase>true</DefinedByBase>
@@ -248,26 +268,6 @@
     <Name>MinimizeButton</Name>
     <BaseType>Controls/ButtonIcon</BaseType>
     <DefinedByBase>true</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>FilesViewerInstance</Name>
-    <BaseType>MyComponents/FilesViewer</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>PanelInstance</Name>
-    <BaseType>Controls/Panel</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>SelectPathTextBox</Name>
-    <BaseType>Controls/TextBox</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
-    <Name>SelectButton</Name>
-    <BaseType>Controls/ButtonStandard</BaseType>
-    <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
 </ComponentSave>
