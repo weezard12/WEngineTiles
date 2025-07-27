@@ -17,6 +17,8 @@ partial class FilesViewer
 
     private readonly HashSet<string> SelectedFiles = new HashSet<string>();
 
+    public int SelectFilesAmount { get; set; } = -1;
+
     partial void CustomInitialize()
     {
         SetAbsolutePath("C:\\Users\\User1\\Downloads\\test");
@@ -83,20 +85,44 @@ partial class FilesViewer
             OpenedFolders.Add(path);
     }
 
-    public void SelectFile(string filePath)
+    public bool SelectFile(string filePath)
     {
-        SelectedFiles.Add(filePath);
+        // can select infinite files if SelectFilesAmount is negative
+        if (SelectFilesAmount < 0)
+        {
+            SelectedFiles.Add(filePath);
+            return true;
+        }
+
+        if (SelectedFiles.Count < SelectFilesAmount)
+        {
+            SelectedFiles.Add(filePath);
+            return true;
+        }
+
+        return false;
     }
-    public void SelectFile(File file)
+    public bool SelectFile(File file)
     {
-        SelectedFiles.Add(file.FilePath);
+        return SelectFile(file.FilePath);
     }
+
     public void UnselectFile(string filePath)
     {
         SelectedFiles.Remove(filePath);
     }
     public void UnselectFile(File file)
     {
-        SelectedFiles.Remove(file.FilePath);
+        UnselectFile(file.FilePath);
+    }
+
+
+    public File GetFile(string path)
+    {
+        foreach (var child in ScrollViewerInstance.InnerPanel.Children)
+            if (child is File file && file.FilePath == path)
+                return file;
+
+        return null;
     }
 }

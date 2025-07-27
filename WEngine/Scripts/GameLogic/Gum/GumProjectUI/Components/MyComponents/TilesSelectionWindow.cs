@@ -7,13 +7,17 @@ using Nez;
 using RenderingLibrary.Graphics;
 using System;
 using System.Linq;
+using static WEngine.Scripts.Main.Game1;
 
 partial class TilesSelectionWindow
 {
     partial void CustomInitialize()
     {
         Debug.Log("Custom Initialize");
-        ImportTilesetButton.Click += (_,_) => Debug.Log("Import Tileset Button Clicked");
+        ImportTilesetButton.Click += (_, _) =>
+        {
+            CurrentGumScreen.AddChild(new SelectFileWindow().Visual);
+        };
     }
 
 

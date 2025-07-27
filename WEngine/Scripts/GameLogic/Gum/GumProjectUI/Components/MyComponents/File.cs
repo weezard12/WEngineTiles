@@ -66,8 +66,9 @@ partial class File
                     
                 else
                 {
-                    QuikcStylesState = QuikcStyles.Selected;
-                    FilesViewer.SelectFile(this);
+                    if(FilesViewer.SelectFile(this))
+                        QuikcStylesState = QuikcStyles.Selected;
+                    
                 }
                     
             }

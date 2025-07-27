@@ -36,7 +36,6 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
         });
     }
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
-    public SelectFileWindow SelectFileWindowInstance { get; protected set; }
 
     public EditorScreen(InteractiveGue visual) : base(visual) { }
     public EditorScreen()
@@ -49,7 +48,6 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
     {
         base.ReactToVisualChanged();
         TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
-        SelectFileWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectFileWindow>(this.Visual,"SelectFileWindowInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

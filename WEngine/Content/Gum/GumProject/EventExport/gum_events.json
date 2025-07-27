@@ -1148,6 +1148,13 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-07-26T21:32:43.3030421Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "EditorScreen.MyComponents/SelectFileWindow SelectFileWindowInstance in EditorScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-07-27T17:56:45.1599231Z"
       }
     ]
   }
