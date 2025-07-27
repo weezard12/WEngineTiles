@@ -49,11 +49,11 @@ namespace WEngine.Scripts.Main
             // Debug
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
-            //var imGuiManager = new ImGuiManager();
-            //RegisterGlobalManager(imGuiManager);
+            var imGuiManager = new ImGuiManager();
+            RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
-            //imGuiManager.SetEnabled(true);
+            imGuiManager.SetEnabled(true);
 
             Scene = new TilesWorldEditor();
         }

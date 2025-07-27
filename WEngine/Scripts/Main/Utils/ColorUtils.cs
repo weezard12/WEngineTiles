@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WEngine.Scripts.Main
+namespace WEngine.Scripts.Main.Utils
 {
     internal static class ColorUtils
     {

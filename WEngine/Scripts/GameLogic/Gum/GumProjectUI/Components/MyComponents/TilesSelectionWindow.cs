@@ -18,12 +18,19 @@ partial class TilesSelectionWindow
         ImportTilesetButton.Click += (_, _) =>
         {
             SelectFileWindow selectFileWindow = new SelectFileWindow();
+            selectFileWindow.OnDialogComplete += (filePath) =>
+            {
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    LoadTiles(filePath);
+                }
+            };
             CurrentGumScreen.AddChild(selectFileWindow);
         };
     }
 
 
-    public void LoadTiles(object sender, EventArgs e)
+    public void LoadTiles(string path)
     {
 
     }
