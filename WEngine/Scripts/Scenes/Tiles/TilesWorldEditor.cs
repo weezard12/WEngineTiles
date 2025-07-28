@@ -42,6 +42,9 @@ namespace WEngine.Scripts.Scenes.Tiles
             var displayEntity = CreateEntity("camera-display");
             displayEntity.AddComponent(new CameraInfoDisplay());
 
+
+            AddTexture("Assets/Tiles/Tile");
+
             // Testing tiles rendering
             Entity testEntity = new Entity("TestEntity");
             testEntity.SetPosition(Screen.Center);

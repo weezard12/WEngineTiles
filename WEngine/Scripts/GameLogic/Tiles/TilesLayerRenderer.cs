@@ -20,6 +20,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         private readonly float _scale = 5f;
 
+        private readonly int[,] _tiles = new int[SizeX, SizeY];
+
         public override float Width => _tileWidth * SizeX * _scale;
         public override float Height => _tileHeight * SizeY * _scale;
         public override RectangleF Bounds

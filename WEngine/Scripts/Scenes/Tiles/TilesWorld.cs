@@ -11,6 +11,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorld : Scene
     {
+        // Stores all the tiles textures by their ID. 0 is empty tile.
         private readonly Dictionary<int, Texture2D> textures = new();
 
         public Texture2D GetTexture(int id)
@@ -33,6 +34,26 @@ namespace WEngine.Scripts.Scenes.Tiles
             {
                 Debug.Error($"Texture with ID {id} already exists.");
             }
+        }
+        protected void AddTexture(string texturePath)
+        {
+            int id = GetNextAvailableTextureId();
+            try
+            {
+                textures.Add(id, Content.LoadTexture(texturePath));
+            }
+            catch(Exception ex)
+            {
+                Debug.Error($"Error loading texture:{texturePath}\n{ex.Message}");
+            }
+        }
+
+        private int GetNextAvailableTextureId()
+        {
+            int id = 1;
+            while (textures.ContainsKey(id))
+                id++;
+            return id;
         }
 
         List<TilesChunk> Chunks { get; set; }
