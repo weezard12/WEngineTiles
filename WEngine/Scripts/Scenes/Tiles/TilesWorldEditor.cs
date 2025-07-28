@@ -38,6 +38,9 @@ namespace WEngine.Scripts.Scenes.Tiles
             Entity entity = CreateEntity("camera-controller");
             entity.AddComponent(new EditorCameraController());
 
+            // Displays the camera position.
+            var displayEntity = CreateEntity("camera-display");
+            displayEntity.AddComponent(new CameraPositionDisplay());
 
             // Testing tiles rendering
             Entity testEntity = new Entity("TestEntity");
