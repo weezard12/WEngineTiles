@@ -18,7 +18,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         private readonly int _tileWidth;
         private readonly int _tileHeight;
 
-        private float _scale = 5f;
+        private readonly float _scale = 5f;
 
         public override float Width => _tileWidth * SizeX * _scale;
         public override float Height => _tileHeight * SizeY * _scale;

@@ -2,16 +2,16 @@
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
+    // TODO add a nice wteening (easing) oprion when zooming in and out
+
     internal class EditorCameraController : Component, IUpdatable
     {
         float moveSpeed = 300f;
+        float zoomSpeed = 0.2f;
+        float defaultZoom = 0f;
 
         public override void OnAddedToEntity()
         {
@@ -38,10 +38,19 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
 
             camera.Position += move * moveSpeed * deltaTime;
 
-            // Reset to (0, 0) with Space key
-            if (Input.IsKeyDown(Keys.Space))
+            // Mouse wheel zoom
+            var mouseState = Input.CurrentMouseState;
+            if (mouseState.ScrollWheelValue > Input.PreviousMouseState.ScrollWheelValue)
+                camera.Zoom += zoomSpeed;
+            else if (mouseState.ScrollWheelValue < Input.PreviousMouseState.ScrollWheelValue)
+                camera.Zoom -= zoomSpeed;
+
+
+            // Reset position and zoom with Space key
+            if (Input.IsKeyPressed(Keys.Space))
             {
                 camera.Position = Vector2.Zero;
+                camera.Zoom = defaultZoom;
             }
         }
     }

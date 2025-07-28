@@ -40,7 +40,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Displays the camera position.
             var displayEntity = CreateEntity("camera-display");
-            displayEntity.AddComponent(new CameraPositionDisplay());
+            displayEntity.AddComponent(new CameraInfoDisplay());
 
             // Testing tiles rendering
             Entity testEntity = new Entity("TestEntity");

@@ -11,7 +11,7 @@ using UILabel = Nez.UI.Label;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
-    public class CameraPositionDisplay : Component, IUpdatable
+    public class CameraInfoDisplay : Component, IUpdatable
     {
         private UICanvas _canvas;
         private UILabel _label;
@@ -25,7 +25,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             table.SetFillParent(true);
             table.Top().Left();
 
-            _label = new UILabel("Loading Camera Position", Nez.UI.Skin.CreateDefaultSkin());
+            _label = new UILabel("Loading Camera Info", Nez.UI.Skin.CreateDefaultSkin());
             _label.SetFontScale(1.5f);
             table.Add(_label).SetPadLeft(10).SetPadTop(10);
         }
@@ -33,8 +33,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         public void Update()
         {
             var cameraPos = Core.Scene.Camera.Position;
-            _label.SetText($"Camera Position: X={cameraPos.X:0}, Y={cameraPos.Y:0}");
+            var cameraZoom = Core.Scene.Camera.Zoom;
+            _label.SetText($"Camera Position: X={cameraPos.X:0}, Y={cameraPos.Y:0}\nCamera Zoom: {cameraZoom:0.00}");
         }
-
     }
 }
