@@ -47,7 +47,7 @@ namespace WEngine.Scripts.Main
             //screenRuntime.AddToRoot();
 
             // Debug
-            //DebugRenderEnabled = true;
+            DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             var imGuiManager = new ImGuiManager();
             //RegisterGlobalManager(imGuiManager);

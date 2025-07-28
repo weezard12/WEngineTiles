@@ -9,6 +9,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesChunk : Entity
     {
-        List<TilesLayer> Layers { get; set; }
+        List<TilesLayerRenderer> Layers { get; set; }
     }
 }

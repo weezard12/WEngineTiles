@@ -32,6 +32,7 @@
     <ProjectReference Include="..\Nez\Nez.Portable\Nez.MG38.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Assets\Tiles\" />
     <Folder Include="Content\Gum\GumProject\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\Components\MyComponents\" />

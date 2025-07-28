@@ -3,10 +3,12 @@ using Gum.DataTypes;
 using Gum.Wireframe;
 using ImGuiNET;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using MonoGameGum;
 using MonoGameGum.Forms;
 using MonoGameGum.Forms.Controls;
 using Nez;
+using Nez.Systems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +16,9 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Gum;
+using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.Main;
-using Button = MonoGameGum.Forms.Controls.Button;
-using Label = MonoGameGum.Forms.Controls.Label;
 
 namespace WEngine.Scripts.Scenes.Tiles
 {
@@ -32,29 +33,16 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Getting the Gum UI Elements.
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
 
-            // Enable UI Canvas
-            //var canvas = CreateEntity("ui-canvas").AddComponent<UICanvas>();
+            // Testing tiles rendering
+            Entity testEntity = new Entity("TestEntity");
+            testEntity.SetPosition(Screen.Center);
 
-            //var gumCanvas = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("MyComponents/EditorWindow") );
+            Texture2D tileTexture = Content.LoadTexture("Assets/Tiles/Tile");
 
-            //var gumCanvas2 = CreateEntity("gum-canvas").AddComponent<GumCanvas>( new GumCanvas("TestScreen") );
+            TilesLayerRenderer layerRenderer = new TilesLayerRenderer(tileTexture);
+            testEntity.AddComponent(layerRenderer);
 
-            //canvas.IsFullScreen = true;
-
-            //SetupTileSelectionUI(canvas.Stage);
-
-            //TilesSelector tilesSelector = new TilesSelector();
-
-            //AddEntity(tilesSelector);
-            //tilesSelector.SetPosition(Screen.Center);
-
-
-            // Ensure UI renders in screen space
-            //AddRenderer(new ScreenSpaceRenderer(1, null));
-
-            // Create a panel to hold UI controls
-            // Root UI panel
-
+            AddEntity(testEntity);
 
         }
         public override void Update()
