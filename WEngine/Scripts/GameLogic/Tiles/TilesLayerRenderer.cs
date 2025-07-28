@@ -12,8 +12,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesLayerRenderer : RenderableComponent, IUpdatable
     {
-        public const int SizeX = 3;
-        public const int SizeY = 3;
+        public const int SizeX = 8;
+        public const int SizeY = 8;
         private readonly Sprite _sprite;
         private readonly int _tileWidth;
         private readonly int _tileHeight;

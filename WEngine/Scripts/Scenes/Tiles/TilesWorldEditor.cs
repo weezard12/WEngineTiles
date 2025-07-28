@@ -19,6 +19,7 @@ using WEngine.Scripts.GameLogic.Gum;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.Main;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace WEngine.Scripts.Scenes.Tiles
 {
@@ -32,6 +33,11 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Getting the Gum UI Elements.
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+
+            // Creates Camera Controller for the Editor.
+            Entity entity = CreateEntity("camera-controller");
+            entity.AddComponent(new EditorCameraController());
+
 
             // Testing tiles rendering
             Entity testEntity = new Entity("TestEntity");
