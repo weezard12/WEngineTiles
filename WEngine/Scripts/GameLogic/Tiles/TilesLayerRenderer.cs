@@ -14,7 +14,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
     {
         public const int SizeX = 3;
         public const int SizeY = 3;
-        private readonly Texture2D _texture;
         private readonly Sprite _sprite;
         private readonly int _tileWidth;
         private readonly int _tileHeight;
@@ -39,7 +38,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         public TilesLayerRenderer(Texture2D texture)
         {
-            this._texture = texture;
             _sprite = new Sprite(texture);
             _tileWidth = texture.Width;
             _tileHeight = texture.Height;
@@ -54,19 +52,31 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             var position = Entity.Transform.Position;
 
-            // Offset to center the tile grid on the entity's position
-            var centeredPosition = position - new Vector2(Width / 2f, Height / 2f);
+            var totalWidth = _tileWidth * SizeX * _scale;
+            var totalHeight = _tileHeight * SizeY * _scale;
 
-            // Draw grid tiles centered around the entity
+            var startX = position.X - totalWidth / 2f + (_tileWidth * _scale) / 2f;
+            var startY = position.Y - totalHeight / 2f + (_tileHeight * _scale) / 2f;
+
             for (int y = 0; y < SizeY; y++)
             {
                 for (int x = 0; x < SizeX; x++)
                 {
                     var tilePos = new Vector2(
-                        centeredPosition.X + x * _tileWidth * _scale,
-                        centeredPosition.Y + y * _tileHeight * _scale
+                        startX + x * _tileWidth * _scale,
+                        startY + y * _tileHeight * _scale
                     );
-                    batcher.Draw(_sprite, tilePos, Color.White, 0, new Vector2(_tileWidth, _tileHeight), _scale, SpriteEffects.None, 0);
+
+                    batcher.Draw(
+                        _sprite,
+                        tilePos,
+                        Color.White,
+                        rotation: 0f,
+                        origin: new Vector2(_tileWidth / 2f, _tileHeight / 2f),
+                        scale: _scale,
+                        effects: SpriteEffects.None,
+                        layerDepth: 0f
+                    );
                 }
             }
         }
