@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.Tiles
 {
@@ -14,7 +15,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
     {
         public const int SizeX = 8;
         public const int SizeY = 8;
-        private readonly Sprite _sprite;
         private readonly int _tileWidth;
         private readonly int _tileHeight;
 
@@ -38,11 +38,10 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
         }
 
-        public TilesLayerRenderer(Texture2D texture)
+        public TilesLayerRenderer(int tileWidth, int tileHeight)
         {
-            _sprite = new Sprite(texture);
-            _tileWidth = texture.Width;
-            _tileHeight = texture.Height;
+            _tileWidth = tileWidth;
+            _tileHeight = tileHeight;
         }
 
         public override void OnAddedToEntity()
@@ -64,13 +63,16 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 for (int x = 0; x < SizeX; x++)
                 {
+                    if (_tiles[y,x] == 0)
+                        continue;
+                    
                     var tilePos = new Vector2(
                         startX + x * _tileWidth * _scale,
                         startY + y * _tileHeight * _scale
                     );
 
                     batcher.Draw(
-                        _sprite,
+                        ((TilesWorld)Entity.Scene).GetTexture(_tiles[y,x]),
                         tilePos,
                         Color.White,
                         rotation: 0f,
@@ -83,10 +85,17 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
         }
 
-
         public void Update()
         {
             // Update logic if needed
+        }
+
+
+        public void SetTile(int x, int y, int tileId)
+        {
+            if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
+                throw new ArgumentOutOfRangeException("Tile coordinates are out of bounds.");
+            _tiles[y, x] = tileId;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Nez;
+using Nez.Textures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace WEngine.Scripts.Scenes.Tiles
     internal class TilesWorld : Scene
     {
         // Stores all the tiles textures by their ID. 0 is empty tile.
-        private readonly Dictionary<int, Texture2D> textures = new();
+        private readonly Dictionary<int, Sprite> textures = new();
 
-        public Texture2D GetTexture(int id)
+        public Sprite GetTexture(int id)
         {
             if(textures.TryGetValue(id, out var texture))
             {
@@ -28,7 +29,7 @@ namespace WEngine.Scripts.Scenes.Tiles
         {
             if(!textures.ContainsKey(id))
             {
-                textures[id] = texture;
+                textures[id] = new Sprite(texture);
             }
             else
             {
@@ -40,7 +41,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             int id = GetNextAvailableTextureId();
             try
             {
-                textures.Add(id, Content.LoadTexture(texturePath));
+                AddTexture(id, Content.LoadTexture(texturePath));
             }
             catch(Exception ex)
             {

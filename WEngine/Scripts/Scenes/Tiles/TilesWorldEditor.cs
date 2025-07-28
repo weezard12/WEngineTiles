@@ -51,9 +51,13 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             Texture2D tileTexture = Content.LoadTexture("Assets/Tiles/Tile");
 
-            TilesLayerRenderer layerRenderer = new TilesLayerRenderer(tileTexture);
+            TilesLayerRenderer layerRenderer = new TilesLayerRenderer(16, 16);
             testEntity.AddComponent(layerRenderer);
 
+            layerRenderer.SetTile(0, 0, 1);
+            layerRenderer.SetTile(1, 1, 1);
+            layerRenderer.SetTile(2, 2, 1);
+            layerRenderer.SetTile(3, 3, 1);
             AddEntity(testEntity);
 
         }
