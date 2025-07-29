@@ -49,6 +49,42 @@
 /processorParam:TextureFormat=Color
 /build:Assets/Editor/Icons/minimizeIcon.png;Assets/Editor/Icons/minimizeIcon
 
+#begin Assets/Tiles/Kaftor_Bush.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Tiles/Kaftor_Bush.png;Assets/Tiles/Kaftor_Bush
+
+#begin Assets/Tiles/Kaftor_Grass.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Tiles/Kaftor_Grass.png;Assets/Tiles/Kaftor_Grass
+
+#begin Assets/Tiles/Kaftor_Grass2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Assets/Tiles/Kaftor_Grass2.png;Assets/Tiles/Kaftor_Grass2
+
 #begin Assets/Tiles/Tile.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -59,5 +95,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Assets/Tiles/Tile.png
+/build:Assets/Tiles/Tile.png;Assets/Tiles/Tile
 

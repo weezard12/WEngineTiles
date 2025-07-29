@@ -35,7 +35,7 @@ namespace WEngine.Scripts.Main
 
             // Gum Logic Initialization
             //MonoGameGum.GumService.Default.Initialize(this);
-
+            
             LoadedGumProject = GumService.Default.Initialize(this, "Gum/GumProject/GumProject.gumx");
 
             LoadGumScreen("EditorScreen");
