@@ -6,6 +6,7 @@ using System;
 using UILabel = Nez.UI.Label;
 using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
 using WEngine.Scripts.Scenes.Tiles;
+using WEngine.Scripts.GameLogic.Tiles;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
@@ -73,6 +74,18 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
 
             _tilesWorld.GetTileCordinates(mouseWorldPos, ref tilePos);
             _tileLabel.SetText($"Selected Tile:\nX={tilePos.X}, Y={tilePos.Y}");
+
+            // just for testing
+            if(Input.LeftMouseButtonDown)
+            {
+                TilesChunk chunk = _tilesWorld.GetChunk(mouseChunk);
+                chunk.GetLayers().ForEach(layer =>
+                {
+                    layer.SetTile(tilePos.X, tilePos.Y, 1);
+                });
+            }
+            
+
         }
     }
 }
