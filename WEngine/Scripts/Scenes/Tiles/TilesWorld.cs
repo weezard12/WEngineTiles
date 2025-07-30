@@ -13,6 +13,12 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorld : Scene
     {
+        // Constant Values
+        public const int ChunkSize = 8 * 16 * 4; // (512) Each chunk is 8x8 tiles, each tile is 16x16 pixels, and each pixel is 4x4 in the game world.
+
+
+
+
         // Stores all the tiles textures by their ID. 0 is empty tile.
         private readonly Dictionary<int, Sprite> textures = new();
 
@@ -67,6 +73,27 @@ namespace WEngine.Scripts.Scenes.Tiles
             Chunks.Add(chunk);
 
             AddEntity(chunk);
+        }
+
+
+        // TODO improve this method to be more efficient
+        public void GetChunkCoordinates(Vector2 worldPosition, ref Point chunkPos)
+        {
+            int GetCoord(float value)
+            {
+                float halfChunk = ChunkSize / 2f;
+
+                if (value >= -halfChunk && value < halfChunk)
+                    return 0;
+
+                if (value >= 0)
+                    return 1 + (int)((value - halfChunk) / ChunkSize);
+                else
+                    return -1 + (int)((value + halfChunk) / ChunkSize);
+            }
+
+            chunkPos.X = GetCoord(worldPosition.X);
+            chunkPos.Y = GetCoord(worldPosition.Y);
         }
     }
 }

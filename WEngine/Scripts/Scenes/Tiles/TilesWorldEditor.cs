@@ -41,7 +41,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Displays the camera position.
             var displayEntity = CreateEntity("camera-display");
-            displayEntity.AddComponent(new CameraInfoDisplay());
+            displayEntity.AddComponent(new CameraInfoDisplay(this));
 
             // Setting up the camera
             Camera.SetPosition(new Microsoft.Xna.Framework.Vector2(0,0));

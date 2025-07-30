@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
 
 namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesChunk : Entity
     {
-        // Each chunk is 8x8 tiles, each tile is 16x16 pixels, and each pixel is 4x4 in the game world.
-        public const int ChunkSize = 8 * 16 * 4;
         List<TilesLayerRenderer> Layers { get; set; }
 
         public TilesChunk(int idX, int idY) : base($"TilesChunk_{idX}_{idY}")
