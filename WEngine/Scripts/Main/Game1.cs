@@ -38,7 +38,7 @@ namespace WEngine.Scripts.Main
             
             LoadedGumProject = GumService.Default.Initialize(this, "Gum/GumProject/GumProject.gumx");
 
-            LoadGumScreen("EditorScreen");
+            //LoadGumScreen("EditorScreen");
 
             // Load and configure the component
 

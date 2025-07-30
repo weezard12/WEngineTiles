@@ -33,7 +33,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             base.OnStart();
 
             // Getting the Gum UI Elements.
-            tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+            //tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
@@ -43,6 +43,9 @@ namespace WEngine.Scripts.Scenes.Tiles
             var displayEntity = CreateEntity("camera-display");
             displayEntity.AddComponent(new CameraInfoDisplay());
 
+            // Setting up the camera
+            Camera.SetPosition(new Microsoft.Xna.Framework.Vector2(0,0));
+
 
             AddTexture("Assets/Tiles/Tile");
             AddTexture("Assets/Tiles/Kaftor_Grass");
@@ -51,7 +54,6 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Testing tiles rendering
             Entity testEntity = new Entity("TestEntity");
-            testEntity.SetPosition(Screen.Center);
 
             Texture2D tileTexture = Content.LoadTexture("Assets/Tiles/Tile");
 
