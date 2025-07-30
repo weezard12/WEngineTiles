@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Nez;
 using Nez.Textures;
 using System;
@@ -57,7 +58,16 @@ namespace WEngine.Scripts.Scenes.Tiles
             return id;
         }
 
-        List<TilesChunk> Chunks { get; set; }
 
+        List<TilesChunk> Chunks { get; set; } = new List<TilesChunk>();
+
+        protected void AddChunk(int x, int y)
+        {
+            TilesChunk chunk = new TilesChunk(x, y);
+            chunk.SetPosition(new Vector2(8*16*5*x,8*16*5*y));
+            Chunks.Add(chunk);
+
+            AddEntity(chunk);
+        }
     }
 }

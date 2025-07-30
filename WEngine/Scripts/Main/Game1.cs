@@ -33,9 +33,14 @@ namespace WEngine.Scripts.Main
         {
             base.Initialize();
 
+            // No FPS limit
+/*            IsFixedTimeStep = false;
+            Screen.SynchronizeWithVerticalRetrace = false;
+            Screen.ApplyChanges();*/
+
             // Gum Logic Initialization
             //MonoGameGum.GumService.Default.Initialize(this);
-            
+
             LoadedGumProject = GumService.Default.Initialize(this, "Gum/GumProject/GumProject.gumx");
 
             //LoadGumScreen("EditorScreen");
@@ -50,7 +55,7 @@ namespace WEngine.Scripts.Main
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             var imGuiManager = new ImGuiManager();
-            //RegisterGlobalManager(imGuiManager);
+            RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
             //imGuiManager.SetEnabled(true);

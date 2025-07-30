@@ -52,7 +52,22 @@ namespace WEngine.Scripts.Scenes.Tiles
             AddTexture("Assets/Tiles/Kaftor_Grass2");
             AddTexture("Assets/Tiles/Kaftor_Bush");
 
+            // Testing chuncks rendering
+            AddChunk(0, 0);
+            AddChunk(0, 1);
+            AddChunk(1, 1);
+            AddChunk(1, 0);
+
+            AddChunk(0, -1);
+            AddChunk(-1, -1);
+            AddChunk(-1, 0);
+
+            AddChunk(-1, 1);
+
+            AddChunk(1, -1);
+
             // Testing tiles rendering
+            return;
             Entity testEntity = new Entity("TestEntity");
 
             Texture2D tileTexture = Content.LoadTexture("Assets/Tiles/Tile");
