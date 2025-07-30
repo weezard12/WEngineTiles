@@ -64,7 +64,6 @@ namespace WEngine.Scripts.Scenes.Tiles
         protected void AddChunk(int x, int y)
         {
             TilesChunk chunk = new TilesChunk(x, y);
-            chunk.SetPosition(new Vector2(8*16*5*x,8*16*5*y));
             Chunks.Add(chunk);
 
             AddEntity(chunk);

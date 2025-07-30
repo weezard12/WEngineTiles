@@ -18,7 +18,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         private readonly int _tileWidth;
         private readonly int _tileHeight;
 
-        private readonly float _scale = 5f;
+        private readonly float _scale = 4f;
 
         private readonly int[,] _tiles = new int[SizeX, SizeY];
 

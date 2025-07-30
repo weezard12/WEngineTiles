@@ -9,11 +9,16 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesChunk : Entity
     {
+        // Each chunk is 8x8 tiles, each tile is 16x16 pixels, and each pixel is 4x4 in the game world.
+        public const int ChunkSize = 8 * 16 * 4;
         List<TilesLayerRenderer> Layers { get; set; }
 
         public TilesChunk(int idX, int idY) : base($"TilesChunk_{idX}_{idY}")
         {
             Layers = new List<TilesLayerRenderer>();
+
+            // sets the position of the chunk in the game world
+            Transform.SetPosition(ChunkSize * idX, ChunkSize * idY);
 
             // For testing purposes, we will create a single layer
             TilesLayerRenderer layerRenderer = new TilesLayerRenderer(16, 16);
