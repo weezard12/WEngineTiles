@@ -95,5 +95,59 @@ namespace WEngine.Scripts.Scenes.Tiles
             chunkPos.X = GetCoord(worldPosition.X);
             chunkPos.Y = GetCoord(worldPosition.Y);
         }
+
+        // TODO improve this method to be more efficient (maby add all tiles to a set, this method of finding the entity is not efficient)
+        public TilesChunk GetChunk(Point coordinates)
+        {
+            
+            return (TilesChunk) FindEntity($"TilesChunk_{coordinates.X}_{coordinates.Y}");
+        }
+
+        public void GetTileCordinates(Vector2 worldPosition, ref Point tilePos)
+        {
+            Point chunkPos = Point.Zero;
+            GetChunkCoordinates(worldPosition, ref chunkPos);
+            TilesChunk chunk = GetChunk(chunkPos);
+            
+            if(chunk == null)
+            {
+                Debug.Error($"Chunk at coordinates {chunkPos} not found.");
+                tilePos = new Point(-1, -1);
+                return;
+            }
+
+            foreach (var layer in chunk.GetLayers())
+            {
+                var layerEntity = layer.Entity;
+                var layerPos = layerEntity.Transform.Position;
+
+                float totalWidth = layer._tileWidth * TilesLayerRenderer.SizeX * layer._scale;
+                float totalHeight = layer._tileHeight * TilesLayerRenderer.SizeY * layer._scale;
+
+                // Convert world position to local tile-space relative to top-left
+                var topLeft = new Vector2(
+                    layerPos.X - totalWidth / 2f,
+                    layerPos.Y - totalHeight / 2f
+                );
+
+                var localPos = worldPosition - topLeft;
+
+                int tileX = (int)(localPos.X / (layer._tileWidth * layer._scale));
+                int tileY = (int)(localPos.Y / (layer._tileHeight * layer._scale));
+
+                if (tileX >= 0 && tileX < TilesLayerRenderer.SizeX &&
+                    tileY >= 0 && tileY < TilesLayerRenderer.SizeY)
+                {
+                    tilePos.X = tileX;
+                    tilePos.Y = tileY;
+                    return;
+                }
+            }
+
+            // Not found in any layer
+            tilePos = new Point(-1, -1);
+        }
+
+
     }
 }

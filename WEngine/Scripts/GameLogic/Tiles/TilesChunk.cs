@@ -10,7 +10,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesChunk : Entity
     {
-        List<TilesLayerRenderer> Layers { get; set; }
+        public List<TilesLayerRenderer> Layers { get; private set; }
 
         public TilesChunk(int idX, int idY) : base($"TilesChunk_{idX}_{idY}")
         {
@@ -34,6 +34,12 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             AddComponent(layerRenderer);
             Layers.Add(layerRenderer);
+        }
+
+
+        public List<TilesLayerRenderer> GetLayers()
+        {
+            return Layers;
         }
 
     }

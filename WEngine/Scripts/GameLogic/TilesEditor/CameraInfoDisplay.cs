@@ -5,7 +5,7 @@ using Nez.UI;
 using System;
 using UILabel = Nez.UI.Label;
 using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
-using WEngine.Scripts.Scenes.Tiles; // for ChunkSize
+using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
@@ -15,16 +15,19 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         private UILabel _cameraLabel;
         private UILabel _mouseLabel;
         private UILabel _chunkLabel;
+        private UILabel _tileLabel;
 
         private TilesWorld _tilesWorld;
 
-        Point cameraChunk = Point.Zero;
-        Point mouseChunk = Point.Zero;
+        private Point cameraChunk = Point.Zero;
+        private Point mouseChunk = Point.Zero;
+        private Point tilePos = Point.Zero;
 
         public CameraInfoDisplay(TilesWorld tilesWorld)
         {
             _tilesWorld = tilesWorld;
         }
+
         public override void OnAddedToEntity()
         {
             _canvas = Entity.AddComponent(new UICanvas());
@@ -47,6 +50,11 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             _chunkLabel = new UILabel("Loading Chunk Info", Nez.UI.Skin.CreateDefaultSkin());
             _chunkLabel.SetFontScale(1.5f);
             table.Add(_chunkLabel).SetPadLeft(10).Top().Left();
+            table.Row();
+
+            _tileLabel = new UILabel("Loading Tile Info", Nez.UI.Skin.CreateDefaultSkin());
+            _tileLabel.SetFontScale(1.5f);
+            table.Add(_tileLabel).SetPadLeft(10).Top().Left();
         }
 
         public void Update()
@@ -59,15 +67,12 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             var mouseWorldPos = Core.Scene.Camera.ScreenToWorldPoint(mouseScreenPos);
             _mouseLabel.SetText($"Mouse Position:\nScreen X={mouseScreenPos.X:0}, Y={mouseScreenPos.Y:0}\nWorld X={mouseWorldPos.X:0}, Y={mouseWorldPos.Y:0}");
 
-
             _tilesWorld.GetChunkCoordinates(cameraPos, ref cameraChunk);
-            
             _tilesWorld.GetChunkCoordinates(mouseWorldPos, ref mouseChunk);
-
             _chunkLabel.SetText($"Chunk Info:\nCamera Chunk: X={cameraChunk.X}, Y={cameraChunk.Y}\nMouse Chunk: X={mouseChunk.X}, Y={mouseChunk.Y}");
+
+            _tilesWorld.GetTileCordinates(mouseWorldPos, ref tilePos);
+            _tileLabel.SetText($"Selected Tile:\nX={tilePos.X}, Y={tilePos.Y}");
         }
-
-
-
     }
 }

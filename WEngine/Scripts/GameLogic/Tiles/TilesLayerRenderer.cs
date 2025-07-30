@@ -15,10 +15,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
     {
         public const int SizeX = 8;
         public const int SizeY = 8;
-        private readonly int _tileWidth;
-        private readonly int _tileHeight;
 
-        private readonly float _scale = 4f;
+        public readonly int _tileWidth;
+        public readonly int _tileHeight;
+
+        public readonly float _scale = 4f;
 
         private readonly int[,] _tiles = new int[SizeX, SizeY];
 
