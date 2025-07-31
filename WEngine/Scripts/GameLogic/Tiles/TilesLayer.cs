@@ -19,8 +19,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public int SizeX = 8;
         public int SizeY = 8;
 
-        public readonly int _tileWidth;
-        public readonly int _tileHeight;
+        public readonly int _tileWidth = 16;
+        public readonly int _tileHeight = 16;
 
         public readonly float _scale = 4f;
 
@@ -36,6 +36,12 @@ namespace WEngine.Scripts.GameLogic.Tiles
             if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
                 throw new IndexOutOfRangeException("Tile coordinates are out of range.");
             return _tiles[y, x];
+        }
+
+        // This method should be called only from the World so it can update the necessary stuff.
+        public void SetTile(int x, int y, int value)
+        {
+            _tiles[y, x] = value;
         }
     }
 }

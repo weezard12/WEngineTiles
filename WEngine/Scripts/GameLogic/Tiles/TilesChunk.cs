@@ -22,22 +22,21 @@ namespace WEngine.Scripts.GameLogic.Tiles
             Transform.SetPosition(ChunkSize * idX, ChunkSize * idY);
 
             AddLayer(new TilesLayer());
+;
+            TilesLayer tilesLayer = GetLayers()[0];
+            // For testing purposes, we will create a single layer
 
-/*            // For testing purposes, we will create a single layer
-            TilesLayerRenderer layerRenderer = new TilesLayerRenderer(16, 16);
-
-            for (int y = 0; y < TilesLayerRenderer.SizeX; y++)
+            for (int y = 0; y < tilesLayer.SizeX; y++)
             {
-                for (int x = 0; x < TilesLayerRenderer.SizeY; x++)
+                for (int x = 0; x < tilesLayer.SizeY; x++)
                 {
                     // Randomly select a tile ID for testing
                     int tileId = Random.Range(2, 4);
-                    layerRenderer.SetTile(x, y, tileId);
+                    tilesLayer.SetTile(x, y, tileId);
                 }
             }
 
-            AddComponent(layerRenderer);
-            Layers.Add(layerRenderer);*/
+
         }
 
 
