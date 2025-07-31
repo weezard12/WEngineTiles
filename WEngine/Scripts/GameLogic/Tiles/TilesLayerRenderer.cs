@@ -13,18 +13,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesLayerRenderer : RenderableComponent, IUpdatable
     {
-        public const int SizeX = 8;
-        public const int SizeY = 8;
+        private TilesLayer _tilesLayer;
 
-        public readonly int _tileWidth;
-        public readonly int _tileHeight;
 
-        public readonly float _scale = 4f;
-
-        private readonly int[,] _tiles = new int[SizeX, SizeY];
-
-        public override float Width => _tileWidth * SizeX * _scale;
-        public override float Height => _tileHeight * SizeY * _scale;
+        public override float Width => _tilesLayer._tileWidth * _tilesLayer.SizeX * _tilesLayer._scale;
+        public override float Height => _tilesLayer._tileHeight * _tilesLayer.SizeY * _tilesLayer._scale;
         public override RectangleF Bounds
         {
             get
@@ -39,10 +32,9 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
         }
 
-        public TilesLayerRenderer(int tileWidth, int tileHeight)
+        public TilesLayerRenderer(TilesLayer tilesLayer)
         {
-            _tileWidth = tileWidth;
-            _tileHeight = tileHeight;
+            _tilesLayer = tilesLayer;
         }
 
         public override void OnAddedToEntity()
@@ -54,31 +46,31 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             var position = Entity.Transform.Position;
 
-            var totalWidth = _tileWidth * SizeX * _scale;
-            var totalHeight = _tileHeight * SizeY * _scale;
+            var totalWidth = _tilesLayer._tileWidth * _tilesLayer.SizeX * _tilesLayer._scale;
+            var totalHeight = _tilesLayer._tileHeight * _tilesLayer.SizeY * _tilesLayer._scale;
 
-            var startX = position.X - totalWidth / 2f + (_tileWidth * _scale) / 2f;
-            var startY = position.Y - totalHeight / 2f + (_tileHeight * _scale) / 2f;
+            var startX = position.X - totalWidth / 2f + (_tilesLayer._tileWidth * _tilesLayer._scale) / 2f;
+            var startY = position.Y - totalHeight / 2f + (_tilesLayer._tileHeight * _tilesLayer._scale) / 2f;
 
-            for (int y = 0; y < SizeY; y++)
+            for (int y = 0; y < _tilesLayer.SizeY; y++)
             {
-                for (int x = 0; x < SizeX; x++)
+                for (int x = 0; x < _tilesLayer.SizeX; x++)
                 {
-                    if (_tiles[y,x] == 0)
+                    if (_tilesLayer.GetTile(x, y) == 0)
                         continue;
                     
                     var tilePos = new Vector2(
-                        startX + x * _tileWidth * _scale,
-                        startY + y * _tileHeight * _scale
+                        startX + x * _tilesLayer._tileWidth * _tilesLayer._scale,
+                        startY + y * _tilesLayer._tileHeight * _tilesLayer._scale
                     );
 
                     batcher.Draw(
-                        ((TilesWorld)Entity.Scene).GetTexture(_tiles[y,x]),
+                        ((TilesWorld)Entity.Scene).GetTexture(_tilesLayer.GetTile(x, y)),
                         tilePos,
                         Color.White,
                         rotation: 0f,
-                        origin: new Vector2(_tileWidth / 2f, _tileHeight / 2f),
-                        scale: _scale,
+                        origin: new Vector2(_tilesLayer._tileWidth / 2f, _tilesLayer._tileHeight / 2f),
+                        scale: _tilesLayer._scale,
                         effects: SpriteEffects.None,
                         layerDepth: 0f
                     );
@@ -92,11 +84,5 @@ namespace WEngine.Scripts.GameLogic.Tiles
         }
 
 
-        public void SetTile(int x, int y, int tileId)
-        {
-            if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
-                throw new ArgumentOutOfRangeException("Tile coordinates are out of bounds.");
-            _tiles[y, x] = tileId;
-        }
     }
 }

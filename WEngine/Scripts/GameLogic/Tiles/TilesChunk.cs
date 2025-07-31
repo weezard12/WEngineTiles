@@ -10,16 +10,20 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class TilesChunk : Entity
     {
-        public List<TilesLayerRenderer> Layers { get; private set; }
+        // List of all the layers as DATA objects. Saving the tiles inside of them.
+        public List<TilesLayer> Layers { get; private set; } = new List<TilesLayer>();
+
+        public List<TilesLayerRenderer> RenderLayers { get; private set; } = new List<TilesLayerRenderer>();
+
 
         public TilesChunk(int idX, int idY) : base($"TilesChunk_{idX}_{idY}")
         {
-            Layers = new List<TilesLayerRenderer>();
-
             // sets the position of the chunk in the game world
             Transform.SetPosition(ChunkSize * idX, ChunkSize * idY);
 
-            // For testing purposes, we will create a single layer
+            AddLayer(new TilesLayer());
+
+/*            // For testing purposes, we will create a single layer
             TilesLayerRenderer layerRenderer = new TilesLayerRenderer(16, 16);
 
             for (int y = 0; y < TilesLayerRenderer.SizeX; y++)
@@ -33,14 +37,30 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
 
             AddComponent(layerRenderer);
-            Layers.Add(layerRenderer);
+            Layers.Add(layerRenderer);*/
         }
 
 
-        public List<TilesLayerRenderer> GetLayers()
+        public void AddLayer(TilesLayer layer)
+        {
+            Layers.Add(layer);
+            AddComponent(layer);
+
+            TilesLayerRenderer renderLayer = new TilesLayerRenderer(layer);
+            RenderLayers.Add(renderLayer);
+            AddComponent(renderLayer);
+        }
+        public TilesLayerRenderer GetLayerRenderer(int renderLayer)
+        {
+/*            if (index < 0 || index >= RenderLayers.Count)
+                throw new IndexOutOfRangeException("Layer index is out of range.");
+            return RenderLayers[index];*/
+            return null;
+        }
+
+        public List<TilesLayer> GetLayers()
         {
             return Layers;
         }
-
     }
 }

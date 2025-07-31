@@ -17,8 +17,6 @@ namespace WEngine.Scripts.Scenes.Tiles
         public const int ChunkSize = 8 * 16 * 4; // (512) Each chunk is 8x8 tiles, each tile is 16x16 pixels, and each pixel is 4x4 in the game world.
 
 
-
-
         // Stores all the tiles textures by their ID. 0 is empty tile.
         private readonly Dictionary<int, Sprite> textures = new();
 
@@ -109,7 +107,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             GetChunkCoordinates(worldPosition, ref chunkPos);
             TilesChunk chunk = GetChunk(chunkPos);
             
-            if(chunk == null)
+/*            if(chunk == null)
             {
                 Debug.Error(String.Format("Chunk at coordinates [{0}, {1}] not found.", chunkPos.X, chunkPos.Y));
                 tilePos = new Point(-1, -1);
@@ -145,7 +143,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             }
 
             // Not found in any layer
-            tilePos = new Point(-1, -1);
+            tilePos = new Point(-1, -1);*/
         }
 
 

@@ -66,37 +66,6 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             AddChunk(1, -1);
 
-            // Testing tiles rendering
-            return;
-            Entity testEntity = new Entity("TestEntity");
-
-            Texture2D tileTexture = Content.LoadTexture("Assets/Tiles/Tile");
-
-            TilesLayerRenderer layerRenderer = new TilesLayerRenderer(16, 16);
-            testEntity.AddComponent(layerRenderer);
-
-            for (int x = 0; x < TilesLayerRenderer.SizeX; x++)
-            {
-                for (int y = 0; y < TilesLayerRenderer.SizeY; y++)
-                {
-                    layerRenderer.SetTile(x, y, Random.Range(2, 4));
-                }
-            }
-
-            TilesLayerRenderer grassLayerRenderer = new TilesWindLayerRenderer(16, 16);
-            testEntity.AddComponent(grassLayerRenderer);
-            
-            for (int x = 0; x < TilesLayerRenderer.SizeX; x++)
-            {
-                for (int y = 0; y < TilesLayerRenderer.SizeY; y++)
-                {
-                    if(Random.Range(0,4) == 2)
-                    grassLayerRenderer.SetTile(x, y, 4);
-                }
-            }
-
-            AddEntity(testEntity);
-
         }
         public override void Update()
         {

@@ -13,10 +13,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
     {
         private Effect _windEffect;
         private float _time;
-        public TilesWindLayerRenderer(int tileWidth, int tileHeight) : base(tileWidth, tileHeight)
+
+        public TilesWindLayerRenderer(TilesLayer tilesLayer) : base(tilesLayer)
         {
-            
         }
+
         public override void OnAddedToEntity()
         {
             base.OnAddedToEntity();
