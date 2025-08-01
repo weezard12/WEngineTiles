@@ -7,7 +7,6 @@ using UILabel = Nez.UI.Label;
 using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
 using WEngine.Scripts.Scenes.Tiles;
 using WEngine.Scripts.GameLogic.Tiles;
-
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
     internal class CameraInfoDisplay : Component, IUpdatable
@@ -19,14 +18,12 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         private UILabel _tileLabel;
 
         private TilesWorld _tilesWorld;
+        private TilesUserInfo _tilesUserInfo;
 
-        private Point cameraChunk = Point.Zero;
-        private Point mouseChunk = Point.Zero;
-        private Point tilePos = Point.Zero;
-
-        public CameraInfoDisplay(TilesWorld tilesWorld)
+        public CameraInfoDisplay(TilesWorld tilesWorld, TilesUserInfo tilesUserInfo)
         {
             _tilesWorld = tilesWorld;
+            _tilesUserInfo = tilesUserInfo;
         }
 
         public override void OnAddedToEntity()
@@ -68,12 +65,10 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             var mouseWorldPos = Core.Scene.Camera.ScreenToWorldPoint(mouseScreenPos);
             _mouseLabel.SetText($"Mouse Position:\nScreen X={mouseScreenPos.X:0}, Y={mouseScreenPos.Y:0}\nWorld X={mouseWorldPos.X:0}, Y={mouseWorldPos.Y:0}");
 
-            _tilesWorld.GetChunkCoordinates(cameraPos, ref cameraChunk);
-            _tilesWorld.GetChunkCoordinates(mouseWorldPos, ref mouseChunk);
-            _chunkLabel.SetText($"Chunk Info:\nCamera Chunk: X={cameraChunk.X}, Y={cameraChunk.Y}\nMouse Chunk: X={mouseChunk.X}, Y={mouseChunk.Y}");
+            _chunkLabel.SetText($"Chunk Info:\nCamera Chunk: X={_tilesUserInfo.CameraChunk.X}, Y={_tilesUserInfo.CameraChunk.Y}\nMouse Chunk: X={_tilesUserInfo.MouseChunk.X}, Y={_tilesUserInfo.MouseChunk.Y}");
 
-            _tilesWorld.GetTileCordinates(mouseWorldPos, ref tilePos);
-            _tileLabel.SetText($"Selected Tile:\nX={tilePos.X}, Y={tilePos.Y}");
+
+            _tileLabel.SetText($"Selected Tile:\nX={_tilesUserInfo.SelectedTile.X}, Y={_tilesUserInfo.SelectedTile.Y}");
 
             // just for testing
 /*            if(Input.LeftMouseButtonDown)

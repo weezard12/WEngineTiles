@@ -39,12 +39,20 @@ namespace WEngine.Scripts.Scenes.Tiles
             Entity entity = CreateEntity("camera-controller");
             entity.AddComponent(new EditorCameraController());
 
-            // Displays the camera position.
+            // Setting up the user info
+            TilesUserInfo tilesUserInfo = new TilesUserInfo();
+            tilesUserInfo.Name = "tiles-user-info";
+            AddEntity(tilesUserInfo);
+
+            // Displays the camera position and other values.
             var displayEntity = CreateEntity("camera-display");
-            displayEntity.AddComponent(new CameraInfoDisplay(this));
+            displayEntity.AddComponent(new CameraInfoDisplay(this, tilesUserInfo));
 
             // Setting up the camera
             Camera.SetPosition(new Microsoft.Xna.Framework.Vector2(0,0));
+
+
+
 
 
             AddTexture("Assets/Tiles/Tile");
