@@ -80,9 +80,46 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         public override void DebugRender(Batcher batcher)
         {
+            var position = Entity.Transform.Position;
+
+            float scaledTileWidth = _tilesLayer.TileWidth * _tilesLayer._scale;
+            float scaledTileHeight = _tilesLayer.TileHeight * _tilesLayer._scale;
+
+            float startX = position.X - Width / 2f;
+            float startY = position.Y - Height / 2f;
+
+            int cols = _tilesLayer.SizeX;
+            int rows = _tilesLayer.SizeY;
+
+            Color lineColor = Color.Transparent;
+            lineColor.R = 50;
             
 
+            float lineThickness = 2f;
+
+            // Draw vertical lines
+            for (int x = 0; x <= cols; x++)
+            {
+                float xPos = startX + x * scaledTileWidth;
+                batcher.DrawLine(
+                    new Vector2(xPos, startY),
+                    new Vector2(xPos, startY + rows * scaledTileHeight),
+                    lineColor, lineThickness
+                );
+            }
+
+            // Draw horizontal lines
+            for (int y = 0; y <= rows; y++)
+            {
+                float yPos = startY + y * scaledTileHeight;
+                batcher.DrawLine(
+                    new Vector2(startX, yPos),
+                    new Vector2(startX + cols * scaledTileWidth, yPos),
+                    lineColor, lineThickness
+                );
+            }
         }
+
 
         public void Update()
         {
