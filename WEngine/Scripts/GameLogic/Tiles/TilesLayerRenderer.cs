@@ -16,8 +16,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
         private TilesLayer _tilesLayer;
 
 
-        public override float Width => _tilesLayer._tileWidth * _tilesLayer.SizeX * _tilesLayer._scale;
-        public override float Height => _tilesLayer._tileHeight * _tilesLayer.SizeY * _tilesLayer._scale;
+        public override float Width => _tilesLayer.TileWidth * _tilesLayer.SizeX * _tilesLayer._scale;
+        public override float Height => _tilesLayer.TileHeight * _tilesLayer.SizeY * _tilesLayer._scale;
         public override RectangleF Bounds
         {
             get
@@ -46,11 +46,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             var position = Entity.Transform.Position;
 
-            var totalWidth = _tilesLayer._tileWidth * _tilesLayer.SizeX * _tilesLayer._scale;
-            var totalHeight = _tilesLayer._tileHeight * _tilesLayer.SizeY * _tilesLayer._scale;
+            var totalWidth = _tilesLayer.TotalWidth;
+            var totalHeight = _tilesLayer.TotalHeight;
 
-            var startX = position.X - totalWidth / 2f + (_tilesLayer._tileWidth * _tilesLayer._scale) / 2f;
-            var startY = position.Y - totalHeight / 2f + (_tilesLayer._tileHeight * _tilesLayer._scale) / 2f;
+            var startX = position.X - totalWidth / 2f + (_tilesLayer.TileWidth * _tilesLayer._scale) / 2f;
+            var startY = position.Y - totalHeight / 2f + (_tilesLayer.TileHeight * _tilesLayer._scale) / 2f;
 
             for (int y = 0; y < _tilesLayer.SizeY; y++)
             {
@@ -60,8 +60,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
                         continue;
                     
                     var tilePos = new Vector2(
-                        startX + x * _tilesLayer._tileWidth * _tilesLayer._scale,
-                        startY + y * _tilesLayer._tileHeight * _tilesLayer._scale
+                        startX + x * _tilesLayer.TileWidth * _tilesLayer._scale,
+                        startY + y * _tilesLayer.TileHeight * _tilesLayer._scale
                     );
 
                     batcher.Draw(
@@ -69,13 +69,19 @@ namespace WEngine.Scripts.GameLogic.Tiles
                         tilePos,
                         Color.White,
                         rotation: 0f,
-                        origin: new Vector2(_tilesLayer._tileWidth / 2f, _tilesLayer._tileHeight / 2f),
+                        origin: new Vector2(_tilesLayer.TileWidth / 2f, _tilesLayer.TileHeight / 2f),
                         scale: _tilesLayer._scale,
                         effects: SpriteEffects.None,
                         layerDepth: 0f
                     );
                 }
             }
+        }
+
+        public override void DebugRender(Batcher batcher)
+        {
+            
+
         }
 
         public void Update()
