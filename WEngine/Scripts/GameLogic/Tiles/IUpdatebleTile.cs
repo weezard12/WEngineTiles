@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace WEngine.Scripts.GameLogic.Tiles
 {
-    internal class Tile
+    internal interface IUpdatebleTile
     {
-        int Id { get; set; }
-
-        public int TextureId { get; set; } = 0;
+        public void Update();
     }
 }

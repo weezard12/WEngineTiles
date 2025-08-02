@@ -16,51 +16,8 @@ namespace WEngine.Scripts.Scenes.Tiles
         // Constant Values
         public const int ChunkSize = 8 * 16 * 4; // (512) Each chunk is 8x8 tiles, each tile is 16x16 pixels, and each pixel is 4x4 in the game world.
 
-        // Stores all the tiles textures by their ID. 0 is empty tile.
-        private readonly Dictionary<int, Sprite> textures = new();
-
-        public Sprite GetTexture(int id)
-        {
-            if(textures.TryGetValue(id, out var texture))
-            {
-                return texture;
-            }
-            Debug.Error($"Texture with ID {id} not found.");
-            return null;
-        }
-
-        protected void AddTexture(int id, Texture2D texture)
-        {
-            if(!textures.ContainsKey(id))
-            {
-                textures[id] = new Sprite(texture);
-            }
-            else
-            {
-                Debug.Error($"Texture with ID {id} already exists.");
-            }
-        }
-        protected void AddTexture(string texturePath)
-        {
-            int id = GetNextAvailableTextureId();
-            try
-            {
-                AddTexture(id, Content.LoadTexture(texturePath));
-            }
-            catch(Exception ex)
-            {
-                Debug.Error($"Error loading texture:{texturePath}\n{ex.Message}");
-            }
-        }
-
-        private int GetNextAvailableTextureId()
-        {
-            int id = 1;
-            while (textures.ContainsKey(id))
-                id++;
-            return id;
-        }
-
+        // Manages all of the rendering in the game world.
+        public RenderingManager RenderingManager { get; private set; }
 
         List<TilesChunk> Chunks { get; set; } = new List<TilesChunk>();
 
@@ -94,10 +51,13 @@ namespace WEngine.Scripts.Scenes.Tiles
         }
 
         // TODO improve this method to be more efficient (maby add all tiles to a set, this method of finding the entity is not efficient)
+        public TilesChunk GetChunk(int x, int y)
+        {
+            return (TilesChunk)FindEntity($"TilesChunk_{x}_{y}");
+        }
         public TilesChunk GetChunk(Point coordinates)
         {
-            
-            return (TilesChunk) FindEntity($"TilesChunk_{coordinates.X}_{coordinates.Y}");
+            return GetChunk(coordinates.X, coordinates.Y);
         }
 
         public void GetTileCordinates(Vector2 worldPosition, ref Point tilePos)
@@ -145,5 +105,13 @@ namespace WEngine.Scripts.Scenes.Tiles
             tilePos = new Point(-1, -1);
         }
 
+
+        public override void OnStart()
+        {
+            base.OnStart();
+
+            RenderingManager = new RenderingManager();
+            AddEntity(RenderingManager);
+        }
     }
 }
