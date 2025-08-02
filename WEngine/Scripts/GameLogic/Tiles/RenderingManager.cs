@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace WEngine.Scripts.GameLogic.Tiles
 {
+    // TODO mabey move the `Tiles` to the `TilesWorld` class. Since this call needs to contain only rendering stuff.
     internal class RenderingManager : Entity, IUpdatable
     {
         // Stores all the tiles textures by their ID. 0 is empty tile.
@@ -40,7 +41,9 @@ namespace WEngine.Scripts.GameLogic.Tiles
             AddTile(new Tile { TextureId = 3 });
             AddTile(new Tile { TextureId = 4 });
 
-            AddTile(new AnimatedTile { TextureId = 4 });
+            AnimatedTile animatedTile = new AnimatedTile { TextureId = 2, Frames = {5,6,7} };
+
+            AddTile(animatedTile);
         }
 
 
@@ -52,12 +55,10 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 // If it is, we get the tile from the tileset.
 
             }
+
             // If it is not part of a tileset, we check if it is a regular tile.
-
-
             if (Tiles.TryGetValue(id, out var tile))
             {
-                tile.TextureId = id;
                 if(Sprites.TryGetValue(tile.TextureId, out var sprite))
                     return sprite;
             }
@@ -69,7 +70,17 @@ namespace WEngine.Scripts.GameLogic.Tiles
         #region Adding Tiles
         public void AddTile(Tile tile)
         {
-            Tiles.Add(GetNextAvailableTileId(), tile);
+            int tileId = GetNextAvailableTileId();
+            tile.Id = tileId;
+            Tiles.Add(tileId, tile);
+
+            // If the tile has an animation it will start the animation coroutine.
+            if (tile is AnimatedTile animatedTile)
+            {
+                var coroutine = Core.StartCoroutine(animatedTile.Animate());
+            }
+
+            Debug.Log("Added: " + tile.ToString());
         }
         private int GetNextAvailableTileId()
         {
@@ -77,7 +88,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 Tiles.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value),
                 Tilesets.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value)
-            }, 0);
+            }, 1);
         }
         #endregion
 

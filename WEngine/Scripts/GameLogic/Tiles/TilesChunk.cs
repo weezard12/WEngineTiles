@@ -23,7 +23,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             AddLayer(new TilesLayer());
 ;
-            TilesLayer tilesLayer = GetLayers()[0];
+/*            TilesLayer tilesLayer = GetLayers()[0];
             // For testing purposes, we will create a single layer
 
             for (int y = 0; y < tilesLayer.SizeX; y++)
@@ -34,7 +34,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
                     int tileId = Random.Range(1, 3);
                     tilesLayer.SetTile(x, y, tileId);
                 }
-            }
+            }*/
 
 
         }
