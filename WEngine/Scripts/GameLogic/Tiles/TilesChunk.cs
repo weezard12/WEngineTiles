@@ -31,7 +31,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 for (int x = 0; x < tilesLayer.SizeY; x++)
                 {
                     // Randomly select a tile ID for testing
-                    int tileId = Random.Range(2, 4);
+                    int tileId = Random.Range(1, 3);
                     tilesLayer.SetTile(x, y, tileId);
                 }
             }

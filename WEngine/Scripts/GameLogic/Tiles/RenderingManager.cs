@@ -22,9 +22,25 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             base.OnAddedToScene();
 
+            AddTexture("Assets/Tiles/Tile");
+            AddTexture("Assets/Tiles/Kaftor_Grass");
+            AddTexture("Assets/Tiles/Kaftor_Grass2");
+            AddTexture("Assets/Tiles/Kaftor_Bush");
+
+            AddTexture("Assets/Tiles/buttom_left");
+            AddTexture("Assets/Tiles/buttom_right");
+            AddTexture("Assets/Tiles/top_left");
+            AddTexture("Assets/Tiles/top_right");
+            AddTexture("Assets/Tiles/full");
+
             // For testing
-            Tiles.Add(1, new Tile { TextureId = 0 });
-            Tiles.Add(2, new Tile { TextureId = 2 });
+            AddTile(new Tile { TextureId = 0 });
+            AddTile(new Tile { TextureId = 1 });
+            AddTile(new Tile { TextureId = 2 });
+            AddTile(new Tile { TextureId = 3 });
+            AddTile(new Tile { TextureId = 4 });
+
+            AddTile(new AnimatedTile { TextureId = 4 });
         }
 
 
@@ -49,6 +65,21 @@ namespace WEngine.Scripts.GameLogic.Tiles
             Debug.Error($"Tile with ID {id} not found.");
             return null;
         }
+
+        #region Adding Tiles
+        public void AddTile(Tile tile)
+        {
+            Tiles.Add(GetNextAvailableTileId(), tile);
+        }
+        private int GetNextAvailableTileId()
+        {
+            return GetNextAvailableIdAcrossCollections(new IDictionary<int, object>[]
+            {
+                Tiles.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value),
+                Tilesets.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value)
+            }, 0);
+        }
+        #endregion
 
         #region Adding Textures
         protected void AddTexture(int id, Texture2D texture)
@@ -75,11 +106,54 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
         }
 
+
         private int GetNextAvailableTextureId()
         {
-            int id = 1;
-            while (Sprites.ContainsKey(id))
+            return GetNextAvailableId(Sprites, 0);
+        }
+        #endregion
+
+        #region Collections utils (for getting free IDs)
+        /// <summary>
+        /// Gets the next available ID for any collection that uses integer keys
+        /// </summary>
+        /// <typeparam name="T">The value type of the collection</typeparam>
+        /// <param name="collection">The collection to check for available IDs</param>
+        /// <param name="startId">The starting ID to begin searching from (default: 0)</param>
+        /// <returns>The next available integer ID</returns>
+        private int GetNextAvailableId<T>(IDictionary<int, T> collection, int startId = 0)
+        {
+            int id = startId;
+            while (collection.ContainsKey(id))
                 id++;
+            return id;
+        }
+        /// <summary>
+        /// Gets the next available ID from multiple collections simultaneously
+        /// Ensures the returned ID is not used in any of the provided collections
+        /// </summary>
+        /// <param name="collections">Array of collections to check</param>
+        /// <param name="startId">The starting ID to begin searching from (default: 0)</param>
+        /// <returns>The next available integer ID across all collections</returns>
+        private int GetNextAvailableIdAcrossCollections(IDictionary<int, object>[] collections, int startId = 0)
+        {
+            int id = startId;
+            bool idExists;
+
+            do
+            {
+                idExists = false;
+                foreach (var collection in collections)
+                {
+                    if (collection.ContainsKey(id))
+                    {
+                        idExists = true;
+                        break;
+                    }
+                }
+                if (idExists) id++;
+            } while (idExists);
+
             return id;
         }
         #endregion

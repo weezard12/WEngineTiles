@@ -80,10 +80,10 @@ namespace WEngine.Scripts.Scenes.Tiles
             AddChunk(1, -1);
 
             // Testing tilesets
-            TilesChunk chunk = GetChunk(0, 0);
+/*            TilesChunk chunk = GetChunk(0, 0);
             TilesLayer layer = new TilesLayer();
             layer.SetTile(0, 0, 5);
-            chunk.AddLayer(layer);
+            chunk.AddLayer(layer);*/
         }
         public override void Update()
         {

@@ -65,7 +65,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
                     );
 
                     batcher.Draw(
-                        ((TilesWorld)Entity.Scene).GetTexture(_tilesLayer.GetTile(x, y)),
+                        ((TilesWorld)Entity.Scene).RenderingManager.GetTexture(_tilesLayer.GetTile(x, y)),
                         tilePos,
                         Color.White,
                         rotation: 0f,
