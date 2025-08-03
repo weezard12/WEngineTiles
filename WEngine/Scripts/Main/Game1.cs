@@ -26,7 +26,7 @@ namespace WEngine.Scripts.Main
         {
             IsMouseVisible = true;
             Window.AllowUserResizing = true;
-            
+            Window.Title = "WEngine - Tiles";
         }
 
         protected override void Initialize()

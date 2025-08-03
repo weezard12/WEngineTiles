@@ -57,6 +57,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         // This method should be called only from the World so it can update the necessary stuff.
         public void SetTile(int x, int y, int value, bool checkForTileset = true)
         {
+            // TODO use a loop for checking. make it so it can get tiles from other layers.
             if (checkForTileset)
             {
                 Tileset tileset = ((TilesWorld)Entity.Scene).RenderingManager.GetTilesetForTile(value);
