@@ -57,30 +57,103 @@ namespace WEngine.Scripts.GameLogic.Tiles
         // This method should be called only from the World so it can update the necessary stuff.
         public void SetTile(int x, int y, int value, bool checkForTileset = true)
         {
-            if (checkForTileset) {
+            if (checkForTileset)
+            {
                 Tileset tileset = ((TilesWorld)Entity.Scene).RenderingManager.GetTilesetForTile(value);
-                if(tileset != null)
+                if (tileset != null)
                 {
-                    int[,] serroundingTiles = new int[3, 3];
-                    for (int i = 0; i < 3; i++)
-                    {
-                        for (int j = 0; j < 3; j++)
-                        {
-                            serroundingTiles[i, j] = GetTile(x + j - 1, y + i - 1);
-                        }
-                    }
+                    // Sets the current tile based on the tileset
+                    int[,] serroundingTiles = GetSurroundingTiles(x, y);
                     int tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                    //Debug.Log("V:" + tilesetValue);
                     _tiles[y, x] = tilesetValue;
+
+                    // Top-Left
+                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x - 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x - 1, y - 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y - 1, x - 1] = tilesetValue;
+                    }
+
+                    // Top
+                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x, y - 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y - 1, x] = tilesetValue;
+                    }
+
+                    // Top-Right
+                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x + 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x + 1, y - 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y - 1, x + 1] = tilesetValue;
+                    }
+
+                    // Left
+                    if (tileset.IsTilesetContainsTile(_tiles[y, x - 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x - 1, y);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y, x - 1] = tilesetValue;
+                    }
+
+                    // Right
+                    if (tileset.IsTilesetContainsTile(_tiles[y, x + 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x + 1, y);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y, x + 1] = tilesetValue;
+                    }
+
+                    // Bottom-Left
+                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x - 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x - 1, y + 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y + 1, x - 1] = tilesetValue;
+                    }
+
+                    // Bottom
+                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x, y + 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y + 1, x] = tilesetValue;
+                    }
+
+                    // Bottom-Right
+                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x + 1]))
+                    {
+                        serroundingTiles = GetSurroundingTiles(x + 1, y + 1);
+                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
+                        _tiles[y + 1, x + 1] = tilesetValue;
+                    }
+
                     return;
                 }
             }
+
 
             _tiles[y, x] = value;
         }
         public void SetTile(Point point, int value)
         {
             SetTile(point.X, point.Y, value);
+        }
+
+        private int[,] GetSurroundingTiles(int x, int y)
+        {
+            int[,] serroundingTiles = new int[3, 3];
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    serroundingTiles[i, j] = GetTile(x + j - 1, y + i - 1);
+                }
+            }
+            return serroundingTiles;
         }
     }
 }
