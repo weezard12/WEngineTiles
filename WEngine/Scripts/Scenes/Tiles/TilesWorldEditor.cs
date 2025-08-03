@@ -82,18 +82,27 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Testing tilesets
             TilesChunk chunk = GetChunk(0, 0);
             TilesLayer layer = new TilesLayer();
-            for (int i = 0; i < 7; i++)
+            chunk.AddLayer(layer);
+/*            for (int i = 0; i < 7; i++)
             {
                 layer.SetTile(0, i, i);
-            }
+            }*/
 
             for (int i = 0; i < 5; i++)
             {
-                layer.SetTile(1, i, i+5);
+                layer.SetTile(1, i+1, i+5);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                layer.SetTile(2, i+1, i + 5);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                layer.SetTile(3, i+1, i + 5);
             }
 
 
-            chunk.AddLayer(layer);
+
         }
         public override void Update()
         {

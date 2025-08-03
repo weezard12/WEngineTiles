@@ -18,7 +18,22 @@ namespace WEngine.Scripts.GameLogic.Tiles
         private readonly Dictionary<int, Sprite> Sprites = new();
         private readonly Dictionary<int, Tile> Tiles = new();
 
-        private readonly Dictionary<int, Tileset> Tilesets = new();
+        private readonly List<Tileset> Tilesets = new();
+
+        public RenderingManager()
+        {
+            // Testing tilesets (TODO move this logic to TilesWorld)
+            Tileset tileset = new Tileset();
+
+            tileset.SetTiles(new int[3, 3]
+            {
+                { 7, 9, 8 },
+                { 9, 9, 9 },
+                { 5, 9, 6 }
+            });
+
+            AddTileset(tileset);
+        }
 
         public override void OnAddedToScene()
         {
@@ -62,33 +77,23 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             AddTile(animatedWaterTile);
 
-            // Testing tilesets
-            Tileset tileset = new Tileset
-            {
-                Tiles = new int[3, 3]
-                {
-                    { 7, 9, 8 },
-                    { 9, 9, 9 },
-                    { 5, 9, 6 }
-                }
-            };
-            AddTileset(tileset);
+
         }
 
 
         public Sprite GetTexture(int id)
         {
             // First we check if this tile is part of a tileset.
-            if (Tilesets.TryGetValue(id, out var tileset))
+/*            if (Tilesets.TryGetValue(id, out var tileset))
             {
                 // If it is, we get the tile from the tileset.
                 
-/*                if (Tiles.TryGetValue(id, out var tile))
+*//*                if (Tiles.TryGetValue(id, out var tile))
                 {
                     if (Sprites.TryGetValue(tile.TextureId, out var sprite))
                         return sprite;
-                }*/
-            }
+                }*//*
+            }*/
 
             // If it is not part of a tileset, we check if it is a regular tile.
             if (Tiles.TryGetValue(id, out var tile))
@@ -101,23 +106,27 @@ namespace WEngine.Scripts.GameLogic.Tiles
             return null;
         }
 
+        internal Tileset GetTilesetForTile(int value)
+        {
+            foreach (var tileset in Tilesets)
+            {
+                if (tileset.IsTilesetContainsTile(value))
+                {
+                    return tileset;
+                }
+            }
+            return null;
+        }
+
         #region Adding Tilesets
         public void AddTileset(Tileset tileset)
         {
-            int tilesetId = GetNextAvailableTilesetId();
-            tileset.Id = tilesetId;
-            Tilesets.Add(tilesetId, tileset);
+
+            Tilesets.Add(tileset);
 
             Debug.Log("Added: " + tileset.ToString());
         }
-        private int GetNextAvailableTilesetId()
-        {
-            return GetNextAvailableIdAcrossCollections(new IDictionary<int, object>[]
-            {
-                Tiles.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value),
-                Tilesets.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value)
-            }, 1);
-        }
+
         #endregion
 
         #region Adding Tiles
@@ -140,7 +149,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             return GetNextAvailableIdAcrossCollections(new IDictionary<int, object>[]
             {
                 Tiles.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value),
-                Tilesets.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value)
+
             }, 1);
         }
         #endregion
