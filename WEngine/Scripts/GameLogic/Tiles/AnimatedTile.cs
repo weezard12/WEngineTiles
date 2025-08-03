@@ -18,7 +18,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             while (true)
             {
-                yield return Coroutine.WaitForSeconds(1 / FrameRate);
+                yield return Coroutine.WaitForSeconds(1f / FrameRate);
                 TextureId = Frames[CurrentFrameIndex % Frames.Count];
                 CurrentFrameIndex++;
             }
