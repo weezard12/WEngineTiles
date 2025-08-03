@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.Main.Utils;
 
 namespace WEngine.Scripts.GameLogic.Tiles
 {
@@ -34,16 +35,44 @@ namespace WEngine.Scripts.GameLogic.Tiles
             AddTexture("Assets/Tiles/top_right");
             AddTexture("Assets/Tiles/full");
 
+            // Testing sprite sheet loading.
+            Texture2D spriteSheet = Scene.Content.Load<Texture2D>("Assets/Tiles/water sprite sheet");
+
+            // Get all sprites from the sheet
+            Sprite[,] allSprites = SpriteSheetUtils.GetSprites(spriteSheet, 16, 16);
+
+            foreach (var sprite in allSprites)
+            {
+                AddTexture(sprite);
+            }
+
             // For testing
             AddTile(new Tile { TextureId = 0 });
             AddTile(new Tile { TextureId = 1 });
             AddTile(new Tile { TextureId = 2 });
             AddTile(new Tile { TextureId = 3 });
+
             AddTile(new Tile { TextureId = 4 });
+            AddTile(new Tile { TextureId = 5 });
+            AddTile(new Tile { TextureId = 6 });
+            AddTile(new Tile { TextureId = 7 });
+            AddTile(new Tile { TextureId = 8 });
 
-            AnimatedTile animatedTile = new AnimatedTile { TextureId = 2, Frames = {5,6,7} };
+            AnimatedTile animatedWaterTile = new AnimatedTile { TextureId = 2, Frames = {11, 12, 13}, FrameRate = 4 };
 
-            AddTile(animatedTile);
+            AddTile(animatedWaterTile);
+
+            // Testing tilesets
+            Tileset tileset = new Tileset
+            {
+                Tiles = new int[3, 3]
+                {
+                    { 7, 9, 8 },
+                    { 9, 9, 9 },
+                    { 5, 9, 6 }
+                }
+            };
+            AddTileset(tileset);
         }
 
 
@@ -53,7 +82,12 @@ namespace WEngine.Scripts.GameLogic.Tiles
             if (Tilesets.TryGetValue(id, out var tileset))
             {
                 // If it is, we get the tile from the tileset.
-
+                
+/*                if (Tiles.TryGetValue(id, out var tile))
+                {
+                    if (Sprites.TryGetValue(tile.TextureId, out var sprite))
+                        return sprite;
+                }*/
             }
 
             // If it is not part of a tileset, we check if it is a regular tile.
@@ -66,6 +100,25 @@ namespace WEngine.Scripts.GameLogic.Tiles
             Debug.Error($"Tile with ID {id} not found.");
             return null;
         }
+
+        #region Adding Tilesets
+        public void AddTileset(Tileset tileset)
+        {
+            int tilesetId = GetNextAvailableTilesetId();
+            tileset.Id = tilesetId;
+            Tilesets.Add(tilesetId, tileset);
+
+            Debug.Log("Added: " + tileset.ToString());
+        }
+        private int GetNextAvailableTilesetId()
+        {
+            return GetNextAvailableIdAcrossCollections(new IDictionary<int, object>[]
+            {
+                Tiles.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value),
+                Tilesets.ToDictionary(kvp => kvp.Key, kvp => (object)kvp.Value)
+            }, 1);
+        }
+        #endregion
 
         #region Adding Tiles
         public void AddTile(Tile tile)
@@ -93,17 +146,28 @@ namespace WEngine.Scripts.GameLogic.Tiles
         #endregion
 
         #region Adding Textures
-        protected void AddTexture(int id, Texture2D texture)
+
+        protected void AddTexture(int id, Sprite sprite)
         {
             if (!Sprites.ContainsKey(id))
             {
-                Sprites[id] = new Sprite(texture);
+                Sprites[id] = sprite;
             }
             else
             {
                 Debug.Error($"Texture with ID {id} already exists.");
             }
         }
+        protected void AddTexture(Sprite sprite)
+        {
+            int id = GetNextAvailableTextureId();
+            AddTexture(id, sprite);
+        }
+        protected void AddTexture(int id, Texture2D texture)
+        {
+            AddTexture(id, new Sprite(texture));
+        }
+
         protected void AddTexture(string texturePath)
         {
             int id = GetNextAvailableTextureId();

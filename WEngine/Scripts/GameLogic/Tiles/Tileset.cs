@@ -8,6 +8,9 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class Tileset
     {
+        public int Id { get; set; }
+
+        public int[,] Tiles { get; set; } = new int[3, 3];
 
 
         public Tile GetTileBasedOnSerroundings(int[,] surrounding)

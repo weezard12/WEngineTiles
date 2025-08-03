@@ -14,7 +14,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
     /// </summary>
     internal class TilesLayer : Component
     {
-        // The layer ID, used to identify the layer and its the smae as the
+        // The layer ID, used to identify the layer, and its the smae as the render layer
         public int Id { get; private set; }
 
         public int SizeX = 8;

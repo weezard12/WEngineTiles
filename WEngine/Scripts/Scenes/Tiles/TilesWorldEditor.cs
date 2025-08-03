@@ -86,7 +86,13 @@ namespace WEngine.Scripts.Scenes.Tiles
             {
                 layer.SetTile(0, i, i);
             }
-            
+
+            for (int i = 0; i < 5; i++)
+            {
+                layer.SetTile(1, i, i+5);
+            }
+
+
             chunk.AddLayer(layer);
         }
         public override void Update()
