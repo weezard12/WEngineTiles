@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework.Input;
 using Nez;
 using System;
+using System.Linq;
+using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
 {
@@ -51,6 +54,17 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             {
                 camera.Position = Vector2.Zero;
                 camera.Zoom = defaultZoom;
+            }
+
+            // just for testing
+            if (Input.LeftMouseButtonDown)
+            {
+                TilesWorld world = (TilesWorld)Entity.Scene;
+                TilesUserInfo userInfo = (TilesUserInfo) world.FindEntity("tiles-user-info");
+
+                TilesChunk chunk = world.GetChunk(userInfo.MouseChunk);
+                chunk.GetLayers().Last().SetTile(userInfo.SelectedTile, 7);
+
             }
         }
     }

@@ -70,17 +70,6 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
 
             _tileLabel.SetText($"Selected Tile:\nX={_tilesUserInfo.SelectedTile.X}, Y={_tilesUserInfo.SelectedTile.Y}");
 
-            // just for testing
-/*            if(Input.LeftMouseButtonDown)
-            {
-                TilesChunk chunk = _tilesWorld.GetChunk(mouseChunk);
-                chunk.GetLayers().ForEach(layer =>
-                {
-                    layer.SetTile(tilePos.X, tilePos.Y, 1);
-                });
-            }*/
-            
-
         }
     }
 }
