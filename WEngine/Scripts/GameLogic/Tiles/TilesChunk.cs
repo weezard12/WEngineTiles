@@ -14,12 +14,19 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public List<TilesLayer> Layers { get; private set; } = new List<TilesLayer>();
 
         public List<TilesLayerRenderer> RenderLayers { get; private set; } = new List<TilesLayerRenderer>();
+        
+        public readonly int idX;
+        public readonly int idY;
 
-
-        public TilesChunk(int idX, int idY) : base($"TilesChunk_{idX}_{idY}")
+        public TilesChunk(int idX, int idY)
         {
             // sets the position of the chunk in the game world
             Transform.SetPosition(ChunkSize * idX, ChunkSize * idY);
+
+            this.idX = idX;
+            this.idX = idY;
+
+            Name = GetChunkEntityName(idX, idY);
 
             AddLayer(new TilesLayer());
 ;
@@ -43,6 +50,10 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public void AddLayer(TilesLayer layer)
         {
             Layers.Add(layer);
+
+            // Sets the layer id. TODO change this to actually work better
+            layer.Id = Layers.Count - 1;
+
             AddComponent(layer);
 
             TilesLayerRenderer renderLayer = new TilesLayerRenderer(layer);
@@ -60,6 +71,16 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public List<TilesLayer> GetLayers()
         {
             return Layers;
+        }
+
+        public TilesLayer GetLayer(int layerId)
+        {
+            return Layers.Find(layer => layer.Id == layerId);
+        }
+
+        public static string GetChunkEntityName(int x, int y)
+        {
+            return $"TilesChunk_{x}_{y}";
         }
     }
 }

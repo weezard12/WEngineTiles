@@ -16,7 +16,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
     internal class TilesLayer : Component
     {
         // The layer ID, used to identify the layer, and its the smae as the render layer
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         public int SizeX = 8;
         public int SizeY = 8;
@@ -44,6 +44,21 @@ namespace WEngine.Scripts.GameLogic.Tiles
             if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
             {
                 Debug.Error($"Tile coordinates [{x}, {y}] are out of range for layer size [{SizeX}, {SizeY}]. Returning 0.");
+
+                // If the tile is out of this layer bounds we will try to get if from the adjacent layer
+                TilesChunk chunk = (TilesChunk) Entity;
+                TilesWorld world = (TilesWorld) Entity.Scene;
+
+                TilesChunk adjacentChunk = world.GetChunk(chunk.idX, chunk.idY-1);
+                if (adjacentChunk == null)
+                    return 0;
+
+                TilesLayer adjacentLayer = adjacentChunk.GetLayer(Id);
+                if (adjacentChunk == null)
+                    return 0;
+
+
+
                 return 0;
             }
                 
@@ -63,74 +78,39 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 Tileset tileset = ((TilesWorld)Entity.Scene).RenderingManager.GetTilesetForTile(value);
                 if (tileset != null)
                 {
-                    // Sets the current tile based on the tileset
-                    int[,] serroundingTiles = GetSurroundingTiles(x, y);
-                    int tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                    _tiles[y, x] = tilesetValue;
+                    // Set the current tile based on the tileset
+                    int[,] surroundingTiles = GetSurroundingTiles(x, y);
+                    int tilesetValue = tileset.GetTileBasedOnSerroundings(surroundingTiles);
+                    SetTile(x, y, tilesetValue, false);
 
-                    // Top-Left
-                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x - 1]))
+                    // Define relative positions for 8 surrounding tiles
+                    (int dx, int dy)[] directions = new (int, int)[]
                     {
-                        serroundingTiles = GetSurroundingTiles(x - 1, y - 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y - 1, x - 1] = tilesetValue;
+                        (-1, -1), // Top-Left
+                        ( 0, -1), // Top
+                        ( 1, -1), // Top-Right
+                        (-1,  0), // Left
+                        ( 1,  0), // Right
+                        (-1,  1), // Bottom-Left
+                        ( 0,  1), // Bottom
+                        ( 1,  1)  // Bottom-Right
+                    };
+
+                    foreach (var (dx, dy) in directions)
+                    {
+                        int nx = x + dx;
+                        int ny = y + dy;
+
+
+                        if (tileset.IsTilesetContainsTile(GetTile(nx, ny)))
+                        {
+                            surroundingTiles = GetSurroundingTiles(nx, ny);
+                            tilesetValue = tileset.GetTileBasedOnSerroundings(surroundingTiles);
+                            SetTile(nx, ny, tilesetValue, false);
+                        }
+                        
                     }
 
-                    // Top
-                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x, y - 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y - 1, x] = tilesetValue;
-                    }
-
-                    // Top-Right
-                    if (tileset.IsTilesetContainsTile(_tiles[y - 1, x + 1]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x + 1, y - 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y - 1, x + 1] = tilesetValue;
-                    }
-
-                    // Left
-                    if (tileset.IsTilesetContainsTile(_tiles[y, x - 1]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x - 1, y);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y, x - 1] = tilesetValue;
-                    }
-
-                    // Right
-                    if (tileset.IsTilesetContainsTile(_tiles[y, x + 1]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x + 1, y);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y, x + 1] = tilesetValue;
-                    }
-
-                    // Bottom-Left
-                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x - 1]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x - 1, y + 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y + 1, x - 1] = tilesetValue;
-                    }
-
-                    // Bottom
-                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x, y + 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y + 1, x] = tilesetValue;
-                    }
-
-                    // Bottom-Right
-                    if (tileset.IsTilesetContainsTile(_tiles[y + 1, x + 1]))
-                    {
-                        serroundingTiles = GetSurroundingTiles(x + 1, y + 1);
-                        tilesetValue = tileset.GetTileBasedOnSerroundings(serroundingTiles);
-                        _tiles[y + 1, x + 1] = tilesetValue;
-                    }
 
                     return;
                 }
