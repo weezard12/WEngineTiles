@@ -131,8 +131,32 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 Debug.Error($"Tile coordinates [{x}, {y}] are out of range for layer size [{SizeX}, {SizeY}].");
 
-                // DOTO implement logic for placing the tile on adjacent layer
+                // If the tile is out of this layer bounds we will try to get if from the adjacent layer
+                TilesChunk chunk = (TilesChunk)Entity;
+                TilesWorld world = (TilesWorld)Entity.Scene;
 
+                // TODO add module to the coordinates so it can wrap around farther chunks.
+                int offsetX = x < 0 ? -1 : (x >= SizeX ? 1 : 0);
+                int offsetY = y < 0 ? -1 : (y >= SizeY ? 1 : 0);
+
+                TilesChunk adjacentChunk = world.GetChunk(chunk.idX + offsetX, chunk.idY + offsetY);
+                if (adjacentChunk == null)
+                    return;
+
+                TilesLayer adjacentLayer = adjacentChunk.GetLayer(Id);
+                if (adjacentLayer == null)
+                    return;
+
+                if (!AreLayersWithSameProperties(this, adjacentLayer))
+                    return;
+
+                int wrappedX = (x + SizeX) % SizeX;
+                int wrappedY = (y + SizeY) % SizeY;
+
+                Debug.Warn($"Trying to fetch adjacent layer coordinates [{wrappedX}, {wrappedY}] in chunk [{adjacentChunk.idX}, {adjacentChunk.idY}].");
+
+                // Recursive call to safely fetch from wrapped adjacent layer
+                adjacentLayer.SetTile(wrappedX, wrappedY, value, checkForTileset);
                 return;
             }
             _tiles[y, x] = value;
