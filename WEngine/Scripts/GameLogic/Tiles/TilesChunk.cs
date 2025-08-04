@@ -24,7 +24,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             Transform.SetPosition(ChunkSize * idX, ChunkSize * idY);
 
             this.idX = idX;
-            this.idX = idY;
+            this.idY = idY;
 
             Name = GetChunkEntityName(idX, idY);
 
@@ -75,7 +75,12 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         public TilesLayer GetLayer(int layerId)
         {
-            return Layers.Find(layer => layer.Id == layerId);
+            foreach (var layer in Layers)
+            {
+                if (layer.Id == layerId)
+                    return layer;
+            }
+            return null;
         }
 
         public static string GetChunkEntityName(int x, int y)

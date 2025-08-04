@@ -43,23 +43,34 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
             {
-                Debug.Error($"Tile coordinates [{x}, {y}] are out of range for layer size [{SizeX}, {SizeY}]. Returning 0.");
+                Debug.Error($"Tile coordinates [{x}, {y}] are out of range for layer size [{SizeX}, {SizeY}].");
 
                 // If the tile is out of this layer bounds we will try to get if from the adjacent layer
                 TilesChunk chunk = (TilesChunk) Entity;
                 TilesWorld world = (TilesWorld) Entity.Scene;
 
-                TilesChunk adjacentChunk = world.GetChunk(chunk.idX, chunk.idY-1);
+                // TODO add module to the coordinates so it can wrap around farther chunks.
+                int offsetX = x < 0 ? -1 : (x >= SizeX ? 1 : 0);
+                int offsetY = y < 0 ? -1 : (y >= SizeY ? 1 : 0);
+
+                TilesChunk adjacentChunk = world.GetChunk(chunk.idX + offsetX, chunk.idY + offsetY);
                 if (adjacentChunk == null)
                     return 0;
 
                 TilesLayer adjacentLayer = adjacentChunk.GetLayer(Id);
-                if (adjacentChunk == null)
+                if (adjacentLayer == null)
                     return 0;
 
+                if (!AreLayersWithSameProperties(this, adjacentLayer))
+                    return 0;
+                
+                int wrappedX = (x + SizeX) % SizeX;
+                int wrappedY = (y + SizeY) % SizeY;
 
+                Debug.Warn($"Trying to fetch adjacent layer coordinates [{wrappedX}, {wrappedY}] in chunk [{adjacentChunk.idX}, {adjacentChunk.idY}].");
 
-                return 0;
+                // Recursive call to safely fetch from wrapped adjacent layer
+                return adjacentLayer.GetTile(wrappedX, wrappedY);
             }
                 
             return _tiles[y, x];
@@ -82,7 +93,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
                     int[,] surroundingTiles = GetSurroundingTiles(x, y);
                     int tilesetValue = tileset.GetTileBasedOnSerroundings(surroundingTiles);
                     SetTile(x, y, tilesetValue, false);
-
+                    
                     // Define relative positions for 8 surrounding tiles
                     (int dx, int dy)[] directions = new (int, int)[]
                     {
@@ -116,7 +127,14 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 }
             }
 
+            if(!InLayerBounds(x, y))
+            {
+                Debug.Error($"Tile coordinates [{x}, {y}] are out of range for layer size [{SizeX}, {SizeY}].");
 
+                // DOTO implement logic for placing the tile on adjacent layer
+
+                return;
+            }
             _tiles[y, x] = value;
         }
         public void SetTile(Point point, int value)
@@ -135,6 +153,28 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 }
             }
             return serroundingTiles;
+        }
+
+
+        public static bool AreLayersWithSameProperties(TilesLayer layer1, TilesLayer layer2)
+        {
+            if(layer1.SizeX != layer2.SizeX)
+                return false;
+            if(layer1.SizeY != layer2.SizeY)
+                return false;
+            if(layer1.TileWidth != layer2.TileWidth)
+                return false;
+            if(layer1.TileHeight != layer2.TileHeight)
+                return false;
+            if(layer1._scale != layer2._scale)
+                return false;
+
+            return true;
+        }
+
+        public bool InLayerBounds(int x, int y)
+        {
+            return x >= 0 && x < SizeX && y >= 0 && y < SizeY;
         }
     }
 }
