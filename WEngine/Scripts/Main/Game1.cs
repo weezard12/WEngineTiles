@@ -55,7 +55,7 @@ namespace WEngine.Scripts.Main
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             var imGuiManager = new ImGuiManager();
-            //RegisterGlobalManager(imGuiManager);
+            RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
             //imGuiManager.SetEnabled(true);

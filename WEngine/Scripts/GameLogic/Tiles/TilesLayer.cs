@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Tiles.Tilesets;
 using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.Tiles
@@ -39,6 +40,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             _tiles = new int[SizeY, SizeX];
         }
 
+        #region Get Tiles
         public int GetTile(int x, int y)
         {
             if (x < 0 || x >= SizeX || y < 0 || y >= SizeY)
@@ -49,7 +51,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 TilesChunk chunk = (TilesChunk) Entity;
                 TilesWorld world = (TilesWorld) Entity.Scene;
 
-                // TODO add module to the coordinates so it can wrap around farther chunks.
                 int offsetX = x < 0 ? -1 : (x >= SizeX ? 1 : 0);
                 int offsetY = y < 0 ? -1 : (y >= SizeY ? 1 : 0);
 
@@ -80,10 +81,23 @@ namespace WEngine.Scripts.GameLogic.Tiles
             return GetTile(point.X, point.Y);
         }
 
-        // This method should be called only from the World so it can update the necessary stuff.
+        private int[,] GetSurroundingTiles(int x, int y)
+        {
+            int[,] serroundingTiles = new int[3, 3];
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    serroundingTiles[i, j] = GetTile(x + j - 1, y + i - 1);
+                }
+            }
+            return serroundingTiles;
+        }
+        #endregion
+
+        #region Set Tile
         public void SetTile(int x, int y, int value, bool checkForTileset = true)
         {
-            // TODO use a loop for checking. make it so it can get tiles from other layers.
             if (checkForTileset)
             {
                 Tileset tileset = ((TilesWorld)Entity.Scene).RenderingManager.GetTilesetForTile(value);
@@ -135,7 +149,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 TilesChunk chunk = (TilesChunk)Entity;
                 TilesWorld world = (TilesWorld)Entity.Scene;
 
-                // TODO add module to the coordinates so it can wrap around farther chunks.
                 int offsetX = x < 0 ? -1 : (x >= SizeX ? 1 : 0);
                 int offsetY = y < 0 ? -1 : (y >= SizeY ? 1 : 0);
 
@@ -165,21 +178,10 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             SetTile(point.X, point.Y, value);
         }
-
-        private int[,] GetSurroundingTiles(int x, int y)
-        {
-            int[,] serroundingTiles = new int[3, 3];
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    serroundingTiles[i, j] = GetTile(x + j - 1, y + i - 1);
-                }
-            }
-            return serroundingTiles;
-        }
+        #endregion
 
 
+        #region Checks
         public static bool AreLayersWithSameProperties(TilesLayer layer1, TilesLayer layer2)
         {
             if(layer1.SizeX != layer2.SizeX)
@@ -195,10 +197,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             return true;
         }
-
         public bool InLayerBounds(int x, int y)
         {
             return x >= 0 && x < SizeX && y >= 0 && y < SizeY;
         }
+
+        #endregion
     }
 }
