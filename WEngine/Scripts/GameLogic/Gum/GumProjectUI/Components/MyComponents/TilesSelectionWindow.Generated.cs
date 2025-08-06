@@ -34,7 +34,9 @@ partial class TilesSelectionWindow : EditorWindow
     public ButtonStandard ImportTilesetButton { get; protected set; }
     public EditorWindowContent EditorWindowContentInstance { get; protected set; }
 
-    public TilesSelectionWindow(InteractiveGue visual) : base(visual) { }
+    public TilesSelectionWindow(InteractiveGue visual) : base(visual)
+    {
+    }
     public TilesSelectionWindow()
     {
 

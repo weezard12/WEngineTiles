@@ -55,7 +55,7 @@ namespace WEngine.Scripts.Main
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
             var imGuiManager = new ImGuiManager();
-            RegisterGlobalManager(imGuiManager);
+            //RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
             //imGuiManager.SetEnabled(true);
@@ -86,7 +86,7 @@ namespace WEngine.Scripts.Main
 
 
         #region Gum Logic (still not integrated with Nez rendering)
-        protected GraphicalUiElement LoadGumScreen(string screenName)
+        public static GraphicalUiElement LoadGumScreen(string screenName)
         {
             // Load the Gum screen by name
             var gumScreen = LoadedGumProject.Screens.FirstOrDefault(s => s.Name == screenName);

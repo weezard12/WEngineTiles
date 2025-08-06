@@ -4,6 +4,7 @@ using Gum.Wireframe;
 using ImGuiNET;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using MonoGameGum;
 using MonoGameGum.Forms;
 using MonoGameGum.Forms.Controls;
@@ -12,7 +13,6 @@ using Nez.Systems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Gum;
@@ -27,42 +27,34 @@ namespace WEngine.Scripts.Scenes.Tiles
     internal class TilesWorldEditor : TilesWorld
     {
         private TilesSelectionWindow tilesSelectionWindow;
+        TilesUserInfo tilesUserInfo;
+        CameraInfoDisplay cameraInfoDisplay;
 
         public override void OnStart()
         {
             base.OnStart();
 
             // Getting the Gum UI Elements.
-            //tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+            Game1.LoadGumScreen("EditorScreen");
+            tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
             entity.AddComponent(new EditorCameraController());
 
             // Setting up the user info
-            TilesUserInfo tilesUserInfo = new TilesUserInfo();
+            tilesUserInfo = new TilesUserInfo();
             tilesUserInfo.Name = "tiles-user-info";
             AddEntity(tilesUserInfo);
 
             // Displays the camera position and other values.
             var displayEntity = CreateEntity("camera-display");
-            displayEntity.AddComponent(new CameraInfoDisplay(this, tilesUserInfo));
+            cameraInfoDisplay = new CameraInfoDisplay(this, tilesUserInfo);
+            displayEntity.AddComponent(cameraInfoDisplay);
 
             // Setting up the camera
             Camera.SetPosition(new Microsoft.Xna.Framework.Vector2(0,0));
 
-
-
-/*            AddTexture("Assets/Tiles/Tile");
-            AddTexture("Assets/Tiles/Kaftor_Grass");
-            AddTexture("Assets/Tiles/Kaftor_Grass2");
-            AddTexture("Assets/Tiles/Kaftor_Bush");
-
-            AddTexture("Assets/Tiles/buttom_left");
-            AddTexture("Assets/Tiles/buttom_right");
-            AddTexture("Assets/Tiles/top_left");
-            AddTexture("Assets/Tiles/top_right");
-            AddTexture("Assets/Tiles/full");*/
 
             // Testing chuncks rendering
 
@@ -109,6 +101,14 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void Update()
         {
             base.Update();
+
+            // 1 toggles the Editor gum ui
+            if(Input.IsKeyPressed(Keys.D1))
+            {
+                //tilesSelectionWindow.IsEnabled = !tilesSelectionWindow.IsEnabled;
+                Game1.CurrentGumScreen.Visible = !Game1.CurrentGumScreen.Visible;
+                cameraInfoDisplay.SetOffset(new Vector2(0, Game1.CurrentGumScreen.Visible ? 30 : 0));
+            }
         }
     }
 }

@@ -49,7 +49,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ImportTilesetButton.ButtonDisplayText</Name>
-      <Value xsi:type="xsd:string">Import Tileset</Value>
+      <Value xsi:type="xsd:string">New Tile</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

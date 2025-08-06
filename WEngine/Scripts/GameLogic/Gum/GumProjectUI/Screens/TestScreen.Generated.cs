@@ -37,8 +37,11 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     }
     public EditorWindow TestWindowInstance { get; protected set; }
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
+    public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
 
-    public TestScreen(InteractiveGue visual) : base(visual) { }
+    public TestScreen(InteractiveGue visual) : base(visual)
+    {
+    }
     public TestScreen()
     {
 
@@ -50,6 +53,7 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         base.ReactToVisualChanged();
         TestWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorWindow>(this.Visual,"TestWindowInstance");
         TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
+        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

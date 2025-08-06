@@ -2,741 +2,6 @@
   "UserEvents": {
     "27a534a25cf745b6c985eb782079a6fe8641b00003dada14f392a2d01b9c790a": [
       {
-        "NewName": "TestScreen",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-18T14:22:06.9828921Z"
-      },
-      {
-        "NewName": "TestScreen.ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:22:18.1618217Z"
-      },
-      {
-        "NewName": "TestScreen.WindowStandardInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:33:07.2628346Z"
-      },
-      {
-        "NewName": "TestScreen.ContainerInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:38:55.3078079Z"
-      },
-      {
-        "NewName": "TestScreen.TextInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:40:07.040255Z"
-      },
-      {
-        "NewName": "TestScreen.ContainerInstance1",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:42:05.670017Z"
-      },
-      {
-        "NewName": "TestScreen.ColoredRectangleInstance1",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-18T14:42:29.4125275Z"
-      },
-      {
-        "NewName": "TestScreen.EditorWindow",
-        "OldName": "TestScreen.WindowStandardInstance",
-        "ElementType": "Screens",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-18T14:43:36.6425787Z"
-      },
-      {
-        "NewName": "TestScreen.TitleBar",
-        "OldName": "TestScreen.ContainerInstance",
-        "ElementType": "Screens",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-18T14:43:44.7298414Z"
-      },
-      {
-        "NewName": "TestScreen.Content",
-        "OldName": "TestScreen.ContainerInstance1",
-        "ElementType": "Screens",
-        "EventType": 7,
-        "TimestampUtc": "2025-07-18T14:44:00.6943425Z"
-      },
-      {
-        "NewName": "TestScreen",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-19T11:34:58.1579111Z"
-      },
-      {
-        "NewName": "TestScreen.WindowStandardInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-19T11:35:14.3706954Z"
-      },
-      {
-        "NewName": "TestScreen.ButtonStandardInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-19T11:35:36.5870183Z"
-      },
-      {
-        "NewName": "EditorScreen",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-19T12:33:49.7028871Z"
-      },
-      {
-        "NewName": "MyComponents/WindowStandard",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-20T17:11:52.4492633Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow",
-        "OldName": "MyComponents/WindowStandard",
-        "ElementType": "Components",
-        "EventType": 2,
-        "TimestampUtc": "2025-07-20T17:12:51.3998015Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow",
-        "ElementType": "Components",
-        "EventType": 1,
-        "TimestampUtc": "2025-07-20T17:14:55.4818146Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-20T17:15:04.4987771Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).WindowStandardInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-20T17:15:12.1046152Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).ButtonStandardInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-20T17:15:28.8275474Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.Controls/WindowStandard WindowStandardInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-21T20:47:34.2145068Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.Controls/ButtonStandard ButtonStandardInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-21T20:47:45.5650636Z"
-      },
-      {
-        "NewName": "TestScreen.EditorWindowInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-21T20:48:16.0069595Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).Controls/WindowStandard WindowStandardInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:07:58.6700769Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).Controls/ButtonStandard ButtonStandardInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:08:03.132039Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:09:35.021723Z"
-      },
-      {
-        "NewName": "TestScreen.EditorWindowInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:09:37.997653Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:12:29.8721883Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow",
-        "ElementType": "Components",
-        "EventType": 1,
-        "TimestampUtc": "2025-07-22T11:12:45.0091303Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T11:14:06.4392804Z"
-      },
-      {
-        "NewName": "TestScreen.TestWindowInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:14:41.8364Z"
-      },
-      {
-        "NewName": "TestScreen.PanelInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:16:01.8515907Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.Controls/Panel PanelInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:16:16.6234097Z"
-      },
-      {
-        "NewName": "MyComponents/Test2",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T11:18:56.8547756Z"
-      },
-      {
-        "NewName": "MyComponents/Test2 (Container).InnerPanelInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:19:03.5991386Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/Test2",
-        "ElementType": "Components",
-        "EventType": 1,
-        "TimestampUtc": "2025-07-22T11:19:38.004711Z"
-      },
-      {
-        "NewName": "TestScreen.InnerPanelInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:19:46.0487137Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T11:28:43.5874342Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).MenuInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:36:50.8248044Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).MenuItemInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:36:59.1994946Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).MenuInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:37:55.8920888Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).MenuItemInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:38:04.2000531Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/Menu MenuInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:54:57.7477835Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/MenuItem MenuItemInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:54:57.7477835Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/MenuItem MenuItemInstance1 in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:54:57.7573531Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:55:19.0797076Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonIconInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:55:51.2231607Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).StackPanelInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:56:45.4137511Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonClose ButtonCloseInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:58:57.0170236Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonIcon ButtonIconInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:58:57.0190185Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:59:03.1016496Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonCloseInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:59:06.5886491Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonClose ButtonCloseInstance1 in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T11:59:17.498692Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonIconInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T11:59:28.8464914Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindowContent",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T12:06:04.8471907Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindowContent (Container).ScrollViewerInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:06:37.6411154Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).TextInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:07:19.8976369Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T12:14:13.5476505Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).WindowStandardInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:14:22.6879123Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).WindowActionsBarInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:16:01.2428303Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/StackPanel StackPanelInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:17:26.3977928Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).StackPanelInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:18:03.5609282Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonIcon ButtonIconInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:19:48.8551145Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonClose ButtonCloseInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:19:48.8561221Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:19:55.02484Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/StackPanel StackPanelInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:20:27.3492902Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonClose ButtonCloseInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:20:27.3502925Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:20:37.1398846Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).EditorWindowContentInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:21:11.6275517Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).StackPanelInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:21:38.3132114Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Controls/Panel).RectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:23:50.1000605Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Text TextInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:24:57.8408001Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Controls/Panel).Controls/ButtonClose ButtonCloseInstance in MyComponents/WindowActionsBar (Controls/Panel)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:25:02.3445197Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar",
-        "ElementType": "Components",
-        "EventType": 1,
-        "TimestampUtc": "2025-07-22T12:26:11.9766992Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-22T12:26:16.8901869Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).RectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:26:21.8868381Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:26:38.1405449Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Container).Rectangle RectangleInstance in MyComponents/WindowActionsBar (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:26:49.8813005Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/WindowActionsBar (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:32:01.4669004Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:32:21.7716499Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:34:13.0003809Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).MyComponents/EditorWindowContent EditorWindowContentInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:36:10.6969927Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:37:20.5402204Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).Controls/StackPanel StackPanelInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:41:02.2670514Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/WindowActionsBar (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/WindowActionsBar (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:43:03.8483122Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).MyComponents/WindowActionsBar WindowActionsBarInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:43:07.2770607Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:43:58.6113407Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).ColoredRectangleInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:45:47.8496551Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:49:49.6478774Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).ButtonCloseInstance1",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:50:13.960288Z"
-      },
-      {
-        "NewName": "MyComponents/WindowActionsBar (Container).TextInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:51:00.2525002Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).WindowActionsBarInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:51:51.4606286Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).EditorWindowContentInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:52:23.1570861Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:54:57.2319645Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).ColoredRectangle ColoredRectangleInstance1 in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:54:57.2330178Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.MyComponents/TestWindow TestWindowInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:55:27.5962712Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "TestScreen.Controls/Panel InnerPanelInstance in TestScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:55:27.5974267Z"
-      },
-      {
-        "NewName": "TestScreen.EditorWindowInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:55:36.7242723Z"
-      },
-      {
-        "NewName": "MyComponents/EditorWindow (Container).ContainerInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-22T12:57:05.1423257Z"
-      },
-      {
-        "NewName": null,
-        "OldName": "MyComponents/EditorWindow (Container).MyComponents/WindowActionsBar WindowActionsBarInstance in MyComponents/EditorWindow (Container)",
-        "ElementType": "Components",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-22T12:59:50.801852Z"
-      },
-      {
-        "NewName": "TestScreen.TestWindowInstance",
-        "OldName": null,
-        "ElementType": "Screens",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:29:01.5091326Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).TextInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:29:52.8515568Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).ColoredRectangleInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:30:05.7493783Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).ButtonCloseInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:31:51.3914793Z"
-      },
-      {
-        "NewName": "MyComponents/TestWindow (Controls/WindowStandard).ButtonIconInstance",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 5,
-        "TimestampUtc": "2025-07-23T09:36:47.9627831Z"
-      },
-      {
         "NewName": "MyComponents/FilesViewer",
         "OldName": null,
         "ElementType": "Components",
@@ -1162,6 +427,132 @@
         "ElementType": "Components",
         "EventType": 0,
         "TimestampUtc": "2025-07-27T18:20:30.4629556Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:08:55.5668822Z"
+      },
+      {
+        "NewName": "EditorScreen.ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:09:04.3245646Z"
+      },
+      {
+        "NewName": "EditorScreen.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:09:31.8588211Z"
+      },
+      {
+        "NewName": "EditorScreen.Background",
+        "OldName": "EditorScreen.ColoredRectangleInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-05T21:10:00.8794795Z"
+      },
+      {
+        "NewName": "EditorScreen.TopBar",
+        "OldName": "EditorScreen.ContainerInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-05T21:10:15.6816425Z"
+      },
+      {
+        "NewName": "MyComponents/TopBarCategory",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-05T21:10:56.4844103Z"
+      },
+      {
+        "NewName": "EditorScreen.PanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:12:01.6592038Z"
+      },
+      {
+        "NewName": "EditorScreen.TopBarCategoryInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:12:20.4367013Z"
+      },
+      {
+        "NewName": "EditorScreen.TopBarCategoryInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:12:37.8920991Z"
+      },
+      {
+        "NewName": "EditorScreen.TopBarCategoryInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-05T21:13:27.9571163Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-06T11:15:58.782899Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).SpriteInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-06T11:16:29.0888762Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).TileSprite",
+        "OldName": "MyComponents/TileItem (Container).SpriteInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-06T11:16:52.4090702Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-06T11:17:17.6875387Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).TileName",
+        "OldName": "MyComponents/TileItem (Container).LabelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-06T11:17:52.7497436Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-06T11:19:25.3135244Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).TileType",
+        "OldName": "MyComponents/TileItem (Container).LabelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-06T11:19:38.3116121Z"
+      },
+      {
+        "NewName": "MyComponents/TileItem (Container).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-06T11:19:45.9539864Z"
       }
     ]
   }
