@@ -15,6 +15,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
     // TODO mabey move the `Tiles` to the `TilesWorld` class. Since this call needs to contain only rendering stuff.
     internal class RenderingManager : Entity, IUpdatable
     {
+        public event Action FinishedLoadingAssets;
+
         // Stores all the tiles textures by their ID. 0 is empty tile.
         private readonly Dictionary<int, Sprite> Sprites = new();
         private readonly Dictionary<int, Tile> Tiles = new();
@@ -78,25 +80,12 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             AddTile(animatedWaterTile);
 
-
+            FinishedLoadingAssets?.Invoke();
         }
 
 
         public Sprite GetTexture(int id)
         {
-            // First we check if this tile is part of a tileset.
-/*            if (Tilesets.TryGetValue(id, out var tileset))
-            {
-                // If it is, we get the tile from the tileset.
-                
-*//*                if (Tiles.TryGetValue(id, out var tile))
-                {
-                    if (Sprites.TryGetValue(tile.TextureId, out var sprite))
-                        return sprite;
-                }*//*
-            }*/
-
-            // If it is not part of a tileset, we check if it is a regular tile.
             if (Tiles.TryGetValue(id, out var tile))
             {
                 if(Sprites.TryGetValue(tile.TextureId, out var sprite))
@@ -118,6 +107,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
             return null;
         }
+
 
         #region Adding Tilesets
         public void AddTileset(Tileset tileset)
@@ -196,6 +186,27 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             return GetNextAvailableId(Sprites, 0);
         }
+        #endregion
+
+        #region Getters (For Editor)
+        public Sprite GetSprite(int id)
+        {
+            if (Sprites.TryGetValue(id, out var sprite))
+            {
+                
+                return sprite;
+            }
+            Debug.Error($"Sprite with ID {id} not found.");
+            return null;
+        }
+        public IEnumerable<(int id, Sprite sprite)> GetSprites()
+        {
+            foreach (var kvp in Sprites)
+            {
+                yield return (kvp.Key, kvp.Value);
+            }
+        }
+
         #endregion
 
         #region Collections utils (for getting free IDs)

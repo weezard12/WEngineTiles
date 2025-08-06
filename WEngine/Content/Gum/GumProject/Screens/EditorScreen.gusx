@@ -142,8 +142,20 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.Height</Name>
+      <Value xsi:type="xsd:float">559</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TilesSelectionWindowInstance.Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TilesSelectionWindowInstance.Width</Name>
+      <Value xsi:type="xsd:float">204</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

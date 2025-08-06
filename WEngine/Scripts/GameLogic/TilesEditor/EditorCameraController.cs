@@ -63,7 +63,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
                 TilesUserInfo userInfo = (TilesUserInfo) world.FindEntity("tiles-user-info");
 
                 TilesChunk chunk = world.GetChunk(userInfo.MouseChunk);
-                chunk.GetLayers().Last().SetTile(userInfo.SelectedTile, 7);
+                chunk?.GetLayers().Last().SetTile(userInfo.SelectedTile, 7);
 
             }
         }

@@ -33,10 +33,15 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void OnStart()
         {
             base.OnStart();
-
+            Debug.Log("Start");
             // Getting the Gum UI Elements.
             Game1.LoadGumScreen("EditorScreen");
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+            base.RenderingManager.FinishedLoadingAssets += () =>
+            {
+                // Load the tileset after the assets are loaded
+                tilesSelectionWindow.LoadTiles(RenderingManager);
+            };
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
@@ -96,19 +101,28 @@ namespace WEngine.Scripts.Scenes.Tiles
                 layer.SetTile(3, i + 1, i + 5);
             }
 
+            layer.SetTile(7, 7, 10);
+            layer.SetTile(7, 6, 10);
+            layer.SetTile(7, 5, 10);
 
         }
         public override void Update()
         {
             base.Update();
 
-            // 1 toggles the Editor gum ui
+            // 1 toggles all Editor gum ui
             if(Input.IsKeyPressed(Keys.D1))
             {
-                //tilesSelectionWindow.IsEnabled = !tilesSelectionWindow.IsEnabled;
                 Game1.CurrentGumScreen.Visible = !Game1.CurrentGumScreen.Visible;
                 cameraInfoDisplay.SetOffset(new Vector2(0, Game1.CurrentGumScreen.Visible ? 30 : 0));
             }
+        }
+
+        public override void Begin()
+        {
+            base.Begin();
+            Debug.Log("Begin");
+            
         }
     }
 }
