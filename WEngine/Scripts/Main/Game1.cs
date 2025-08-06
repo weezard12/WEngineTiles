@@ -27,6 +27,21 @@ namespace WEngine.Scripts.Main
             IsMouseVisible = true;
             Window.AllowUserResizing = true;
             Window.Title = "WEngine - Tiles";
+            Window.ClientSizeChanged += Window_ClientSizeChanged;
+        }
+
+        private void Window_ClientSizeChanged(object sender, EventArgs e)
+        {
+            UpdateGumCanvasSize();
+        }
+
+        private void UpdateGumCanvasSize()
+        {
+            // TODO fix this
+/*            LoadedGumProject.DefaultCanvasWidth = Window.ClientBounds.Width;
+            LoadedGumProject.DefaultCanvasHeight = Window.ClientBounds.Height;*/
+/*            CurrentGumScreen.Width = Window.ClientBounds.Width;
+            CurrentGumScreen.Height = Window.ClientBounds.Height;*/
         }
 
         protected override void Initialize()
@@ -151,6 +166,8 @@ namespace WEngine.Scripts.Main
 
             return null;
         }
+
+        
 
         #endregion
 

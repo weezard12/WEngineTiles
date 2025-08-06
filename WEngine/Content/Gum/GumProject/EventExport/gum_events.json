@@ -553,6 +553,13 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-08-06T11:19:45.9539864Z"
+      },
+      {
+        "NewName": "EditorScreen.ButtonCloseInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-06T13:20:08.4067111Z"
       }
     ]
   }

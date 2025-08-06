@@ -32,9 +32,18 @@ partial class TilesSelectionWindow
             Sprite sprite = item.sprite;
 
             tile.TileSprite.Texture = sprite.Texture2D;
-            tile.TileSprite.SourceRectangle = new Microsoft.Xna.Framework.Rectangle(50,5,50,5);
-/*            tile.TileSprite.Width = 200;
-            tile.TileSprite.Height = 200;*/
+            
+            tile.TileSprite.TextureAddress = TextureAddress.Custom;
+
+            tile.TileSprite.TextureTop = sprite.SourceRect.X;
+            tile.TileSprite.TextureLeft = sprite.SourceRect.Y;
+            tile.TileSprite.TextureWidth = sprite.SourceRect.Width;
+            tile.TileSprite.TextureHeight = sprite.SourceRect.Height;
+
+
+
+            tile.TileSprite.Width = 200;
+            tile.TileSprite.Height = 200;
             EditorWindowContentInstance.ScrollViewerInstance.AddChild(tile);
 
         }

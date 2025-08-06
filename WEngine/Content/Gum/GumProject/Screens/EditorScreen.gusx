@@ -290,6 +290,42 @@
       <Value xsi:type="xsd:string">PanelInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ButtonCloseInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>ButtonCloseInstance.XOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ButtonCloseInstance.XUnits</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ButtonCloseInstance.Y</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>ButtonCloseInstance.YOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ButtonCloseInstance.YUnits</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Instance>
     <Name>TilesSelectionWindowInstance</Name>
@@ -324,6 +360,11 @@
   <Instance>
     <Name>TopBarCategoryInstance2</Name>
     <BaseType>MyComponents/TopBarCategory</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ButtonCloseInstance</Name>
+    <BaseType>Controls/ButtonClose</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
