@@ -33,10 +33,11 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void OnStart()
         {
             base.OnStart();
-            Debug.Log("Start");
+
             // Getting the Gum UI Elements.
             Game1.LoadGumScreen("EditorScreen");
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
+            tilesSelectionWindow.IsVisible = false;
             base.RenderingManager.FinishedLoadingAssets += () =>
             {
                 // Load the tileset after the assets are loaded
@@ -58,7 +59,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             displayEntity.AddComponent(cameraInfoDisplay);
 
             // Setting up the camera
-            Camera.SetPosition(new Microsoft.Xna.Framework.Vector2(0,0));
+            Camera.SetPosition(new Vector2(0,0));
 
 
             // Testing chuncks rendering
@@ -79,14 +80,6 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Testing tilesets
             TilesChunk chunk = GetChunk(0, 0);
             TilesLayer layer = chunk.GetLayer(0);
-
-            //layer.SetTile(0, -1, 2);
-
-            //chunk.AddLayer(layer);
-/*            for (int i = 0; i < 7; i++)
-            {
-                layer.SetTile(0, i, i);
-            }*/
 
             for (int i = 0; i < 5; i++)
             {
@@ -118,11 +111,5 @@ namespace WEngine.Scripts.Scenes.Tiles
             }
         }
 
-        public override void Begin()
-        {
-            base.Begin();
-            Debug.Log("Begin");
-            
-        }
     }
 }

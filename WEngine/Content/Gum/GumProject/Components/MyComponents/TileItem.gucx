@@ -102,6 +102,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>TextureAddress</Type>
+      <Name>TileSprite.TextureAddress</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TileSprite.Width</Name>
       <Value xsi:type="xsd:float">50</Value>

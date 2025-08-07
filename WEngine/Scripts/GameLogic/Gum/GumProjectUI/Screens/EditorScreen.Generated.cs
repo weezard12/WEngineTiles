@@ -36,13 +36,7 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
         });
     }
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
-    public ColoredRectangleRuntime Background { get; protected set; }
-    public ContainerRuntime TopBar { get; protected set; }
-    public Panel PanelInstance { get; protected set; }
-    public TopBarCategory TopBarCategoryInstance { get; protected set; }
-    public TopBarCategory TopBarCategoryInstance1 { get; protected set; }
-    public TopBarCategory TopBarCategoryInstance2 { get; protected set; }
-    public ButtonClose ButtonCloseInstance { get; protected set; }
+    public EditorTopMenu EditorTopMenuInstance { get; protected set; }
 
     public EditorScreen(InteractiveGue visual) : base(visual)
     {
@@ -57,13 +51,7 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
     {
         base.ReactToVisualChanged();
         TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
-        Background = this.Visual?.GetGraphicalUiElementByName("Background") as ColoredRectangleRuntime;
-        TopBar = this.Visual?.GetGraphicalUiElementByName("TopBar") as ContainerRuntime;
-        PanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");
-        TopBarCategoryInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TopBarCategory>(this.Visual,"TopBarCategoryInstance");
-        TopBarCategoryInstance1 = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TopBarCategory>(this.Visual,"TopBarCategoryInstance1");
-        TopBarCategoryInstance2 = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TopBarCategory>(this.Visual,"TopBarCategoryInstance2");
-        ButtonCloseInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonClose>(this.Visual,"ButtonCloseInstance");
+        EditorTopMenuInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorTopMenu>(this.Visual,"EditorTopMenuInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

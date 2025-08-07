@@ -83,7 +83,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             FinishedLoadingAssets?.Invoke();
         }
 
-
+        // Used in game rendering
         public Sprite GetTexture(int id)
         {
             if (Tiles.TryGetValue(id, out var tile))
@@ -189,11 +189,16 @@ namespace WEngine.Scripts.GameLogic.Tiles
         #endregion
 
         #region Getters (For Editor)
+
+        public Sprite GetSprite(Tile tile)
+        {
+            return GetSprite(tile.TextureId);
+        }
+
         public Sprite GetSprite(int id)
         {
             if (Sprites.TryGetValue(id, out var sprite))
             {
-                
                 return sprite;
             }
             Debug.Error($"Sprite with ID {id} not found.");
@@ -202,6 +207,14 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public IEnumerable<(int id, Sprite sprite)> GetSprites()
         {
             foreach (var kvp in Sprites)
+            {
+                yield return (kvp.Key, kvp.Value);
+            }
+        }
+
+        public IEnumerable<(int id, Tile tile)> GetTiles()
+        {
+            foreach (var kvp in Tiles)
             {
                 yield return (kvp.Key, kvp.Value);
             }

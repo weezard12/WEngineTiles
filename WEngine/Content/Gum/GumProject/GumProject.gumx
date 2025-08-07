@@ -264,6 +264,26 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>MyComponents/EditorMenu/EditMenuItem</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorMenu/EditorTopMenu</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorMenu/FileMenuItem</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorMenu/ViewMenuItem</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>MyComponents/EditorWindow</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

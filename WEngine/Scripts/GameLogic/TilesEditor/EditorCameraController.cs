@@ -55,17 +55,6 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
                 camera.Position = Vector2.Zero;
                 camera.Zoom = defaultZoom;
             }
-
-            // just for testing
-            if (Input.LeftMouseButtonDown)
-            {
-                TilesWorld world = (TilesWorld)Entity.Scene;
-                TilesUserInfo userInfo = (TilesUserInfo) world.FindEntity("tiles-user-info");
-
-                TilesChunk chunk = world.GetChunk(userInfo.MouseChunk);
-                chunk?.GetLayers().Last().SetTile(userInfo.SelectedTile, 7);
-
-            }
         }
     }
 }
