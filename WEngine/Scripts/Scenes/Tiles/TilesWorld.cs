@@ -4,10 +4,12 @@ using Nez;
 using Nez.Textures;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.Serializable;
 
 namespace WEngine.Scripts.Scenes.Tiles
 {
@@ -58,6 +60,11 @@ namespace WEngine.Scripts.Scenes.Tiles
         public TilesChunk GetChunk(Point coordinates)
         {
             return GetChunk(coordinates.X, coordinates.Y);
+        }
+
+        public ReadOnlyCollection<TilesChunk> GetChunks()
+        {
+            return Chunks.AsReadOnly();
         }
 
         public void GetTileCordinates(Vector2 worldPosition, ref Point tilePos)
@@ -118,7 +125,25 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         public void SaveWorld(string worldSavePath)
         {
+            SerializableTilesWorld serializableTilesWorld = ToSerializable();
 
+        }
+        #endregion
+
+        #region Making this object Serializable
+        public SerializableTilesWorld ToSerializable()
+        {
+            return ToSerializable(this);
+        }
+        public static SerializableTilesWorld ToSerializable(TilesWorld world)
+        {
+            SerializableTilesWorld sWorld = new SerializableTilesWorld();
+            foreach (var chunk in world.GetChunks())
+            {
+                sWorld.Chunks.Add(chunk.ToSerializable());
+            }
+
+            return sWorld;
         }
         #endregion
     }

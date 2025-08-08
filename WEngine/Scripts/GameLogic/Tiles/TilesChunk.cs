@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Tiles.Serializable;
 using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
 
 namespace WEngine.Scripts.GameLogic.Tiles
@@ -87,5 +88,22 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             return $"TilesChunk_{x}_{y}";
         }
+
+
+        #region Making this object Serializable
+        public SerializableTilesChunk ToSerializable()
+        {
+            return ToSerializable(this);
+        }
+        public static SerializableTilesChunk ToSerializable(TilesChunk chunk)
+        {
+            SerializableTilesChunk sChunk = new SerializableTilesChunk() { IdX = chunk.idX, IdY = chunk.idY };
+            foreach (var layer in chunk.Layers)
+            {
+                sChunk.Layers.Add(layer.ToSerializable());
+            }
+            return sChunk;
+        }
+        #endregion
     }
 }

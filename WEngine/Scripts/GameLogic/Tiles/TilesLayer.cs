@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Tiles.Serializable;
 using WEngine.Scripts.GameLogic.Tiles.Tilesets;
 using WEngine.Scripts.Scenes.Tiles;
 
@@ -202,6 +203,29 @@ namespace WEngine.Scripts.GameLogic.Tiles
             return x >= 0 && x < SizeX && y >= 0 && y < SizeY;
         }
 
+        #endregion
+
+
+        #region Making this object Serializable
+        public SerializableTilesLayer ToSerializable()
+        {
+            return ToSerializable(this);
+        }
+        public static SerializableTilesLayer ToSerializable(TilesLayer layer)
+        {
+            SerializableTilesLayer sLayer = new SerializableTilesLayer()
+            {
+                Id = layer.Id,
+                SizeX = layer.SizeX,
+                SizeY = layer.SizeY,
+                TileWidth = layer.TileWidth,
+                TileHeight = layer.TileHeight,
+                Scale = layer._scale,
+                Tiles = layer._tiles,
+            };
+
+            return sLayer;
+        }
         #endregion
     }
 }
