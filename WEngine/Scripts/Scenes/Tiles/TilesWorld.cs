@@ -113,5 +113,13 @@ namespace WEngine.Scripts.Scenes.Tiles
             RenderingManager = new RenderingManager();
             AddEntity(RenderingManager);
         }
+
+        #region World Saving
+
+        public void SaveWorld(string worldSavePath)
+        {
+
+        }
+        #endregion
     }
 }

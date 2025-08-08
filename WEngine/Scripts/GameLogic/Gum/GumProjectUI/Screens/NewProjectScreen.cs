@@ -5,7 +5,7 @@ using Gum.Wireframe;
 using Nez;
 using RenderingLibrary.Graphics;
 using System.Linq;
-using WEngine.Scripts.Main;
+using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.Scenes.Tiles;
 
 partial class NewProjectScreen

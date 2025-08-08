@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Gum;
+using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.Main;
@@ -37,7 +38,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             // Getting the Gum UI Elements.
             Game1.LoadGumScreen("EditorScreen");
             tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
-            tilesSelectionWindow.IsVisible = false;
+            Game1.CurrentGumScreen.Visible = false;
             base.RenderingManager.FinishedLoadingAssets += () =>
             {
                 // Load the tileset after the assets are loaded
@@ -76,6 +77,8 @@ namespace WEngine.Scripts.Scenes.Tiles
             AddChunk(-1, 1);
 
             AddChunk(1, -1);
+
+            SaveWorld(ProjectManager.FilePath());
 
             // Testing tilesets
             TilesChunk chunk = GetChunk(0, 0);

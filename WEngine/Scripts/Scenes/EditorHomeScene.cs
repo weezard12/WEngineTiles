@@ -11,6 +11,7 @@ using Nez;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.Main;
 
 namespace WEngine.Scripts.Scenes
@@ -21,6 +22,8 @@ namespace WEngine.Scripts.Scenes
         private Panel mainPanel;
         private StackPanel projectListPanel;
         private List<string> projectNames; // Mock list of project names for demo
+
+        List<StackPanel> stackPanels = new List<StackPanel>();
 
         public override void OnStart()
         {
@@ -40,7 +43,6 @@ namespace WEngine.Scripts.Scenes
             // Clear any existing UI elements
             GumService.Root.Children.Clear();
 
-            // Initialize mock project list (replace with actual project data in a real application)
             projectNames = ProjectManager.GetAllProjectsNames();
 
             // Create main panel to hold UI elements
@@ -85,7 +87,13 @@ namespace WEngine.Scripts.Scenes
 
         private void UpdateProjectList()
         {
+            // Initialize mock project list (replace with actual project data in a real application)
+            projectNames = ProjectManager.GetAllProjectsNames();
 
+            foreach (var item in stackPanels)
+            {
+                item.RemoveFromRoot();
+            }
             foreach (var projectName in projectNames)
             {
                 var projectContainer = new StackPanel();
@@ -129,11 +137,12 @@ namespace WEngine.Scripts.Scenes
                 deleteButton.Click += (sender, args) =>
                 {
                     Debug.Log($"Deleting project: {projectName}");
-                    projectNames.Remove(projectName);
+                    ProjectManager.DeleteProject(projectName);
                     UpdateProjectList(); // Refresh the list
                 };
                 projectContainer.AddChild(deleteButton);
 
+                stackPanels.Add(projectContainer);
                 projectListPanel.AddChild(projectContainer);
             }
         }

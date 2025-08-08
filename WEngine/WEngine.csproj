@@ -37,6 +37,7 @@
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\Components\MyComponents\" />
     <Folder Include="Scripts\GameLogic\TilesEditor\MyFilesSystem\" />
+    <Folder Include="Scripts\GameLogic\Tiles\Serializable\" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

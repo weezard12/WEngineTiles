@@ -12,6 +12,7 @@ using RenderingLibrary.Graphics;
 using System;
 using System.Linq;
 using System.Reflection.PortableExecutable;
+using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.Scenes;
 using WEngine.Scripts.Scenes.Tiles;
 

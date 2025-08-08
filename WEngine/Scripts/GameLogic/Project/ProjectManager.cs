@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static WEngine.Scripts.Main.Utils.FileUtils;
-namespace WEngine.Scripts.Main
+namespace WEngine.Scripts.GameLogic.Project
 {
     internal class ProjectManager
     {
@@ -46,7 +46,18 @@ namespace WEngine.Scripts.Main
 
             // Create necessary subdirectories
             CreateFolderIfDoesntExist(Path.Combine(projectPath, "Assets"));
+            CreateFolderIfDoesntExist(Path.Combine(projectPath, "World"));
             CreateFolderIfDoesntExist(Path.Combine(projectPath, "Tilesets"));
+        }
+
+        internal static void DeleteProject(string projectName)
+        {
+            Directory.Delete(GetProjectPath(projectName), true);
+        }
+
+        internal static string FilePath(string fileName)
+        {
+            return Path.Combine(GetProjectPath())
         }
     }
 }

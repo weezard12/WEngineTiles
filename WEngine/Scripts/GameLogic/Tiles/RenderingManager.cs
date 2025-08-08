@@ -26,7 +26,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         public RenderingManager()
         {
             // Testing tilesets (TODO move this logic to TilesWorld)
-            Tileset tileset = new Tileset();
+/*            Tileset tileset = new Tileset();
 
             tileset.SetTiles(new int[3, 3]
             {
@@ -35,7 +35,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 { 5, 9, 6 }
             });
 
-            AddTileset(tileset);
+            AddTileset(tileset);*/
         }
 
         public override void OnAddedToScene()
@@ -63,22 +63,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 AddTexture(sprite);
             }
-
-            // For testing
-            AddTile(new Tile { TextureId = 0 });
-            AddTile(new Tile { TextureId = 1 });
-            AddTile(new Tile { TextureId = 2 });
-            AddTile(new Tile { TextureId = 3 });
-
-            AddTile(new Tile { TextureId = 4 });
-            AddTile(new Tile { TextureId = 5 });
-            AddTile(new Tile { TextureId = 6 });
-            AddTile(new Tile { TextureId = 7 });
-            AddTile(new Tile { TextureId = 8 });
-
-            AnimatedTile animatedWaterTile = new AnimatedTile { TextureId = 2, Frames = {11, 12, 13}, FrameRate = 4 };
-
-            AddTile(animatedWaterTile);
 
             FinishedLoadingAssets?.Invoke();
         }
