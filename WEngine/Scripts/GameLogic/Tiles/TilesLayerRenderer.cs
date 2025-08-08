@@ -64,8 +64,11 @@ namespace WEngine.Scripts.GameLogic.Tiles
                         startY + y * _tilesLayer.TileHeight * _tilesLayer._scale
                     );
 
+                    Sprite tileSprite = ((TilesWorld)Entity.Scene).RenderingManager.GetTexture(_tilesLayer.GetTile(x, y));
+                    if (tileSprite == null)
+                        continue;
                     batcher.Draw(
-                        ((TilesWorld)Entity.Scene).RenderingManager.GetTexture(_tilesLayer.GetTile(x, y)),
+                        tileSprite,
                         tilePos,
                         Color.White,
                         rotation: 0f,
