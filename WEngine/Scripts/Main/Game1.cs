@@ -76,8 +76,8 @@ namespace WEngine.Scripts.Main
             //imGuiManager.SetEnabled(true);
 
             ProjectManager.Initialize();
-            ProjectManager.CreateProject("Test Project");
-            Scene = new TilesWorldEditor();
+            //ProjectManager.CreateProject("Test Project");
+            Scene = new EditorHomeScene();
         }
 
         protected override void Update(GameTime gameTime)

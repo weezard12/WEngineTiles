@@ -616,6 +616,83 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2025-08-07T14:03:28.348026Z"
+      },
+      {
+        "NewName": "EditorHomeScreen",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-07T14:54:25.2206814Z"
+      },
+      {
+        "NewName": "NewProjectScreen",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-08T08:43:35.335452Z"
+      },
+      {
+        "NewName": "NewProjectScreen.TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-08T08:44:31.5581901Z"
+      },
+      {
+        "NewName": "NewProjectScreen.ProjectNameEntry",
+        "OldName": "NewProjectScreen.TextBoxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-08T08:44:57.0145154Z"
+      },
+      {
+        "NewName": "NewProjectScreen.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-08T08:45:05.9180595Z"
+      },
+      {
+        "NewName": "NewProjectScreen.PanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-08T08:45:28.6602352Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "NewProjectScreen.Controls/ButtonStandard ButtonStandardInstance in NewProjectScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-08T08:46:26.7147704Z"
+      },
+      {
+        "NewName": "NewProjectScreen.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-08T08:46:31.8835688Z"
+      },
+      {
+        "NewName": "NewProjectScreen.CreateProjectButton",
+        "OldName": "NewProjectScreen.ButtonStandardInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-08T08:47:05.936884Z"
+      },
+      {
+        "NewName": "NewProjectScreen.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-08T08:47:35.0695523Z"
+      },
+      {
+        "NewName": "NewProjectScreen.BackButton",
+        "OldName": "NewProjectScreen.ButtonStandardInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-08T08:47:52.002119Z"
       }
     ]
   }
