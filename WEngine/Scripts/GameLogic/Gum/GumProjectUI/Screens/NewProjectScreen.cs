@@ -22,6 +22,7 @@ partial class NewProjectScreen
             return;
         }
         ProjectManager.CreateProject(projectName);
+        ProjectManager.SetCurrentProject(projectName);
         Core.Scene = new TilesWorldEditor();
     }
 

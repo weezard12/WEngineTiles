@@ -78,10 +78,10 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             AddChunk(1, -1);
 
-            SaveWorld(ProjectManager.FilePath());
+            SaveWorld();
 
             // Testing tilesets
-            TilesChunk chunk = GetChunk(0, 0);
+/*            TilesChunk chunk = GetChunk(0, 0);
             TilesLayer layer = chunk.GetLayer(0);
 
             for (int i = 0; i < 5; i++)
@@ -99,7 +99,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             layer.SetTile(7, 7, 10);
             layer.SetTile(7, 6, 10);
-            layer.SetTile(7, 5, 10);
+            layer.SetTile(7, 5, 10);*/
 
         }
         public override void Update()

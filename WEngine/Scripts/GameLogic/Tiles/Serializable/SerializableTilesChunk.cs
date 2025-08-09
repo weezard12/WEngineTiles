@@ -11,7 +11,7 @@ namespace WEngine.Scripts.GameLogic.Tiles.Serializable
     {
         public int IdX { get; set; }
         public int IdY { get; set; }
-        public List<SerializableTilesLayer> Layers { get; set; }
+        public List<SerializableTilesLayer> Layers { get; set; } = new List<SerializableTilesLayer>();
 
 
     }

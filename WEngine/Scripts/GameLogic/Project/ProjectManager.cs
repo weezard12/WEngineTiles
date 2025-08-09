@@ -10,6 +10,7 @@ namespace WEngine.Scripts.GameLogic.Project
     internal class ProjectManager
     {
         public const string EngineName = "WEngine";
+        public static TilesProject CurrentProject { get; private set; }
         public static void Initialize()
         {
             // Create the main directory for WEngine if it doesn't exist
@@ -39,6 +40,15 @@ namespace WEngine.Scripts.GameLogic.Project
                             .ToList();
         }
 
+        public static string GetFileInProject(string projectName, string fileName)
+        {
+            return Path.Combine(GetProjectPath(projectName), fileName);
+        }
+        public static string[] GetFilesInProject(string projectName, string folderName)
+        {
+            return Directory.GetFiles(Path.Combine(GetProjectPath(projectName), folderName));
+        }
+
         public static void CreateProject(string projectName)
         {
             // Get the project path
@@ -55,9 +65,17 @@ namespace WEngine.Scripts.GameLogic.Project
             Directory.Delete(GetProjectPath(projectName), true);
         }
 
-        internal static string FilePath(string fileName)
+        public static void SetCurrentProject(string projectName)
         {
-            return Path.Combine(GetProjectPath())
+            CurrentProject = new TilesProject()
+            {
+                Name = projectName,
+            };
+        }
+
+        internal static void WriteFileInProject(string projectName, string fileName, string json)
+        {
+            System.IO.File.WriteAllText(GetFileInProject(projectName, fileName), json);
         }
     }
 }

@@ -28,23 +28,6 @@ namespace WEngine.Scripts.GameLogic.Tiles
             this.idY = idY;
 
             Name = GetChunkEntityName(idX, idY);
-
-            AddLayer(new TilesLayer());
-;
-/*            TilesLayer tilesLayer = GetLayers()[0];
-            // For testing purposes, we will create a single layer
-
-            for (int y = 0; y < tilesLayer.SizeX; y++)
-            {
-                for (int x = 0; x < tilesLayer.SizeY; x++)
-                {
-                    // Randomly select a tile ID for testing
-                    int tileId = Random.Range(1, 3);
-                    tilesLayer.SetTile(x, y, tileId);
-                }
-            }*/
-
-
         }
 
 
@@ -103,6 +86,16 @@ namespace WEngine.Scripts.GameLogic.Tiles
                 sChunk.Layers.Add(layer.ToSerializable());
             }
             return sChunk;
+        }
+
+        public static TilesChunk FromSerializable(SerializableTilesChunk sChunk)
+        {
+            TilesChunk chunk = new TilesChunk(sChunk.IdX, sChunk.IdY);
+            foreach (var sLayer in sChunk.Layers)
+            {
+                chunk.Layers.Add(TilesLayer.FromSerializable(sLayer));
+            }
+            return chunk;
         }
         #endregion
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 using Nez;
 using Nez.Textures;
 using System;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
 
@@ -23,6 +25,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         List<TilesChunk> Chunks { get; set; } = new List<TilesChunk>();
 
+        // Adds a new empty chunk at the position
         protected void AddChunk(int x, int y)
         {
             TilesChunk chunk = new TilesChunk(x, y);
@@ -30,7 +33,13 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             AddEntity(chunk);
         }
+        protected void LoadChunk(SerializableTilesChunk serializableChunk)
+        {
+            TilesChunk chunk = TilesChunk.FromSerializable(serializableChunk);
+            Chunks.Add(chunk);
 
+            AddEntity(chunk);
+        }
 
         // TODO improve this method to be more efficient
         public void GetChunkCoordinates(Vector2 worldPosition, ref Point chunkPos)
@@ -123,10 +132,18 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         #region World Saving
 
-        public void SaveWorld(string worldSavePath)
+        public void SaveWorld()
         {
             SerializableTilesWorld serializableTilesWorld = ToSerializable();
-
+            ProjectManager.CurrentProject.SaveWorldJson(serializableTilesWorld);
+        }
+        public void LoadWorld()
+        {
+            List<SerializableTilesChunk> sChunks = ProjectManager.CurrentProject.LoadChunks();
+            foreach (SerializableTilesChunk chunk in sChunks)
+            {
+                LoadChunk(chunk);
+            }
         }
         #endregion
 

@@ -226,6 +226,30 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             return sLayer;
         }
+
+        public static TilesLayer FromSerializable(SerializableTilesLayer sLayer)
+        {
+            if (sLayer == null)
+                throw new ArgumentNullException(nameof(sLayer));
+
+            // Create new TilesLayer
+            var layer = new TilesLayer
+            {
+                Id = sLayer.Id,
+                SizeX = sLayer.SizeX,
+                SizeY = sLayer.SizeY,
+                TileWidth = sLayer.TileWidth,
+                TileHeight = sLayer.TileHeight
+            };
+
+            // Copy tiles data
+            for (int y = 0; y < sLayer.SizeY; y++)
+                for (int x = 0; x < sLayer.SizeX; x++)
+                    layer._tiles[y, x] = sLayer.Tiles[y, x];
+                
+            return layer;
+        }
+
         #endregion
     }
 }
