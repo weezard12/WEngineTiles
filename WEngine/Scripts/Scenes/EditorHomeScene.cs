@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.Main;
+using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.Scenes
 {
@@ -115,7 +116,9 @@ namespace WEngine.Scripts.Scenes
                 openButton.Click += (sender, args) =>
                 {
                     Debug.Log($"Opening project: {projectName}");
-                    // Add logic to open the project
+
+                    ProjectManager.SetCurrentProject(projectName);
+                    Core.Scene = new TilesWorldEditor(true);
                 };
                 projectContainer.AddChild(openButton);
 

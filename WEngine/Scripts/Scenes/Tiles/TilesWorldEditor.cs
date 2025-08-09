@@ -31,6 +31,15 @@ namespace WEngine.Scripts.Scenes.Tiles
         TilesUserInfo tilesUserInfo;
         CameraInfoDisplay cameraInfoDisplay;
 
+        public TilesWorldEditor(bool loadProject = false)
+        {
+            if (loadProject)
+            {
+                LoadWorld();
+            }
+        }
+
+
         public override void OnStart()
         {
             base.OnStart();
@@ -65,7 +74,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Testing chuncks rendering
 
-            AddChunk(0, 0);
+/*            AddChunk(0, 0);
             AddChunk(0, 1);
             AddChunk(1, 1);
             AddChunk(1, 0);
@@ -78,7 +87,7 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             AddChunk(1, -1);
 
-            SaveWorld();
+            SaveWorld();*/
 
             // Testing tilesets
 /*            TilesChunk chunk = GetChunk(0, 0);

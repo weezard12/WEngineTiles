@@ -36,7 +36,7 @@ namespace WEngine.Scripts.GameLogic.Project
             string[] chunks = ProjectManager.GetFilesInProject(Name, worldFileName);
 
             foreach (var chunk in chunks)
-                sChunks.Add(JsonConvert.DeserializeObject<SerializableTilesChunk>(chunk));
+                sChunks.Add(JsonConvert.DeserializeObject<SerializableTilesChunk>(System.IO.File.ReadAllText(chunk)));
             
             return sChunks;
         }
