@@ -35,9 +35,10 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
             return gue;
         });
     }
-    public EditorWindow TestWindowInstance { get; protected set; }
-    public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
-    public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
+    public ContainerRuntime ContainerInstance { get; protected set; }
+    public Panel PanelInstance { get; protected set; }
+    public Panel PanelInstance1 { get; protected set; }
+    public Panel PanelInstance2 { get; protected set; }
 
     public TestScreen(InteractiveGue visual) : base(visual)
     {
@@ -51,9 +52,10 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        TestWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorWindow>(this.Visual,"TestWindowInstance");
-        TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
-        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
+        ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as ContainerRuntime;
+        PanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");
+        PanelInstance1 = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance1");
+        PanelInstance2 = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance2");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

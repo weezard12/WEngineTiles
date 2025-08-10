@@ -1,16 +1,10 @@
 ﻿using Gum.DataTypes;
 using Gum.Forms.Controls;
-using Gum.Forms.DefaultVisuals;
 using Gum.Managers;
 using Gum.Wireframe;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using MonoGameGum;
-using MonoGameGum.GueDeriving;
 using Nez;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.Main;
 using WEngine.Scripts.Scenes.Tiles;

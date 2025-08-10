@@ -1,4 +1,4 @@
-//Code for MyComponents/TileItem (Container)
+//Code for MyComponents/TilesSelection/TileItem (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -19,13 +19,13 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("MyComponents/TileItem");
+            var element = ObjectFinder.Self.GetElementSave("MyComponents/TilesSelection/TileItem");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
             if(createForms) visual.FormsControlAsObject = new TileItem(visual);
             return visual;
         });
         MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TileItem)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/TileItem", () => 
+        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/TilesSelection/TileItem", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
