@@ -9,6 +9,7 @@ using Nez.Textures;
 using System;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.Serializable;
 using WEngine.Scripts.Main;
 using static WEngine.Scripts.Main.Game1;
 
@@ -19,7 +20,8 @@ partial class TilesSelectionWindow
         Debug.Log("Custom Initialize");
         ImportTilesetButton.Click += (_, _) =>
         {
-            Game1.CurrentGumScreen.AddChild(new EditingTileItemWindow());
+            Tile tile = new Tile();
+            Game1.CurrentGumScreen.AddChild(new EditingTileItemWindow(tile));
         };
     }
 

@@ -27,9 +27,10 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorldEditor : TilesWorld
     {
-        private TilesSelectionWindow tilesSelectionWindow;
         TilesUserInfo tilesUserInfo;
         CameraInfoDisplay cameraInfoDisplay;
+
+        EditorScreen EditorScreen;
 
         public TilesWorldEditor(bool loadProject = false)
         {
@@ -39,20 +40,9 @@ namespace WEngine.Scripts.Scenes.Tiles
             }
         }
 
-
         public override void OnStart()
         {
             base.OnStart();
-
-            // Getting the Gum UI Elements.
-            Game1.LoadGumScreen("EditorScreen");
-            tilesSelectionWindow = Game1.CurrentGumScreen.GetFrameworkElementByName<TilesSelectionWindow>("TilesSelectionWindowInstance");
-            Game1.CurrentGumScreen.Visible = false;
-            base.RenderingManager.FinishedLoadingAssets += () =>
-            {
-                // Load the tileset after the assets are loaded
-                tilesSelectionWindow.LoadTiles(RenderingManager);
-            };
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
@@ -70,6 +60,12 @@ namespace WEngine.Scripts.Scenes.Tiles
 
             // Setting up the camera
             Camera.SetPosition(new Vector2(0,0));
+
+            // Setting up the Gum UI Elements.
+            EditorScreen = new EditorScreen(this);
+            EditorScreen.IsVisible = false;
+            Game1.SetGumScreen(EditorScreen);
+
 
 
             // Testing chuncks rendering
@@ -118,8 +114,8 @@ namespace WEngine.Scripts.Scenes.Tiles
             // 1 toggles all Editor gum ui
             if(Input.IsKeyPressed(Keys.D1))
             {
-                Game1.CurrentGumScreen.Visible = !Game1.CurrentGumScreen.Visible;
-                cameraInfoDisplay.SetOffset(new Vector2(0, Game1.CurrentGumScreen.Visible ? 30 : 0));
+                EditorScreen.IsVisible = !EditorScreen.IsVisible;
+                cameraInfoDisplay.SetOffset(new Vector2(0, EditorScreen.IsVisible ? 30 : 0));
             }
         }
 

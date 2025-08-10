@@ -10,9 +10,9 @@ namespace WEngine.Scripts.GameLogic.Tiles
 {
     internal class AnimatedTile : Tile
     {
-        public int FrameRate = 1; // Frames per second
+        public int FrameRate { get; set; } = 1; // Frames per second
         public List<int> Frames = new List<int>();
-        public int CurrentFrameIndex = 0;
+        public int CurrentFrameIndex { get; set; } = 0;
 
         public IEnumerator Animate()
         {

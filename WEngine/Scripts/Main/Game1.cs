@@ -1,4 +1,5 @@
 ﻿using Gum.DataTypes;
+using Gum.Forms.Controls;
 using Gum.Wireframe;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -127,7 +128,20 @@ namespace WEngine.Scripts.Main
 
                 return null;
         }
+        public static void SetGumScreen(FrameworkElement gumScreen)
+        {
+            if (gumScreen != null)
+            {
+                // Clears the existing screen
+                GumService.Default.Root.Children.Clear();
 
+                // Convert to GraphicalUiElement and add to root
+                var graphicalUiElement = gumScreen.Visual;
+                graphicalUiElement.AddToRoot();
+
+                CurrentGumScreen = graphicalUiElement;
+            }
+        }
         protected GraphicalUiElement LoadGumComponent(string componentName)
         {
             // Load the Gum component by name
