@@ -3,15 +3,13 @@ using Gum.DataTypes;
 using Gum.Forms.Controls;
 using Gum.Managers;
 using Gum.Wireframe;
+using Nez;
 using Nez.Textures;
-using System;
-using System.Linq;
+
 using WEngine.Scripts.GameLogic.Tiles;
 
 partial class EditingTileItem
 {
-
-
     Tile tile;
 
     TileItem TileDisplay;
@@ -41,7 +39,11 @@ partial class EditingTileItem
         TileDisplay.TileSprite.Width = 200;
         TileDisplay.TileSprite.Height = 200;
 
-        TileDisplay.TileSprite
+        TileDisplay.SpriteContainer.Click += (s, e) =>
+        {
+            Debug.Log("Select a texture");
+            EditorScreen.Instance.AddChild(new TextureSelectionWindow());
+        };
 
         InnerPanel.AddChild(TileDisplay);
     }

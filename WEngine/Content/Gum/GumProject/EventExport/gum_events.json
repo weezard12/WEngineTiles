@@ -714,6 +714,132 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-08-10T09:42:51.2293096Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).PanelInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T10:18:11.5854437Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).SpritePanel",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).PanelInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-11T10:18:25.127913Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).SpriteClickBounds",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).SpritePanel",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-11T10:20:55.6018351Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).SpriteContainer",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).SpriteClickBounds",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-11T10:21:07.7303544Z"
+      },
+      {
+        "NewName": "MyComponents/DialogWindows/TextureSelectionWindow",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-11T10:29:18.7742131Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TilesSprite",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-11T10:36:17.8735366Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TilesSprite (Container).SpriteInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T10:38:32.6543808Z"
+      },
+      {
+        "NewName": "MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow).ScrollViewerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T10:43:28.380173Z"
+      },
+      {
+        "NewName": "MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow).ScrollViewer",
+        "OldName": "MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow).ScrollViewerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-11T10:43:48.7106088Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:00:36.4710949Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:00:53.0116024Z"
+      },
+      {
+        "NewName": "TestScreen.StackPanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:12.4008487Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:19.6162293Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance3",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:20.8989155Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance4",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:21.7188362Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance5",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:24.111961Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance6",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:01:24.9164282Z"
+      },
+      {
+        "NewName": "MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow).StackPanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:02:10.2634189Z"
       }
     ]
   }

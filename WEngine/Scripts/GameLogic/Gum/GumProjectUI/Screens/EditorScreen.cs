@@ -6,6 +6,7 @@ using Nez;
 using RenderingLibrary.Graphics;
 
 using System.Linq;
+using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.Scenes.Tiles;
 
 partial class EditorScreen
@@ -13,6 +14,7 @@ partial class EditorScreen
     public static EditorScreen Instance { get; private set; }
     public TilesWorldEditor WorldEditor { get; private set; }
 
+    public RenderingManager RenderingManager => WorldEditor.RenderingManager;
 
     public EditorScreen(TilesWorldEditor tilesWorld)
     {
