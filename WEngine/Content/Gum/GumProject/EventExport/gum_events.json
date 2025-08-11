@@ -2,20 +2,6 @@
   "UserEvents": {
     "27a534a25cf745b6c985eb782079a6fe8641b00003dada14f392a2d01b9c790a": [
       {
-        "NewName": null,
-        "OldName": "EditorScreen.MyComponents/SelectFileWindow SelectFileWindowInstance in EditorScreen",
-        "ElementType": "Screens",
-        "EventType": 6,
-        "TimestampUtc": "2025-07-27T17:56:45.1599231Z"
-      },
-      {
-        "NewName": "MyComponents/DialogEditorWindow",
-        "OldName": null,
-        "ElementType": "Components",
-        "EventType": 0,
-        "TimestampUtc": "2025-07-27T18:20:30.4629556Z"
-      },
-      {
         "NewName": "TestScreen.ColoredRectangleInstance",
         "OldName": null,
         "ElementType": "Screens",

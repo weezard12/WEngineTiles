@@ -14,9 +14,10 @@ partial class EditingTileItemWindow
     public EditingTileItemWindow(Tile tile)
     {
         this.tile = tile;
+        EditingTileItemInstance.SetTile(tile);
     }
     partial void CustomInitialize()
     {
-        EditingTileItemInstance.SetTile(tile);
+        
     }
 }

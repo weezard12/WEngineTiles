@@ -50,8 +50,6 @@ partial class TilesSelectionWindow
             EditorWindowContentInstance.ScrollViewerInstance.AddChild(tile);
 
         }
-        
-
     }
 
     public void LoadTiles(string path)
