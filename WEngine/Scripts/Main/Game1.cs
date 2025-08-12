@@ -60,7 +60,7 @@ namespace WEngine.Scripts.Main
 
             LoadedGumProject = GumService.Default.Initialize(this, "Gum/GumProject/GumProject.gumx");
 
-            //LoadGumScreen("EditorScreen");
+            LoadGumScreen("TestScreen");
 
             // Load and configure the component
 
@@ -69,17 +69,17 @@ namespace WEngine.Scripts.Main
             //screenRuntime.AddToRoot();
 
             // Debug
-            DebugRenderEnabled = true;
+            //DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
-            var imGuiManager = new ImGuiManager();
+            //var imGuiManager = new ImGuiManager();
             //RegisterGlobalManager(imGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
             //imGuiManager.SetEnabled(true);
 
-            ProjectManager.Initialize();
+            //ProjectManager.Initialize();
             //ProjectManager.CreateProject("Test Project");
-            Scene = new EditorHomeScene();
+            //Scene = new EditorHomeScene();
         }
 
         protected override void Update(GameTime gameTime)
