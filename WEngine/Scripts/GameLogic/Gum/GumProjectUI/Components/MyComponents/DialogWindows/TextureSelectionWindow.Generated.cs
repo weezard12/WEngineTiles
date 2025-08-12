@@ -32,7 +32,6 @@ partial class TextureSelectionWindow : DialogEditorWindow
         });
     }
     public ScrollViewer ScrollViewerInstance { get; protected set; }
-    public StackPanel StackPanelInstance { get; protected set; }
 
     public TextureSelectionWindow(InteractiveGue visual) : base(visual)
     {
@@ -47,7 +46,6 @@ partial class TextureSelectionWindow : DialogEditorWindow
     {
         base.ReactToVisualChanged();
         ScrollViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollViewer>(this.Visual,"ScrollViewerInstance");
-        StackPanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"StackPanelInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

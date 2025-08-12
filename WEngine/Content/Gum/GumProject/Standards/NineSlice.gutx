@@ -85,7 +85,7 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>HeightUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -184,7 +184,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextureHeight</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -198,14 +198,14 @@
     <Variable>
       <Type>int</Type>
       <Name>TextureTop</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">48</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextureWidth</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -226,7 +226,7 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>WidthUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -240,14 +240,14 @@
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>XOrigin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>XUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">6</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -261,14 +261,14 @@
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>YOrigin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>YUnits</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">7</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>

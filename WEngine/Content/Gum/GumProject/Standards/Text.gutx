@@ -89,7 +89,7 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>HeightUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -276,7 +276,7 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>WidthUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
