@@ -21,6 +21,7 @@ partial class TextureSelectionWindow
             tileSprite.Visual.Click += (s, e) =>
             {
                 Debug.Log(tileSprite.TextureId);
+                RaiseDialogComplete(tileSprite.TextureId);
             };
             ScrollViewerInstance.AddChild(tileSprite);
         }

@@ -9,16 +9,15 @@ using System.Linq;
 
 partial class DialogEditorWindow
 {
-    public event Action<string> OnDialogComplete;
+    public event Action<DialogResult> OnDialogComplete;
+
     partial void CustomInitialize()
     {
-        OnClosed += () =>
-        {
-            OnDialogComplete?.Invoke(String.Empty);
-        };
     }
-    protected void RaiseDialogComplete(string result)
+
+    protected void RaiseDialogComplete(object result)
     {
-        OnDialogComplete?.Invoke(result);
+        OnDialogComplete?.Invoke(new DialogResult(result));
     }
 }
+

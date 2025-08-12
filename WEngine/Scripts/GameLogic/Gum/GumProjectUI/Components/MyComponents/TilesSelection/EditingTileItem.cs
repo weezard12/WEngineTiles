@@ -10,6 +10,8 @@ using WEngine.Scripts.GameLogic.Tiles;
 
 partial class EditingTileItem
 {
+    TextureSelectionWindow textureSelectionWindow;
+
     Tile tile;
 
     TileItem TileDisplay;
@@ -41,11 +43,26 @@ partial class EditingTileItem
 
         TileDisplay.SpriteContainer.Click += (s, e) =>
         {
-            Debug.Log("Select a texture");
-            EditorScreen.Instance.AddChild(new TextureSelectionWindow());
+            if (textureSelectionWindow == null)
+            {
+                Debug.Log("Select a texture");
+                textureSelectionWindow = new TextureSelectionWindow();
+                textureSelectionWindow.OnDialogComplete += TextureSelectionWindow_OnDialogComplete;
+                textureSelectionWindow.OnClosed += () =>
+                {
+                    textureSelectionWindow = null;
+                };
+            }
+            EditorScreen.Instance.AddChild(textureSelectionWindow);
         };
 
         InnerPanel.AddChild(TileDisplay);
+    }
+
+    private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
+    {
+        tile.TextureId = result.GetValue<int>();
+        UpdateTileDisplay();
     }
 
     partial void CustomInitialize()
