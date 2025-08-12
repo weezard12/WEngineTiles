@@ -868,6 +868,139 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2025-08-11T11:19:20.7109203Z"
+      },
+      {
+        "NewName": "TestScreen.EditorWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-12T13:16:47.1570558Z"
+      },
+      {
+        "NewName": "TestScreen.WindowStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-12T13:17:12.3128155Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Container ContainerInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:01.9036958Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:01.908179Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/StackPanel StackPanelInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:01.9147558Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/ScrollViewer ScrollViewerInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:01.9227132Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.MyComponents/EditorWindow EditorWindowInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:01.9282429Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance9 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9070225Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9080301Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance2 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9153386Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance1 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9214272Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance1 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9254736Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance2 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9313725Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance3 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9379945Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance4 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9430117Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance6 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.94844Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance8 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9539906Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance7 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9600393Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance5 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T13:18:12.9656203Z"
       }
     ],
     "User1": [
