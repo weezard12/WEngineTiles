@@ -840,6 +840,43 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-08-11T11:02:10.2634189Z"
+      },
+      {
+        "NewName": "TestScreen.ScrollViewerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:19:10.6534523Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance7",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:19:18.1320516Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance8",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:19:19.0242051Z"
+      },
+      {
+        "NewName": "TestScreen.ColoredRectangleInstance9",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-11T11:19:20.7109203Z"
+      }
+    ],
+    "User1": [
+      {
+        "NewName": null,
+        "OldName": "MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow).Controls/StackPanel StackPanelInstance in MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T11:57:31.1337471Z"
       }
     ]
   }

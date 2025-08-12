@@ -46,7 +46,11 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     public ColoredRectangleRuntime ColoredRectangleInstance4 { get; protected set; }
     public ColoredRectangleRuntime ColoredRectangleInstance5 { get; protected set; }
     public ColoredRectangleRuntime ColoredRectangleInstance6 { get; protected set; }
+    public ColoredRectangleRuntime ColoredRectangleInstance7 { get; protected set; }
+    public ColoredRectangleRuntime ColoredRectangleInstance8 { get; protected set; }
+    public ColoredRectangleRuntime ColoredRectangleInstance9 { get; protected set; }
     public StackPanel StackPanelInstance { get; protected set; }
+    public ScrollViewer ScrollViewerInstance { get; protected set; }
 
     public TestScreen(InteractiveGue visual) : base(visual)
     {
@@ -71,7 +75,11 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         ColoredRectangleInstance4 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance4") as ColoredRectangleRuntime;
         ColoredRectangleInstance5 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance5") as ColoredRectangleRuntime;
         ColoredRectangleInstance6 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance6") as ColoredRectangleRuntime;
+        ColoredRectangleInstance7 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance7") as ColoredRectangleRuntime;
+        ColoredRectangleInstance8 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance8") as ColoredRectangleRuntime;
+        ColoredRectangleInstance9 = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance9") as ColoredRectangleRuntime;
         StackPanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"StackPanelInstance");
+        ScrollViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollViewer>(this.Visual,"ScrollViewerInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

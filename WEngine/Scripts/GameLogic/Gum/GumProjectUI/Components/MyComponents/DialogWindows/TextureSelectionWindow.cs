@@ -1,3 +1,5 @@
+using Gum.Managers;
+using Nez;
 using System.Collections.Generic;
 
 partial class TextureSelectionWindow
@@ -7,10 +9,20 @@ partial class TextureSelectionWindow
     {
         List<(int id, Nez.Textures.Sprite sprite)> sprites = new List<(int id, Nez.Textures.Sprite sprite)> ();
 
+        var innerPanel = ScrollViewerInstance.InnerPanel;
+        innerPanel.ChildrenLayout = ChildrenLayout.LeftToRightStack;
+        innerPanel.WrapsChildren = true;
+        innerPanel.StackSpacing = 4;
+
         foreach (var sprite in EditorScreen.Instance.RenderingManager.GetSprites())
         {
             sprites.Add( new (sprite.id, sprite.sprite) );
-            StackPanelInstance.AddChild(new TilesSprite(sprite.id, sprite.sprite));
+            TilesSprite tileSprite = new TilesSprite(sprite.id, sprite.sprite);
+            tileSprite.Visual.Click += (s, e) =>
+            {
+                Debug.Log(tileSprite.TextureId);
+            };
+            ScrollViewerInstance.AddChild(tileSprite);
         }
     }
 }
