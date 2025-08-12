@@ -19,7 +19,15 @@ partial class EditingTileItem
     {
         this.tile = tile;
         UpdateTileDisplay();
+        ConfirmButton.Click += OnConfirmButtonClick;
     }
+
+    private void OnConfirmButtonClick(object sender, System.EventArgs e)
+    {
+        EditorScreen.Instance.RenderingManager.AddTile(tile);
+        EditorScreen.Instance.TilesSelectionWindowInstance.LoadTiles();
+    }
+
     private void UpdateTileDisplay()
     {
         TileDisplay?.RemoveFromRoot();

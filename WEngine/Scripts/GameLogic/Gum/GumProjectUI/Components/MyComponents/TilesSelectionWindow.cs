@@ -52,8 +52,8 @@ partial class TilesSelectionWindow
         }
     }
 
-    public void LoadTiles(string path)
+    public void LoadTiles()
     {
-
+        LoadTiles(EditorScreen.Instance.RenderingManager);
     }
 }
