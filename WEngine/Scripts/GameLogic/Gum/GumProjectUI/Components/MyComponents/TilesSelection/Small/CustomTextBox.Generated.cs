@@ -31,36 +31,6 @@ partial class CustomTextBox : MonoGameGum.Forms.Controls.FrameworkElement
             return gue;
         });
     }
-    public enum States
-    {
-        Focused,
-        Normal,
-    }
-
-    States? _statesState;
-    public States? StatesState
-    {
-        get => _statesState;
-        set
-        {
-            _statesState = value;
-            if(value != null)
-            {
-                if(Visual.Categories.ContainsKey("States"))
-                {
-                    var category = Visual.Categories["States"];
-                    var state = category.States.Find(item => item.Name == value.ToString());
-                    this.Visual.ApplyState(state);
-                }
-                else
-                {
-                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "States");
-                    var state = category.States.Find(item => item.Name == value.ToString());
-                    this.Visual.ApplyState(state);
-                }
-            }
-        }
-    }
     public Label LabelInstance { get; protected set; }
     public TextBox TextBoxInstance { get; protected set; }
 

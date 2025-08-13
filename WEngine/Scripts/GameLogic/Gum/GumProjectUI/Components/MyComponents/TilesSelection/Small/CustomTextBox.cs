@@ -12,20 +12,27 @@ partial class CustomTextBox
     string Text { get; set; }
     partial void CustomInitialize()
     {
-        //StatesState = States.Normal;
         Visual.Click += OnVisualClick;
         Visual.RollOn += OnVisualRollOn;
         
         TextBoxInstance.LostFocus += OnTextBoxInstanceLostFocus;
-        
+        TextBoxInstance.KeyDown += OnTextBoxInstanceKeyDown;
+    }
+
+    private void OnTextBoxInstanceKeyDown(object sender, Gum.Forms.Controls.KeyEventArgs key)
+    {
+        if (key.Key == Microsoft.Xna.Framework.Input.Keys.Enter)
+        {
+            TextBoxInstance.IsFocused = false;
+        }
     }
 
     private void OnTextBoxInstanceLostFocus(object sender, EventArgs e)
     {
         Debug.Log("lost focuse");
-        //Visual.ExposeChildrenEvents = false;
-        //StatesState = States.Normal;
         TextBoxInstance.IsVisible = false;
+        Visual.ExposeChildrenEvents = false;
+        LabelInstance.Text = TextBoxInstance.Text;
     }
 
     private void OnVisualRollOn(object sender, EventArgs e)
@@ -35,16 +42,10 @@ partial class CustomTextBox
 
     private void OnVisualClick(object sender, EventArgs e)
     {
-        if(StatesState == null)
-        {
-            //StatesState = States.Focused;
-            Visual.ExposeChildrenEvents = true;
-            TextBoxInstance.IsVisible = true;
-            TextBoxInstance.IsFocused = true;
+        Visual.ExposeChildrenEvents = true;
+        TextBoxInstance.IsVisible = true;
+        TextBoxInstance.IsFocused = true;
             
-            Debug.Log("focuse");
-        }
-
-            
+        Debug.Log("focuse");
     }
 }
