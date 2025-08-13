@@ -27,18 +27,21 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorldEditor : TilesWorld
     {
-
+        private Dictionary<int, string> _tilesNames = new Dictionary<int, string>();
 
         TilesUserInfo tilesUserInfo;
         CameraInfoDisplay cameraInfoDisplay;
 
         EditorScreen EditorScreen;
-
+        TilesEditorProject project;
         public TilesWorldEditor(bool loadProject = false)
         {
+            project = (TilesEditorProject) ProjectManager.CurrentProject;
+            LoadTilesNames();
             if (loadProject)
             {
                 LoadWorld();
+                LoadTilesNames();
             }
         }
 
@@ -120,6 +123,39 @@ namespace WEngine.Scripts.Scenes.Tiles
                 cameraInfoDisplay.SetOffset(new Vector2(0, EditorScreen.IsVisible ? 30 : 0));
             }
         }
+
+        #region Managing Tiles Names
+
+        
+
+        public string GetTileName(Tile tile)
+        {
+            return GetTileName(tile.Id);
+        }
+        public string GetTileName(int tileId)
+        {
+            if(_tilesNames.TryGetValue(tileId, out string tileName)){
+                return tileName;
+            }
+            Debug.Error($"Tile with id {tileId} doesnt have a name.");
+            return "Unnamed";
+        }
+        public void SetTileName(Tile tile)
+        {
+            SetTileName(tile);
+        }
+        public void SetTileName(int tileId, string name)
+        {
+            _tilesNames.Add(tileId, name);
+        }
+
+        protected void LoadTilesNames()
+        {
+            project.GetTilesNames();
+            foreach ((int tileId, string name) in project.GetTilesNames())
+                _tilesNames.Add(tileId, name);
+        }
+        #endregion
 
     }
 }

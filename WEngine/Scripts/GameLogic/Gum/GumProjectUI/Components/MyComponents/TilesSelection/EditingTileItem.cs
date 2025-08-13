@@ -65,15 +65,8 @@ partial class EditingTileItem
             }
             EditorScreen.Instance.AddChild(textureSelectionWindow);
         };
-        TileDisplay.TileName.Text = "Tile Name";
-/*         TileDisplay.TileNameContainer.Click += (s, e) =>
-        {
-            Debug.Log("Rename TIle");
-            TileDisplay.TileName.IsVisible = false;
 
-           TileDisplay.TileNameTextBox.IsVisible = true;
-            TileDisplay.TileNameTextBox.IsFocused = true;*//*
-        };*/
+        TileDisplay.TileName.Text = EditorScreen.Instance.WorldEditor.GetTileName(tile);
 
         InnerPanel.AddChild(TileDisplay);
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,7 @@ namespace WEngine.Scripts.GameLogic.Project
             CreateFolderIfDoesntExist(Path.Combine(projectPath, "Assets"));
             CreateFolderIfDoesntExist(Path.Combine(projectPath, "World"));
             CreateFolderIfDoesntExist(Path.Combine(projectPath, "Tilesets"));
+            CreateFolderIfDoesntExist(Path.Combine(projectPath, "Editor"));
         }
 
         internal static void DeleteProject(string projectName)
@@ -67,12 +69,20 @@ namespace WEngine.Scripts.GameLogic.Project
 
         public static void SetCurrentProject(string projectName)
         {
-            CurrentProject = new TilesProject()
+            if (IsEditorProject(projectName))
             {
-                Name = projectName,
-            };
-        }
+                CurrentProject = new TilesEditorProject(projectName);
+                return;
+            }
+            CurrentProject = new TilesProject(projectName);
 
+        }
+        public static bool IsEditorProject(string projectName)
+        {
+            string editorPath = GetFileInProject(projectName, "Editor");
+            
+            return Directory.Exists(editorPath);
+        }
         internal static void WriteFileInProject(string projectName, string fileName, string json)
         {
             System.IO.File.WriteAllText(GetFileInProject(projectName, fileName), json);

@@ -21,6 +21,11 @@ namespace WEngine.Scripts.GameLogic.Project
         public string TileSetsPath { get; set; }
         public string TexturesPath { get; set; }
 
+        public TilesProject(string name)
+        {
+            this.Name = name;
+        }
+
         public void SaveWorldJson(SerializableTilesWorld serializableTilesWorld)
         {
             // saving each chunk in a seperate file
