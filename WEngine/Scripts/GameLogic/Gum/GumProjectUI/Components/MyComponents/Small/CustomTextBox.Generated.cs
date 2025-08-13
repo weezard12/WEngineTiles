@@ -1,4 +1,4 @@
-//Code for MyComponents/TilesSelection/Small/CustomTextBox (Container)
+//Code for MyComponents/Small/CustomTextBox (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -19,13 +19,13 @@ partial class CustomTextBox : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("MyComponents/TilesSelection/Small/CustomTextBox");
+            var element = ObjectFinder.Self.GetElementSave("MyComponents/Small/CustomTextBox");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
             if(createForms) visual.FormsControlAsObject = new CustomTextBox(visual);
             return visual;
         });
         MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(CustomTextBox)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/TilesSelection/Small/CustomTextBox", () => 
+        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/Small/CustomTextBox", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;

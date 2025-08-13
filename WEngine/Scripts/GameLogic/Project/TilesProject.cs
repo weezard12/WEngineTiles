@@ -6,10 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
 
 namespace WEngine.Scripts.GameLogic.Project
 {
+    // This is used to save and load a tiles world. *Not editor related*
     internal class TilesProject
     {
         const string worldFileName = "World";
@@ -40,5 +42,6 @@ namespace WEngine.Scripts.GameLogic.Project
             
             return sChunks;
         }
+
     }
 }

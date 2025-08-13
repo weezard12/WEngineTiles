@@ -1071,6 +1071,13 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2025-08-13T12:17:29.6859227Z"
+      },
+      {
+        "NewName": "MyComponents/Small/CustomTextBox",
+        "OldName": "MyComponents/TilesSelection/Small/CustomTextBox",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-08-13T12:38:37.7310168Z"
       }
     ]
   }

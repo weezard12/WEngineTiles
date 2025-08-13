@@ -27,6 +27,8 @@ namespace WEngine.Scripts.Scenes.Tiles
 {
     internal class TilesWorldEditor : TilesWorld
     {
+
+
         TilesUserInfo tilesUserInfo;
         CameraInfoDisplay cameraInfoDisplay;
 

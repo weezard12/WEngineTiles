@@ -11,12 +11,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>TileName.Parent</Name>
-      <Value xsi:type="xsd:string">PanelInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -96,6 +90,12 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TileName.Parent</Name>
+      <Value xsi:type="xsd:string">PanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TileSprite.Height</Name>
       <Value xsi:type="xsd:float">50</Value>
@@ -151,7 +151,7 @@
   </Instance>
   <Instance>
     <Name>TileName</Name>
-    <BaseType>MyComponents/TilesSelection/Small/CustomTextBox</BaseType>
+    <BaseType>MyComponents/Small/CustomTextBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>

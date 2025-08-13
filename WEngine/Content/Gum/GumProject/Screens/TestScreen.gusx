@@ -18,7 +18,7 @@
   </State>
   <Instance>
     <Name>CustomTextBoxInstance</Name>
-    <BaseType>MyComponents/TilesSelection/Small/CustomTextBox</BaseType>
+    <BaseType>MyComponents/Small/CustomTextBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

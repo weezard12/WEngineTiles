@@ -65,10 +65,7 @@ partial class EditingTileItem
             }
             EditorScreen.Instance.AddChild(textureSelectionWindow);
         };
-        TileDisplay.PanelInstance.Visual.Click += (s, e) =>
-        {
-            Debug.Log("Rename Tile");
-        };
+        TileDisplay.TileName.Text = "Tile Name";
 /*         TileDisplay.TileNameContainer.Click += (s, e) =>
         {
             Debug.Log("Rename TIle");
