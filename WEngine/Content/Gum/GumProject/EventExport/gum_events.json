@@ -847,6 +847,230 @@
         "ElementType": "Components",
         "EventType": 6,
         "TimestampUtc": "2025-08-12T13:36:37.0301372Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-12T14:13:53.66003Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).TileNameContainer",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-12T14:14:38.4603104Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-12T14:15:00.4731439Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).ColoredRectangle ColoredRectangleInstance in MyComponents/TilesSelection/TileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-12T14:15:41.7577174Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T11:42:56.1223332Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).TileNameTextBox",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).TextBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-13T11:43:25.7910644Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).Controls/TextBox TileNameTextBox in MyComponents/TilesSelection/TileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T11:47:41.0590288Z"
+      },
+      {
+        "NewName": "MyComponents/Small",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-13T11:50:21.5405017Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Small",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2025-08-13T11:50:26.9864633Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/Small/CustomTextEdit",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-13T11:50:57.2144717Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/Small/CustomTextBox",
+        "OldName": "MyComponents/TilesSelection/Small/CustomTextEdit",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-08-13T11:51:12.3395771Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/Small/CustomTextBox (Container).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T11:51:31.436548Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/Small/CustomTextBox (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T11:52:24.3821449Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).CustomTextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T11:57:59.0859853Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).Controls/Label TileName in MyComponents/TilesSelection/TileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T11:58:03.2027008Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).TileName",
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).CustomTextBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-13T11:58:11.9042858Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/TileItem (Container).Container TileNameContainer in MyComponents/TilesSelection/TileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:00:58.5639521Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:21.5406003Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/StackPanel StackPanelInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:21.5416035Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Container ContainerInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:21.5512494Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5369061Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance1 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5460291Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.Controls/Panel PanelInstance2 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5546168Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance1 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5636638Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance2 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5696891Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance3 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5757239Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance4 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5808473Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance5 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:26.5884031Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.ColoredRectangle ColoredRectangleInstance6 in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:05:29.4768198Z"
+      },
+      {
+        "NewName": "TestScreen.CustomTextBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T12:05:33.9679452Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TestScreen.MyComponents/TilesSelection/Small/CustomTextBox CustomTextBoxInstance in TestScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-13T12:17:25.4675919Z"
+      },
+      {
+        "NewName": "TestScreen.CustomTextBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-13T12:17:29.6859227Z"
       }
     ]
   }

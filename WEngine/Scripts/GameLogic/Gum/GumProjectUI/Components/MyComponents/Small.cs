@@ -7,10 +7,10 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class TileItem
+partial class Small
 {
-
     partial void CustomInitialize()
     {
+    
     }
 }

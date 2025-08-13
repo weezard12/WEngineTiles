@@ -32,7 +32,7 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
         });
     }
     public SpriteRuntime TileSprite { get; protected set; }
-    public Label TileName { get; protected set; }
+    public CustomTextBox TileName { get; protected set; }
     public Label TileType { get; protected set; }
     public ContainerRuntime SpriteContainer { get; protected set; }
     public Panel PanelInstance { get; protected set; }
@@ -50,7 +50,7 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
     {
         base.ReactToVisualChanged();
         TileSprite = this.Visual?.GetGraphicalUiElementByName("TileSprite") as SpriteRuntime;
-        TileName = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"TileName");
+        TileName = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<CustomTextBox>(this.Visual,"TileName");
         TileType = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"TileType");
         SpriteContainer = this.Visual?.GetGraphicalUiElementByName("SpriteContainer") as ContainerRuntime;
         PanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");

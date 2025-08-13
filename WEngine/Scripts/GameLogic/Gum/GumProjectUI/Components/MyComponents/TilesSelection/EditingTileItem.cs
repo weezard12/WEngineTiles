@@ -33,6 +33,7 @@ partial class EditingTileItem
         TileDisplay?.RemoveFromRoot();
         TileDisplay = new TileItem();
 
+        // Setting up the tile Tile Display texture
         Sprite sprite = EditorScreen.Instance.WorldEditor.RenderingManager.GetSprite(tile);
 
         TileDisplay.TileSprite.Texture = sprite.Texture2D;
@@ -49,6 +50,7 @@ partial class EditingTileItem
         TileDisplay.TileSprite.Width = 200;
         TileDisplay.TileSprite.Height = 200;
 
+        // Making the sprite editable
         TileDisplay.SpriteContainer.Click += (s, e) =>
         {
             if (textureSelectionWindow == null)
@@ -63,6 +65,18 @@ partial class EditingTileItem
             }
             EditorScreen.Instance.AddChild(textureSelectionWindow);
         };
+        TileDisplay.PanelInstance.Visual.Click += (s, e) =>
+        {
+            Debug.Log("Rename Tile");
+        };
+/*         TileDisplay.TileNameContainer.Click += (s, e) =>
+        {
+            Debug.Log("Rename TIle");
+            TileDisplay.TileName.IsVisible = false;
+
+           TileDisplay.TileNameTextBox.IsVisible = true;
+            TileDisplay.TileNameTextBox.IsFocused = true;*//*
+        };*/
 
         InnerPanel.AddChild(TileDisplay);
     }

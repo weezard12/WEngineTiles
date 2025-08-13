@@ -1,4 +1,4 @@
-//Code for TestScreen
+//Code for MyComponents/Small (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
+partial class Small : MonoGameGum.Forms.Controls.FrameworkElement
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -19,28 +19,23 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("TestScreen");
+            var element = ObjectFinder.Self.GetElementSave("MyComponents/Small");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new TestScreen(visual);
-            visual.Width = 0;
-            visual.WidthUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
-            visual.Height = 0;
-            visual.HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToParent;
+            if(createForms) visual.FormsControlAsObject = new Small(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TestScreen)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("TestScreen", () => 
+        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(Small)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/Small", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
         });
     }
-    public CustomTextBox CustomTextBoxInstance { get; protected set; }
 
-    public TestScreen(InteractiveGue visual) : base(visual)
+    public Small(InteractiveGue visual) : base(visual)
     {
     }
-    public TestScreen()
+    public Small()
     {
 
 
@@ -49,7 +44,6 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        CustomTextBoxInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<CustomTextBox>(this.Visual,"CustomTextBoxInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

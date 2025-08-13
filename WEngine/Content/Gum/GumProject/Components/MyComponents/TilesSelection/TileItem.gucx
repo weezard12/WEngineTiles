@@ -11,6 +11,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>TileName.Parent</Name>
+      <Value xsi:type="xsd:string">PanelInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -90,36 +96,6 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>TileName.LabelText</Name>
-      <Value xsi:type="xsd:string">This is the name of the tile</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TileName.Parent</Name>
-      <Value xsi:type="xsd:string">PanelInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>StyleCategory</Type>
-      <Name>TileName.Style</Name>
-      <Value xsi:type="xsd:string">H2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>TileName.Width</Name>
-      <Value xsi:type="xsd:float">240</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>TileName.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>TileSprite.Height</Name>
       <Value xsi:type="xsd:float">50</Value>
@@ -175,7 +151,7 @@
   </Instance>
   <Instance>
     <Name>TileName</Name>
-    <BaseType>Controls/Label</BaseType>
+    <BaseType>MyComponents/TilesSelection/Small/CustomTextBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
