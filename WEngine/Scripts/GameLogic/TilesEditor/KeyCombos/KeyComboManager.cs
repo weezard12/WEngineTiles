@@ -15,12 +15,16 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
     {
         public event EventHandler<KeyComboActivatedEventArgs> ComboActivated;
 
-        private List<KeyCombo> _combos = new List<KeyCombo>();
-        private List<ComboProgress> _activeProgresses = new List<ComboProgress>();
+        private readonly List<KeyCombo> _combos = new List<KeyCombo>();
+        private readonly List<ComboProgress> _activeProgresses = new List<ComboProgress>();
         private float _currentTime;
 
         public bool Enabled { get; set; } = true;
         public bool LogComboAttempts { get; set; } = false; // For debugging
+
+        // Performance caches
+        private readonly Dictionary<Keys, List<KeyCombo>> _combosByFirstKey = new Dictionary<Keys, List<KeyCombo>>();
+        private readonly HashSet<Keys> _relevantKeysCache = new HashSet<Keys>();
 
         public override void OnAddedToEntity()
         {
@@ -56,6 +60,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                 throw new ArgumentException("Combo must have at least one key");
 
             _combos.Add(combo);
+            IndexCombo(combo);
         }
 
         /// <summary>
@@ -129,6 +134,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                 _combos.Remove(combo);
                 // Also remove any active progress for this combo
                 _activeProgresses.RemoveAll(p => p.Combo == combo);
+                DeindexCombo(combo);
                 return true;
             }
             return false;
@@ -165,6 +171,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
         {
             _combos.Clear();
             _activeProgresses.Clear();
+            _combosByFirstKey.Clear();
+            _relevantKeysCache.Clear();
         }
 
         /// <summary>
@@ -187,18 +195,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
         {
             var newKeys = new List<Keys>();
 
-            // Optimized: Only check keys that are actually used in combos
-            var relevantKeys = new HashSet<Keys>();
-            foreach (var combo in _combos)
-            {
-                foreach (var key in combo.Keys)
-                {
-                    relevantKeys.Add(key);
-                }
-            }
-
-            // Check only the keys that matter for our combos
-            foreach (var key in relevantKeys)
+            // Check only the keys that matter for our combos (cached)
+            foreach (var key in _relevantKeysCache)
             {
                 if (Input.IsKeyPressed(key))
                 {
@@ -216,61 +214,58 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                 Debug.Log($"Key pressed: {pressedKey}");
             }
 
-            // Check each combo for potential matches
-            foreach (var combo in _combos)
+            // Track which combos we have already processed to avoid duplicate work
+            var processedCombos = new HashSet<KeyCombo>();
+
+            // Check combos that start with this key first
+            if (_combosByFirstKey.TryGetValue(pressedKey, out var startingCombos))
             {
-                ProcessComboForKey(combo, pressedKey);
+                for (int i = 0; i < startingCombos.Count; i++)
+                {
+                    processedCombos.Add(startingCombos[i]);
+                    ProcessComboForKey(startingCombos[i], pressedKey);
+                }
+            }
+
+            // Then attempt to continue existing progresses that expect or accept this key
+            // Iterate over a copy because we may remove progresses
+            if (_activeProgresses.Count > 0)
+            {
+                var snapshot = new List<ComboProgress>(_activeProgresses);
+                for (int i = 0; i < snapshot.Count; i++)
+                {
+                    var progress = snapshot[i];
+                    // Skip expired here; cleanup will remove later
+                    if (progress.IsExpired(_currentTime)) continue;
+
+                    var combo = progress.Combo;
+                    if (processedCombos.Contains(combo))
+                        continue;
+                    if (combo.RequireExactOrder)
+                    {
+                        if (progress.CurrentIndex < combo.Keys.Count && combo.Keys[progress.CurrentIndex] == pressedKey)
+                        {
+                            ProcessComboForKey(combo, pressedKey);
+                        }
+                    }
+                    else
+                    {
+                        if (progress.RemainingAnyOrderKeys != null && progress.RemainingAnyOrderKeys.Contains(pressedKey))
+                        {
+                            ProcessComboForKey(combo, pressedKey);
+                        }
+                    }
+                }
             }
         }
 
         private void ProcessComboForKey(KeyCombo combo, Keys pressedKey)
         {
-            // Find existing progress for this combo
+            // Find existing progress for this combo (linear search kept due to typically small active set)
             var progress = _activeProgresses.FirstOrDefault(p => p.Combo == combo);
 
-            // Check if this key starts the combo
-            if (combo.Keys[0] == pressedKey)
-            {
-                if (progress == null)
-                {
-                    // Start new progress
-                    progress = new ComboProgress
-                    {
-                        Combo = combo,
-                        CurrentIndex = 1,
-                        LastKeyTime = _currentTime,
-                        StartTime = _currentTime
-                    };
-                    progress.PressedKeys.Add(pressedKey);
-                    _activeProgresses.Add(progress);
-
-                    if (LogComboAttempts)
-                    {
-                        Debug.Log($"Started combo '{combo.Name}' with key {pressedKey}");
-                    }
-                }
-                else
-                {
-                    // Reset existing progress
-                    progress.Reset(_currentTime);
-                    progress.CurrentIndex = 1;
-                    progress.PressedKeys.Add(pressedKey);
-
-                    if (LogComboAttempts)
-                    {
-                        Debug.Log($"Restarted combo '{combo.Name}' with key {pressedKey}");
-                    }
-                }
-
-                // Check if combo is complete (single key combo)
-                if (combo.Keys.Count == 1)
-                {
-                    OnComboActivated(combo, 0f);
-                    _activeProgresses.Remove(progress);
-                }
-            }
-            // Check if this key continues an existing combo
-            else if (progress != null && !progress.IsExpired(_currentTime))
+            // Prefer continuing an existing, non-expired progress if present
+            if (progress != null && !progress.IsExpired(_currentTime))
             {
                 if (combo.RequireExactOrder)
                 {
@@ -303,6 +298,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                             progress.Reset(_currentTime);
                             progress.CurrentIndex = 1;
                             progress.PressedKeys.Add(pressedKey);
+                            if (progress.RemainingAnyOrderKeys != null)
+                                progress.RemainingAnyOrderKeys.Remove(pressedKey);
                         }
                         else
                         {
@@ -317,11 +314,14 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                 else
                 {
                     // Any order allowed - check if key is in remaining keys
-                    var remainingKeys = combo.Keys.Skip(progress.PressedKeys.Count).ToList();
-                    if (remainingKeys.Contains(pressedKey))
+                    if (progress.RemainingAnyOrderKeys == null)
+                        progress.RemainingAnyOrderKeys = new HashSet<Keys>(combo.Keys.Except(progress.PressedKeys));
+
+                    if (progress.RemainingAnyOrderKeys.Contains(pressedKey))
                     {
                         progress.PressedKeys.Add(pressedKey);
                         progress.LastKeyTime = _currentTime;
+                        progress.RemainingAnyOrderKeys.Remove(pressedKey);
 
                         if (LogComboAttempts)
                         {
@@ -336,6 +336,44 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
                             _activeProgresses.Remove(progress);
                         }
                     }
+                    else if (combo.Keys[0] == pressedKey)
+                    {
+                        // Restart any-order combo if first key is hit
+                        progress.Reset(_currentTime);
+                        progress.CurrentIndex = 1;
+                        progress.PressedKeys.Add(pressedKey);
+                        if (progress.RemainingAnyOrderKeys != null)
+                            progress.RemainingAnyOrderKeys.Remove(pressedKey);
+                    }
+                }
+            }
+            // No active progress or expired: check if this key starts the combo
+            else if (combo.Keys[0] == pressedKey)
+            {
+                // Start new progress
+                progress = new ComboProgress
+                {
+                    Combo = combo,
+                    CurrentIndex = 1,
+                    LastKeyTime = _currentTime,
+                    StartTime = _currentTime,
+                    RemainingAnyOrderKeys = combo.RequireExactOrder ? null : new HashSet<Keys>(combo.Keys)
+                };
+                progress.PressedKeys.Add(pressedKey);
+                if (progress.RemainingAnyOrderKeys != null)
+                    progress.RemainingAnyOrderKeys.Remove(pressedKey);
+                _activeProgresses.Add(progress);
+
+                if (LogComboAttempts)
+                {
+                    Debug.Log($"Started combo '{combo.Name}' with key {pressedKey}");
+                }
+
+                // Check if combo is complete (single key combo)
+                if (combo.Keys.Count == 1)
+                {
+                    OnComboActivated(combo, 0f);
+                    _activeProgresses.Remove(progress);
                 }
             }
         }
@@ -368,6 +406,42 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.KeyCombos
             ComboActivated?.Invoke(this, args);
             // Raise per-combo event
             combo.InvokeActivated(this, args);
+        }
+
+        private void IndexCombo(KeyCombo combo)
+        {
+            if (combo.Keys.Count == 0) return;
+            var first = combo.Keys[0];
+            if (!_combosByFirstKey.TryGetValue(first, out var list))
+            {
+                list = new List<KeyCombo>();
+                _combosByFirstKey[first] = list;
+            }
+            list.Add(combo);
+
+            foreach (var key in combo.Keys)
+                _relevantKeysCache.Add(key);
+        }
+
+        private void DeindexCombo(KeyCombo combo)
+        {
+            if (combo.Keys.Count == 0) return;
+            var first = combo.Keys[0];
+            if (_combosByFirstKey.TryGetValue(first, out var list))
+            {
+                list.Remove(combo);
+                if (list.Count == 0)
+                    _combosByFirstKey.Remove(first);
+            }
+
+            // Rebuild relevant keys cache conservatively when removing
+            _relevantKeysCache.Clear();
+            for (int i = 0; i < _combos.Count; i++)
+            {
+                var c = _combos[i];
+                foreach (var key in c.Keys)
+                    _relevantKeysCache.Add(key);
+            }
         }
     }
 }
