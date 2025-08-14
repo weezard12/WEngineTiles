@@ -12,6 +12,10 @@ using WEngine.Scripts.GameLogic.Tiles.Serializable;
 namespace WEngine.Scripts.GameLogic.Project
 {
     // This is used to save and load a tiles world. *Not editor related*
+    /// <summary>
+    /// Handles all files operations. Separates the logic of creating, reading, modifying... files from the Tiles World.
+    /// (All file operations in must be in here)
+    /// </summary>
     internal class TilesProject
     {
         const string worldFileName = "World";

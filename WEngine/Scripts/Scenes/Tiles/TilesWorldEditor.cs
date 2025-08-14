@@ -21,8 +21,10 @@ using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable.Editor;
 using WEngine.Scripts.GameLogic.TilesEditor;
+using WEngine.Scripts.GameLogic.TilesEditor.KeyCombos;
 using WEngine.Scripts.Main;
 using static System.Formats.Asn1.AsnWriter;
+using KeyCombo = WEngine.Scripts.GameLogic.TilesEditor.KeyCombos.KeyCombo;
 using Random = Nez.Random;
 
 namespace WEngine.Scripts.Scenes.Tiles
@@ -49,6 +51,14 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void OnStart()
         {
             base.OnStart();
+            var _inputEntity = CreateEntity("input-manager");
+            // The API is unchanged - just cleaner internally
+            var manager = _inputEntity.AddComponent<KeyComboManager>();
+            manager.AddCombo(new KeyCombo("MyCombo", Keys.A, Keys.B, Keys.C), () => { Debug.Log("A B C clicked"); });
+
+            manager.ComboActivated += (sender, args) => {
+                Debug.Log($"Combo {args.Combo.Name} activated!");
+            };
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
