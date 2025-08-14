@@ -51,14 +51,14 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void OnStart()
         {
             base.OnStart();
+            // Input Manager for shortcuts
             var _inputEntity = CreateEntity("input-manager");
-            // The API is unchanged - just cleaner internally
             var manager = _inputEntity.AddComponent<KeyComboManager>();
-            manager.AddCombo(new KeyCombo("MyCombo", Keys.A, Keys.B, Keys.C), () => { Debug.Log("A B C clicked"); });
+            manager.AddCombo(new KeyCombo("Save", Keys.LeftControl, Keys.S), () =>
+            {
+                SaveWorld();
+            });
 
-            manager.ComboActivated += (sender, args) => {
-                Debug.Log($"Combo {args.Combo.Name} activated!");
-            };
 
             // Creates Camera Controller for the Editor.
             Entity entity = CreateEntity("camera-controller");
