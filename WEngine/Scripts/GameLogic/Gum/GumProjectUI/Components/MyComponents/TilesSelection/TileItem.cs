@@ -35,13 +35,14 @@ partial class TileItem
 
         // Tile Name
         TileName.Text = EditorScreen.Instance.WorldEditor.GetTileName(_tile);
-        TileName.TextChanged += OnTileNameTextChanged;
+        TileName.TextConfirmed += OnTileNameTextConfirmed; ;
     }
 
-    private void OnTileNameTextChanged(object sender, System.EventArgs e)
+    private void OnTileNameTextConfirmed(object sender, System.EventArgs e)
     {
         EditorScreen.Instance.WorldEditor.SetTileName(_tile, TileName.Text);
     }
+
 
     partial void CustomInitialize()
     {

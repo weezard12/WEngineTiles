@@ -42,7 +42,6 @@ namespace WEngine.Scripts.Scenes.Tiles
             if (loadProject)
             {
                 LoadWorld();
-                LoadTilesNames();
             }
         }
 

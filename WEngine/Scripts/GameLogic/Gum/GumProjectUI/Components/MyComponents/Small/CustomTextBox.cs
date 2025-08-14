@@ -24,6 +24,7 @@ partial class CustomTextBox
         }
     }
     public event EventHandler TextChanged;
+    public event EventHandler TextConfirmed;
     partial void CustomInitialize()
     {
         Visual.Click += OnVisualClick;
@@ -64,6 +65,7 @@ partial class CustomTextBox
 
         // Sync property when focus is lost
         Text = TextBoxInstance.Text;
+        TextConfirmed?.Invoke(this, e);
     }
 
     private void OnVisualRollOn(object sender, EventArgs e)

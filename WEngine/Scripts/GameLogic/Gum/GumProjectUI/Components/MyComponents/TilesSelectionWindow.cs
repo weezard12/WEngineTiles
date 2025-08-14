@@ -1,12 +1,14 @@
 
 using Gum.Converters;
 using Gum.DataTypes;
+using Gum.Forms.Controls;
 using Gum.Managers;
 using Gum.Wireframe;
 using MonoGameGum;
 using Nez;
 using Nez.Textures;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
@@ -15,12 +17,14 @@ using static WEngine.Scripts.Main.Game1;
 
 partial class TilesSelectionWindow
 {
+    List<FrameworkElement> _elements = new List<FrameworkElement>();
     partial void CustomInitialize()
     {
-        Debug.Log("Custom Initialize");
         ImportTilesetButton.Click += (_, _) =>
         {
+            Debug.Log("Adding new tile to the rendering manager");
             Tile tile = new Tile();
+            EditorScreen.Instance.RenderingManager.AddTile(tile);
             Game1.CurrentGumScreen.AddChild(new EditingTileItemWindow(tile));
         };
     }
@@ -29,11 +33,17 @@ partial class TilesSelectionWindow
     {
         // Load tiles from the rendering manager
 
+        foreach (FrameworkElement element in _elements)
+            element.RemoveFromRoot();
+        
+        _elements.Clear();
+
         foreach (var item in renderingManager.GetTiles())
         {
             TileItem tile = new TileItem(item.tile);
 
             EditorWindowContentInstance.ScrollViewerInstance.AddChild(tile);
+            _elements.Add(tile);
         }
     }
 

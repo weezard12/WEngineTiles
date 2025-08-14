@@ -24,7 +24,6 @@ partial class EditingTileItem
 
     private void OnConfirmButtonClick(object sender, System.EventArgs e)
     {
-        EditorScreen.Instance.RenderingManager.AddTile(tile);
         EditorScreen.Instance.TilesSelectionWindowInstance.LoadTiles();
     }
 
