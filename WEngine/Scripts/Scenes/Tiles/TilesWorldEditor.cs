@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using MonoGameGum;
 using MonoGameGum.Forms;
 using MonoGameGum.Forms.Controls;
+using Newtonsoft.Json;
 using Nez;
 using Nez.Systems;
 using System;
@@ -162,6 +163,21 @@ namespace WEngine.Scripts.Scenes.Tiles
             project.GetTilesNames();
             foreach (SerializableTileName tileName in project.GetTilesNames())
                 _tilesNames.Add(tileName.ID, tileName.Name);
+        }
+
+        public override void SaveWorld()
+        {
+            base.SaveWorld();
+            // The editor also save the Tiles from the rendering manager.
+            // (Regular world doesnt need to save them since for it they are read only)
+
+            List<Tile> tiles = new List<Tile>();
+            foreach (var tile in RenderingManager.GetTiles())
+            {
+                tiles.Add(tile.tile);
+            }
+
+            project.SaveTiles(tiles);
         }
         #endregion
 

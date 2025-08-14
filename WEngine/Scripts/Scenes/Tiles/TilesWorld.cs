@@ -132,12 +132,12 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         #region World Saving
 
-        public void SaveWorld()
+        public virtual void SaveWorld()
         {
             SerializableTilesWorld serializableTilesWorld = ToSerializable();
             ProjectManager.CurrentProject.SaveWorldJson(serializableTilesWorld);
         }
-        public void LoadWorld()
+        public virtual void LoadWorld()
         {
             List<SerializableTilesChunk> sChunks = ProjectManager.CurrentProject.LoadChunks();
             foreach (SerializableTilesChunk chunk in sChunks)
