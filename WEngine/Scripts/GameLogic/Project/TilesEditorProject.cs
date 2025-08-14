@@ -19,12 +19,12 @@ namespace WEngine.Scripts.GameLogic.Project
         public List<SerializableTileName> GetTilesNames()
         {
             string tilesNamesPath = ProjectManager.GetFileInProject(Name, "Editor\\tiles_names.json");
-            if (!System.IO.File.Exists(tilesNamesPath))
+            if (!File.Exists(tilesNamesPath))
             {
                 return new List<SerializableTileName>();
             }
 
-            return JsonSerializer.Deserialize<List<SerializableTileName>>();
+            return JsonSerializer.Deserialize<List<SerializableTileName>>(File.ReadAllText(tilesNamesPath));
         }
 
         public void SetTilesNames(List<SerializableTileName> tileNames)

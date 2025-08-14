@@ -69,12 +69,12 @@ partial class FilesViewer
     {
         foreach (var file in Directory.GetFiles(path))
         {
-            ScrollViewerInstance.AddChild(new File(this, file) { X = depth * 20 });
+            ScrollViewerInstance.AddChild(new FileComponent(this, file) { X = depth * 20 });
         }
 
         foreach (var file in Directory.GetDirectories(path))
         {
-            ScrollViewerInstance.AddChild(new File(this, file, true) { X = depth * 20});
+            ScrollViewerInstance.AddChild(new FileComponent(this, file, true) { X = depth * 20});
             if (OpenedFolders.Contains(file))
             {
                 RefreshView(file, ++depth);
@@ -108,7 +108,7 @@ partial class FilesViewer
 
         return false;
     }
-    public bool SelectFile(File file)
+    public bool SelectFile(FileComponent file)
     {
         return SelectFile(file.FilePath);
     }
@@ -118,16 +118,16 @@ partial class FilesViewer
         SelectedFiles.Remove(filePath);
         OnFileUnselected?.Invoke(filePath);
     }
-    public void UnselectFile(File file)
+    public void UnselectFile(FileComponent file)
     {
         UnselectFile(file.FilePath);
     }
 
 
-    public File GetFile(string path)
+    public FileComponent GetFile(string path)
     {
         foreach (var child in ScrollViewerInstance.InnerPanel.Children)
-            if (child is File file && file.FilePath == path)
+            if (child is FileComponent file && file.FilePath == path)
                 return file;
 
         return null;

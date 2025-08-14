@@ -1078,6 +1078,20 @@
         "ElementType": "Components",
         "EventType": 2,
         "TimestampUtc": "2025-08-13T12:38:37.7310168Z"
+      },
+      {
+        "NewName": "MyComponents/FileComponent",
+        "OldName": "MyComponents/File",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-08-14T17:19:33.1170455Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "FileComponent",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2025-08-14T17:24:18.8406453Z"
       }
     ]
   }

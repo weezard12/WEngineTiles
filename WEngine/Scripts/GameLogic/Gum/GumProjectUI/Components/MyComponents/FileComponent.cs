@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-partial class File
+partial class FileComponent
 {
     private static readonly Dictionary<string, string> FileIcons = new()
     {
@@ -25,7 +25,7 @@ partial class File
 
     private readonly FilesViewer FilesViewer;
 
-    public File(FilesViewer filesViewer, string fullPath, bool isFolder = false)
+    public FileComponent(FilesViewer filesViewer, string fullPath, bool isFolder = false)
     {
         this.IsFolder = isFolder;
         this.FileName = Path.GetFileName(fullPath);
@@ -41,7 +41,7 @@ partial class File
             return;
         }
 
-        if(FileIcons.TryGetValue(FileExtension, out string specialTexture))
+        if (FileIcons.TryGetValue(FileExtension, out string specialTexture))
             FileIcon.SourceFileName = specialTexture;
         else
             FileIcon.SourceFileName = "fileDefaultIcon.png";
@@ -58,22 +58,22 @@ partial class File
             }
             else
             {
-                if(QuikcStylesState == QuikcStyles.Selected)
+                if (QuikcStylesState == QuikcStyles.Selected)
                 {
                     QuikcStylesState = QuikcStyles.Hovered;
                     FilesViewer.UnselectFile(this);
                 }
-                    
+
                 else
                 {
-                    if(FilesViewer.SelectFile(this))
+                    if (FilesViewer.SelectFile(this))
                         QuikcStylesState = QuikcStyles.Selected;
-                    
+
                 }
-                    
+
             }
         };
-        
+
         FileClickBounds.RollOn += (sender, e) =>
         {
             Debug.Log($"Hovered on file: {FileName}");
@@ -88,7 +88,6 @@ partial class File
                 QuikcStylesState = QuikcStyles.Clear;
 
         };
-        
+
     }
-    
 }

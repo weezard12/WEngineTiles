@@ -1,4 +1,4 @@
-//Code for MyComponents/File (Container)
+//Code for MyComponents/FileComponent (Container)
 using GumRuntime;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class File : MonoGameGum.Forms.Controls.FrameworkElement
+partial class FileComponent : MonoGameGum.Forms.Controls.FrameworkElement
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -19,13 +19,13 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
         var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
             var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
-            var element = ObjectFinder.Self.GetElementSave("MyComponents/File");
+            var element = ObjectFinder.Self.GetElementSave("MyComponents/FileComponent");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
-            if(createForms) visual.FormsControlAsObject = new File(visual);
+            if(createForms) visual.FormsControlAsObject = new FileComponent(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(File)] = template;
-        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/File", () => 
+        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(FileComponent)] = template;
+        ElementSaveExtensions.RegisterGueInstantiation("MyComponents/FileComponent", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
             return gue;
@@ -68,8 +68,10 @@ partial class File : MonoGameGum.Forms.Controls.FrameworkElement
     public SpriteRuntime FileIcon { get; protected set; }
     public Label FileNameLabel { get; protected set; }
 
-    public File(InteractiveGue visual) : base(visual) { }
-    public File()
+    public FileComponent(InteractiveGue visual) : base(visual)
+    {
+    }
+    public FileComponent()
     {
 
 

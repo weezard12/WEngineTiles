@@ -11,7 +11,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class Folder : File
+partial class Folder : FileComponent
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
