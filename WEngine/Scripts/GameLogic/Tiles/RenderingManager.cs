@@ -23,19 +23,24 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         private readonly List<Tileset> Tilesets = new();
 
-        public RenderingManager()
+        public RenderingManager(List<Tile> tiles)
         {
             // Testing tilesets (TODO move this logic to TilesWorld)
-/*            Tileset tileset = new Tileset();
+            /*            Tileset tileset = new Tileset();
 
-            tileset.SetTiles(new int[3, 3]
-            {
-                { 7, 9, 8 },
-                { 9, 9, 9 },
-                { 5, 9, 6 }
-            });
+                        tileset.SetTiles(new int[3, 3]
+                        {
+                            { 7, 9, 8 },
+                            { 9, 9, 9 },
+                            { 5, 9, 6 }
+                        });
 
-            AddTileset(tileset);*/
+                        AddTileset(tileset);*/
+
+            // Loading the tiles when initializing the renderer
+            foreach (Tile tile in tiles)
+                Tiles.Add(tile.Id, tile);
+            
         }
 
         public override void OnAddedToScene()
@@ -65,6 +70,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             }
 
             FinishedLoadingAssets?.Invoke();
+
         }
 
         // Used in game rendering
@@ -92,7 +98,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             return null;
         }
 
-
+        
         #region Adding Tilesets
         public void AddTileset(Tileset tileset)
         {
@@ -202,6 +208,14 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 yield return (kvp.Key, kvp.Value);
             }
+        }
+
+        #endregion
+
+        #region Loading Resources
+        private void LoadTiles()
+        {
+
         }
 
         #endregion

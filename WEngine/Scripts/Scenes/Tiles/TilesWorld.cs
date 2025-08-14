@@ -126,9 +126,10 @@ namespace WEngine.Scripts.Scenes.Tiles
         {
             base.OnStart();
 
-            RenderingManager = new RenderingManager();
+            RenderingManager = new RenderingManager(ProjectManager.CurrentProject.LoadTiles());
             AddEntity(RenderingManager);
         }
+
 
         #region World Saving
 

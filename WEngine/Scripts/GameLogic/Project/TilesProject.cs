@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
+using NJson = Newtonsoft.Json;
 
 namespace WEngine.Scripts.GameLogic.Project
 {
@@ -28,6 +29,7 @@ namespace WEngine.Scripts.GameLogic.Project
         public TilesProject(string name)
         {
             this.Name = name;
+            TilesPath = ProjectManager.GetFileInProject(name, "tiles.json");
         }
 
         public void SaveWorldJson(SerializableTilesWorld serializableTilesWorld)
@@ -52,5 +54,16 @@ namespace WEngine.Scripts.GameLogic.Project
             return sChunks;
         }
 
+        public List<Tile> LoadTiles()
+        {
+            string json = File.ReadAllText(TilesPath);
+            var settings = new NJson.JsonSerializerSettings
+            {
+                TypeNameHandling = NJson.TypeNameHandling.All,
+                Formatting = NJson.Formatting.Indented
+            };
+
+            return NJson.JsonConvert.DeserializeObject<List<Tile>>(json, settings);
+        }
     }
 }
