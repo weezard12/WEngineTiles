@@ -31,24 +31,7 @@ partial class EditingTileItem
     private void UpdateTileDisplay()
     {
         TileDisplay?.RemoveFromRoot();
-        TileDisplay = new TileItem();
-
-        // Setting up the tile Tile Display texture
-        Sprite sprite = EditorScreen.Instance.WorldEditor.RenderingManager.GetSprite(tile);
-
-        TileDisplay.TileSprite.Texture = sprite.Texture2D;
-
-        TileDisplay.TileSprite.TextureAddress = TextureAddress.Custom;
-
-        TileDisplay.TileSprite.TextureTop = sprite.SourceRect.X;
-        TileDisplay.TileSprite.TextureLeft = sprite.SourceRect.Y;
-        TileDisplay.TileSprite.TextureWidth = sprite.SourceRect.Width;
-        TileDisplay.TileSprite.TextureHeight = sprite.SourceRect.Height;
-        
-        TileDisplay.TileType.Text = tile.GetType().Name;
-        
-        TileDisplay.TileSprite.Width = 200;
-        TileDisplay.TileSprite.Height = 200;
+        TileDisplay = new TileItem(tile);
 
         // Making the sprite editable
         TileDisplay.SpriteContainer.Click += (s, e) =>
@@ -66,7 +49,7 @@ partial class EditingTileItem
             EditorScreen.Instance.AddChild(textureSelectionWindow);
         };
 
-        TileDisplay.TileName.Text = EditorScreen.Instance.WorldEditor.GetTileName(tile);
+        
 
         InnerPanel.AddChild(TileDisplay);
     }

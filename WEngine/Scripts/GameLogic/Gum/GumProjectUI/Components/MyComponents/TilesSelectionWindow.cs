@@ -31,24 +31,9 @@ partial class TilesSelectionWindow
 
         foreach (var item in renderingManager.GetTiles())
         {
-            TileItem tile = new TileItem();
-            Sprite sprite = renderingManager.GetSprite(item.tile);
+            TileItem tile = new TileItem(item.tile);
 
-            tile.TileSprite.Texture = sprite.Texture2D;
-            
-            tile.TileSprite.TextureAddress = TextureAddress.Custom;
-
-            tile.TileSprite.TextureTop = sprite.SourceRect.X;
-            tile.TileSprite.TextureLeft = sprite.SourceRect.Y;
-            tile.TileSprite.TextureWidth = sprite.SourceRect.Width;
-            tile.TileSprite.TextureHeight = sprite.SourceRect.Height;
-
-            tile.TileType.Text = item.tile.GetType().Name;
-
-            tile.TileSprite.Width = 200;
-            tile.TileSprite.Height = 200;
             EditorWindowContentInstance.ScrollViewerInstance.AddChild(tile);
-
         }
     }
 

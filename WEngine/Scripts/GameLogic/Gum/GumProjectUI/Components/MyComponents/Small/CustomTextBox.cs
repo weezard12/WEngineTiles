@@ -32,10 +32,20 @@ partial class CustomTextBox
         TextBoxInstance.LostFocus += OnTextBoxInstanceLostFocus;
         TextBoxInstance.KeyDown += OnTextBoxInstanceKeyDown;
 
-        TextBoxInstance.TextChanged += TextChanged;
+        TextBoxInstance.TextChanged += OnTextBoxInstanceTextChanged;
 
         // Initialize binding between the UI and property
         Text = LabelInstance.Text;
+    }
+
+    private void OnTextBoxInstanceTextChanged(object sender, EventArgs e)
+    {
+        // Keep property in sync
+        _text = TextBoxInstance.Text;
+        LabelInstance.Text = _text;
+
+        // Raise your own event
+        TextChanged?.Invoke(this, e);
     }
 
     private void OnTextBoxInstanceKeyDown(object sender, Gum.Forms.Controls.KeyEventArgs key)

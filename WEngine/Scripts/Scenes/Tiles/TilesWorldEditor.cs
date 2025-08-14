@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Gum;
 using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.Serializable.Editor;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.Main;
 using static System.Formats.Asn1.AsnWriter;
@@ -140,20 +141,28 @@ namespace WEngine.Scripts.Scenes.Tiles
             Debug.Error($"Tile with id {tileId} doesnt have a name.");
             return "Unnamed";
         }
-        public void SetTileName(Tile tile)
+        public void SetTileName(Tile tile, string name)
         {
-            SetTileName(tile);
+            SetTileName(tile.Id, name); 
         }
         public void SetTileName(int tileId, string name)
         {
-            _tilesNames.Add(tileId, name);
+            _tilesNames[tileId] = name;
+
+            project.SetTilesNames(
+            _tilesNames.Select(kv => new SerializableTileName
+            {
+                ID = kv.Key,
+                Name = kv.Value
+            })
+            .ToList());
         }
 
         protected void LoadTilesNames()
         {
             project.GetTilesNames();
-            foreach ((int tileId, string name) in project.GetTilesNames())
-                _tilesNames.Add(tileId, name);
+            foreach (SerializableTileName tileName in project.GetTilesNames())
+                _tilesNames.Add(tileName.ID, tileName.Name);
         }
         #endregion
 
