@@ -87,45 +87,47 @@ namespace WEngine.Scripts.Scenes.Tiles
             var toolsEntity = CreateEntity("tools-entity");
             PenTool penTool = new PenTool();
             toolsEntity.AddComponent(penTool);
+            EraserTool eraserTool = new EraserTool();
+            toolsEntity.AddComponent(eraserTool);
 
 
             // Testing chuncks rendering
 
-/*            AddChunk(0, 0);
-            AddChunk(0, 1);
-            AddChunk(1, 1);
-            AddChunk(1, 0);
+            /*            AddChunk(0, 0);
+                        AddChunk(0, 1);
+                        AddChunk(1, 1);
+                        AddChunk(1, 0);
 
-            AddChunk(0, -1);
-            AddChunk(-1, -1);
-            AddChunk(-1, 0);
+                        AddChunk(0, -1);
+                        AddChunk(-1, -1);
+                        AddChunk(-1, 0);
 
-            AddChunk(-1, 1);
+                        AddChunk(-1, 1);
 
-            AddChunk(1, -1);
+                        AddChunk(1, -1);
 
-            SaveWorld();*/
+                        SaveWorld();*/
 
             // Testing tilesets
-/*            TilesChunk chunk = GetChunk(0, 0);
-            TilesLayer layer = chunk.GetLayer(0);
+            /*            TilesChunk chunk = GetChunk(0, 0);
+                        TilesLayer layer = chunk.GetLayer(0);
 
-            for (int i = 0; i < 5; i++)
-            {
-                layer.SetTile(1, i + 1, i + 5);
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                layer.SetTile(2, i + 1, i + 5);
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                layer.SetTile(3, i + 1, i + 5);
-            }
+                        for (int i = 0; i < 5; i++)
+                        {
+                            layer.SetTile(1, i + 1, i + 5);
+                        }
+                        for (int i = 0; i < 5; i++)
+                        {
+                            layer.SetTile(2, i + 1, i + 5);
+                        }
+                        for (int i = 0; i < 5; i++)
+                        {
+                            layer.SetTile(3, i + 1, i + 5);
+                        }
 
-            layer.SetTile(7, 7, 10);
-            layer.SetTile(7, 6, 10);
-            layer.SetTile(7, 5, 10);*/
+                        layer.SetTile(7, 7, 10);
+                        layer.SetTile(7, 6, 10);
+                        layer.SetTile(7, 5, 10);*/
 
         }
         public override void Update()

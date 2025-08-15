@@ -23,6 +23,19 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TitleText.Text</Name>
+      <Value xsi:type="xsd:string">Tools</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>ToolsPanel.ChildrenLayout</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -98,19 +111,6 @@
       <Type>PositionUnitType</Type>
       <Name>ToolsPanel.YUnits</Name>
       <Value xsi:type="xsd:int">7</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>State</Type>
-      <Name>State</Name>
-      <Value xsi:type="xsd:string">Default</Value>
-      <Category>States and Visibility</Category>
-      <SetsValue>false</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TitleText.Text</Name>
-      <Value xsi:type="xsd:string">Tools</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -197,7 +197,7 @@
   </Instance>
   <Instance>
     <Name>ToolsPanel</Name>
-    <BaseType>Controls/Panel</BaseType>
+    <BaseType>MyComponents/Small/SelectionPanel</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

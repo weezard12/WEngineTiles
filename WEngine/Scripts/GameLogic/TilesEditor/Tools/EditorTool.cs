@@ -21,7 +21,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
         public override void OnAddedToEntity()
         {
             base.OnAddedToEntity();
-            EditorScreen.Instance.ToolSelectionWindowInstance.ToolsPanel.AddChild(new ToolUI(this));
+            EditorScreen.Instance.ToolSelectionWindowInstance.ToolsPanel.AddItem(new ToolUI(this));
         }
     }
 }

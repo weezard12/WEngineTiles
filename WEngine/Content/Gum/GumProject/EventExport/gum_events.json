@@ -1197,6 +1197,34 @@
         "ElementType": "Components",
         "EventType": 6,
         "TimestampUtc": "2025-08-15T19:20:02.348105Z"
+      },
+      {
+        "NewName": "MyComponents/Small/SelectionPanel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-15T19:22:40.1462271Z"
+      },
+      {
+        "NewName": "MyComponents/Small/SelectionPanelItemHolder",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-15T19:24:15.6210277Z"
+      },
+      {
+        "NewName": "MyComponents/Small/SelectionPanelItemHolder (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T19:25:02.8280935Z"
+      },
+      {
+        "NewName": "MyComponents/Small/SelectionPanelItemHolder (Container).TextInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T19:25:16.6913028Z"
       }
     ]
   }
