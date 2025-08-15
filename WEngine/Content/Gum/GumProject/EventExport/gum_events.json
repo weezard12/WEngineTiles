@@ -1106,6 +1106,97 @@
         "ElementType": "Components",
         "EventType": 5,
         "TimestampUtc": "2025-08-14T19:22:54.3882638Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-15T18:52:01.2585962Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolUI",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-08-15T18:53:17.9830123Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolUI (Container).SpriteInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:53:33.1346941Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolUI (Container).ToolIcon",
+        "OldName": "MyComponents/ToolsSelection/ToolUI (Container).SpriteInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-15T18:54:26.4963625Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).ToolUIInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:54:43.5286229Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).ToolUIInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:54:47.0238149Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:56:36.4395899Z"
+      },
+      {
+        "NewName": "EditorScreen.ToolSelectionWindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:58:14.4591291Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).ToolUIInstance2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-15T18:58:43.4823831Z"
+      },
+      {
+        "NewName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).ToolsPanel",
+        "OldName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).PanelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-08-15T18:58:56.5641915Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).MyComponents/ToolsSelection/ToolUI ToolUIInstance in MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-15T19:20:02.3380237Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).MyComponents/ToolsSelection/ToolUI ToolUIInstance1 in MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-15T19:20:02.3390298Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow).MyComponents/ToolsSelection/ToolUI ToolUIInstance2 in MyComponents/ToolsSelection/ToolSelectionWindow (MyComponents/EditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-08-15T19:20:02.348105Z"
       }
     ]
   }

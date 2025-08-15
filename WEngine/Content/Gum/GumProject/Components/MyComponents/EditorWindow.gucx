@@ -145,7 +145,7 @@
     <Variable>
       <Type>float</Type>
       <Name>InnerPanelInstance.Height</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -164,6 +164,18 @@
       <Type>DimensionUnitType</Type>
       <Name>InnerPanelInstance.WidthUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>InnerPanelInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>InnerPanelInstance.Y</Name>
+      <Value xsi:type="xsd:float">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -274,6 +286,13 @@
     <State>
       <Name>Windowed</Name>
       <Variable>
+        <Type>float</Type>
+        <Name>Height</Name>
+        <Value xsi:type="xsd:float">150</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>bool</Type>
         <Name>InnerPanelInstance.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
@@ -285,13 +304,6 @@
         <Name>TitleBarInstance.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
         <Category>States and Visibility</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Height</Name>
-        <Value xsi:type="xsd:float">150</Value>
-        <Category>Dimensions</Category>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

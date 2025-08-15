@@ -22,6 +22,7 @@ using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable.Editor;
 using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.GameLogic.TilesEditor.KeyCombos;
+using WEngine.Scripts.GameLogic.TilesEditor.Tools;
 using WEngine.Scripts.Main;
 using static System.Formats.Asn1.AsnWriter;
 using KeyCombo = WEngine.Scripts.GameLogic.TilesEditor.KeyCombos.KeyCombo;
@@ -82,6 +83,10 @@ namespace WEngine.Scripts.Scenes.Tiles
             EditorScreen.IsVisible = false;
             Game1.SetGumScreen(EditorScreen);
 
+            // Setup Tools
+            var toolsEntity = CreateEntity("tools-entity");
+            PenTool penTool = new PenTool();
+            toolsEntity.AddComponent(penTool);
 
 
             // Testing chuncks rendering

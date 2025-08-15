@@ -37,6 +37,7 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
     }
     public TilesSelectionWindow TilesSelectionWindowInstance { get; protected set; }
     public EditorTopMenu EditorTopMenuInstance { get; protected set; }
+    public ToolSelectionWindow ToolSelectionWindowInstance { get; protected set; }
 
     public EditorScreen(InteractiveGue visual) : base(visual)
     {
@@ -52,6 +53,7 @@ partial class EditorScreen : MonoGameGum.Forms.Controls.FrameworkElement
         base.ReactToVisualChanged();
         TilesSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TilesSelectionWindow>(this.Visual,"TilesSelectionWindowInstance");
         EditorTopMenuInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorTopMenu>(this.Visual,"EditorTopMenuInstance");
+        ToolSelectionWindowInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ToolSelectionWindow>(this.Visual,"ToolSelectionWindowInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

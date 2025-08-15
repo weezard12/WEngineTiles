@@ -32,7 +32,7 @@ partial class TileItem
 
         // Tile Type
         TileType.Text = _tile.GetType().Name;
-
+        
         // Tile Name
         TileName.Text = EditorScreen.Instance.WorldEditor.GetTileName(_tile);
         TileName.TextConfirmed += OnTileNameTextConfirmed; ;

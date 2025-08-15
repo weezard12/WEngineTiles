@@ -66,7 +66,9 @@ partial class EditorWindow : WindowStandard
     public ButtonClose CloseButton { get; protected set; }
     public ButtonIcon MinimizeButton { get; protected set; }
 
-    public EditorWindow(InteractiveGue visual) : base(visual) { }
+    public EditorWindow(InteractiveGue visual) : base(visual)
+    {
+    }
     public EditorWindow()
     {
 

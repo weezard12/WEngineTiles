@@ -56,6 +56,30 @@
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ToolSelectionWindowInstance.Height</Name>
+      <Value xsi:type="xsd:float">207</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ToolSelectionWindowInstance.Width</Name>
+      <Value xsi:type="xsd:float">82</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ToolSelectionWindowInstance.X</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ToolSelectionWindowInstance.Y</Name>
+      <Value xsi:type="xsd:float">391</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Instance>
     <Name>TilesSelectionWindowInstance</Name>
@@ -65,6 +89,11 @@
   <Instance>
     <Name>EditorTopMenuInstance</Name>
     <BaseType>MyComponents/EditorMenu/EditorTopMenu</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ToolSelectionWindowInstance</Name>
+    <BaseType>MyComponents/ToolsSelection/ToolSelectionWindow</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />
