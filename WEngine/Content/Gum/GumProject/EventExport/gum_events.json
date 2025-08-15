@@ -1092,6 +1092,20 @@
         "ElementType": "Components",
         "EventType": 1,
         "TimestampUtc": "2025-08-14T17:24:18.8406453Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-14T19:22:21.1922289Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/TileItem (Container).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-08-14T19:22:54.3882638Z"
       }
     ]
   }
