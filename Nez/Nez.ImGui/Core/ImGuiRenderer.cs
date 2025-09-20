@@ -41,7 +41,7 @@ namespace Nez.ImGuiTools
 		int _scrollWheelValue;
 
 
-		List<int> _keys = new List<int>();
+		List<ImGuiKey> _keys = new List<ImGuiKey>();
 
 
 		public ImGuiRenderer(Game game)
@@ -185,26 +185,27 @@ namespace Nez.ImGuiTools
 			io.GetClipboardTextFn = Marshal.GetFunctionPointerForDelegate<GetClipboardTextDelegate>(SDL2.SDL.SDL_GetClipboardText);
 #endif
 
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Tab] = (int)Keys.Tab);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.LeftArrow] = (int)Keys.Left);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.RightArrow] = (int)Keys.Right);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.UpArrow] = (int)Keys.Up);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.DownArrow] = (int)Keys.Down);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.PageUp] = (int)Keys.PageUp);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.PageDown] = (int)Keys.PageDown);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Home] = (int)Keys.Home);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.End] = (int)Keys.End);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Delete] = (int)Keys.Delete);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Backspace] = (int)Keys.Back);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Enter] = (int)Keys.Enter);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Escape] = (int)Keys.Escape);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.LeftCtrl] = (int)Keys.LeftControl);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.A] = (int)Keys.A);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.C] = (int)Keys.C);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.V] = (int)Keys.V);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.X] = (int)Keys.X);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Y] = (int)Keys.Y);
-			_keys.Add(io.KeyMap[(int)ImGuiKey.Z] = (int)Keys.Z);
+			// In newer ImGui.NET, we need to use AddKeyEvent instead of the old KeyMap approach
+			_keys.Add(ImGuiKey.Tab);
+			_keys.Add(ImGuiKey.LeftArrow);
+			_keys.Add(ImGuiKey.RightArrow);
+			_keys.Add(ImGuiKey.UpArrow);
+			_keys.Add(ImGuiKey.DownArrow);
+			_keys.Add(ImGuiKey.PageUp);
+			_keys.Add(ImGuiKey.PageDown);
+			_keys.Add(ImGuiKey.Home);
+			_keys.Add(ImGuiKey.End);
+			_keys.Add(ImGuiKey.Delete);
+			_keys.Add(ImGuiKey.Backspace);
+			_keys.Add(ImGuiKey.Enter);
+			_keys.Add(ImGuiKey.Escape);
+			_keys.Add(ImGuiKey.LeftCtrl);
+			_keys.Add(ImGuiKey.A);
+			_keys.Add(ImGuiKey.C);
+			_keys.Add(ImGuiKey.V);
+			_keys.Add(ImGuiKey.X);
+			_keys.Add(ImGuiKey.Y);
+			_keys.Add(ImGuiKey.Z);
 
 
 #if !FNA
@@ -254,15 +255,42 @@ namespace Nez.ImGuiTools
 			var mouse = Input.CurrentMouseState;
 			var keyboard = Input.CurrentKeyboardState;
 
-			for (int i = 0; i < _keys.Count; i++)
-			{
-				io.KeysDown[_keys[i]] = keyboard.IsKeyDown((Keys)_keys[i]);
-			}
+			// Map XNA Keys to ImGuiKey and use AddKeyEvent
+			io.AddKeyEvent(ImGuiKey.Tab, keyboard.IsKeyDown(Keys.Tab));
+			io.AddKeyEvent(ImGuiKey.LeftArrow, keyboard.IsKeyDown(Keys.Left));
+			io.AddKeyEvent(ImGuiKey.RightArrow, keyboard.IsKeyDown(Keys.Right));
+			io.AddKeyEvent(ImGuiKey.UpArrow, keyboard.IsKeyDown(Keys.Up));
+			io.AddKeyEvent(ImGuiKey.DownArrow, keyboard.IsKeyDown(Keys.Down));
+			io.AddKeyEvent(ImGuiKey.PageUp, keyboard.IsKeyDown(Keys.PageUp));
+			io.AddKeyEvent(ImGuiKey.PageDown, keyboard.IsKeyDown(Keys.PageDown));
+			io.AddKeyEvent(ImGuiKey.Home, keyboard.IsKeyDown(Keys.Home));
+			io.AddKeyEvent(ImGuiKey.End, keyboard.IsKeyDown(Keys.End));
+			io.AddKeyEvent(ImGuiKey.Delete, keyboard.IsKeyDown(Keys.Delete));
+			io.AddKeyEvent(ImGuiKey.Backspace, keyboard.IsKeyDown(Keys.Back));
+			io.AddKeyEvent(ImGuiKey.Enter, keyboard.IsKeyDown(Keys.Enter));
+			io.AddKeyEvent(ImGuiKey.Escape, keyboard.IsKeyDown(Keys.Escape));
+			io.AddKeyEvent(ImGuiKey.LeftCtrl, keyboard.IsKeyDown(Keys.LeftControl));
+			io.AddKeyEvent(ImGuiKey.RightCtrl, keyboard.IsKeyDown(Keys.RightControl));
+			io.AddKeyEvent(ImGuiKey.LeftShift, keyboard.IsKeyDown(Keys.LeftShift));
+			io.AddKeyEvent(ImGuiKey.RightShift, keyboard.IsKeyDown(Keys.RightShift));
+			io.AddKeyEvent(ImGuiKey.LeftAlt, keyboard.IsKeyDown(Keys.LeftAlt));
+			io.AddKeyEvent(ImGuiKey.RightAlt, keyboard.IsKeyDown(Keys.RightAlt));
+			io.AddKeyEvent(ImGuiKey.LeftSuper, keyboard.IsKeyDown(Keys.LeftWindows));
+			io.AddKeyEvent(ImGuiKey.RightSuper, keyboard.IsKeyDown(Keys.RightWindows));
 
-			io.KeyShift = keyboard.IsKeyDown(Keys.LeftShift) || keyboard.IsKeyDown(Keys.RightShift);
-			io.KeyCtrl = keyboard.IsKeyDown(Keys.LeftControl) || keyboard.IsKeyDown(Keys.RightControl);
-			io.KeyAlt = keyboard.IsKeyDown(Keys.LeftAlt) || keyboard.IsKeyDown(Keys.RightAlt);
-			io.KeySuper = keyboard.IsKeyDown(Keys.LeftWindows) || keyboard.IsKeyDown(Keys.RightWindows);
+			// Add letter keys
+			io.AddKeyEvent(ImGuiKey.A, keyboard.IsKeyDown(Keys.A));
+			io.AddKeyEvent(ImGuiKey.C, keyboard.IsKeyDown(Keys.C));
+			io.AddKeyEvent(ImGuiKey.V, keyboard.IsKeyDown(Keys.V));
+			io.AddKeyEvent(ImGuiKey.X, keyboard.IsKeyDown(Keys.X));
+			io.AddKeyEvent(ImGuiKey.Y, keyboard.IsKeyDown(Keys.Y));
+			io.AddKeyEvent(ImGuiKey.Z, keyboard.IsKeyDown(Keys.Z));
+
+			// Modifier keys are now set using AddKeyEvent
+			io.AddKeyEvent(ImGuiKey.ModCtrl, keyboard.IsKeyDown(Keys.LeftControl) || keyboard.IsKeyDown(Keys.RightControl));
+			io.AddKeyEvent(ImGuiKey.ModShift, keyboard.IsKeyDown(Keys.LeftShift) || keyboard.IsKeyDown(Keys.RightShift));
+			io.AddKeyEvent(ImGuiKey.ModAlt, keyboard.IsKeyDown(Keys.LeftAlt) || keyboard.IsKeyDown(Keys.RightAlt));
+			io.AddKeyEvent(ImGuiKey.ModSuper, keyboard.IsKeyDown(Keys.LeftWindows) || keyboard.IsKeyDown(Keys.RightWindows));
 
 			io.DisplaySize = new System.Numerics.Vector2(Core.GraphicsDevice.PresentationParameters.BackBufferWidth,
 				Core.GraphicsDevice.PresentationParameters.BackBufferHeight);
@@ -348,7 +376,8 @@ namespace Nez.ImGuiTools
 
 			for (var n = 0; n < drawData.CmdListsCount; n++)
 			{
-				var cmdList = drawData.CmdListsRange[n];
+				// Use CmdLists instead of CmdListsRange in newer ImGui.NET
+				var cmdList = drawData.CmdLists[n];
 
 				fixed (void* vtxDstPtr = &_vertexData[vtxOffset * _vertexDeclarationSize])
 				fixed (void* idxDstPtr = &_indexData[idxOffset * sizeof(ushort)])
@@ -378,7 +407,8 @@ namespace Nez.ImGuiTools
 
 			for (int n = 0; n < drawData.CmdListsCount; n++)
 			{
-				var cmdList = drawData.CmdListsRange[n];
+				// Use CmdLists instead of CmdListsRange in newer ImGui.NET
+				var cmdList = drawData.CmdLists[n];
 				for (int cmdi = 0; cmdi < cmdList.CmdBuffer.Size; cmdi++)
 				{
 					var drawCmd = cmdList.CmdBuffer[cmdi];
