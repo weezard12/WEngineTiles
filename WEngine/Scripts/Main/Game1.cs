@@ -11,6 +11,8 @@ using Nez.ImGuiTools;
 using RenderingLibrary;
 using RenderingLibrary.Graphics;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using WEngine.Scripts.GameLogic.Project;
@@ -71,12 +73,9 @@ namespace WEngine.Scripts.Main
 
             // Debug
             DebugRenderEnabled = true;
-            //System.Reflection.Assembly.Load("Nez.ImGui");
-            var imGuiManager = new ImGuiManager();
-            //RegisterGlobalManager(imGuiManager);
 
-            // toggle ImGui rendering on/off. It starts out enabled.
-            //imGuiManager.SetEnabled(true);
+            StartCoroutine(RegisterImGuiWithDelay());
+
 
             ProjectManager.Initialize();
             //ProjectManager.CreateProject("Test Project");
@@ -100,6 +99,22 @@ namespace WEngine.Scripts.Main
 
             gumBatch.Draw(screenRuntime);
             gumBatch.End();*/
+        }
+
+        /// <summary>
+        /// When updating to the latest ImGui.NET version the ImGuiManager started throwing an exception when Time.DeltaTime is <= 0.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator RegisterImGuiWithDelay()
+        {
+            // Yield for a short delay (e.g., 0.1 seconds)
+            yield return Coroutine.WaitForSeconds(0.01f);
+            var imGuiManager = new ImGuiManager();
+            // Register the ImGui manager after the delay
+            RegisterGlobalManager(imGuiManager);
+
+            // toggle ImGui rendering on/off. It starts out enabled.
+            imGuiManager.SetEnabled(true);
         }
 
 
