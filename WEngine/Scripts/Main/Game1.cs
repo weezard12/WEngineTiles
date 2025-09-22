@@ -39,11 +39,15 @@ namespace WEngine.Scripts.Main
 
         private void UpdateGumCanvasSize()
         {
-            // TODO fix this
-/*            LoadedGumProject.DefaultCanvasWidth = Window.ClientBounds.Width;
-            LoadedGumProject.DefaultCanvasHeight = Window.ClientBounds.Height;*/
-/*            CurrentGumScreen.Width = Window.ClientBounds.Width;
-            CurrentGumScreen.Height = Window.ClientBounds.Height;*/
+            // TODO improve this gum resizing logic
+
+            if(CurrentGumScreen == null)
+                return;
+
+            LoadedGumProject.DefaultCanvasWidth = Window.ClientBounds.Width;
+            LoadedGumProject.DefaultCanvasHeight = Window.ClientBounds.Height;
+            CurrentGumScreen.Width = Window.ClientBounds.Width;
+            CurrentGumScreen.Height = Window.ClientBounds.Height;
         }
 
         protected override void Initialize()
@@ -93,13 +97,11 @@ namespace WEngine.Scripts.Main
 
         protected override void Draw(GameTime gameTime)
         {
+            // Renders MonoGame + Nez
             base.Draw(gameTime);
-            
-            MonoGameGum.GumService.Default.Draw();
-/*            gumBatch.Begin();
 
-            gumBatch.Draw(screenRuntime);
-            gumBatch.End();*/
+            // Renders Gum
+            GumService.Default.Draw();
         }
 
 
