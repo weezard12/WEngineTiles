@@ -21,6 +21,8 @@ namespace WEngine.Scripts.Main
 {
     public class Game1 : Core
     {
+        public static ImGuiManager ImGuiManager { get; private set; }
+
         public static GumProjectSave LoadedGumProject { get; private set; }
         public static GraphicalUiElement CurrentGumScreen;
 
@@ -76,11 +78,11 @@ namespace WEngine.Scripts.Main
             // Debug
             DebugRenderEnabled = true;
             //System.Reflection.Assembly.Load("Nez.ImGui");
-            var imGuiManager = new ImGuiManager();
-            //RegisterGlobalManager(imGuiManager);
+            ImGuiManager = new ImGuiManager();
+            RegisterGlobalManager(ImGuiManager);
 
             // toggle ImGui rendering on/off. It starts out enabled.
-            //imGuiManager.SetEnabled(true);
+            ImGuiManager.SetEnabled(false);
 
             ProjectManager.Initialize();
             //ProjectManager.CreateProject("Test Project");

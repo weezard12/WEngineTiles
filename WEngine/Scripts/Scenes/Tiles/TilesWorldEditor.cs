@@ -65,7 +65,7 @@ namespace WEngine.Scripts.Scenes.Tiles
             Entity entity = CreateEntity("camera-controller");
             entity.AddComponent(new EditorCameraController());
 
-            // Setting up the user info
+            // Setting up the user info (no ui)
             tilesUserInfo = new TilesUserInfo();
             tilesUserInfo.Name = "tiles-user-info";
             AddEntity(tilesUserInfo);
@@ -140,11 +140,21 @@ namespace WEngine.Scripts.Scenes.Tiles
                 EditorScreen.IsVisible = !EditorScreen.IsVisible;
                 cameraInfoDisplay.SetOffset(new Vector2(0, EditorScreen.IsVisible ? 30 : 0));
             }
+
+            if (Input.IsKeyPressed(Keys.F1))
+            {
+                Game1.ImGuiManager.SetEnabled(!Game1.ImGuiManager.Enabled);
+            }
+        }
+
+        public TilesUserInfo GetUserInfo()
+        {
+            return tilesUserInfo;
         }
 
         #region Managing Tiles Names
 
-        
+
 
         public string GetTileName(Tile tile)
         {

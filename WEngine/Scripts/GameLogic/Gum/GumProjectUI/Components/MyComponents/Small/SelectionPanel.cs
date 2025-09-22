@@ -33,7 +33,7 @@ partial class SelectionPanel
     {
         if (item == null) return;
 
-        SelectionPanelItemHolder holder = new SelectionPanelItemHolder();
+        SelectionPanelItemHolder holder = new SelectionPanelItemHolder(item);
         holder.AddChild(item);
 
         // Add the holder to this panel's visual tree

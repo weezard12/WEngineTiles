@@ -4,7 +4,7 @@ using Gum.Managers;
 using Gum.Wireframe;
 
 using RenderingLibrary.Graphics;
-
+using System;
 using System.Linq;
 using WEngine.Scripts.GameLogic.TilesEditor.Tools;
 
@@ -28,5 +28,15 @@ partial class ToolUI
     partial void CustomInitialize()
     {
     
+    }
+
+    public void Selected()
+    {
+        _editorTool.SetEnabled(true);
+    }
+
+    internal void UnSelected()
+    {
+        _editorTool.SetEnabled(false);
     }
 }

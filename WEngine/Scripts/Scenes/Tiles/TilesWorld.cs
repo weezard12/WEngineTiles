@@ -25,14 +25,23 @@ namespace WEngine.Scripts.Scenes.Tiles
 
         List<TilesChunk> Chunks { get; set; } = new List<TilesChunk>();
 
-        // Adds a new empty chunk at the position
-        protected void AddChunk(int x, int y)
+        /// <summary>
+        /// Adds a new empty chunk at the position.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        public void AddChunk(int x, int y)
         {
             TilesChunk chunk = new TilesChunk(x, y);
             Chunks.Add(chunk);
 
             AddEntity(chunk);
         }
+        public void AddChunk(Point coordinates)
+        {
+            AddChunk(coordinates.X, coordinates.Y);
+        }
+
         protected void LoadChunk(SerializableTilesChunk serializableChunk)
         {
             TilesChunk chunk = TilesChunk.FromSerializable(serializableChunk);
@@ -42,6 +51,16 @@ namespace WEngine.Scripts.Scenes.Tiles
         }
 
         // TODO improve this method to be more efficient
+        /// <summary>
+        /// Calculates the chunk coordinates corresponding to a given world position.
+        /// </summary>
+        /// <remarks>This method determines the chunk coordinates based on the specified world position
+        /// and the size of each chunk. The chunk coordinates are calculated relative to the origin, with (0, 0)
+        /// representing the chunk containing the origin.</remarks>
+        /// <param name="worldPosition">The position in world space for which to determine the chunk coordinates.</param>
+        /// <param name="chunkPos">A reference to a <see cref="Point"/> structure that will be updated with the calculated chunk coordinates.
+        /// The X and Y components of the <paramref name="chunkPos"/> represent the chunk's column and row indices,
+        /// respectively.</param>
         public void GetChunkCoordinates(Vector2 worldPosition, ref Point chunkPos)
         {
             int GetCoord(float value)
