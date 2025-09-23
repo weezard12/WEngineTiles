@@ -93,7 +93,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             TilesChunk chunk = new TilesChunk(sChunk.IdX, sChunk.IdY);
             foreach (var sLayer in sChunk.Layers)
             {
-                chunk.Layers.Add(TilesLayer.FromSerializable(sLayer));
+                chunk.AddLayer(TilesLayer.FromSerializable(sLayer));
             }
             return chunk;
         }
