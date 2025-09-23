@@ -57,7 +57,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
             {
                 layer = tilesChunk.GetLayers()[0];
             }
-            layer.SetTile(UserInfo.SelectedTile.X, UserInfo.SelectedTile.Y, tile.TextureId);
+            layer.SetTile(UserInfo.SelectedTile.X, UserInfo.SelectedTile.Y, tile.Id);
         }
     }
 }

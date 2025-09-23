@@ -50,7 +50,11 @@ partial class TilesSelectionWindow
     public Tile GetSelectedTile()
     {
         // Gets the selected tile ui item
-        TileItem tileItem = SelectionPanelInstance.SelectedItem.Item as TileItem;
+        SelectionPanelItemHolder itemHolder = SelectionPanelInstance.SelectedItem;
+        if (itemHolder == null)
+            return null;
+
+        TileItem tileItem = itemHolder.Item as TileItem;
 
         return tileItem.GetTile();
     }

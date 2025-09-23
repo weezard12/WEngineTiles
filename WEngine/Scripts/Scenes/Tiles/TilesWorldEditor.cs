@@ -24,9 +24,7 @@ using WEngine.Scripts.GameLogic.TilesEditor;
 using WEngine.Scripts.GameLogic.TilesEditor.KeyCombos;
 using WEngine.Scripts.GameLogic.TilesEditor.Tools;
 using WEngine.Scripts.Main;
-using static System.Formats.Asn1.AsnWriter;
 using KeyCombo = WEngine.Scripts.GameLogic.TilesEditor.KeyCombos.KeyCombo;
-using Random = Nez.Random;
 
 namespace WEngine.Scripts.Scenes.Tiles
 {

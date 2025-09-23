@@ -56,6 +56,7 @@ partial class EditingTileItem
     private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
     {
         tile.TextureId = result.GetValue<int>();
+        Debug.Log(tile.TextureId);
         UpdateTileDisplay();
     }
 
