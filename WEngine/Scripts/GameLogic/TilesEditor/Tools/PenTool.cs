@@ -27,32 +27,37 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
 
         protected override void UseTool()
         {
-            
-            if(WorldEditor.GetChunk(UserInfo.MouseChunk) == null)
+            // Gets the selected tile for painting
+            Tile tile = EditorScreen.Instance.TilesSelectionWindowInstance.GetSelectedTile();
+            if(tile == null)
+            {
+                Debug.Warn("No tile selected");
+                return;
+            }
+
+            if (WorldEditor.GetChunk(UserInfo.MouseChunk) == null)
             {
                 WorldEditor.AddChunk(UserInfo.MouseChunk);
                 UseTool();
             }
             TilesChunk tilesChunk = WorldEditor.GetChunk(UserInfo.MouseChunk);
 
-            
+            TilesLayer layer;
             if (tilesChunk.GetLayers().Count == 0)
             {
-                TilesLayer layer = new TilesLayer();
+                layer = new TilesLayer();
                 tilesChunk.AddLayer(layer);
 
                 var mouseScreenPos = Input.MousePosition;
                 var mouseWorldPos = Core.Scene.Camera.ScreenToWorldPoint(mouseScreenPos);
 
                 WorldEditor.GetTileCordinates(mouseWorldPos, ref UserInfo.SelectedTile);
-
-                layer.SetTile(UserInfo.SelectedTile.X, UserInfo.SelectedTile.Y, 1);
             }
             else
             {
-                TilesLayer layer = tilesChunk.GetLayers()[0];
-                layer.SetTile(UserInfo.SelectedTile.X, UserInfo.SelectedTile.Y, 1);
+                layer = tilesChunk.GetLayers()[0];
             }
+            layer.SetTile(UserInfo.SelectedTile.X, UserInfo.SelectedTile.Y, tile.TextureId);
         }
     }
 }

@@ -17,7 +17,6 @@ using static WEngine.Scripts.Main.Game1;
 
 partial class TilesSelectionWindow
 {
-    List<FrameworkElement> _elements = new List<FrameworkElement>();
     partial void CustomInitialize()
     {
         ImportTilesetButton.Click += (_, _) =>
@@ -33,22 +32,26 @@ partial class TilesSelectionWindow
     {
         // Load tiles from the rendering manager
 
-        foreach (FrameworkElement element in _elements)
-            element.RemoveFromRoot();
-        
-        _elements.Clear();
+        SelectionPanelInstance.ClearItems();
 
         foreach (var item in renderingManager.GetTiles())
         {
             TileItem tile = new TileItem(item.tile);
 
-            EditorWindowContentInstance.ScrollViewerInstance.AddChild(tile);
-            _elements.Add(tile);
+            SelectionPanelInstance.AddItem(tile);
         }
     }
 
     public void LoadTiles()
     {
         LoadTiles(EditorScreen.Instance.RenderingManager);
+    }
+
+    public Tile GetSelectedTile()
+    {
+        // Gets the selected tile ui item
+        TileItem tileItem = SelectionPanelInstance.SelectedItem.Item as TileItem;
+
+        return tileItem.GetTile();
     }
 }

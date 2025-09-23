@@ -1,5 +1,6 @@
 using Gum.Converters;
 using Gum.DataTypes;
+using Gum.Forms.Controls;
 using Gum.Managers;
 using Gum.Wireframe;
 using Nez;
@@ -16,6 +17,9 @@ partial class EditorScreen
 
     public RenderingManager RenderingManager => WorldEditor.RenderingManager;
 
+
+    // Main Gum UI elements in the screen are already defined in the partial class
+
     public EditorScreen(TilesWorldEditor tilesWorld)
     {
         Instance = this;
@@ -31,7 +35,5 @@ partial class EditorScreen
     partial void CustomInitialize()
     {
         TilesSelectionWindowInstance.IsVisible = true;
-
-
     }
 }

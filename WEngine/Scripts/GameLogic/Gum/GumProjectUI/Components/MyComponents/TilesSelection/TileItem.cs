@@ -49,4 +49,6 @@ partial class TileItem
 
 
     }
+
+    public Tile GetTile() => _tile;
 }

@@ -37,7 +37,7 @@ namespace WEngine.Scripts.Scenes.Tiles
         TilesUserInfo tilesUserInfo;
         CameraInfoDisplay cameraInfoDisplay;
 
-        EditorScreen EditorScreen;
+        EditorScreen EditorScreen; // same as EditorScreen.Instance
         TilesEditorProject project;
         public TilesWorldEditor(bool loadProject = false)
         {

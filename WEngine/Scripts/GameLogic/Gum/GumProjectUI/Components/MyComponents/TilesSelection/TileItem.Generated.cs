@@ -1,5 +1,6 @@
 //Code for MyComponents/TilesSelection/TileItem (Container)
 using GumRuntime;
+using System.Linq;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
 using Gum.Converters;
@@ -16,15 +17,15 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
     {
-        var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
+        var template = new global::MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
-            var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
+            var visual = new global::MonoGameGum.GueDeriving.ContainerRuntime();
             var element = ObjectFinder.Self.GetElementSave("MyComponents/TilesSelection/TileItem");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
             if(createForms) visual.FormsControlAsObject = new TileItem(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TileItem)] = template;
+        global::MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TileItem)] = template;
         ElementSaveExtensions.RegisterGueInstantiation("MyComponents/TilesSelection/TileItem", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
@@ -55,7 +56,7 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
                 }
                 else
                 {
-                    var category = ((Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "QuickStyles");
+                    var category = ((global::Gum.DataTypes.ElementSave)this.Visual.Tag).Categories.FirstOrDefault(item => item.Name == "QuickStyles");
                     var state = category.States.Find(item => item.Name == value.ToString());
                     this.Visual.ApplyState(state);
                 }
@@ -82,13 +83,13 @@ partial class TileItem : MonoGameGum.Forms.Controls.FrameworkElement
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        TileSprite = this.Visual?.GetGraphicalUiElementByName("TileSprite") as SpriteRuntime;
-        TileName = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<CustomTextBox>(this.Visual,"TileName");
-        TileType = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"TileType");
-        SpriteContainer = this.Visual?.GetGraphicalUiElementByName("SpriteContainer") as ContainerRuntime;
-        PanelInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");
-        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as ColoredRectangleRuntime;
-        ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as ContainerRuntime;
+        TileSprite = this.Visual?.GetGraphicalUiElementByName("TileSprite") as global::MonoGameGum.GueDeriving.SpriteRuntime;
+        TileName = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<CustomTextBox>(this.Visual,"TileName");
+        TileType = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"TileType");
+        SpriteContainer = this.Visual?.GetGraphicalUiElementByName("SpriteContainer") as global::MonoGameGum.GueDeriving.ContainerRuntime;
+        PanelInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"PanelInstance");
+        ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as global::MonoGameGum.GueDeriving.ColoredRectangleRuntime;
+        ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

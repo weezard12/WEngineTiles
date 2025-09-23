@@ -56,6 +56,10 @@ namespace WEngine.Scripts.GameLogic.Project
 
         public List<Tile> LoadTiles()
         {
+            if(!File.Exists(TilesPath))
+                return new List<Tile>();
+            
+
             string json = File.ReadAllText(TilesPath);
             var settings = new NJson.JsonSerializerSettings
             {
