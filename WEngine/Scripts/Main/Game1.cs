@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGameGum;
 using MonoGameGum.Forms;
+using MonoGameGum.Input;
 using Nez;
 using Nez.ImGuiTools;
 using RenderingLibrary;
@@ -25,6 +26,8 @@ namespace WEngine.Scripts.Main
 
         public static GumProjectSave LoadedGumProject { get; private set; }
         public static GraphicalUiElement CurrentGumScreen;
+
+        public static bool IsCursorOverGum { get; private set; }
 
         public Game1()
         {
@@ -92,7 +95,9 @@ namespace WEngine.Scripts.Main
         protected override void Update(GameTime gameTime)
         {
             SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
-            MonoGameGum.GumService.Default.Update(gameTime);
+            GumService.Default.Update(gameTime);
+
+            IsCursorOverGum = GumService.Default.Cursor.WindowOver != null;
 
             base.Update(gameTime);
         }
@@ -103,7 +108,7 @@ namespace WEngine.Scripts.Main
             base.Draw(gameTime);
 
             // Renders Gum
-            GumService.Default.Draw();
+            GumService.Default.Draw(); 
         }
 
 
