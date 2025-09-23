@@ -5,6 +5,7 @@ using Gum.Wireframe;
 using Nez.Textures;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Main.Utils;
 
 partial class TileItem
 {
@@ -18,17 +19,7 @@ partial class TileItem
         // Setting up the tile Tile Display texture
         Sprite sprite = EditorScreen.Instance.WorldEditor.RenderingManager.GetSprite(_tile);
 
-        TileSprite.Texture = sprite.Texture2D;
-
-        TileSprite.TextureAddress = TextureAddress.Custom;
-
-        TileSprite.TextureTop = sprite.SourceRect.X;
-        TileSprite.TextureLeft = sprite.SourceRect.Y;
-        TileSprite.TextureWidth = sprite.SourceRect.Width;
-        TileSprite.TextureHeight = sprite.SourceRect.Height;
-
-        TileSprite.Width = 200;
-        TileSprite.Height = 200;
+        GumUtils.SetGumSpriteToNezSprite(TileSprite, sprite, 200, 200);
 
         // Tile Type
         TileType.Text = _tile.GetType().Name;

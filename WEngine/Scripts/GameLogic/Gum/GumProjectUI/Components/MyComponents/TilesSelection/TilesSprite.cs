@@ -7,6 +7,7 @@ using Nez.Textures;
 
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Main.Utils;
 
 partial class TilesSprite
 {
@@ -17,17 +18,7 @@ partial class TilesSprite
         this.TextureId = textureId;
         this.Sprite = sprite;
 
-        SpriteInstance.Texture = sprite.Texture2D;
-
-        SpriteInstance.TextureAddress = TextureAddress.Custom;
-
-        SpriteInstance.TextureTop = sprite.SourceRect.X;
-        SpriteInstance.TextureLeft = sprite.SourceRect.Y;
-        SpriteInstance.TextureWidth = sprite.SourceRect.Width;
-        SpriteInstance.TextureHeight = sprite.SourceRect.Height;
-
-        SpriteInstance.Width = 200;
-        SpriteInstance.Height = 200;
+        GumUtils.SetGumSpriteToNezSprite(SpriteInstance, sprite, 200, 200);
     }
     partial void CustomInitialize()
     {

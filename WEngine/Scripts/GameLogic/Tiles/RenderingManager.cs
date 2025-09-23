@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Nez;
 using Nez.Textures;
 using System;
@@ -47,7 +48,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         {
             base.OnAddedToScene();
 
-            AddTexture("Assets/Tiles/Tile");
+/*            AddTexture("Assets/Tiles/Tile");
             AddTexture("Assets/Tiles/Kaftor_Grass");
             AddTexture("Assets/Tiles/Kaftor_Grass2");
             AddTexture("Assets/Tiles/Kaftor_Bush");
@@ -56,7 +57,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
             AddTexture("Assets/Tiles/buttom_right");
             AddTexture("Assets/Tiles/top_left");
             AddTexture("Assets/Tiles/top_right");
-            AddTexture("Assets/Tiles/full");
+            AddTexture("Assets/Tiles/full");*/
 
             // Testing sprite sheet loading.
             Texture2D spriteSheet = Scene.Content.Load<Texture2D>("Assets/Tiles/water sprite sheet");
