@@ -15,7 +15,7 @@ partial class ToolUI
     public ToolUI(EditorTool editorTool) : base()
     {
         _editorTool = editorTool;
-        GumUtils.SetGumSpriteToNezSprite(ToolIcon, editorTool.Sprite, 50, 50);
+        GumUtils.SetGumSpriteToNezSprite(ToolIcon, editorTool.Sprite, 200, 200);
 
     }
     partial void CustomInitialize()
