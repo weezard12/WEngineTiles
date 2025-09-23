@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Main;
 using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
@@ -35,7 +36,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
         {
             if(Input.LeftMouseButtonDown)
             {
-                if(Input.MousePosition.X > 200)
+                if(!Game1.IsCursorOverGum)
                 {
                     UseTool();
                 }
