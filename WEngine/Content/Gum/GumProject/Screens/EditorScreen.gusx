@@ -23,7 +23,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TilesSelectionWindowInstance.X</Name>
-      <Value xsi:type="xsd:float">-2</Value>
+      <Value xsi:type="xsd:float">-0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -41,7 +41,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TilesSelectionWindowInstance.Y</Name>
-      <Value xsi:type="xsd:float">37</Value>
+      <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -71,13 +71,37 @@
     <Variable>
       <Type>float</Type>
       <Name>ToolSelectionWindowInstance.X</Name>
-      <Value xsi:type="xsd:float">2</Value>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>ToolSelectionWindowInstance.XOrigin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ToolSelectionWindowInstance.XUnits</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>ToolSelectionWindowInstance.Y</Name>
-      <Value xsi:type="xsd:float">391</Value>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>ToolSelectionWindowInstance.YOrigin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ToolSelectionWindowInstance.YUnits</Name>
+      <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
   </State>

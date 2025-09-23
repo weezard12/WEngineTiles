@@ -103,7 +103,8 @@ namespace WEngine.Scripts.Scenes.Tiles
             
             if(chunk == null)
             {
-                Debug.Error(String.Format("Chunk at coordinates [{0}, {1}] not found.", chunkPos.X, chunkPos.Y));
+                // TODO possibe to bring basck, its off befause of spam when testing
+                //Debug.Error(String.Format("Chunk at coordinates [{0}, {1}] not found.", chunkPos.X, chunkPos.Y));
                 tilePos = new Point(-1, -1);
                 return;
             }

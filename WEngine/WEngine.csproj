@@ -37,7 +37,6 @@
     <Folder Include="Content\Gum\GumProject\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\" />
     <Folder Include="Scripts\GameLogic\Gum\GumProjectUI\Components\MyComponents\" />
-    <Folder Include="Scripts\GameLogic\TilesEditor\MyFilesSystem\" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
@@ -53,6 +52,12 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Link>Content\%(RecursiveDir)%(Filename)%(Extension)</Link>
 		</Content>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="Scripts\GameLogic\TilesEditor\MyFilesSystem\**" />
+	  <EmbeddedResource Remove="Scripts\GameLogic\TilesEditor\MyFilesSystem\**" />
+	  <None Remove="Scripts\GameLogic\TilesEditor\MyFilesSystem\**" />
 	</ItemGroup>
 
 	<Target Name="RestoreDotnetTools" BeforeTargets="CollectPackageReferences">

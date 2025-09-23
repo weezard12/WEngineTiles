@@ -7,24 +7,29 @@ using Gum.Wireframe;
 using MonoGameGum;
 using Nez;
 using Nez.Textures;
+using RenderingLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
 using WEngine.Scripts.Main;
+using WEngine.Scripts.Main.Utils;
 using static WEngine.Scripts.Main.Game1;
 
 partial class TilesSelectionWindow
 {
     partial void CustomInitialize()
     {
-        ImportTilesetButton.Click += (_, _) =>
+        NewTileButton.Click += (_, _) =>
         {
             Debug.Log("Adding new tile to the rendering manager");
             Tile tile = new Tile();
             EditorScreen.Instance.RenderingManager.AddTile(tile);
-            Game1.CurrentGumScreen.AddChild(new EditingTileItemWindow(tile));
+            EditingTileItemWindow editingTileItemWindow = new EditingTileItemWindow(tile);
+            Game1.CurrentGumScreen.AddChild(editingTileItemWindow);
+
+            GumUtils.CenterToScreen(editingTileItemWindow);
         };
     }
 

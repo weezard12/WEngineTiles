@@ -48,49 +48,49 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>ImportTilesetButton.ButtonDisplayText</Name>
+      <Name>NewTileButton.ButtonDisplayText</Name>
       <Value xsi:type="xsd:string">New Tile</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ImportTilesetButton.Height</Name>
+      <Name>NewTileButton.Height</Name>
       <Value xsi:type="xsd:float">19</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>bool</Type>
-      <Name>ImportTilesetButton.IgnoredByParentSize</Name>
+      <Name>NewTileButton.IgnoredByParentSize</Name>
       <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>ImportTilesetButton.Parent</Name>
+      <Name>NewTileButton.Parent</Name>
       <Value xsi:type="xsd:string">InnerPanelInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ImportTilesetButton.Width</Name>
+      <Name>NewTileButton.Width</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>ImportTilesetButton.WidthUnits</Name>
+      <Name>NewTileButton.WidthUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ImportTilesetButton.X</Name>
+      <Name>NewTileButton.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>ImportTilesetButton.Y</Name>
+      <Name>NewTileButton.Y</Name>
       <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -280,7 +280,7 @@
     <DefinedByBase>true</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>ImportTilesetButton</Name>
+    <Name>NewTileButton</Name>
     <BaseType>Controls/ButtonStandard</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

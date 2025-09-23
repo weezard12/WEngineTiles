@@ -7,6 +7,7 @@ using Nez;
 using Nez.Textures;
 
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Main.Utils;
 
 partial class EditingTileItem
 {
@@ -39,6 +40,7 @@ partial class EditingTileItem
             {
                 Debug.Log("Select a texture");
                 textureSelectionWindow = new TextureSelectionWindow();
+                GumUtils.CenterToScreen(textureSelectionWindow);
                 textureSelectionWindow.OnDialogComplete += TextureSelectionWindow_OnDialogComplete;
                 textureSelectionWindow.OnClosed += () =>
                 {
@@ -56,7 +58,6 @@ partial class EditingTileItem
     private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
     {
         tile.TextureId = result.GetValue<int>();
-        Debug.Log(tile.TextureId);
         UpdateTileDisplay();
     }
 

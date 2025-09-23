@@ -32,7 +32,7 @@ partial class TilesSelectionWindow : EditorWindow
             return gue;
         });
     }
-    public ButtonStandard ImportTilesetButton { get; protected set; }
+    public ButtonStandard NewTileButton { get; protected set; }
     public EditorWindowContent EditorWindowContentInstance { get; protected set; }
     public SelectionPanel SelectionPanelInstance { get; protected set; }
 
@@ -48,7 +48,7 @@ partial class TilesSelectionWindow : EditorWindow
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        ImportTilesetButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"ImportTilesetButton");
+        NewTileButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"NewTileButton");
         EditorWindowContentInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditorWindowContent>(this.Visual,"EditorWindowContentInstance");
         SelectionPanelInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectionPanel>(this.Visual,"SelectionPanelInstance");
         CustomInitialize();
