@@ -101,6 +101,13 @@
       <Category>States and Visibility</Category>
       <SetsValue>false</SetsValue>
     </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TitleText.Text</Name>
+      <Value xsi:type="xsd:string">Texture selection
+</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Instance>
     <Name>Background</Name>

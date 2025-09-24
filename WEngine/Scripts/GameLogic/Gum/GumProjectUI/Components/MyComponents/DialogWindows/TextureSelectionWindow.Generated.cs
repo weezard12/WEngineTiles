@@ -1,5 +1,6 @@
 //Code for MyComponents/DialogWindows/TextureSelectionWindow (MyComponents/DialogEditorWindow)
 using GumRuntime;
+using System.Linq;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
 using Gum.Converters;
@@ -16,15 +17,15 @@ partial class TextureSelectionWindow : DialogEditorWindow
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
     {
-        var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
+        var template = new global::MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
-            var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
+            var visual = new global::MonoGameGum.GueDeriving.ContainerRuntime();
             var element = ObjectFinder.Self.GetElementSave("MyComponents/DialogWindows/TextureSelectionWindow");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
             if(createForms) visual.FormsControlAsObject = new TextureSelectionWindow(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TextureSelectionWindow)] = template;
+        global::MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(TextureSelectionWindow)] = template;
         ElementSaveExtensions.RegisterGueInstantiation("MyComponents/DialogWindows/TextureSelectionWindow", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
@@ -45,7 +46,7 @@ partial class TextureSelectionWindow : DialogEditorWindow
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        ScrollViewerInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollViewer>(this.Visual,"ScrollViewerInstance");
+        ScrollViewerInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ScrollViewer>(this.Visual,"ScrollViewerInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code
