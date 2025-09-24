@@ -4,6 +4,7 @@ using Nez;
 using System;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.Main;
 using WEngine.Scripts.Scenes.Tiles;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor
@@ -29,6 +30,10 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             var deltaTime = Time.DeltaTime;
             var move = Vector2.Zero;
 
+            // Prevents moving when the mouse is over GumUI
+            if (Game1.IsTextBoxFocused)
+                return;
+
             // WASD controls
             if (Input.IsKeyDown(Keys.W))
                 move.Y -= 1;
@@ -41,6 +46,17 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
 
             camera.Position += move * moveSpeed * deltaTime;
 
+            // Reset position and zoom with Space key
+            if (Input.IsKeyPressed(Keys.Space))
+            {
+                camera.Position = Vector2.Zero;
+                camera.Zoom = defaultZoom;
+            }
+
+            // Prevents zooming when the mouse is over GumUI
+            if(Game1.IsCursorOverGum)
+                return;
+
             // Mouse wheel zoom
             var mouseState = Input.CurrentMouseState;
             if (mouseState.ScrollWheelValue > Input.PreviousMouseState.ScrollWheelValue)
@@ -48,13 +64,6 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
             else if (mouseState.ScrollWheelValue < Input.PreviousMouseState.ScrollWheelValue)
                 camera.Zoom -= zoomSpeed;
 
-
-            // Reset position and zoom with Space key
-            if (Input.IsKeyPressed(Keys.Space))
-            {
-                camera.Position = Vector2.Zero;
-                camera.Zoom = defaultZoom;
-            }
         }
     }
 }

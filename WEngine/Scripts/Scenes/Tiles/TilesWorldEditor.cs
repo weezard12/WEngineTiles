@@ -132,8 +132,11 @@ namespace WEngine.Scripts.Scenes.Tiles
         {
             base.Update();
 
+            if(Game1.IsTextBoxFocused)
+                return;
+
             // 1 toggles all Editor gum ui
-            if(Input.IsKeyPressed(Keys.D1))
+            if (Input.IsKeyPressed(Keys.D1))
             {
                 EditorScreen.IsVisible = !EditorScreen.IsVisible;
                 cameraInfoDisplay.SetOffset(new Vector2(0, EditorScreen.IsVisible ? 30 : 0));

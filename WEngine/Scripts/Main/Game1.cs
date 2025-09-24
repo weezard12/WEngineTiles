@@ -28,6 +28,7 @@ namespace WEngine.Scripts.Main
         public static GraphicalUiElement CurrentGumScreen;
 
         public static bool IsCursorOverGum { get; private set; }
+        public static bool IsTextBoxFocused { get; set; }
 
         public Game1()
         {
