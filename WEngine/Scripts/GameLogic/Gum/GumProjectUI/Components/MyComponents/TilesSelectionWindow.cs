@@ -43,7 +43,15 @@ partial class TilesSelectionWindow
         {
             TileItem tile = new TileItem(item.tile);
 
-            SelectionPanelInstance.AddItem(tile);
+            SelectionPanelItemHolder selectionPanelItemHolder = SelectionPanelInstance.AddItem(tile);
+
+            // This will open the editing window when double clicking the tile item
+            selectionPanelItemHolder.Visual.DoubleClick += (_, _) =>
+            {
+                EditingTileItemWindow editingTileItemWindow = new EditingTileItemWindow(item.tile);
+                Game1.CurrentGumScreen.AddChild(editingTileItemWindow);
+                GumUtils.CenterToScreen(editingTileItemWindow);
+            };
         }
     }
 

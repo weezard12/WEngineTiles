@@ -29,9 +29,9 @@ partial class SelectionPanel
         };
     }
 
-    public void AddItem(FrameworkElement item)
+    public SelectionPanelItemHolder AddItem(FrameworkElement item)
     {
-        if (item == null) return;
+        if (item == null) return null;
 
         SelectionPanelItemHolder holder = new SelectionPanelItemHolder(item);
         holder.AddChild(item);
@@ -80,6 +80,7 @@ partial class SelectionPanel
         {
             SelectItem(0);
         }
+        return holder;
     }
 
     public void RemoveItem(FrameworkElement item)
