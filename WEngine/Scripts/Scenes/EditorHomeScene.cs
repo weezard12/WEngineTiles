@@ -119,7 +119,7 @@ namespace WEngine.Scripts.Scenes
                 // Rename button
                 var renameButton = new Button();
                 renameButton.Text = "Rename";
-                renameButton.Visual.Width = 60;
+                renameButton.Visual.Width = 80;
                 renameButton.Click += (sender, args) =>
                 {
                     Debug.Log($"Renaming project: {projectName}");
