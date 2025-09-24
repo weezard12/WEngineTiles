@@ -26,6 +26,9 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         private Vector2 _currentOffset = Vector2.Zero;
         private Vector2 _targetOffset = Vector2.Zero;
 
+        // Low render layer to draw on top of most things.
+        private const int RenderLayer = -1000;
+
         public Vector2 Offset
         {
             get => _targetOffset;
@@ -51,6 +54,7 @@ namespace WEngine.Scripts.GameLogic.TilesEditor
         public override void OnAddedToEntity()
         {
             _canvas = Entity.AddComponent(new UICanvas());
+            _canvas.RenderLayer = RenderLayer;
             _canvas.IsFullScreen = true;
 
             _table = _canvas.Stage.AddElement(new Table());
