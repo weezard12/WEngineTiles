@@ -4,7 +4,7 @@ using Gum.Managers;
 using Gum.Wireframe;
 using Nez.Textures;
 using System.Linq;
-using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 using WEngine.Scripts.Main.Utils;
 
 partial class TileItem

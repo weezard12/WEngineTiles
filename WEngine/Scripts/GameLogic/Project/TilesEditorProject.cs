@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
 using WEngine.Scripts.GameLogic.Tiles.Serializable.Editor;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 using NJson = Newtonsoft.Json;
 
 namespace WEngine.Scripts.GameLogic.Project

@@ -7,13 +7,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ButtomPanel.Height</Name>
-      <Value xsi:type="xsd:float">52</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>ButtomPanel.HeightUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -65,6 +65,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>CloseButton.ButtonDisplayText</Name>
       <Value xsi:type="xsd:string">Close</Value>
@@ -110,12 +116,6 @@
       <Type>PositionUnitType</Type>
       <Name>CloseButton.YUnits</Name>
       <Value xsi:type="xsd:int">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>ChildrenLayout</Type>
-      <Name>ChildrenLayout</Name>
-      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -185,13 +185,13 @@
     <Variable>
       <Type>ChildrenLayout</Type>
       <Name>InnerPanel.ChildrenLayout</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>InnerPanel.Height</Name>
-      <Value xsi:type="xsd:float">-71</Value>
+      <Value xsi:type="xsd:float">-56</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -202,8 +202,14 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>InnerPanel.StackSpacing</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>InnerPanel.Width</Name>
-      <Value xsi:type="xsd:float">-1</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -240,7 +246,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TopPanel.Height</Name>
-      <Value xsi:type="xsd:float">17</Value>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TopPanel.HeightUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -252,7 +264,7 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>TopPanel.WidthUnits</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -264,13 +276,13 @@
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>TopPanel.XOrigin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>TopPanel.XUnits</Name>
-      <Value xsi:type="xsd:int">6</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -304,13 +316,8 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>TileTypeMenu</Name>
-    <BaseType>Controls/MenuItem</BaseType>
-    <DefinedByBase>false</DefinedByBase>
-  </Instance>
-  <Instance>
     <Name>InnerPanel</Name>
-    <BaseType>Controls/Panel</BaseType>
+    <BaseType>Controls/StackPanel</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
@@ -326,6 +333,11 @@
   <Instance>
     <Name>CloseButton</Name>
     <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TileTypeMenu</Name>
+    <BaseType>Controls/ComboBox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Behaviors />

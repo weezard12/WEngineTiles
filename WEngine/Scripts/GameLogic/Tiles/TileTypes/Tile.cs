@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WEngine.Scripts.GameLogic.Tiles
+namespace WEngine.Scripts.GameLogic.Tiles.TileTypes
 {
     internal class Tile
     {

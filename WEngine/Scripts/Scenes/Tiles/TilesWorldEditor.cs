@@ -20,8 +20,11 @@ using WEngine.Scripts.GameLogic.Gum;
 using WEngine.Scripts.GameLogic.Project;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable.Editor;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 using WEngine.Scripts.GameLogic.TilesEditor;
+using WEngine.Scripts.GameLogic.TilesEditor.Components;
 using WEngine.Scripts.GameLogic.TilesEditor.KeyCombos;
+using WEngine.Scripts.GameLogic.TilesEditor.TilesManagment;
 using WEngine.Scripts.GameLogic.TilesEditor.Tools;
 using WEngine.Scripts.Main;
 using KeyCombo = WEngine.Scripts.GameLogic.TilesEditor.KeyCombos.KeyCombo;
@@ -50,6 +53,9 @@ namespace WEngine.Scripts.Scenes.Tiles
         public override void OnStart()
         {
             base.OnStart();
+
+            EditorTilesManager.Initialize();
+
             // Input Manager for shortcuts
             var _inputEntity = CreateEntity("input-manager");
             var manager = _inputEntity.AddComponent<KeyComboManager>();

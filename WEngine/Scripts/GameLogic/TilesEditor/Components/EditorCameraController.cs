@@ -7,7 +7,7 @@ using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.Main;
 using WEngine.Scripts.Scenes.Tiles;
 
-namespace WEngine.Scripts.GameLogic.TilesEditor
+namespace WEngine.Scripts.GameLogic.TilesEditor.Components
 {
     // TODO add a nice wteening (easing) oprion when zooming in and out
 

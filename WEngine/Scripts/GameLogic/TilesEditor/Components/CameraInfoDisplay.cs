@@ -9,7 +9,7 @@ using static WEngine.Scripts.Scenes.Tiles.TilesWorld;
 using WEngine.Scripts.Scenes.Tiles;
 using WEngine.Scripts.GameLogic.Tiles;
 
-namespace WEngine.Scripts.GameLogic.TilesEditor
+namespace WEngine.Scripts.GameLogic.TilesEditor.Components
 {
     internal class CameraInfoDisplay : Component, IUpdatable
     {

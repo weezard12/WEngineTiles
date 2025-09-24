@@ -63,6 +63,181 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-09-23T12:33:51.027925Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-24T09:59:59.4238283Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:00:25.6585977Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:00:35.8375725Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:00:38.4021449Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).ScrollViewerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:01:27.8828782Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).SelectionPanelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:03:44.2427326Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).Controls/ScrollViewer ScrollViewerInstance in MyComponents/Editors/AnimationEditor/AnimationEditor (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-24T10:04:16.1417486Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).SelectionPanelInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:04:24.8859095Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:06:59.1343673Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).MyComponents/Small/SelectionPanel SelectionPanelInstance in MyComponents/Editors/AnimationEditor/AnimationEditor (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-24T10:08:03.6774461Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).ButtonStandardInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:08:10.1962731Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:09:29.3357467Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).CustomTextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:10:18.4981731Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FramesPanel",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:13:38.5254945Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FramesSelectionPanel",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).SelectionPanelInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:13:53.1251126Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FramesActionsPanel",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:14:37.4270046Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).AddFrameButton",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).ButtonStandardInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:14:55.3790282Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).DeleteFrameButton",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).ButtonStandardInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:15:05.7708261Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FPSPanel",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).PanelInstance2",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:15:30.9343542Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FPSLabel",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).LabelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:15:43.1474463Z"
+      },
+      {
+        "NewName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).FPSTextBox",
+        "OldName": "MyComponents/Editors/AnimationEditor/AnimationEditor (Container).CustomTextBoxInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-24T10:15:54.945092Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/EditingTileItem (Container).TileTypeMenu1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:21:09.9406976Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelection/EditingTileItem (Container).TileTypeMenu2",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-24T10:21:20.1068568Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/EditingTileItem (Container).Controls/MenuItem TileTypeMenu1 in MyComponents/TilesSelection/EditingTileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-24T10:22:16.0444516Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/EditingTileItem (Container).Controls/MenuItem TileTypeMenu2 in MyComponents/TilesSelection/EditingTileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-24T10:22:16.045455Z"
       }
     ]
   }

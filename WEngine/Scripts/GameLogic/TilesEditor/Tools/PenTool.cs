@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 
 namespace WEngine.Scripts.GameLogic.TilesEditor.Tools
 {

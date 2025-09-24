@@ -17,7 +17,6 @@ partial class TextureSelectionWindow
         foreach (var sprite in EditorScreen.Instance.RenderingManager.GetSprites())
         {
             sprites.Add(new (sprite.id, sprite.sprite));
-            Debug.Log($"Loaded sprite with ID: {sprite.id}");
             TilesSprite tileSprite = new TilesSprite(sprite.id, sprite.sprite);
             tileSprite.Visual.Click += (s, e) =>
             {

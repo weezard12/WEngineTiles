@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>MyComponents/Editors/AnimationEditor/AnimationEditor</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>string</Type>
+      <Name>AddFrameButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Add Frame</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>AddFrameButton.Parent</Name>
+      <Value xsi:type="xsd:string">FramesActionsPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FPSTextBox.Parent</Name>
+      <Value xsi:type="xsd:string">FPSPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>DeleteFrameButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Delete frame</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>DeleteFrameButton.Parent</Name>
+      <Value xsi:type="xsd:string">FramesActionsPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FPSLabel.LabelText</Name>
+      <Value xsi:type="xsd:string">FPS:</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FPSLabel.Parent</Name>
+      <Value xsi:type="xsd:string">FPSPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FPSLabel.Width</Name>
+      <Value xsi:type="xsd:float">35</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>FPSPanel.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FPSPanel.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FPSPanel.HeightUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FPSPanel.StackSpacing</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FPSPanel.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FPSPanel.WidthUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>FramesActionsPanel.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesActionsPanel.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesActionsPanel.HeightUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesActionsPanel.StackSpacing</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesActionsPanel.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesActionsPanel.WidthUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesPanel.Height</Name>
+      <Value xsi:type="xsd:float">30</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesPanel.HeightUnits</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesPanel.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesPanel.WidthUnits</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesSelectionPanel.Height</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesSelectionPanel.HeightUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FramesSelectionPanel.Parent</Name>
+      <Value xsi:type="xsd:string">FramesPanel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesSelectionPanel.Width</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FramesSelectionPanel.WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesSelectionPanel.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FramesSelectionPanel.XOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FramesSelectionPanel.XUnits</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesSelectionPanel.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>FramesSelectionPanel.YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FramesSelectionPanel.YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>HeightUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">-0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WidthUnits</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>XOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>XUnits</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>YOrigin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>YUnits</Name>
+      <Value xsi:type="xsd:int">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>FramesPanel</Name>
+    <BaseType>Controls/Panel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FramesActionsPanel</Name>
+    <BaseType>Controls/StackPanel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FPSPanel</Name>
+    <BaseType>Controls/StackPanel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FramesSelectionPanel</Name>
+    <BaseType>MyComponents/Small/SelectionPanel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>AddFrameButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>DeleteFrameButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FPSLabel</Name>
+    <BaseType>Controls/Label</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FPSTextBox</Name>
+    <BaseType>MyComponents/Small/CustomTextBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

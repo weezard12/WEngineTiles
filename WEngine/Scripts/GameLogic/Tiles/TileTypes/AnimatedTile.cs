@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WEngine.Scripts.GameLogic.Tiles
+namespace WEngine.Scripts.GameLogic.Tiles.TileTypes
 {
     internal class AnimatedTile : Tile
     {
         public int FrameRate { get; set; } = 1; // Frames per second
-        public List<int> Frames = new List<int>();
+        public List<int> Frames { get; set; } = new List<int>();
         public int CurrentFrameIndex { get; set; } = 0;
 
         public IEnumerator Animate()

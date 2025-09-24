@@ -6,7 +6,7 @@ using Gum.Wireframe;
 using RenderingLibrary.Graphics;
 
 using System.Linq;
-using WEngine.Scripts.GameLogic.Tiles;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 
 partial class EditingTileItemWindow
 {

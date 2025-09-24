@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.Serializable;
+using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 using WEngine.Scripts.Main;
 using WEngine.Scripts.Main.Utils;
 using static WEngine.Scripts.Main.Game1;
