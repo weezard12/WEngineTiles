@@ -1,4 +1,5 @@
 ﻿using Nez;
+using Nez.Textures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
                 typeof(AnimatedTile),
                 "Tile with animated texture"
                 );
-            animatedTileType.AddTileProperty<int>(nameof(AnimatedTile.FrameRate));
+            animatedTileType.AddTileProperty(nameof(AnimatedTile.FrameRate), typeof(EditorIntPropertyUI));
+            animatedTileType.AddTileProperty(nameof(AnimatedTile.Frames), typeof(EditorImageListPropertyUI));
 
             AddTileType(animatedTileType);
 

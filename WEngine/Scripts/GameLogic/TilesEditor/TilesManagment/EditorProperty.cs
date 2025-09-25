@@ -38,6 +38,11 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
         {
             return (T) _propertyInfo.GetValue(target);
         }
+
+        public void SetValue(object target, object value)
+        {
+            _propertyInfo.SetValue(target, value);
+        }
     }
 }
 

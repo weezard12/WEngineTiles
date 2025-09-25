@@ -350,6 +350,20 @@
         "ElementType": "Components",
         "EventType": 1,
         "TimestampUtc": "2025-09-25T13:11:38.2713716Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorPropertyUI1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T13:17:18.346292Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI",
+        "OldName": "MyComponents/EditorProperties/EditorPropertyUI1",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T15:18:42.9167481Z"
       }
     ]
   }

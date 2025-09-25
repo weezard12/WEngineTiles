@@ -13,6 +13,8 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
         public string Description;
 
         public List<EditorProperty> Properties = new List<EditorProperty>();
+        public List<Type> PropertiesUI = new List<Type>();
+
 
         public TileType(string name, Type type, string description)
         {
@@ -21,9 +23,10 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
             Description = description;
         }
 
-        public void AddTileProperty<T>(string propertryName)
+        public void AddTileProperty(string propertryName, Type uiType)
         {
             Properties.Add(new EditorProperty(Type.GetProperty(propertryName)));
+            PropertiesUI.Add(uiType);
         }
 
 
@@ -48,6 +51,12 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
             }
 
             return sb.ToString().TrimEnd();
+        }
+
+        internal void ShowUI(int idx)
+        {
+            Activator.CreateInstance<EditorPropertyUI>(PropertiesUI[idx]);
+            
         }
     }
 }
