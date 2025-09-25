@@ -13,8 +13,27 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
         public static Dictionary<Type, TileType> TileTypes { get; private set; } = new Dictionary<Type, TileType>();
         public static void Initialize()
         {
-            TileTypes.Add(typeof(Tile), new TileType("Tile", typeof(Tile),"Simple Tile"));
-            TileTypes.Add(typeof(AnimatedTile), new TileType("Animated Tile", typeof(AnimatedTile),"Tile with animated texture"));
+            AddTileType(new TileType
+                (
+                "Tile",
+                typeof(Tile),
+                "Simple Tile"
+                ));
+
+            AddTileType(new TileType(
+                "Animated Tile",
+                typeof(AnimatedTile),
+                "Tile with animated texture"
+                ));
+        }
+
+
+        private static void AddTileType(TileType tileType)
+        {
+            if (!TileTypes.ContainsKey(tileType.Type))
+                TileTypes.Add(tileType.Type, tileType);
+            else
+                Debug.Error("Tile type already exists: " + tileType.Name);
         }
 
         public static TileType GetTileType(Tile tile)
