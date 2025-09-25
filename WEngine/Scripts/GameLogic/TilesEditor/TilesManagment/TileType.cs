@@ -25,5 +25,30 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
         {
             Properties.Add(new EditorProperty(Type.GetProperty(propertryName)));
         }
+
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"TileType: {Name ?? "Unnamed"}");
+            sb.AppendLine($"  Type: {Type?.Name ?? "null"}");
+            sb.AppendLine($"  Description: {Description ?? "No description"}");
+
+            if (Properties != null && Properties.Count > 0)
+            {
+                sb.AppendLine($"  Properties ({Properties.Count}):");
+                foreach (var property in Properties)
+                {
+                    sb.AppendLine($"    - {property?.ToString() ?? "null"}");
+                }
+            }
+            else
+            {
+                sb.AppendLine("  Properties: None");
+            }
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }
+

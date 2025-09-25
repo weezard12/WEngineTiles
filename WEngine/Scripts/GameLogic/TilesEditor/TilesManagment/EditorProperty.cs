@@ -11,12 +11,13 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
     {
         private readonly PropertyInfo _propertyInfo;
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
 
         public EditorProperty(PropertyInfo propertyInfo)
         {
             _propertyInfo = propertyInfo;
+            Name = propertyInfo.Name;
         }
 
 
@@ -27,23 +28,15 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
             switch (value)
             {
                 case int:
-                    return new EditorIntPropertyUI();
-                    
-
-                case string strValue:
-                    Console.WriteLine($"[String Field] {Name} = \"{strValue}\"");
-                    // render textbox here
-                    break;
-
-                case bool boolValue:
-                    Console.WriteLine($"[Checkbox] {Name} = {boolValue}");
-                    // render checkbox here
-                    break;
-
-                default:
-                    Console.WriteLine($"[Unsupported] {Name} ({typeof(T).Name})");
-                    break;
+                    return new EditorIntPropertyUI(target, this);
             }
+
+            return null;
+        }
+
+        public T GetValue<T>(object target)
+        {
+            return (T) _propertyInfo.GetValue(target);
         }
     }
 }

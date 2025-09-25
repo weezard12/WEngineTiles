@@ -49,21 +49,6 @@ namespace WEngine.Scripts.Main.Utils
                 }
             }
 
-            // Copy fields too (optional)
-            var sourceFields = source.GetType().GetFields();
-            var targetFields = targetType.GetFields();
-
-            foreach (var sf in sourceFields)
-            {
-                var tf = targetFields.FirstOrDefault(f => f.Name == sf.Name &&
-                                                          f.FieldType == sf.FieldType);
-                if (tf != null)
-                {
-                    var value = sf.GetValue(source);
-                    tf.SetValue(target, value);
-                }
-            }
-
             return target;
         }
 

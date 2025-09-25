@@ -336,6 +336,20 @@
         "ElementType": "Components",
         "EventType": 2,
         "TimestampUtc": "2025-09-25T10:31:10.237806Z"
+      },
+      {
+        "NewName": "MyComponents/Small/ClearableContainer",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T13:08:35.2487137Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/Small/ClearableContainer",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2025-09-25T13:11:38.2713716Z"
       }
     ]
   }

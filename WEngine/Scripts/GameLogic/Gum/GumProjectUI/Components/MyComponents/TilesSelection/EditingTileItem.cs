@@ -3,6 +3,7 @@ using Gum.DataTypes;
 using Gum.Forms.Controls;
 using Gum.Managers;
 using Gum.Wireframe;
+using MonoGameGum.GueDeriving;
 using Nez;
 using Nez.Textures;
 using WEngine.Scripts.GameLogic.Tiles.TileTypes;
@@ -13,32 +14,41 @@ partial class EditingTileItem
 {
     TextureSelectionWindow textureSelectionWindow;
 
-    Tile tile;
+    private Tile _tile;
 
     TileItem TileDisplay;
+
+    private ClearableContainer PropertiesContainer;
+
     internal void SetTile(Tile tile)
     {
-        this.tile = tile;
+        this._tile = tile;
         UpdateTileDisplay();
         ConfirmButton.Click += OnConfirmButtonClick;
 
+        SetupChangintTileType();
+    }
+
+    private void SetupChangintTileType()
+    {
         // Adds all of the tile types to the combo box
         foreach (var item in EditorTilesManager.TileTypes.Values)
             TileTypeMenu.Items.Add(item.Name);
-        
+
         // Sets the selected tile type
-        TileTypeMenu.SelectedObject = EditorTilesManager.GetTileType(tile).Name;
+        TileTypeMenu.SelectedObject = EditorTilesManager.GetTileType(_tile).Name;
 
         TileTypeMenu.SelectionChanged += (s, e) =>
         {
-            string selectedTypeName = (string) TileTypeMenu.SelectedObject;
+            string selectedTypeName = (string)TileTypeMenu.SelectedObject;
             TileType selectedTileType = EditorTilesManager.GetTileType(selectedTypeName);
 
+            Debug.Log(selectedTileType);
 
-            Tile newTile = (Tile) tile.ConvertToType(selectedTileType.Type);
+            Tile newTile = (Tile)_tile.ConvertToType(selectedTileType.Type);
 
             // Change the pointer to the new tile.
-            tile = newTile;
+            _tile = newTile;
 
             UpdateTileDisplay();
         };
@@ -51,8 +61,9 @@ partial class EditingTileItem
 
     private void UpdateTileDisplay()
     {
+        InnerPanel.Visual.Children.Clear();
         TileDisplay?.RemoveFromRoot();
-        TileDisplay = new TileItem(tile);
+        TileDisplay = new TileItem(_tile);
 
         // Making the sprite editable
         TileDisplay.SpriteContainer.Click += (s, e) =>
@@ -72,16 +83,22 @@ partial class EditingTileItem
         };
 
         
-        InnerPanel.AddChild(TileDisplay);
-        foreach (EditorProperty tileProperty in EditorTilesManager.GetTileType(tile).Properties)
+        if(_tile is AnimatedTile)
         {
-            tileProperty.ShowUI(tile);
+            Debug.Log("Tile is animated");
+        }
+
+        InnerPanel.AddChild(TileDisplay);
+        foreach (EditorProperty tileProperty in EditorTilesManager.GetTileType(_tile).Properties)
+        {
+            Debug.Log("Adding property: " + tileProperty.Name);
+            InnerPanel.AddChild(tileProperty.ShowUI(_tile));
         }
     }
 
     private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
     {
-        tile.TextureId = result.GetValue<int>();
+        _tile.TextureId = result.GetValue<int>();
         UpdateTileDisplay();
     }
 
