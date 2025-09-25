@@ -238,6 +238,104 @@
         "ElementType": "Components",
         "EventType": 6,
         "TimestampUtc": "2025-09-24T10:22:16.045455Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorPropertyUI",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T10:09:34.3000391Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/IntEditorPropertyUI",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T10:10:15.840184Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/IntEditorPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-25T10:15:28.0192875Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorPropertyUI (Container).LabelInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-25T10:15:45.045366Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorPropertyUI (Container).PropertyName",
+        "OldName": "MyComponents/EditorProperties/EditorPropertyUI (Container).LabelInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-25T10:15:52.0517315Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorPropertyUI (Container).PropertyNameLabel",
+        "OldName": "MyComponents/EditorProperties/EditorPropertyUI (Container).PropertyName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-25T10:15:57.8176309Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/IntEditorPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-25T10:17:06.4169185Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/IntEditorPropertyUI1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T10:18:22.141131Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/FloatEditorPropertyUI",
+        "OldName": "MyComponents/EditorProperties/IntEditorPropertyUI1",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T10:18:43.7815197Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/IntEditorPropertyUI1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2025-09-25T10:19:24.3909933Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/StringEditorPropertyUI",
+        "OldName": "MyComponents/EditorProperties/IntEditorPropertyUI1",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T10:19:34.6132438Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorFloatPropertyUI",
+        "OldName": "MyComponents/EditorProperties/FloatEditorPropertyUI",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T10:30:48.3572135Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorIntPropertyUI",
+        "OldName": "MyComponents/EditorProperties/IntEditorPropertyUI",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T10:31:00.5422934Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorStringPropertyUI",
+        "OldName": "MyComponents/EditorProperties/StringEditorPropertyUI",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2025-09-25T10:31:10.237806Z"
       }
     ]
   }

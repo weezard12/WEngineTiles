@@ -11,11 +11,19 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
         public string Name;
         public Type Type;
         public string Description;
+
+        public List<EditorProperty> Properties = new List<EditorProperty>();
+
         public TileType(string name, Type type, string description)
         {
             Name = name;
             Type = type;
             Description = description;
+        }
+
+        public void AddTileProperty<T>(string propertryName)
+        {
+            Properties.Add(new EditorProperty(Type.GetProperty(propertryName)));
         }
     }
 }

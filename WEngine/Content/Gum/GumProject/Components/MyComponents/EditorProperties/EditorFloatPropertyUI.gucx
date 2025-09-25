@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>MyComponents/EditorProperties/EditorFloatPropertyUI</Name>
+  <BaseType>MyComponents/EditorProperties/EditorPropertyUI</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TextBoxInstance.PlaceholderText</Name>
+      <Value xsi:type="xsd:string">Float</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>PropertyNameLabel</Name>
+    <BaseType>Controls/Label</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>TextBoxInstance</Name>
+    <BaseType>Controls/TextBox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

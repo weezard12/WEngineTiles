@@ -20,11 +20,15 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
                 "Simple Tile"
                 ));
 
-            AddTileType(new TileType(
+            TileType animatedTileType = new TileType(
                 "Animated Tile",
                 typeof(AnimatedTile),
                 "Tile with animated texture"
-                ));
+                );
+            animatedTileType.AddTileProperty<int>(nameof(AnimatedTile.FrameRate));
+
+            AddTileType(animatedTileType);
+
         }
 
 

@@ -295,6 +295,26 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>MyComponents/EditorProperties/EditorFloatPropertyUI</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorProperties/EditorIntPropertyUI</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorProperties/EditorPropertyUI</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>MyComponents/EditorProperties/EditorStringPropertyUI</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>MyComponents/Editors/AnimationEditor/AnimationEditor</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

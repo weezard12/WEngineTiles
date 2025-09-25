@@ -73,7 +73,10 @@ partial class EditingTileItem
 
         
         InnerPanel.AddChild(TileDisplay);
-
+        foreach (EditorProperty tileProperty in EditorTilesManager.GetTileType(tile).Properties)
+        {
+            tileProperty.ShowUI(tile);
+        }
     }
 
     private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
