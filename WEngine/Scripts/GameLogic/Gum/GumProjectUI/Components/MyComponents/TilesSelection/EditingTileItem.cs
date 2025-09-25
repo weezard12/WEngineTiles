@@ -18,7 +18,6 @@ partial class EditingTileItem
 
     TileItem TileDisplay;
 
-    private ClearableContainer PropertiesContainer;
 
     internal void SetTile(Tile tile)
     {
