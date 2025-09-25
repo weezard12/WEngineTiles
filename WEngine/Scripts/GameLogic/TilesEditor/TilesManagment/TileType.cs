@@ -53,10 +53,13 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
             return sb.ToString().TrimEnd();
         }
 
-        internal void ShowUI(int idx)
+        internal EditorPropertyUI ShowUI(int idx, object target)
         {
-            Activator.CreateInstance<EditorPropertyUI>(PropertiesUI[idx]);
-            
+            EditorPropertyUI propertyUI = (EditorPropertyUI) Activator.CreateInstance(PropertiesUI[idx]);
+            propertyUI.Setup(target, Properties[idx]);
+
+            return propertyUI;
+
         }
     }
 }

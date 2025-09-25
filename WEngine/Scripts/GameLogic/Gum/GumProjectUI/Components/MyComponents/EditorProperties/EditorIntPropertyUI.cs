@@ -10,15 +10,13 @@ partial class EditorIntPropertyUI
     {
     
     }
-    public EditorIntPropertyUI(object target, EditorProperty editorProperty) : base(target, editorProperty)
+    public override void Setup(object target, EditorProperty editorProperty)
     {
-        TextBoxInstance.Text = _editorProperty.GetValue<int>(target).ToString();
-
+        base.Setup(target, editorProperty);
 
         TextBoxInstance.TextChanged += (s, e) =>
         {
             _editorProperty.SetValue(target, TextBoxInstance.Text);
         };
-        
     }
 }

@@ -91,12 +91,11 @@ partial class EditingTileItem
 
         TileType tileType = EditorTilesManager.GetTileType(_tile);
 
-        foreach (EditorProperty tileProperty in tileType.Properties)
+        for (int i = 0; i < tileType.Properties.Count; i++)
         {
-            tileType.ShowUI();
-            tileProperty
-            Debug.Log("Adding property: " + tileProperty.Name);
-            InnerPanel.AddChild(tileProperty.ShowUI(_tile));
+            EditorPropertyUI propertyUI = tileType.ShowUI(i, _tile);
+            Debug.Log("Adding property: " + propertyUI.Name);
+            InnerPanel.AddChild(propertyUI);
         }
     }
 

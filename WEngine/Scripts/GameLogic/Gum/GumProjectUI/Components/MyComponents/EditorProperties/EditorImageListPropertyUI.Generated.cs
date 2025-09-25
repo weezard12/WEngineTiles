@@ -1,4 +1,4 @@
-//Code for MyComponents/EditorProperties/EditorImageListPropertyUI (Container)
+//Code for MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI)
 using GumRuntime;
 using System.Linq;
 using MonoGameGum;
@@ -12,7 +12,7 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-partial class EditorImageListPropertyUI : MonoGameGum.Forms.Controls.FrameworkElement
+partial class EditorImageListPropertyUI : EditorPropertyUI
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
@@ -32,7 +32,6 @@ partial class EditorImageListPropertyUI : MonoGameGum.Forms.Controls.FrameworkEl
             return gue;
         });
     }
-    public Label PropertyNameLabel { get; protected set; }
 
     public EditorImageListPropertyUI(InteractiveGue visual) : base(visual)
     {
@@ -46,7 +45,6 @@ partial class EditorImageListPropertyUI : MonoGameGum.Forms.Controls.FrameworkEl
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        PropertyNameLabel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Label>(this.Visual,"PropertyNameLabel");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

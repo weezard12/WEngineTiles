@@ -17,19 +17,14 @@ partial class EditorPropertyUI
     {
         
     }
-    public void Setup(object target, EditorProperty editorProperty)
+
+    // This method sets up the UI property.
+    public virtual void Setup(object target, EditorProperty editorProperty)
     {
         this._target = target;
         this._editorProperty = editorProperty;
         PropertyNameLabel.Text = _editorProperty.Name;
     }
 
-    public EditorPropertyUI()
-    {
-        this._target = target;
-        this._editorProperty = editorProperty;
-
-        PropertyNameLabel.Text = _editorProperty.Name;
-    }
 
 }

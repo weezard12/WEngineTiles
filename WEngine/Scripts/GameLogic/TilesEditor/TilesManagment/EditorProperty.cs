@@ -20,20 +20,6 @@ namespace WEngine.Scripts.GameLogic.TilesEditor.TilesManagment
             Name = propertyInfo.Name;
         }
 
-
-        public EditorPropertyUI ShowUI(object target)
-        {
-            var value = _propertyInfo.GetValue(target);
-
-            switch (value)
-            {
-                case int:
-                    return new EditorIntPropertyUI(target, this);
-            }
-
-            return null;
-        }
-
         public T GetValue<T>(object target)
         {
             return (T) _propertyInfo.GetValue(target);
