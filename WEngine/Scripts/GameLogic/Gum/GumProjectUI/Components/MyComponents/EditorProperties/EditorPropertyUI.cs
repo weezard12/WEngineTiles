@@ -26,5 +26,4 @@ partial class EditorPropertyUI
         PropertyNameLabel.Text = _editorProperty.Name;
     }
 
-
 }

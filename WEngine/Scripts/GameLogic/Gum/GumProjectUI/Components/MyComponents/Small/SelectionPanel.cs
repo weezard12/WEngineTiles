@@ -29,6 +29,60 @@ partial class SelectionPanel
         };
     }
 
+    public SelectionPanelItemHolder AddItem(GraphicalUiElement item)
+    {
+        if (item == null) return null;
+
+        SelectionPanelItemHolder holder = new SelectionPanelItemHolder(a);
+        holder.AddChild(item);
+
+        // Add the holder to this panel's visual tree
+        this.AddChild(holder);
+
+        // Track the holder in our collection
+        _frameworkElements.Add(holder);
+
+        holder.Visual.ExposeChildrenEvents = false;
+
+        holder.Visual.RollOn += (s, e) =>
+        {
+            Debug.Log("Item hovered");
+            // Only apply hover state if not selected
+            if (holder != _selectedHolder)
+            {
+                holder.QuickStylesState = SelectionPanelItemHolder.QuickStyles.Hovered;
+            }
+        };
+
+        holder.Visual.RollOff += (s, e) =>
+        {
+            // Only clear hover if not selected
+            if (holder != _selectedHolder)
+            {
+                holder.QuickStylesState = SelectionPanelItemHolder.QuickStyles.Clear;
+            }
+        };
+
+        holder.Visual.Click += (s, e) =>
+        {
+            int clickedIndex = GetHolderIndex(holder);
+            Debug.Log($"Item clicked at index: {clickedIndex}");
+
+            // Fire item clicked event
+            ItemClicked?.Invoke(this, new ItemClickedEventArgs(holder, clickedIndex));
+
+            // Handle selection
+            SelectItem(clickedIndex);
+        };
+
+        // Auto-select the first item when it's added
+        if (_frameworkElements.Count == 1)
+        {
+            SelectItem(0);
+        }
+        return holder;
+    }
+
     public SelectionPanelItemHolder AddItem(FrameworkElement item)
     {
         if (item == null) return null;
@@ -83,6 +137,10 @@ partial class SelectionPanel
         return holder;
     }
 
+    public void RemoveItem(GraphicalUiElement item)
+    {
+
+    }
     public void RemoveItem(FrameworkElement item)
     {
         if (item == null) return;
