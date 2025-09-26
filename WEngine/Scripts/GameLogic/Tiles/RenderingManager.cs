@@ -73,6 +73,15 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             FinishedLoadingAssets?.Invoke();
 
+            // Start animations for animated tiles
+            foreach (var tile in Tiles.Values)
+            {
+                // If the tile has an animation it will start the animation coroutine.
+                if (tile is AnimatedTile animatedTile)
+                {
+                    var coroutine = Core.StartCoroutine(animatedTile.Animate());
+                }
+            }
         }
 
         // Used in game rendering
@@ -180,7 +189,7 @@ namespace WEngine.Scripts.GameLogic.Tiles
         }
         #endregion
 
-        #region Getters (For Editor)
+        #region Getters (For Editor) + Set
 
         public Sprite GetSprite(Tile tile)
         {
@@ -210,6 +219,22 @@ namespace WEngine.Scripts.GameLogic.Tiles
             {
                 yield return (kvp.Key, kvp.Value);
             }
+        }
+
+        public Tile GetTile(int id)
+        {
+            if (Tiles.TryGetValue(id, out var tile))
+            {
+                return tile;
+            }
+            Debug.Error($"Tile with ID {id} not found.");
+            return null;
+        }
+
+        
+        public void SetTile(int id, Tile tile)
+        {
+            Tiles[id] = tile;
         }
 
         #endregion

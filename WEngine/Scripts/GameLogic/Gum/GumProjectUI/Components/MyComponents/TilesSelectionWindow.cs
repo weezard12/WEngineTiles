@@ -27,10 +27,8 @@ partial class TilesSelectionWindow
             Debug.Log("Adding new tile to the rendering manager");
             Tile tile = new Tile();
             EditorScreen.Instance.RenderingManager.AddTile(tile);
-            EditingTileItemWindow editingTileItemWindow = new EditingTileItemWindow(tile);
-            Game1.CurrentGumScreen.AddChild(editingTileItemWindow);
 
-            GumUtils.CenterToScreen(editingTileItemWindow);
+            OpenTileEditingWindow(tile);
         };
     }
 
@@ -49,11 +47,17 @@ partial class TilesSelectionWindow
             // This will open the editing window when double clicking the tile item
             selectionPanelItemHolder.Visual.DoubleClick += (_, _) =>
             {
-                EditingTileItemWindow editingTileItemWindow = new EditingTileItemWindow(item.tile);
-                Game1.CurrentGumScreen.AddChild(editingTileItemWindow);
-                GumUtils.CenterToScreen(editingTileItemWindow);
+                OpenTileEditingWindow(item.tile);
             };
         }
+    }
+
+    private void OpenTileEditingWindow(Tile tile)
+    {
+        EditingTileItemWindow editingTileItemWindow = new EditingTileItemWindow(tile);
+        Game1.CurrentGumScreen.AddChild(editingTileItemWindow);
+
+        GumUtils.CenterToScreen(editingTileItemWindow);
     }
 
     public void LoadTiles()

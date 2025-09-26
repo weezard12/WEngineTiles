@@ -6,6 +6,7 @@ using Gum.Wireframe;
 using MonoGameGum.GueDeriving;
 using Nez;
 using Nez.Textures;
+using WEngine.Scripts.GameLogic.Tiles;
 using WEngine.Scripts.GameLogic.Tiles.TileTypes;
 using WEngine.Scripts.GameLogic.TilesEditor.TilesManagment;
 using WEngine.Scripts.Main.Utils;
@@ -14,14 +15,21 @@ partial class EditingTileItem
 {
     TextureSelectionWindow textureSelectionWindow;
 
-    private Tile _tile;
+    // The tile have to be a reference to the tile in the RenderingManager.
+    // If it will be an object, then its just a pointer - when the type is changed to an animated tile the pointer changes but the tile in the rendering manager stays the same.
+    private Tile _tile {
+        get => GetTile();
+        set => SetTile(value);
+    } 
+    
+
+    private int tileId;
 
     TileItem TileDisplay;
 
-
-    internal void SetTile(Tile tile)
+    internal void SetTile(int tileId)
     {
-        this._tile = tile;
+        this.tileId = tileId;
         UpdateTileDisplay();
         ConfirmButton.Click += OnConfirmButtonClick;
 
@@ -89,6 +97,11 @@ partial class EditingTileItem
 
         InnerPanel.AddChild(TileDisplay);
 
+        AddPropertisUI();
+    }
+
+    private void AddPropertisUI()
+    {
         TileType tileType = EditorTilesManager.GetTileType(_tile);
 
         for (int i = 0; i < tileType.Properties.Count; i++)
@@ -105,9 +118,13 @@ partial class EditingTileItem
         UpdateTileDisplay();
     }
 
-    partial void CustomInitialize()
+
+    private void SetTile(Tile tile)
     {
-        
-        
+        EditorScreen.Instance.RenderingManager.SetTile(tileId, tile);
+    }
+    private Tile GetTile()
+    {
+        return EditorScreen.Instance.RenderingManager.GetTile(tileId);
     }
 }

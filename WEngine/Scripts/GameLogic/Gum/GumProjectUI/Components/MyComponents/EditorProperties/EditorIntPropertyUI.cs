@@ -2,6 +2,7 @@ using Gum.Converters;
 using Gum.DataTypes;
 using Gum.Managers;
 using Gum.Wireframe;
+using Nez;
 using System;
 using WEngine.Scripts.GameLogic.TilesEditor.TilesManagment;
 
@@ -20,6 +21,8 @@ partial class EditorIntPropertyUI
         _target = target;
 
         TextBoxInstance.TextChanged += OnTextChanged;
+
+        TextBoxInstance.Text = _editorProperty.GetValue<int>(_target).ToString();
     }
 
     private void OnTextChanged(object sender, EventArgs e)
