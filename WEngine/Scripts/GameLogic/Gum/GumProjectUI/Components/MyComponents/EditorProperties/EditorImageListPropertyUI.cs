@@ -15,6 +15,7 @@ partial class EditorImageListPropertyUI
 {
     TextureSelectionWindow textureSelectionWindow;
 
+    // quick access to the list of texture ids. (since its not a generic i cant do that)
     List<int> texturesIds;
 
     public override void Setup(object target, EditorProperty editorProperty)
@@ -22,6 +23,7 @@ partial class EditorImageListPropertyUI
         base.Setup(target, editorProperty);
 
         texturesIds = _editorProperty.GetValue<List<int>>(_target);
+        RefreshFramesPanel();
     }
     partial void CustomInitialize()
     {
