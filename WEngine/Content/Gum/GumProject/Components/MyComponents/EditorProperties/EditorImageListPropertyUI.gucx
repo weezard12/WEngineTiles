@@ -71,6 +71,12 @@ Frame</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>FramesSelectionPanel.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>FramesSelectionPanel.Height</Name>
       <Value xsi:type="xsd:float">-0</Value>

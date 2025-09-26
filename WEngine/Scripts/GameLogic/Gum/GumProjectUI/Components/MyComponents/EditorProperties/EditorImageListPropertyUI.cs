@@ -42,6 +42,8 @@ partial class EditorImageListPropertyUI
         {
             textureSelectionWindow = null;
         };
+
+        EditorScreen.Instance.AddChild(textureSelectionWindow);
     }
 
     private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
@@ -64,8 +66,10 @@ partial class EditorImageListPropertyUI
             GumUtils.SetGumSpriteToNezSprite(gumSprite, nezSprite, 200, 200);
 
             
-            FramesSelectionPanel.AddItem(gumSprite);
-            
+            SelectionPanelItemHolder itemHolder = FramesSelectionPanel.AddItem(gumSprite);
+
+            itemHolder.Width = 20;
+            itemHolder.Height = 20;
         }
     }
 }
