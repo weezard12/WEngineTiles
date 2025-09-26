@@ -33,7 +33,7 @@ partial class SelectionPanel
     {
         if (item == null) return null;
 
-        SelectionPanelItemHolder holder = new SelectionPanelItemHolder(a);
+        SelectionPanelItemHolder holder = new SelectionPanelItemHolder();
         holder.AddChild(item);
 
         // Add the holder to this panel's visual tree
@@ -139,7 +139,32 @@ partial class SelectionPanel
 
     public void RemoveItem(GraphicalUiElement item)
     {
+        if (item == null) return;
 
+        // Find the holder that contains this GraphicalUiElement
+        var holderToRemove = _frameworkElements
+            .OfType<SelectionPanelItemHolder>()
+            .FirstOrDefault(holder => holder.Visual.Children.Contains(item));
+
+        if (holderToRemove != null)
+        {
+            int removedIndex = GetHolderIndex(holderToRemove);
+
+            // If we're removing the selected item, clear selection
+            if (holderToRemove == _selectedHolder)
+            {
+                ClearSelection();
+            }
+            // If we're removing an item before the selected one, adjust selected index
+            else if (_selectedIndex > removedIndex)
+            {
+                _selectedIndex--;
+            }
+
+            // Remove the item from the holder
+            holderToRemove.RemoveFromRoot();
+            _frameworkElements.Remove(holderToRemove);
+        }
     }
     public void RemoveItem(FrameworkElement item)
     {
