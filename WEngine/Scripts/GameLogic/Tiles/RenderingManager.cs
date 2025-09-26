@@ -25,6 +25,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
         private readonly List<Tileset> Tilesets = new();
 
+        private readonly List<ICoroutine> ActiveAnimations = new();
+
         public RenderingManager(List<Tile> tiles)
         {
             // Testing tilesets (TODO move this logic to TilesWorld)
@@ -73,15 +75,8 @@ namespace WEngine.Scripts.GameLogic.Tiles
 
             FinishedLoadingAssets?.Invoke();
 
-            // Start animations for animated tiles
-            foreach (var tile in Tiles.Values)
-            {
-                // If the tile has an animation it will start the animation coroutine.
-                if (tile is AnimatedTile animatedTile)
-                {
-                    var coroutine = Core.StartCoroutine(animatedTile.Animate());
-                }
-            }
+
+            RefreshAnimations();
         }
 
         // Used in game rendering
@@ -243,6 +238,33 @@ namespace WEngine.Scripts.GameLogic.Tiles
         private void LoadTiles()
         {
 
+        }
+
+        #endregion
+
+        #region Animations Managment
+
+        /// <summary>
+        /// Stops all active animations and restarts them. (AnimatedTiles)
+        /// </summary>
+        public void RefreshAnimations()
+        {
+            // Stop all active animations
+            foreach (var coroutine in ActiveAnimations)
+            {
+                coroutine.Stop();
+            }
+
+            // Start animations for animated tiles
+            foreach (var tile in Tiles.Values)
+            {
+                // If the tile has an animation it will start the animation coroutine.
+                if (tile is AnimatedTile animatedTile)
+                {
+                    var coroutine = Core.StartCoroutine(animatedTile.Animate());
+                    ActiveAnimations.Add(coroutine);
+                }
+            }
         }
 
         #endregion

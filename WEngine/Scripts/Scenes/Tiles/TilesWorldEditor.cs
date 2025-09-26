@@ -152,6 +152,11 @@ namespace WEngine.Scripts.Scenes.Tiles
             {
                 Game1.ImGuiManager.SetEnabled(!Game1.ImGuiManager.Enabled);
             }
+
+            if(Input.IsKeyPressed(Keys.R))
+            {
+                RenderingManager.RefreshAnimations();
+            }
         }
 
         public TilesUserInfo GetUserInfo()
