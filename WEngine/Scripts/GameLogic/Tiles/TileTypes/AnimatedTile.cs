@@ -19,6 +19,14 @@ namespace WEngine.Scripts.GameLogic.Tiles.TileTypes
             while (true)
             {
                 yield return Coroutine.WaitForSeconds(1f / FrameRate);
+
+                // In case there are no frames, skip updating the texture. (This state shouldnt happen. but when using the editor it can.)
+                if (Frames.Count == 0)
+                {
+                    Debug.Error(ToString() + " has no frames. Animation skipped.");
+                    continue;
+                }
+                    
                 TextureId = Frames[CurrentFrameIndex % Frames.Count];
                 CurrentFrameIndex++;
             }
