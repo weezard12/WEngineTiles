@@ -5,10 +5,52 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>ActionsContainer.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ActionsContainer.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ActionsContainer.HeightUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ActionsContainer.StackSpacing</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ActionsContainer.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ActionsContainer.WidthUnits</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ActionsContainer.Y</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>AddFrameButton.ButtonDisplayText</Name>
       <Value xsi:type="xsd:string">Add
-Frame</Value>
+Frames</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -36,6 +78,18 @@ Frame</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>ChangeFrameButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Change Frame</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ChangeFrameButton.Parent</Name>
+      <Value xsi:type="xsd:string">ActionsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>FramesPanel.ChildrenLayout</Name>
       <Value xsi:type="xsd:int">2</Value>
@@ -44,13 +98,19 @@ Frame</Value>
     <Variable>
       <Type>float</Type>
       <Name>FramesPanel.Height</Name>
-      <Value xsi:type="xsd:float">67</Value>
+      <Value xsi:type="xsd:float">63</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>FramesPanel.HeightUnits</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float?</Type>
+      <Name>FramesPanel.MinWidth</Name>
+      <Value xsi:type="xsd:float">235</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -61,13 +121,13 @@ Frame</Value>
     <Variable>
       <Type>float</Type>
       <Name>FramesPanel.Width</Name>
-      <Value xsi:type="xsd:float">253</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>FramesPanel.WidthUnits</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -86,6 +146,11 @@ Frame</Value>
       <Type>DimensionUnitType</Type>
       <Name>FramesSelectionPanel.HeightUnits</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float?</Type>
+      <Name>FramesSelectionPanel.MinWidth</Name>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -166,6 +231,18 @@ Frame</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>RemoveFrameButton.ButtonDisplayText</Name>
+      <Value xsi:type="xsd:string">Remove Frame</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RemoveFrameButton.Parent</Name>
+      <Value xsi:type="xsd:string">ActionsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <Value xsi:type="xsd:string">Default</Value>
@@ -202,6 +279,21 @@ Frame</Value>
   </Instance>
   <Instance>
     <Name>AddFrameButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ActionsContainer</Name>
+    <BaseType>Controls/StackPanel</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>ChangeFrameButton</Name>
+    <BaseType>Controls/ButtonStandard</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>RemoveFrameButton</Name>
     <BaseType>Controls/ButtonStandard</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

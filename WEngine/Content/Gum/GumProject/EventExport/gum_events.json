@@ -392,6 +392,146 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-09-26T08:45:26.4311548Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelection/EditingTileItem (Container).Controls/ButtonStandard CloseButton in MyComponents/TilesSelection/EditingTileItem (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-26T10:45:58.235656Z"
+      },
+      {
+        "NewName": "MyComponents/TilesSelectionWindow (MyComponents/EditorWindow).TextBoxInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T10:54:21.8910627Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/TilesSelectionWindow (MyComponents/EditorWindow).Controls/TextBox TextBoxInstance in MyComponents/TilesSelectionWindow (MyComponents/EditorWindow)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-26T10:55:34.0248196Z"
+      },
+      {
+        "NewName": "TestScreen.SelectionPanelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:02:39.1639659Z"
+      },
+      {
+        "NewName": "TestScreen.SelectionPanelItemHolderInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:02:52.6657614Z"
+      },
+      {
+        "NewName": "TestScreen.RadioButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:03:02.263778Z"
+      },
+      {
+        "NewName": "TestScreen.ButtonIconInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:03:06.9817578Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:12:22.1350059Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorFloatPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:13:18.6954283Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:13:25.3445189Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:13:52.8798411Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Controls/ButtonStandard ButtonStandardInstance1 in MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-26T11:14:26.4428265Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Controls/ButtonStandard ButtonStandardInstance in MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-26T11:14:35.7465008Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ActionsContainer",
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-26T11:14:52.8490505Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:15:05.4691726Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-26T11:15:27.036188Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Change Frame",
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-26T11:15:58.42785Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Remove Frame",
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ButtonStandardInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-26T11:16:09.0425399Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ChangeFrameButton",
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Change Frame",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-26T11:16:20.6281872Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).RemoveFrameButton",
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).Remove Frame",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2025-09-26T11:16:38.2261174Z"
       }
     ]
   }

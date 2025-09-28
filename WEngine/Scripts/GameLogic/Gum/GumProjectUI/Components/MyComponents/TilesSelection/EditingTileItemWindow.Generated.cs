@@ -1,5 +1,6 @@
 //Code for MyComponents/TilesSelection/EditingTileItemWindow (MyComponents/EditorWindow)
 using GumRuntime;
+using System.Linq;
 using MonoGameGum;
 using MonoGameGum.GueDeriving;
 using Gum.Converters;
@@ -16,15 +17,15 @@ partial class EditingTileItemWindow : EditorWindow
     [System.Runtime.CompilerServices.ModuleInitializer]
     public static void RegisterRuntimeType()
     {
-        var template = new MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
+        var template = new global::MonoGameGum.Forms.VisualTemplate((vm, createForms) =>
         {
-            var visual = new MonoGameGum.GueDeriving.ContainerRuntime();
+            var visual = new global::MonoGameGum.GueDeriving.ContainerRuntime();
             var element = ObjectFinder.Self.GetElementSave("MyComponents/TilesSelection/EditingTileItemWindow");
             element.SetGraphicalUiElement(visual, RenderingLibrary.SystemManagers.Default);
             if(createForms) visual.FormsControlAsObject = new EditingTileItemWindow(visual);
             return visual;
         });
-        MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(EditingTileItemWindow)] = template;
+        global::MonoGameGum.Forms.Controls.FrameworkElement.DefaultFormsTemplates[typeof(EditingTileItemWindow)] = template;
         ElementSaveExtensions.RegisterGueInstantiation("MyComponents/TilesSelection/EditingTileItemWindow", () => 
         {
             var gue = template.CreateContent(null, true) as InteractiveGue;
@@ -45,7 +46,7 @@ partial class EditingTileItemWindow : EditorWindow
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        EditingTileItemInstance = MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditingTileItem>(this.Visual,"EditingTileItemInstance");
+        EditingTileItemInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<EditingTileItem>(this.Visual,"EditingTileItemInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

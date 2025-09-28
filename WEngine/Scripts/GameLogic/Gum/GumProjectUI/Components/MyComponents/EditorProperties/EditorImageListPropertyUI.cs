@@ -25,9 +25,40 @@ partial class EditorImageListPropertyUI
         texturesIds = _editorProperty.GetValue<List<int>>(_target);
         RefreshFramesPanel();
     }
+
+    private void RemoveFrameButton_Click(object sender, EventArgs e)
+    {
+        if(FramesSelectionPanel.SelectedItem == null)
+            return;
+
+        int selectedIndex = FramesSelectionPanel.SelectedIndex;
+        texturesIds.RemoveAt(selectedIndex);
+
+        RefreshFramesPanel();
+    }
+
+    private void ChangeFrameButton_Click(object sender, EventArgs e)
+    {
+        if(FramesSelectionPanel.SelectedItem == null)
+            return;
+        textureSelectionWindow?.Close();
+        textureSelectionWindow = new TextureSelectionWindow();
+        GumUtils.CenterToScreen(textureSelectionWindow);
+        textureSelectionWindow.OnDialogComplete += TextureSelectionWindow_OnChangedFrame;
+        textureSelectionWindow.OnClosed += () =>
+        {
+            textureSelectionWindow = null;
+        };
+
+        EditorScreen.Instance.AddChild(textureSelectionWindow);
+    }
+
+
     partial void CustomInitialize()
     {
         AddFrameButton.Visual.Click += AddFrameButtonClick;
+        RemoveFrameButton.Visual.Click += RemoveFrameButton_Click;
+        ChangeFrameButton.Visual.Click += ChangeFrameButton_Click;
     }
 
     private void AddFrameButtonClick(object sender, EventArgs e)
@@ -39,21 +70,13 @@ partial class EditorImageListPropertyUI
             
         textureSelectionWindow = new TextureSelectionWindow();
         GumUtils.CenterToScreen(textureSelectionWindow);
-        textureSelectionWindow.OnDialogComplete += TextureSelectionWindow_OnDialogComplete;
+        textureSelectionWindow.OnDialogComplete += TextureSelectionWindow_OnAddedFrame;
         textureSelectionWindow.OnClosed += () =>
         {
             textureSelectionWindow = null;
         };
 
         EditorScreen.Instance.AddChild(textureSelectionWindow);
-    }
-
-    private void TextureSelectionWindow_OnDialogComplete(DialogResult result)
-    {
-        int newTextureId = result.GetValue<int>();
-        texturesIds.Add(newTextureId);
-
-        RefreshFramesPanel();
     }
 
     private void RefreshFramesPanel()
@@ -65,13 +88,41 @@ partial class EditorImageListPropertyUI
             Nez.Textures.Sprite nezSprite = EditorScreen.Instance.WorldEditor.RenderingManager.GetSprite(textureId);
 
             SpriteRuntime gumSprite = new SpriteRuntime();
+
+            // Centers the sprite
+            gumSprite.XOrigin = HorizontalAlignment.Center;
+            gumSprite.YOrigin = VerticalAlignment.Center;
+
+            gumSprite.XUnits = GeneralUnitType.PixelsFromMiddle;
+            gumSprite.YUnits = GeneralUnitType.PixelsFromMiddle;
+
             GumUtils.SetGumSpriteToNezSprite(gumSprite, nezSprite, 200, 200);
 
             
             SelectionPanelItemHolder itemHolder = FramesSelectionPanel.AddItem(gumSprite);
 
+            
             itemHolder.Width = 20;
             itemHolder.Height = 20;
         }
+    }
+
+    private void TextureSelectionWindow_OnAddedFrame(DialogResult result)
+    {
+        int newTextureId = result.GetValue<int>();
+        texturesIds.Add(newTextureId);
+
+        RefreshFramesPanel();
+    }
+    private void TextureSelectionWindow_OnChangedFrame(DialogResult result)
+    {
+        int newTextureId = result.GetValue<int>();
+
+        int selectedIndex = FramesSelectionPanel.SelectedIndex;
+        texturesIds[selectedIndex] = newTextureId;
+
+        RefreshFramesPanel();
+
+        FramesSelectionPanel.SelectItem(selectedIndex);
     }
 }

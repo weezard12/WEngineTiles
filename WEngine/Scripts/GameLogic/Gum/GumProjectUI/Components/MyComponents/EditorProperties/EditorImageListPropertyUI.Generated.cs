@@ -35,6 +35,9 @@ partial class EditorImageListPropertyUI : EditorPropertyUI
     public Panel FramesPanel { get; protected set; }
     public SelectionPanel FramesSelectionPanel { get; protected set; }
     public ButtonStandard AddFrameButton { get; protected set; }
+    public StackPanel ActionsContainer { get; protected set; }
+    public ButtonStandard ChangeFrameButton { get; protected set; }
+    public ButtonStandard RemoveFrameButton { get; protected set; }
 
     public EditorImageListPropertyUI(InteractiveGue visual) : base(visual)
     {
@@ -51,6 +54,9 @@ partial class EditorImageListPropertyUI : EditorPropertyUI
         FramesPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"FramesPanel");
         FramesSelectionPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectionPanel>(this.Visual,"FramesSelectionPanel");
         AddFrameButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"AddFrameButton");
+        ActionsContainer = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"ActionsContainer");
+        ChangeFrameButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"ChangeFrameButton");
+        RemoveFrameButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"RemoveFrameButton");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

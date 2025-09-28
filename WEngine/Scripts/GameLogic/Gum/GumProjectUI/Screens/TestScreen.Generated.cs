@@ -40,6 +40,9 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
     public TileItem TileItemInstance { get; protected set; }
     public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
     public ContainerRuntime ContainerInstance { get; protected set; }
+    public SelectionPanel SelectionPanelInstance { get; protected set; }
+    public SelectionPanelItemHolder SelectionPanelItemHolderInstance { get; protected set; }
+    public ButtonIcon ButtonIconInstance { get; protected set; }
 
     public TestScreen(InteractiveGue visual) : base(visual)
     {
@@ -57,6 +60,9 @@ partial class TestScreen : MonoGameGum.Forms.Controls.FrameworkElement
         TileItemInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<TileItem>(this.Visual,"TileItemInstance");
         ColoredRectangleInstance = this.Visual?.GetGraphicalUiElementByName("ColoredRectangleInstance") as global::MonoGameGum.GueDeriving.ColoredRectangleRuntime;
         ContainerInstance = this.Visual?.GetGraphicalUiElementByName("ContainerInstance") as global::MonoGameGum.GueDeriving.ContainerRuntime;
+        SelectionPanelInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectionPanel>(this.Visual,"SelectionPanelInstance");
+        SelectionPanelItemHolderInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectionPanelItemHolder>(this.Visual,"SelectionPanelItemHolderInstance");
+        ButtonIconInstance = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonIcon>(this.Visual,"ButtonIconInstance");
         CustomInitialize();
     }
     //Not assigning variables because Object Instantiation Type is set to By Name rather than Fully In Code

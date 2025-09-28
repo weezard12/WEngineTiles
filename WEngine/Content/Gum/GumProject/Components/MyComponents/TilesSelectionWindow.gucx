@@ -7,7 +7,7 @@
     <Variable>
       <Type>float</Type>
       <Name>EditorWindowContentInstance.Height</Name>
-      <Value xsi:type="xsd:float">-46</Value>
+      <Value xsi:type="xsd:float">-20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -44,6 +44,18 @@
       <Type>VerticalAlignment</Type>
       <Name>EditorWindowContentInstance.YOrigin</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">381</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>InnerPanelInstance.ChildrenLayout</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -91,13 +103,7 @@
     <Variable>
       <Type>float</Type>
       <Name>NewTileButton.Y</Name>
-      <Value xsi:type="xsd:float">25</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>ChildrenLayout</Type>
-      <Name>InnerPanelInstance.ChildrenLayout</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -201,6 +207,12 @@
       <Type>string</Type>
       <Name>TitleText.Text</Name>
       <Value xsi:type="xsd:string">Tiles Selection</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">160</Value>
       <SetsValue>true</SetsValue>
     </Variable>
   </State>

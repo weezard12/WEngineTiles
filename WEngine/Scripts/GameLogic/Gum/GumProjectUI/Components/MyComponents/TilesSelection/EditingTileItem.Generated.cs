@@ -36,7 +36,6 @@ partial class EditingTileItem : MonoGameGum.Forms.Controls.FrameworkElement
     public StackPanel InnerPanel { get; protected set; }
     public Panel ButtomPanel { get; protected set; }
     public ButtonStandard ConfirmButton { get; protected set; }
-    public ButtonStandard CloseButton { get; protected set; }
     public ComboBox TileTypeMenu { get; protected set; }
 
     public EditingTileItem(InteractiveGue visual) : base(visual)
@@ -55,7 +54,6 @@ partial class EditingTileItem : MonoGameGum.Forms.Controls.FrameworkElement
         InnerPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"InnerPanel");
         ButtomPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"ButtomPanel");
         ConfirmButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"ConfirmButton");
-        CloseButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"CloseButton");
         TileTypeMenu = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ComboBox>(this.Visual,"TileTypeMenu");
         CustomInitialize();
     }
