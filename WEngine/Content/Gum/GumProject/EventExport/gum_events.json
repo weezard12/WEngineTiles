@@ -532,6 +532,20 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2025-09-26T11:16:38.2261174Z"
+      },
+      {
+        "NewName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2025-09-28T07:56:27.76359Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI).ColoredRectangle ColoredRectangleInstance in MyComponents/EditorProperties/EditorImageListPropertyUI (MyComponents/EditorProperties/EditorPropertyUI)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2025-09-28T07:57:32.6742946Z"
       }
     ]
   }

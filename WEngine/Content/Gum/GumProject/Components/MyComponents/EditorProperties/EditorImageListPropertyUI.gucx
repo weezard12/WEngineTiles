@@ -110,12 +110,17 @@ Frames</Value>
     <Variable>
       <Type>float?</Type>
       <Name>FramesPanel.MinWidth</Name>
-      <Value xsi:type="xsd:float">235</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>FramesPanel.Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramesPanel.StackSpacing</Name>
+      <Value xsi:type="xsd:float">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -151,6 +156,7 @@ Frames</Value>
     <Variable>
       <Type>float?</Type>
       <Name>FramesSelectionPanel.MinWidth</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -162,13 +168,13 @@ Frames</Value>
     <Variable>
       <Type>float</Type>
       <Name>FramesSelectionPanel.Width</Name>
-      <Value xsi:type="xsd:float">-60</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>FramesSelectionPanel.WidthUnits</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -269,7 +275,7 @@ Frames</Value>
   </Instance>
   <Instance>
     <Name>FramesPanel</Name>
-    <BaseType>Controls/Panel</BaseType>
+    <BaseType>Controls/StackPanel</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>

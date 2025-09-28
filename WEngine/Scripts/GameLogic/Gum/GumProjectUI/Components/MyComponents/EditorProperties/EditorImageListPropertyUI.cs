@@ -35,6 +35,13 @@ partial class EditorImageListPropertyUI
         texturesIds.RemoveAt(selectedIndex);
 
         RefreshFramesPanel();
+        if (selectedIndex == FramesSelectionPanel.ItemCount)
+        {
+            selectedIndex--;
+        }
+
+        if (FramesSelectionPanel.ItemCount > 0)
+            FramesSelectionPanel.SelectItem(selectedIndex);
     }
 
     private void ChangeFrameButton_Click(object sender, EventArgs e)
@@ -82,7 +89,7 @@ partial class EditorImageListPropertyUI
     private void RefreshFramesPanel()
     {
         FramesSelectionPanel.ClearItems();
-
+        
         foreach (var textureId in texturesIds)
         {
             Nez.Textures.Sprite nezSprite = EditorScreen.Instance.WorldEditor.RenderingManager.GetSprite(textureId);

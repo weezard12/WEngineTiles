@@ -32,7 +32,7 @@ partial class EditorImageListPropertyUI : EditorPropertyUI
             return gue;
         });
     }
-    public Panel FramesPanel { get; protected set; }
+    public StackPanel FramesPanel { get; protected set; }
     public SelectionPanel FramesSelectionPanel { get; protected set; }
     public ButtonStandard AddFrameButton { get; protected set; }
     public StackPanel ActionsContainer { get; protected set; }
@@ -51,7 +51,7 @@ partial class EditorImageListPropertyUI : EditorPropertyUI
     protected override void ReactToVisualChanged()
     {
         base.ReactToVisualChanged();
-        FramesPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<Panel>(this.Visual,"FramesPanel");
+        FramesPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"FramesPanel");
         FramesSelectionPanel = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<SelectionPanel>(this.Visual,"FramesSelectionPanel");
         AddFrameButton = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<ButtonStandard>(this.Visual,"AddFrameButton");
         ActionsContainer = global::MonoGameGum.Forms.GraphicalUiElementFormsExtensions.TryGetFrameworkElementByName<StackPanel>(this.Visual,"ActionsContainer");
