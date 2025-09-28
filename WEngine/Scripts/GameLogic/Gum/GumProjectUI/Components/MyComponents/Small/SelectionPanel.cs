@@ -201,11 +201,26 @@ partial class SelectionPanel
         // Clear selection first
         ClearSelection();
 
-        // Remove all items
+        // Remove all items and properly clean up
         var holdersToRemove = _frameworkElements.OfType<SelectionPanelItemHolder>().ToList();
         foreach (var holder in holdersToRemove)
-            holder.RemoveFromRoot();
+        {
+            // Remove from visual tree
+            this.Visual.Children.Remove(holder.Visual);
+            holder.Visual.RemoveFromManagers();
+        }
+
+        // Clear the collection
         _frameworkElements.Clear();
+
+        // Force layout update on the parent container
+        this.Visual.UpdateLayout();
+
+        // If the parent implements any automatic sizing, trigger it
+        if (this.Visual.Parent != null)
+        {
+            ParentFrameworkElement?.Visual.UpdateLayout();
+        }
     }
 
     public void SelectItem(int index)
